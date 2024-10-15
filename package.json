@@ -1,0 +1,24 @@
+{
+  "name": "pricing4ts",
+  "version": "1.0.0",
+  "description": "This is the package description",
+  "main": "main.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "deno test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "null"
+  },
+  "keywords": [
+    "pricing"
+  ],
+  "author": "ISA Group",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
