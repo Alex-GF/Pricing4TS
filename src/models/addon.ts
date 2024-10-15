@@ -1,5 +1,5 @@
-import { Feature } from './feature.d.ts';
-import { UsageLimit } from './usage-limit.d.ts';
+import { Feature } from './feature.ts';
+import { UsageLimit } from './usage-limit.ts';
 
 export interface AddOn {
   name: string;
