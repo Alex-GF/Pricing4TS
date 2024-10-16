@@ -1,0 +1,20 @@
+test_name,pricing_path,expected_error
+---------- saasName ----------,-,-
+Given pricing with no saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-no-name.yml,The SaaS must have a name
+Given pricing with null saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-null-name.yml,The SaaS must have a name
+Given pricing with very long saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-long-name.yml,The SaaS name must have at most 50 characters
+Given pricing with very short saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-short-name.yml,The SaaS name must have at least 3 characters
+Given pricing with empty saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-empty-name.yml,The SaaS name must not be empty
+Given pricing with invalid saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-invalid-name.yml,The SaaS name must be a string
+---------- version ----------,-,-
+Given pricing with no version should throw an error,tests/resources/pricing/negative/version/pricing-no-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
+Given pricing with null version should throw an error,tests/resources/pricing/negative/version/pricing-null-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
+Given pricing with invalid version format should throw an error,tests/resources/pricing/negative/version/pricing-invalid-format-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
+Given pricing with invalid version type should throw an error,tests/resources/pricing/negative/version/pricing-invalid-type-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
+Given pricing with old version should throw an error,tests/resources/pricing/negative/version/pricing-old-version.yml,The version field of the pricing does not correspond to the latest version. Please ensure you are using it
+---------- createdAt ----------,-,-
+Given pricing with no createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-no-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
+Given pricing with null createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-null-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
+Given pricing with invalid createdAt type should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-type-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
+Given pricing with invalid createdAt format should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-format-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
+
