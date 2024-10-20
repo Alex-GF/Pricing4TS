@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-import * as semver from "@std/semver";
+import semver from "semver";
 import { validateVersion } from "./pricing-validators.ts";
 import { updaters } from "./version-updaters/updaters.ts";
 import { writePricingWithErrorToYaml } from "./yaml-utils.ts";
@@ -24,7 +24,7 @@ export function update(extractedPricing: any, pricingPath: string): any {
     validateVersion(extractedPricing.version)
   );
   const latestVersion = _parseToSemver(LATEST_PRICING2YAML_VERSION);
-  if (!semver.equals(pricingVersion, latestVersion)) {
+  if (!semver.eq(pricingVersion, latestVersion)) {
     if (PRICING2YAML_VERSIONS.includes(extractedPricing.version)) {
       _performUpdate(extractedPricing, pricingPath);
     } else {
@@ -32,7 +32,7 @@ export function update(extractedPricing: any, pricingPath: string): any {
         `Unsupported version: ${pricingVersion.major}.${pricingVersion.minor}. Please, visit the changelogs of Pricing2Yaml to check the supported versions.`
       );
     }
-  } else if (semver.greaterThan(pricingVersion, latestVersion)) {
+  } else if (semver.gt(pricingVersion, latestVersion)) {
     throw new Error(
       `Wow! You have travelled to the future! This version of Pricing2Yaml is greater than the latest version available: ${LATEST_PRICING2YAML_VERSION}`
     );

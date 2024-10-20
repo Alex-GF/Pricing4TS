@@ -15,7 +15,6 @@
  * @requires jsr:@std/testing/bdd
  * @requires ../../src/utils/yaml-utils.ts
  * @requires ../../src/models/pricing.ts
- * @requires @std/assert
  * @requires ../../src/utils/version-manager.ts
  * @requires @std/csv
  */
@@ -23,7 +22,7 @@
 import { afterAll, before, beforeAll, describe, it } from "jsr:@std/testing/bdd";
 import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
-import { assertEquals } from "@std/assert";
+import assert from "assert";
 import { readCSVFile, parseCSVContent } from "../utils/csv-utils.ts";
 import {v4 as uuidv4 } from "uuid";
 
@@ -58,7 +57,7 @@ describe("Demo SaaS Parsing Tests", () => {
                 it(`${expected}`, () => {
                     const pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
     
-                    assertEquals(pricing.saasName, expected);
+                    assert.equal(pricing.saasName, expected);
                 });
             }}
         );

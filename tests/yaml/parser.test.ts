@@ -15,7 +15,6 @@
  * @requires jsr:@std/testing/bdd
  * @requires ../../src/utils/yaml-utils.ts
  * @requires ../../src/models/pricing.ts
- * @requires @std/assert
  * @requires ../../src/utils/version-manager.ts
  * @requires @std/csv
  */
@@ -23,10 +22,10 @@
 import { afterAll, before, beforeAll, describe, it } from "jsr:@std/testing/bdd";
 import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
-import { assert, assertEquals, assertIsError } from "@std/assert";
+import assert from "assert";
 import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager.ts";
 import {v4 as uuidv4 } from "uuid";
-import * as csv from "@std/csv";
+import { parseCSVContent, readCSVFile } from "../utils/csv-utils.ts";
 
 const POSITIVE_TESTS_CSV_PATH = "tests/yaml/data/positive-parsing-tests.csv";
 const NEGATIVE_TESTS_CSV_PATH = "tests/yaml/data/negative-parsing-tests.csv";
@@ -43,39 +42,6 @@ interface Test{
 interface TestSection{
     sectionName: string,
     tests: Test[]
-}
-
-function readCSVFile(filePath: string): string[][] {
-    
-    const absolutePath: string = Deno.realPathSync(filePath);
-    const csvContent = Deno.readTextFileSync(absolutePath);
-    const content: string[][] = csv.parse(csvContent.split('\n').slice(1).join('\n'));
-
-    return content;
-
-}
-
-function parseCSVContent(content: string[][]): TestSection[] {
-    const result: TestSection[] = [];
-    let i = -1; // In order to match the index 0 once the first test section is added
-    for (const entry of content) {
-        if (entry[1] === "-") {
-            result.push({
-                sectionName: entry[0],
-                tests: []
-            });
-            i++;
-            continue;
-        }
-
-        result[i].tests.push({
-            testName: entry[0],
-            pricingPath: entry[1],
-            expected: entry[2]
-        });
-    }
-
-    return result;
 }
 
 const positiveTestsParameters = parseCSVContent(readCSVFile(POSITIVE_TESTS_CSV_PATH));
@@ -105,8 +71,8 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
                 it(`${expected} parsing`, () => {
                     const pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
     
-                    assertEquals(pricing.saasName, expected);
-                    assertEquals(pricing.version, LATEST_PRICING2YAML_VERSION);
+                    assert.equal(pricing.saasName, expected);
+                    assert.equal(pricing.version, LATEST_PRICING2YAML_VERSION);
                     assert(pricing.createdAt instanceof Date);
                 });
             }}
@@ -140,8 +106,7 @@ describe("Negative Pricing2Yaml Parser Tests", () => {
                         const _pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
                         assert(false, "Expected an error to be thrown");
                     } catch (error) {
-                        assertIsError(error);
-                        assertEquals(error.message, expected);
+                        assert.equal((error as Error).message, expected);
                     }
                 });
             }

@@ -1,0 +1,34 @@
+name: Node.js Package
+on:
+  push:
+    branches:
+      - "main"
+  # release:
+  #   types: [created]
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.0
+  
+      - name: Install Dependencies
+        run: deno install
+  
+      - name: Run Tests
+        run: deno task test
+
+      - name: Build Package
+        run: deno task build
+        
+      - name: Deploy Package
+        run: cd ./npm && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

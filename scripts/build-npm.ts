@@ -4,12 +4,14 @@ import { build, emptyDir } from "@deno/dnt";
 await emptyDir("./npm");
 
 await build({
-  entryPoints: ["./mod.ts"],
+  entryPoints: ["./src/main.ts"],
   outDir: "./npm",
   shims: {
     // see JS docs for overview and more options
     deno: true,
   },
+  typeCheck: false,
+  test: false,
   package: {
     // package.json properties
     name: "Pricing4TS",
@@ -23,6 +25,17 @@ await build({
     bugs: {
       url: "https://github.com/Alex-GF/Pricing4TS",
     },
+    dependencies: {
+      "@types/assert": "^1.5.10",
+      "@types/semver": "^7.5.8",
+      "@types/js-yaml": "^4.0.9",
+      "@types/uuid": "^10.0.0",
+      "assert": "^2.1.0",
+      "jest": "^29.7.0",
+      "js-yaml": "^4.1.0",
+      "semver": "^7.6.3",
+      "uuid": "^10.0.0",
+    }
   },
   postBuild() {
     // steps to run after building and before running the tests

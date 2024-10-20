@@ -1,5 +1,3 @@
-import * as csv from "@std/csv";
-
 export interface Test{
     testName: string,
     pricingPath: string,
@@ -15,7 +13,7 @@ export function readCSVFile(filePath: string): string[][] {
     
     const absolutePath: string = Deno.realPathSync(filePath);
     const csvContent = Deno.readTextFileSync(absolutePath);
-    const content: string[][] = csv.parse(csvContent.split('\n').slice(1).join('\n'));
+    const content: string[][] = csvContent.split('\n').slice(1).map(row => row.split(','));
 
     return content;
 
@@ -25,6 +23,9 @@ export function parseCSVContent(content: string[][]): TestSection[] {
     const result: TestSection[] = [];
     let i = -1; // In order to match the index 0 once the first test section is added
     for (const entry of content) {
+        if (entry.length < 3) {
+            continue;
+        }
         if (entry[1] === "-") {
             result.push({
                 sectionName: entry[0],

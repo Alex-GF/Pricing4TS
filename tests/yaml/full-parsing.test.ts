@@ -15,7 +15,6 @@
  * @requires jsr:@std/testing/bdd
  * @requires ../../src/utils/yaml-utils.ts
  * @requires ../../src/models/pricing.ts
- * @requires @std/assert
  * @requires ../../src/utils/version-manager.ts
  * @requires @std/csv
  */
@@ -29,7 +28,7 @@ import {
 } from "jsr:@std/testing/bdd";
 import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
-import { assert, assertEquals } from "@std/assert";
+import assert from "assert";
 import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager.ts";
 import {v4 as uuidv4 } from "uuid";
 
@@ -58,7 +57,7 @@ describe("Demo SaaS Parsing Tests", () => {
   it(DEMO_SAAS_NAME, () => {
     const pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
 
-    assertEquals(pricing.saasName, DEMO_SAAS_NAME);
+    assert.equal(pricing.saasName, DEMO_SAAS_NAME);
     // Asserts all global attributes exist
     assert(
       pricing.version === LATEST_PRICING2YAML_VERSION,

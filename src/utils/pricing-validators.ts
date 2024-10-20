@@ -1,5 +1,3 @@
-import * as semver from "@std/semver";
-import { SemVer } from "@std/semver/types";
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types.d.ts";
 import type { Feature } from "../models/feature.ts";
 import type { UsageLimit } from "../models/usage-limit.ts";
