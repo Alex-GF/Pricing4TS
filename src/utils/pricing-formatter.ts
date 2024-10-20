@@ -133,8 +133,8 @@ function formatUsageLimit(
     usageLimit.name = validateName(usageLimit.name, "Usage Limit");
     usageLimit.description = validateDescription(usageLimit.description);
     usageLimit.valueType = validateValueType(usageLimit.valueType);
-    usageLimit.defaultValue = validateDefaultValue(usageLimit, "usage limit");
-    usageLimit.value = validateValue(usageLimit, "usage limit");
+    usageLimit.defaultValue = validateDefaultValue(usageLimit, "usage limit") as string | number | boolean;
+    usageLimit.value = validateValue(usageLimit, "usage limit") as string | number | boolean | undefined;
     usageLimit.unit = validateUnit(usageLimit.unit);
     usageLimit.type = validateUsageLimitType(usageLimit.type);
     usageLimit.linkedFeatures = validateLinkedFeatures(usageLimit.linkedFeatures, pricing);
@@ -231,14 +231,14 @@ function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
 
 // --------- UTILITY FUNCTIONS ---------
 
-function formatObjectToArray<T>(object: object): T[] {
+export function formatObjectToArray<T>(object: object): T[] {
   return Object.entries(object).map(([name, details]) => ({
     name,
     ...details,
   }));
 }
 
-function formatObject(object: object): ContainerFeatures | ContainerUsageLimits {
+export function formatObject(object: object): ContainerFeatures | ContainerUsageLimits {
   return Object.entries(object).reduce((acc: ContainerFeatures | ContainerUsageLimits, [key, value]) => {
     acc[key] = { name: key, ...value };
     return acc;
@@ -246,7 +246,7 @@ function formatObject(object: object): ContainerFeatures | ContainerUsageLimits 
   
 }
 
-function formatArrayIntoObject (array: Feature[] | UsageLimit[]): ContainerFeatures | ContainerUsageLimits {
+export function formatArrayIntoObject (array: Feature[] | UsageLimit[]): ContainerFeatures | ContainerUsageLimits {
   return array.reduce((acc: ContainerFeatures | ContainerUsageLimits, { name, ...rest }) => {
     acc[name] = {name, ...rest};
     return acc;

@@ -8,7 +8,7 @@
             "runtimeExecutable": "deno",
             "runtimeArgs": [
               "test",
-              "tests/yaml/full-parsing.test.ts",  // Cambia esto por el nombre de tu task
+              "tests/yaml/version-parsing.test.ts",  // Cambia esto por el nombre de tu task
               "--allow-all",  // Permisos de acceso total
               "--inspect-brk",  // Opción para iniciar en modo debug
             ],

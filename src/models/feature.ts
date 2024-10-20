@@ -1,11 +1,12 @@
 import { ValueType, FeatureType, RenderMode } from './types.d.ts';
 
+export type PaymentType = "CARD" | "GATEWAY" | "INVOICE" | "ACH" | "WIRE_TRANSFER" | "OTHER";
 export interface Feature {
     name: string;
     description?: string;
     valueType: ValueType;
-    defaultValue: string | number | boolean;
-    value?: string | number | boolean;
+    defaultValue: string | number | boolean | string[];
+    value?: string | number | boolean | string[];
     expression?: string;
     serverExpression?: string;
     type: FeatureType;

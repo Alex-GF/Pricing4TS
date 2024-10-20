@@ -2,11 +2,10 @@ import { Feature } from './feature.ts';
 import { UsageLimit } from './usage-limit.ts';
 import { Plan } from './plan.ts';
 import { AddOn } from './addon.ts';
-import type { SemVer } from "@std/semver/types";
 
 export interface Pricing {
     saasName: string;
-    version: SemVer;
+    version: string;
     createdAt: Date;
     currency: string;
     hasAnnualPayment: boolean;
@@ -24,7 +23,7 @@ export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'>
 export function generateEmptyPricing(): Pricing {
     return {
         saasName: "",
-        version: { major: 0, minor: 0, patch: 0 },
+        version: "0.0",
         createdAt: new Date(),
         currency: "",
         hasAnnualPayment: false,

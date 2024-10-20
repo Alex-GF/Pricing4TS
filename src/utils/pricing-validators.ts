@@ -1,6 +1,5 @@
 import * as semver from "@std/semver";
 import { SemVer } from "@std/semver/types";
-import { LATEST_PRICING2YAML_VERSION, PRICING2YAML_VERSIONS } from "./version-manager.ts";
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types.d.ts";
 import type { Feature } from "../models/feature.ts";
 import type { UsageLimit } from "../models/usage-limit.ts";
@@ -37,7 +36,7 @@ export function validateName(name: string | null, item: string): string {
   return trimmedName;
 }
 
-export function validateVersion(version: string): SemVer {
+export function validateVersion(version: string): string {
   if (version === null || version === undefined) {
     throw new Error(
       `The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted`
@@ -50,15 +49,7 @@ export function validateVersion(version: string): SemVer {
     );
   }
 
-  const parsedVersion = semver.parse(version + ".0");
-
-  if (!semver.equals(parsedVersion, LATEST_PRICING2YAML_VERSION)) {
-    throw new Error(
-      `The version field of the pricing does not correspond to the latest version. Please ensure you are using it`
-    );
-  }
-
-  return parsedVersion;
+  return version;
 }
 
 export function validateCreatedAt(createdAt: string | Date | null): Date {
@@ -161,7 +152,7 @@ export function validateValueType(valueType: string | null): ValueType {
 export function validateDefaultValue(
   elem: Feature | UsageLimit,
   item: string
-): number | boolean | string {
+): number | boolean | string | string[] {
   if (elem.defaultValue === null || elem.defaultValue === undefined) {
     throw new Error(
       `The defaultValue field of a ${item} must not be null or undefined. Please ensure that the defaultValue field is present and its defaultValue type correspond to the declared valueType`
@@ -184,6 +175,17 @@ export function validateDefaultValue(
       }
       break;
     case "TEXT":
+      if (elem.type === "PAYMENT"){
+        if (!(elem.defaultValue instanceof Array) || elem.defaultValue.length === 0){
+          throw new Error(`Payment method value must be an array of payment methods and not empty`)
+        }
+        for (const paymentMethod of elem.defaultValue){
+          if(!["CARD", "GATEWAY", "INVOICE", "ACH", "WIRE_TRANSFER", "OTHER"].includes(paymentMethod)){
+            throw new Error(`Invalid payment method: ${paymentMethod}. Please provide one of the following: CARD, GATEWAY, INVOICE, ACH, WIRE_TRANSFER, OTHER`);
+          }
+        }
+        break;
+      }
       if (typeof elem.defaultValue !== "string") {
         throw new Error(
           `The defaultValue field of a ${item} must be a string when its valueType is TEXT. Received: ${elem.defaultValue}`
@@ -221,7 +223,7 @@ export function validateExpression(
 export function validateValue(
   elem: Feature | UsageLimit,
   item: string
-): number | boolean | string | undefined {
+): number | boolean | string | string[] | undefined {
   if (elem.value === null || elem.value === undefined) {
     elem.value = undefined;
   }
@@ -242,6 +244,17 @@ export function validateValue(
       }
       break;
     case "TEXT":
+      if (elem.type === "PAYMENT" && elem.value !== undefined){
+        if (!(elem.value instanceof Array) || elem.value.length === 0){
+          throw new Error(`Payment method value must be an array of payment methods and not empty`)
+        }
+        for (const paymentMethod of elem.value){
+          if(!["CARD", "GATEWAY", "INVOICE", "ACH", "WIRE_TRANSFER", "OTHER"].includes(paymentMethod)){
+            throw new Error(`Invalid payment method: ${paymentMethod}. Please provide one of the following: CARD, GATEWAY, INVOICE, ACH, WIRE_TRANSFER, OTHER`);
+          }
+        }
+        break;
+      }
       if (typeof elem.value !== "string" && elem.value !== undefined) {
         throw new Error(
           `The value field of a ${item} must be a string when its valueType is TEXT. Received: ${elem.value}`
