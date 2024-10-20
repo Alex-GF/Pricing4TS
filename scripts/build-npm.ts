@@ -14,7 +14,7 @@ await build({
   test: false,
   package: {
     // package.json properties
-    name: "Pricing4TS",
+    name: "pricing4ts",
     version: Deno.args[0],
     description: "Pricing4TS is a TypeScript-based toolkit designed to enhance the server-side functionality of a pricing-driven SaaS by enabling the seamless integration of pricing plans into the application logic. The package provides a suite of components that are predicated on the Pricing2Yaml syntax, a specification that facilitates the definition of system's pricing and its features alongside their respective evaluation expressions, grouping them within plans and add-ons, as well as establishing usage limits.",
     license: "MIT",
