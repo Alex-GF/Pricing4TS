@@ -2,7 +2,7 @@ import { ValueType, UsageLimitType, RenderMode } from "./types.d.ts";
 
 export interface UsageLimit {
     name: string;
-    description: string;
+    description?: string;
     valueType: ValueType;
     defaultValue: string | number | boolean;
     value?: string | number | boolean;

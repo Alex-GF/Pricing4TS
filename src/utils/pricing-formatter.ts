@@ -18,7 +18,11 @@ import {
   validateDefaultValue,
   validateExpression,
   validateValue,
-  validateFeatureType
+  validateFeatureType,
+  validateUnit,
+  validateUsageLimitType,
+  validateLinkedFeatures,
+  validateRenderMode
 } from "./pricing-validators.ts";
 
 export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
@@ -97,6 +101,7 @@ function formatFeature(feature: Feature): Feature {
     feature.expression = validateExpression(feature.expression, "expression");
     feature.serverExpression = validateExpression(feature.serverExpression, "serverExpression");
     feature.type = validateFeatureType(feature.type);
+    feature.render = validateRenderMode(feature.render);
   } catch (err) {
     throw new Error(
       `Error parsing feature ${featureName}. Error: ${(err as Error).message}`
@@ -110,7 +115,23 @@ function formatUsageLimit(
   usageLimit: UsageLimit,
   pricing: Pricing
 ): UsageLimit {
-  // Implement usage limit formatting logic here
+  
+  try{
+    usageLimit.name = validateName(usageLimit.name, "Usage Limit");
+    usageLimit.description = validateDescription(usageLimit.description);
+    usageLimit.valueType = validateValueType(usageLimit.valueType);
+    usageLimit.defaultValue = validateDefaultValue(usageLimit, "usage limit");
+    usageLimit.value = validateValue(usageLimit, "usage limit");
+    usageLimit.unit = validateUnit(usageLimit.unit);
+    usageLimit.type = validateUsageLimitType(usageLimit.type);
+    usageLimit.linkedFeatures = validateLinkedFeatures(usageLimit.linkedFeatures, pricing);
+    usageLimit.render = validateRenderMode(usageLimit.render);
+  }catch(err){
+    throw new Error(
+      `Error parsing usage limit ${usageLimit.name}. Error: ${(err as Error).message}`
+    );
+  }
+
   return usageLimit;
 }
 

@@ -1,9 +1,10 @@
 import * as semver from "@std/semver";
 import { SemVer } from "@std/semver/types";
-import { LATEST_PRICING2YAML_VERSION } from "./version-manager.ts";
-import type { FeatureType, ValueType } from "../models/types.d.ts";
+import { LATEST_PRICING2YAML_VERSION, PRICING2YAML_VERSIONS } from "./version-manager.ts";
+import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types.d.ts";
 import type { Feature } from "../models/feature.ts";
 import type { UsageLimit } from "../models/usage-limit.ts";
+import type { Pricing } from "../models/pricing.ts";
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 
@@ -120,11 +121,13 @@ export function validateHasAnnualPayment(
   return hasAnnualPayment;
 }
 
-export function validateDescription(description: string | null | undefined): string | undefined {
+export function validateDescription(
+  description: string | null | undefined
+): string | undefined {
   if (description === null) {
     description = undefined;
   }
-  
+
   return description;
 }
 
@@ -141,6 +144,8 @@ export function validateValueType(valueType: string | null): ValueType {
     );
   }
 
+  valueType = valueType.trim().toUpperCase();
+
   if (!["NUMERIC", "BOOLEAN", "TEXT"].includes(valueType)) {
     throw new Error(
       `The valueType field of a feature must be one of NUMERIC, BOOLEAN, or TEXT. Received: ${valueType}`
@@ -150,8 +155,10 @@ export function validateValueType(valueType: string | null): ValueType {
   return valueType as ValueType;
 }
 
-export function validateDefaultValue(elem: Feature | UsageLimit, item: string): number | boolean | string {
-  
+export function validateDefaultValue(
+  elem: Feature | UsageLimit,
+  item: string
+): number | boolean | string {
   if (elem.defaultValue === null || elem.defaultValue === undefined) {
     throw new Error(
       `The defaultValue field of a ${item} must not be null or undefined. Please ensure that the defaultValue field is present and its defaultValue type correspond to the declared valueType`
@@ -160,21 +167,21 @@ export function validateDefaultValue(elem: Feature | UsageLimit, item: string): 
 
   switch (elem.valueType) {
     case "NUMERIC":
-      if (typeof elem.defaultValue!== "number") {
+      if (typeof elem.defaultValue !== "number") {
         throw new Error(
           `The defaultValue field of a ${item} must be a number when its valueType is NUMERIC. Received: ${elem.defaultValue}`
         );
       }
       break;
     case "BOOLEAN":
-      if (typeof elem.defaultValue!== "boolean") {
+      if (typeof elem.defaultValue !== "boolean") {
         throw new Error(
           `The defaultValue field of a ${item} must be a boolean when its valueType is BOOLEAN. Received: ${elem.defaultValue}`
         );
       }
       break;
     case "TEXT":
-      if (typeof elem.defaultValue!== "string") {
+      if (typeof elem.defaultValue !== "string") {
         throw new Error(
           `The defaultValue field of a ${item} must be a string when its valueType is TEXT. Received: ${elem.defaultValue}`
         );
@@ -183,50 +190,56 @@ export function validateDefaultValue(elem: Feature | UsageLimit, item: string): 
     default:
       throw new Error(
         `The valueType field of a ${item} must be either BOOLEAN, NUMERIC or TEXT. Received: ${elem.valueType}`
-      )
+      );
   }
 
   return elem.defaultValue;
 }
 
-export function validateExpression(expression: string | null | undefined, item: string): string | undefined {
-  
+export function validateExpression(
+  expression: string | null | undefined,
+  item: string
+): string | undefined {
   if (expression === null) {
     expression = undefined;
   }
 
   if (typeof expression === "string") {
     if (expression.trim().length === 0) {
-      throw new Error(`The ${item} field of a feature must not be empty. If you don't want to declare an expression for this feature, either use null or undefined`);
+      throw new Error(
+        `The ${item} field of a feature must not be empty. If you don't want to declare an expression for this feature, either use null or undefined`
+      );
     }
   }
-  
+
   return expression;
 }
 
-export function validateValue(elem: Feature | UsageLimit, item: string): number | boolean | string | undefined {
-  
+export function validateValue(
+  elem: Feature | UsageLimit,
+  item: string
+): number | boolean | string | undefined {
   if (elem.value === null || elem.value === undefined) {
     elem.value = undefined;
   }
 
   switch (elem.valueType) {
     case "NUMERIC":
-      if (typeof elem.value!== "number" && elem.value !== undefined) {
+      if (typeof elem.value !== "number" && elem.value !== undefined) {
         throw new Error(
           `The value field of a ${item} must be a number when its valueType is NUMERIC. Received: ${elem.value}`
         );
       }
       break;
     case "BOOLEAN":
-      if (typeof elem.value!== "boolean" && elem.value !== undefined) {
+      if (typeof elem.value !== "boolean" && elem.value !== undefined) {
         throw new Error(
           `The value field of a ${item} must be a boolean when its valueType is BOOLEAN. Received: ${elem.value}`
         );
       }
       break;
     case "TEXT":
-      if (typeof elem.value!== "string" && elem.value !== undefined) {
+      if (typeof elem.value !== "string" && elem.value !== undefined) {
         throw new Error(
           `The value field of a ${item} must be a string when its valueType is TEXT. Received: ${elem.value}`
         );
@@ -235,39 +248,135 @@ export function validateValue(elem: Feature | UsageLimit, item: string): number 
     default:
       throw new Error(
         `The valueType field of a ${item} must be either BOOLEAN, NUMERIC or TEXT. Received: ${elem.valueType}`
-      )
+      );
   }
 
   return elem.value;
 }
 
-export function validateFeatureType(type: string | null | undefined): FeatureType {
+export function validateFeatureType(
+  type: string | null | undefined
+): FeatureType {
   if (type === null || type === undefined) {
     throw new Error(
       `The type field of a feature must not be null or undefined. Please ensure that the type field is present and it's value correspond to either INFORMATION, INTEGRATION, DOMAIN, AUTOMATION, MANAGEMENT, GUARANTEE, SUPPORT or PAYMENT`
     );
   }
 
-  if (typeof type!== "string") {
+  if (typeof type !== "string") {
     throw new Error(
       `The type field of a feature must be a string, and its value must be either INFORMATION, INTEGRATION, DOMAIN, AUTOMATION, MANAGEMENT, GUARANTEE, SUPPORT or PAYMENT. Received: ${type} `
     );
   }
 
-  if (![
-    "INFORMATION",
-    "INTEGRATION",
-    "DOMAIN",
-    "AUTOMATION",
-    "MANAGEMENT",
-    "GUARANTEE",
-    "SUPPORT",
-    "PAYMENT",
-  ].includes(type)) {
+  type = type.trim().toUpperCase();
+
+  if (
+    ![
+      "INFORMATION",
+      "INTEGRATION",
+      "DOMAIN",
+      "AUTOMATION",
+      "MANAGEMENT",
+      "GUARANTEE",
+      "SUPPORT",
+      "PAYMENT",
+    ].includes(type)
+  ) {
     throw new Error(
       `The type field of a feature must be one of INFORMATION, INTEGRATION, DOMAIN, AUTOMATION, MANAGEMENT, GUARANTEE, SUPPORT or PAYMENT. Received: ${type}`
     );
   }
 
   return type as FeatureType;
+}
+
+export function validateUnit(unit: string | null | undefined): string {
+  if (unit === null || unit === undefined) {
+    throw new Error(
+      `The unit field of a usage limit must not be null or undefined. Please ensure that the unit field is present and it is a string`
+    );
+  }
+
+  if (typeof unit !== "string") {
+    throw new Error(
+      `The unit field of a usage limit must be a string. Received: ${unit} `
+    );
+  }
+
+  return unit;
+}
+
+export function validateUsageLimitType(
+  type: string | null | undefined
+): UsageLimitType {
+  if (type === null || type === undefined) {
+    throw new Error(
+      `The type field of a usage limit must not be null or undefined. Please ensure that the type field is present and it's value correspond to either RENEWABLE, NON_RENEWABLE, TIME_DRIVEN or RESPONSE_DRIVEN`
+    );
+  }
+
+  if (typeof type !== "string") {
+    throw new Error(
+      `The type field of a usage limit must be a string, and its value must be either RENEWABLE, NON_RENEWABLE, TIME_DRIVEN or RESPONSE_DRIVEN. Received: ${type} `
+    );
+  }
+
+  type = type.trim().toUpperCase();
+
+  if (
+    ![
+      "RENEWABLE", 
+      "NON_RENEWABLE", 
+      "TIME_DRIVEN", 
+      "RESPONSE_DRIVEN"
+    ].includes(type)
+  ) {
+    throw new Error(
+      `The type field of a usage limit must be one of RENEWABLE, NON_RENEWABLE, TIME_DRIVEN or RESPONSE_DRIVEN. Received: ${type}`
+    );
+  }
+
+  return type as UsageLimitType;
+}
+
+export function validateLinkedFeatures(linkedFeatures: string[] | undefined | null, pricing: Pricing): string[] | undefined{
+  if (linkedFeatures === null){
+    linkedFeatures = undefined
+  }
+
+  // Check if linked features is an array
+  if (Array.isArray(linkedFeatures)){
+    const pricingFeatures = pricing.features.map(f => f.name);
+
+    for(const featureName of linkedFeatures){
+      if (!pricingFeatures.includes(featureName)){
+        throw new Error(
+          `The feature ${featureName}, declared as a linked feature for an usage limit, is not defined in the global features`
+        )
+      }
+    }
+  }
+
+  return linkedFeatures;
+}
+
+export function validateRenderMode(renderMode: string | undefined | null): RenderMode{
+  if (renderMode === null || renderMode === undefined){
+    renderMode = "AUTO";
+  }
+
+  renderMode = renderMode.toUpperCase();
+
+  if(![
+    "AUTO",
+    "ENABLED",
+    "DISABLED"
+  ].includes(renderMode)){
+    throw new Error(
+      `The render field of a feature or usage limit must be one of AUTO, ENABLED or DISABLED. Received: ${renderMode}`
+    );
+  }
+
+  return renderMode as RenderMode;
 }
