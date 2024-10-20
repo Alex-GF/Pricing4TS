@@ -20,7 +20,7 @@
  * @requires @std/csv
  */
 
-import { after, before, describe, it } from "jsr:@std/testing/bdd";
+import { after, afterAll, before, beforeAll, describe, it } from "jsr:@std/testing/bdd";
 import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
 import { assert, assertEquals, assertIsError } from "@std/assert";
@@ -30,6 +30,7 @@ import * as csv from "@std/csv";
 const POSITIVE_TESTS_CSV_PATH = "tests/yaml/data/positive-parsing-tests.csv";
 const NEGATIVE_TESTS_CSV_PATH = "tests/yaml/data/negative-parsing-tests.csv";
 const TEMP_FILE_PATH = "tests/resources/temp/test_";
+const TEMP_DIR = "tests/resources/temp/";
 
 interface Test{
     testName: string,
@@ -79,6 +80,15 @@ const positiveTestsParameters = parseCSVContent(readCSVFile(POSITIVE_TESTS_CSV_P
 const negativeTestsParameters = parseCSVContent(readCSVFile(NEGATIVE_TESTS_CSV_PATH));
 
 describe("Positive Pricing2Yaml Parser Tests", () => {
+
+    beforeAll(() => {
+        Deno.mkdir(TEMP_DIR);
+    })
+
+    afterAll(() => {
+        Deno.removeSync(TEMP_DIR, {recursive: true});
+    })
+
     for (const {sectionName, tests} of positiveTestsParameters){
         describe(sectionName, () => {
             for (const {pricingPath, expected} of tests) {
@@ -97,17 +107,21 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
                     assertEquals(pricing.version, LATEST_PRICING2YAML_VERSION);
                     assert(pricing.createdAt instanceof Date);
                 });
-        
-                after(() => {
-                    // Remove the modified temp file
-                    Deno.removeSync(tempPricingPath);
-                });
             }}
         );
     }
 });
 
 describe("Negative Pricing2Yaml Parser Tests", () => {
+
+    beforeAll(() => {
+        Deno.mkdir(TEMP_DIR);
+    })
+
+    afterAll(() => {
+        Deno.removeSync(TEMP_DIR, {recursive: true});
+    })
+
     for (const {sectionName, tests} of negativeTestsParameters) {
         describe(sectionName, () => {
             for (const {testName, pricingPath, expected} of tests) {
@@ -127,11 +141,6 @@ describe("Negative Pricing2Yaml Parser Tests", () => {
                         assertIsError(error);
                         assertEquals(error.message, expected);
                     }
-                });
-    
-                after(() => {
-                    // Remove the modified temp file
-                    Deno.removeSync(tempPricingPath);
                 });
             }
         });

@@ -21,7 +21,6 @@ features:
     description: supportPriority description
     valueType: TEXT
     defaultValue: LOW
-    expression: ''
     type: SUPPORT
   haveCalendar:
     description: haveCalendar description
