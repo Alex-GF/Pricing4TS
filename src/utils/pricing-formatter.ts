@@ -27,7 +27,10 @@ import {
   validatePlanUsageLimits,
   validatePrice,
   validateAddonFeatures,
-  validateAddonUsageLimits
+  validateAddonUsageLimits,
+  validateAvailableFor,
+  validateDependsOn,
+  postValidateDependsOn
 } from "./pricing-validators.ts";
 
 export interface ContainerFeatures{
@@ -82,6 +85,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
       extractedPricing.addOns
     ) as AddOn[];
     pricing.addOns = formattedAddOns.map((a) => formatAddOn(a, pricing));
+    pricing.addOns.forEach(a => postValidateDependsOn(a.dependsOn, pricing));
   }
 
   return pricing;
@@ -156,24 +160,27 @@ function formatPlan(plan: Plan, pricing: Pricing): Plan {
     plan.price = validatePrice(plan.price);
     plan.unit = validateUnit(plan.unit);
 
+    const planFeatures: ContainerFeatures = formatArrayIntoObject(pricing.features) as ContainerFeatures;
+    
     if (plan.features!== null && plan.features!== undefined) {
-      const planFeatures: ContainerFeatures = formatArrayIntoObject(pricing.features) as ContainerFeatures;
-  
-      plan.features = formatObject(plan.features) as ContainerFeatures;
-      plan.features = validatePlanFeatures(plan, planFeatures);
+      plan.features = formatObject(plan.features ?? {}) as ContainerFeatures;
     }else{
       plan.features = {};
     }
 
+    plan.features = validatePlanFeatures(plan, planFeatures);
+
+    
+    const planUsageLimits: ContainerUsageLimits = formatArrayIntoObject(pricing.usageLimits!) as ContainerUsageLimits;
     
     if (plan.usageLimits !== null && plan.usageLimits!== undefined) {
-      const planUsageLimits: ContainerUsageLimits = formatArrayIntoObject(pricing.usageLimits!) as ContainerUsageLimits;
-
       plan.usageLimits = formatObject(plan.usageLimits) as ContainerUsageLimits;
-      plan.usageLimits = validatePlanUsageLimits(plan, planUsageLimits);
     }else{
       plan.usageLimits = {};
     }
+
+    plan.usageLimits = validatePlanUsageLimits(plan, planUsageLimits);
+
   }catch(err){
     throw new Error(
       `Error parsing plan ${plan.name}. Error: ${(err as Error).message}`
@@ -188,6 +195,8 @@ function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
   try{
     addon.name = validateName(addon.name, "Plan");
     addon.description = validateDescription(addon.description);
+    addon.availableFor = validateAvailableFor(addon.availableFor, pricing);
+    addon.dependsOn = validateDependsOn(addon.dependsOn, pricing);
     addon.price = validatePrice(addon.price);
     addon.unit = validateUnit(addon.unit);
 

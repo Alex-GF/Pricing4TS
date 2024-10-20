@@ -7,9 +7,8 @@
             "name": "Deno: Run Task",
             "runtimeExecutable": "deno",
             "runtimeArgs": [
-              "test",
-              "tests/yaml/version-parsing.test.ts",  // Cambia esto por el nombre de tu task
-              "--allow-all",  // Permisos de acceso total
+              "task",
+              "test",  // Cambia esto por el nombre de tu task
               "--inspect-brk",  // Opción para iniciar en modo debug
             ],
             "cwd": "${workspaceFolder}",  // Asegúrate de que sea el directorio raíz del proyecto

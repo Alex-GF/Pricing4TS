@@ -6,7 +6,7 @@ export interface AddOn {
   description?: string;
   price: number | string;
   availableFor: string[];
-  dependsOn: string[] | null;
+  dependsOn?: string[];
   unit: string;
   features?: { [key: string]: Feature };
   usageLimits?: { [key: string]: UsageLimit };

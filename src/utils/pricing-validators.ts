@@ -526,3 +526,60 @@ export function validateAddonUsageLimitsExtensions(addon: AddOn, addonUsageLimit
 
   return addon.usageLimitsExtensions as ContainerUsageLimits;
 }
+
+export function validateAvailableFor(availableFor: string[] | undefined | null, pricing: Pricing): string[] {
+  
+  const planNames = pricing.plans.map(p => p.name);
+  
+  if (availableFor === null || availableFor === undefined){
+    availableFor = planNames as string[];
+  }
+
+  if (!Array.isArray(availableFor)){
+    throw new Error(
+      `The availableFor field must be an array of the plan names for which the addon can be contracted. Received: ${availableFor}`
+    );
+  }
+
+  for (const planName of availableFor) {
+    if (!planNames.includes(planName)){
+      throw new Error(
+        `The plan ${planName} is not defined in the pricing.`
+      );
+    }
+  }
+
+  return availableFor;
+}
+
+export function validateDependsOn(dependsOn: string[] | undefined | null, pricing: Pricing): string[] {
+  
+  const addonNames = pricing.addOns ? pricing.addOns.map(a => a.name) : [];
+  
+  if (dependsOn === null || dependsOn === undefined){
+    dependsOn = addonNames as string[];
+  }
+
+  if (!Array.isArray(addonNames)){
+    throw new Error(
+      `The dependsOn field must be an array of the addons required to contract the addon. Received: ${dependsOn}`
+    );
+  }
+
+  return dependsOn;
+}
+
+export function postValidateDependsOn(dependsOn: string[] | undefined, pricing: Pricing): void {
+  
+  const addonNames = pricing.addOns ? pricing.addOns.map(a => a.name) : [];
+  
+  if (!dependsOn) return;
+
+  for (const addonName of dependsOn) {
+    if (!addonNames.includes(addonName)){
+      throw new Error(
+        `The addon ${addonName} is not defined in the pricing.`
+      );
+    }
+  }
+}

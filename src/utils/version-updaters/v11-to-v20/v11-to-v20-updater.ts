@@ -1,7 +1,7 @@
 // deno-lint-ignore-file no-explicit-any
 
-import { formatObjectToArray } from "../pricing-formatter.ts";
-import { calculateNextVersion } from "../version-manager.ts";
+import { formatObjectToArray } from "../../pricing-formatter.ts";
+import { calculateNextVersion } from "../../version-manager.ts";
 
 export default function v10Tov11Updater(extractedPricing: any): any {
 

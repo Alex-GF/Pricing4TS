@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 
-import { calculateNextVersion } from "../version-manager.ts";
+import { calculateNextVersion } from "../../version-manager.ts";
 
 export default function v10Tov11Updater(
   extractedPricing: any
