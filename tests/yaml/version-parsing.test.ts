@@ -25,10 +25,12 @@ import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
 import { assertEquals } from "@std/assert";
 import { readCSVFile, parseCSVContent } from "../utils/csv-utils.ts";
+import {v4 as uuidv4 } from "uuid";
 
 const OLD_VERSION_SAAS_CSV_PATH = "tests/yaml/data/version-parsing-tests.csv";
-const TEMP_FILE_PATH = "tests/resources/temp/test_";
-const TEMP_DIR = "tests/resources/temp/";
+const suiteUUID = uuidv4();
+const TEMP_FILE_PATH = `tests/resources/temp-${suiteUUID}/test_`;
+const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
 
 const oldVersionSaaSParameters = parseCSVContent(readCSVFile(OLD_VERSION_SAAS_CSV_PATH));
 

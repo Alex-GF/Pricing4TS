@@ -20,17 +20,19 @@
  * @requires @std/csv
  */
 
-import { after, afterAll, before, beforeAll, describe, it } from "jsr:@std/testing/bdd";
+import { afterAll, before, beforeAll, describe, it } from "jsr:@std/testing/bdd";
 import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
 import { assert, assertEquals, assertIsError } from "@std/assert";
 import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager.ts";
+import {v4 as uuidv4 } from "uuid";
 import * as csv from "@std/csv";
 
 const POSITIVE_TESTS_CSV_PATH = "tests/yaml/data/positive-parsing-tests.csv";
 const NEGATIVE_TESTS_CSV_PATH = "tests/yaml/data/negative-parsing-tests.csv";
-const TEMP_FILE_PATH = "tests/resources/temp/test_";
-const TEMP_DIR = "tests/resources/temp/";
+const suiteUUID = uuidv4();
+const TEMP_FILE_PATH = `tests/resources/temp-${suiteUUID}/test_`;
+const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
 
 interface Test{
     testName: string,

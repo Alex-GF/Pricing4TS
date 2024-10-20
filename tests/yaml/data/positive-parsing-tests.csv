@@ -1,6 +1,4 @@
 test_name,pricing_path,expected
----------- Full Pricings ----------,-,-
-Should parse full PetClinic's pricing,tests/resources/pricing/positive/petclinic.yml,PetClinic
 ---------- saasName ----------,-,-
 Given a pricing with a name of exactly 3 characters should parse,tests/resources/pricing/positive/saasName/pricing-lower-limit-name.yml,ASD
 Given a pricing with a name of exactly 50 characters should parse,tests/resources/pricing/positive/saasName/pricing-top-limit-name.yml,This string reaches the name limit of Pricing2Yaml

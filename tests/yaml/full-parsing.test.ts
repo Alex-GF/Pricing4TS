@@ -31,11 +31,13 @@ import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
 import { Pricing } from "../../src/models/pricing.ts";
 import { assert, assertEquals } from "@std/assert";
 import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager.ts";
+import {v4 as uuidv4 } from "uuid";
 
 const DEMO_SAAS_PATH = "tests/resources/pricing/full/petclinic.yml";
 const DEMO_SAAS_NAME = "PetClinic";
-const TEMP_FILE_PATH = "tests/resources/temp/test_";
-const TEMP_DIR = "tests/resources/temp/";
+const suiteUUID = uuidv4();
+const TEMP_FILE_PATH = `tests/resources/temp-${suiteUUID}/test_`;
+const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
 
 describe("Demo SaaS Parsing Tests", () => {
   beforeAll(() => {
