@@ -5,6 +5,9 @@ import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../mode
 import type { Feature } from "../models/feature.ts";
 import type { UsageLimit } from "../models/usage-limit.ts";
 import type { Pricing } from "../models/pricing.ts";
+import type { Plan } from "../models/plan.ts";
+import { ContainerFeatures, ContainerUsageLimits } from "./pricing-formatter.ts";
+import type { AddOn } from "../models/addon.ts";
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 
@@ -379,4 +382,134 @@ export function validateRenderMode(renderMode: string | undefined | null): Rende
   }
 
   return renderMode as RenderMode;
+}
+
+export function validatePlanFeatures(plan: Plan, planFeatures: ContainerFeatures): ContainerFeatures{
+
+  const featuresModifiedByPlan = plan.features;
+  plan.features = planFeatures;
+  
+  for (const planFeature of Object.values(featuresModifiedByPlan) ) {
+    try{
+      if(!Object.values(planFeatures).some(f => f.name === planFeature.name)){
+        throw new Error(`Feature ${planFeature.name} is not defined in the global features.`);
+      }
+  
+      const featureWithDefaultValue = Object.values(plan.features).find(f => f.name === planFeature.name) as Feature;
+  
+      featureWithDefaultValue.value = planFeature.value;
+
+    }catch(err){
+      throw new Error(`Error while parsing the feature ${planFeature.name} of the plan ${plan.name}. Error: ${(err as Error).message}`)
+    }
+  }
+
+  return plan.features;
+}
+
+export function validatePlanUsageLimits(plan: Plan, planUsageLimits: ContainerUsageLimits): ContainerUsageLimits{
+
+  const usageLimitsModifiedByPlan = plan.usageLimits!;
+  plan.usageLimits = planUsageLimits;
+  
+  for (const planUsageLimit of Object.values(usageLimitsModifiedByPlan) ) {
+    try{
+      if(!Object.values(planUsageLimits).some(l => l.name === planUsageLimit.name)){
+        throw new Error(`Usage limit ${planUsageLimit.name} is not defined in the global usage limits.`);
+      }
+  
+      const globalUsageLimit = Object.values(planUsageLimits).find(l => l.name === planUsageLimit.name) as UsageLimit;
+  
+      globalUsageLimit.value = planUsageLimit.value;
+
+    }catch(err){
+      throw new Error(`Error while parsing the usage limit ${planUsageLimit.name} of the plan ${plan.name}. Error: ${(err as Error).message}`)
+    }
+  }
+
+  return plan.usageLimits;
+}
+
+export function validatePrice(price: number | string | undefined | null): number | string{
+  if (price === null || price === undefined){
+    throw new Error(
+      `The price field must not be null or undefined. Please ensure that the price field is present and it's a number`
+    );
+  }
+
+  if (typeof price !== "string" && typeof price!== "number"){
+    throw new Error(
+      `The price field must be a number or a string (which can contain a formula). Received: ${price}`
+    );
+  }
+
+  if (typeof price === "number" && price < 0){
+    throw new Error(
+      `The price field must be a positive number. Received: ${price} `
+    );
+  }
+
+  if (typeof price === "string"){
+    if (price.includes("#")){
+      // TODO: EVALUATE PRICING FORMULA
+    } else if(price.match(/^[0-9]+(\.[0-9]+)?$/)){
+      price = parseFloat(price);
+    }
+  }
+
+  return price;
+}
+
+export function validateAddonFeatures(addon: AddOn, addOnFeatures: ContainerFeatures): ContainerFeatures{
+  
+  for (const addOnFeature of Object.values(addon.features!) ) {
+    try{
+      if(!Object.values(addOnFeatures).some(f => f.name === addOnFeature.name)){
+        throw new Error(`Feature ${addOnFeature.name} is not defined in the global features.`);
+      }
+  
+      addon.features![addOnFeature.name].value = addOnFeature.value;
+
+    }catch(err){
+      throw new Error(`Error while parsing the feature ${addOnFeature.name} of the plan ${addon.name}. Error: ${(err as Error).message}`)
+    }
+  }
+
+  return addon.features as ContainerFeatures;
+}
+
+export function validateAddonUsageLimits(addon: AddOn, addonUsageLimits: ContainerUsageLimits): ContainerUsageLimits{
+  
+  for (const addonUsageLimit of Object.values(addon.usageLimits!) ) {
+    try{
+      if(!Object.values(addonUsageLimits).some(l => l.name === addonUsageLimit.name)){
+        throw new Error(`Usage limit ${addonUsageLimit.name} is not defined in the global usage limits.`);
+      }
+  
+      addon.usageLimits![addonUsageLimit.name].value = addonUsageLimit.value;
+
+    }catch(err){
+      throw new Error(`Error while parsing the usage limit ${addonUsageLimit.name} of the plan ${addon.name}. Error: ${(err as Error).message}`)
+    }
+  }
+
+  return addon.usageLimits as ContainerUsageLimits;
+}
+
+export function validateAddonUsageLimitsExtensions(addon: AddOn, addonUsageLimits: ContainerUsageLimits): ContainerUsageLimits{
+  
+  for (const addonUsageLimitExtension of Object.values(addon.usageLimitsExtensions!) ) {
+    try{
+      if(!Object.values(addonUsageLimits).some(l => l.name === addonUsageLimitExtension.name)){
+        throw new Error(`Usage limit ${addonUsageLimitExtension.name} is not defined in the global usage limits.`);
+      }
+  
+      addon.usageLimitsExtensions![addonUsageLimitExtension.name].value = addonUsageLimitExtension.value;
+
+    }catch(err){
+      throw new Error(`Error while parsing the usage limit ${addonUsageLimitExtension.name} of the plan ${addon.name}. Error: ${(err as Error).message}`)
+    }
+  }
+
+  return addon.usageLimitsExtensions as ContainerUsageLimits;
 }

@@ -22,8 +22,21 @@ import {
   validateUnit,
   validateUsageLimitType,
   validateLinkedFeatures,
-  validateRenderMode
+  validateRenderMode,
+  validatePlanFeatures,
+  validatePlanUsageLimits,
+  validatePrice,
+  validateAddonFeatures,
+  validateAddonUsageLimits
 } from "./pricing-validators.ts";
+
+export interface ContainerFeatures{
+  [key: string]: Feature;
+}
+
+export interface ContainerUsageLimits{
+  [key: string]: UsageLimit;
+}
 
 export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   const pricing: Pricing = generateEmptyPricing();
@@ -136,12 +149,83 @@ function formatUsageLimit(
 }
 
 function formatPlan(plan: Plan, pricing: Pricing): Plan {
-  // Implement plan formatting logic here
+  
+  try{
+    plan.name = validateName(plan.name, "Plan");
+    plan.description = validateDescription(plan.description);
+    plan.price = validatePrice(plan.price);
+    plan.unit = validateUnit(plan.unit);
+
+    if (plan.features!== null && plan.features!== undefined) {
+      const planFeatures: ContainerFeatures = formatArrayIntoObject(pricing.features) as ContainerFeatures;
+  
+      plan.features = formatObject(plan.features) as ContainerFeatures;
+      plan.features = validatePlanFeatures(plan, planFeatures);
+    }else{
+      plan.features = {};
+    }
+
+    
+    if (plan.usageLimits !== null && plan.usageLimits!== undefined) {
+      const planUsageLimits: ContainerUsageLimits = formatArrayIntoObject(pricing.usageLimits!) as ContainerUsageLimits;
+
+      plan.usageLimits = formatObject(plan.usageLimits) as ContainerUsageLimits;
+      plan.usageLimits = validatePlanUsageLimits(plan, planUsageLimits);
+    }else{
+      plan.usageLimits = {};
+    }
+  }catch(err){
+    throw new Error(
+      `Error parsing plan ${plan.name}. Error: ${(err as Error).message}`
+    );
+  }
+
   return plan;
 }
 
 function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
-  // Implement add-on formatting logic here
+  
+  try{
+    addon.name = validateName(addon.name, "Plan");
+    addon.description = validateDescription(addon.description);
+    addon.price = validatePrice(addon.price);
+    addon.unit = validateUnit(addon.unit);
+
+    // Parse Features if provided
+    if (addon.features !== null && addon.features!== undefined) {
+      const addonFeatures: ContainerFeatures = formatArrayIntoObject(pricing.features) as ContainerFeatures;
+  
+      addon.features = formatObject(addon.features) as ContainerFeatures;
+      addon.features = validateAddonFeatures(addon, addonFeatures);
+    }else{
+      addon.features = {};
+    }
+    
+    // Parse UsageLimits if provided
+    if (addon.usageLimits !== null && addon.usageLimits!== undefined) {
+      const addonUsageLimits: ContainerUsageLimits = formatArrayIntoObject(pricing.usageLimits!) as ContainerUsageLimits;
+
+      addon.usageLimits = formatObject(addon.usageLimits) as ContainerUsageLimits;
+      addon.usageLimits = validateAddonUsageLimits(addon, addonUsageLimits);
+    }else{
+      addon.usageLimits = {};
+    }
+
+    // Parse usageLimitsExtensions if provided
+    if (addon.usageLimitsExtensions !== null && addon.usageLimitsExtensions!== undefined) {
+      const addonUsageLimitsExtensions: ContainerUsageLimits = formatArrayIntoObject(pricing.usageLimits!) as ContainerUsageLimits;
+
+      addon.usageLimitsExtensions = formatObject(addon.usageLimitsExtensions) as ContainerUsageLimits;
+      addon.usageLimitsExtensions = validateAddonUsageLimits(addon, addonUsageLimitsExtensions);
+    }else{
+      addon.usageLimitsExtensions = {};
+    }
+  }catch(err){
+    throw new Error(
+      `Error parsing addon ${addon.name}. Error: ${(err as Error).message}`
+    );
+  }
+
   return addon;
 }
 
@@ -152,4 +236,19 @@ function formatObjectToArray<T>(object: object): T[] {
     name,
     ...details,
   }));
+}
+
+function formatObject(object: object): ContainerFeatures | ContainerUsageLimits {
+  return Object.entries(object).reduce((acc: ContainerFeatures | ContainerUsageLimits, [key, value]) => {
+    acc[key] = { name: key, ...value };
+    return acc;
+  }, {} as ContainerFeatures | ContainerUsageLimits);
+  
+}
+
+function formatArrayIntoObject (array: Feature[] | UsageLimit[]): ContainerFeatures | ContainerUsageLimits {
+  return array.reduce((acc: ContainerFeatures | ContainerUsageLimits, { name, ...rest }) => {
+    acc[name] = {name, ...rest};
+    return acc;
+  }, {} as ContainerFeatures | ContainerUsageLimits);
 }

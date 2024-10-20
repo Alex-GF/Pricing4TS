@@ -3,11 +3,12 @@ import { UsageLimit } from './usage-limit.ts';
 
 export interface AddOn {
   name: string;
+  description?: string;
   price: number | string;
   availableFor: string[];
   dependsOn: string[] | null;
   unit: string;
-  features?: Feature[] | null;
-  usageLimits?: UsageLimit[] | null;
-  usageLimitsExtensions?: UsageLimit[] | null;
+  features?: { [key: string]: Feature };
+  usageLimits?: { [key: string]: UsageLimit };
+  usageLimitsExtensions?: { [key: string]: UsageLimit };
 }

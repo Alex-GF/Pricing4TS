@@ -76,27 +76,13 @@ usageLimits:
 plans:
   BASIC:
     description: Basic plan
-    monthlyPrice: 0.0
-    annualPrice: 0.0
+    price: 0.0
     unit: user/month
-    features:
-      supportPriority:
-        value: LOW
-      haveCalendar:
-        value: false
-      haveVetSelection:
-        value: true
-      consultations:
-        value: false
-    usageLimits:
-      maxPets:
-        value: 3
-      maxVisitsPerMonthAndPet:
-        value: 1
+    features: null
+    usageLimits: null
   GOLD:
     description: Advanced plan
-    monthlyPrice: 5.0
-    annualPrice: 5.0
+    price: 5.0
     unit: user/month
     features:
       supportPriority:
@@ -114,8 +100,7 @@ plans:
         value: 3
   PLATINUM:
     description: Pro plan
-    monthlyPrice: 10.0
-    annualPrice: 10.0
+    price: 10.0
     unit: user/month
     features:
       supportPriority:

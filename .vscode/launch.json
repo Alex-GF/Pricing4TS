@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-node",  // Usar el depurador de Node.js en VSCode para Deno
+            "request": "launch",
+            "name": "Deno: Run Task",
+            "runtimeExecutable": "deno",
+            "runtimeArgs": [
+              "test",
+              "tests/yaml/full-parsing.test.ts",  // Cambia esto por el nombre de tu task
+              "--allow-all",  // Permisos de acceso total
+              "--inspect-brk",  // Opción para iniciar en modo debug
+            ],
+            "cwd": "${workspaceFolder}",  // Asegúrate de que sea el directorio raíz del proyecto
+            "attachSimplePort": 9229,  // Puerto para la depuración remota
+            "outputCapture": "std"  // Captura de la salida estándar
+          }
+    ]
+}
