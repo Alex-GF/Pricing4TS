@@ -1,4 +1,5 @@
 export {
+    retrievePricingFromPath,
     retrievePricingFromYaml,
     writePricingToYaml
 } from "./utils/yaml-utils";

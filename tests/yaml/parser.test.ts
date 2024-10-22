@@ -1,4 +1,4 @@
-import { retrievePricingFromYaml } from "../../src/utils/yaml-utils";
+import { retrievePricingFromPath } from "../../src/utils/yaml-utils";
 import { Pricing } from "../../src/models/pricing";
 import assert from "assert";
 import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager";
@@ -48,7 +48,7 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
                 });
             
                 it(`${expected} parsing`, () => {
-                    const pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
+                    const pricing: Pricing = retrievePricingFromPath(tempPricingPath);
     
                     assert.equal(pricing.saasName, expected);
                     assert.equal(pricing.version, LATEST_PRICING2YAML_VERSION);
@@ -82,7 +82,7 @@ describe("Negative Pricing2Yaml Parser Tests", () => {
             
                 it(`${testName}`, () => {
                     try {
-                        const _pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
+                        const _pricing: Pricing = retrievePricingFromPath(tempPricingPath);
                         assert(false, "Expected an error to be thrown");
                     } catch (error) {
                         assert.equal((error as Error).message, expected);

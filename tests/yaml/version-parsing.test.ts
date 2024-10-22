@@ -1,4 +1,4 @@
-import { retrievePricingFromYaml } from "../../src/utils/yaml-utils";
+import { retrievePricingFromPath } from "../../src/utils/yaml-utils";
 import { Pricing } from "../../src/models/pricing";
 import assert from "assert";
 import { readCSVFile, parseCSVContent } from "../utils/csv-utils";
@@ -34,7 +34,7 @@ describe("Demo SaaS Parsing Tests", () => {
                 });
             
                 it(`${expected}`, () => {
-                    const pricing: Pricing = retrievePricingFromYaml(tempPricingPath);
+                    const pricing: Pricing = retrievePricingFromPath(tempPricingPath);
     
                     assert.equal(pricing.saasName, expected);
                 });
