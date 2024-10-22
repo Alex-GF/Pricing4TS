@@ -1,4 +1,4 @@
-import { ValueType, FeatureType, RenderMode } from './types.d.ts';
+import { ValueType, FeatureType, RenderMode } from './types.d';
 
 export type PaymentType = "CARD" | "GATEWAY" | "INVOICE" | "ACH" | "WIRE_TRANSFER" | "OTHER";
 export interface Feature {

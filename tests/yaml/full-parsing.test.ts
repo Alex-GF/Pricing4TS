@@ -13,24 +13,18 @@
  *
  * @module tests/yaml/parser.test
  * @requires jsr:@std/testing/bdd
- * @requires ../../src/utils/yaml-utils.ts
- * @requires ../../src/models/pricing.ts
- * @requires ../../src/utils/version-manager.ts
+ * @requires ../../src/utils/yaml-utils
+ * @requires ../../src/models/pricing
+ * @requires ../../src/utils/version-manager
  * @requires @std/csv
  */
 
-import {
-  afterAll,
-  before,
-  beforeAll,
-  describe,
-  it,
-} from "jsr:@std/testing/bdd";
-import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
-import { Pricing } from "../../src/models/pricing.ts";
+import { retrievePricingFromYaml } from "../../src/utils/yaml-utils";
+import { Pricing } from "../../src/models/pricing";
 import assert from "assert";
-import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager.ts";
+import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager";
 import {v4 as uuidv4 } from "uuid";
+import fs from "fs";
 
 const DEMO_SAAS_PATH = "tests/resources/pricing/full/petclinic.yml";
 const DEMO_SAAS_NAME = "PetClinic";
@@ -40,18 +34,18 @@ const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
 
 describe("Demo SaaS Parsing Tests", () => {
   beforeAll(() => {
-    Deno.mkdir(TEMP_DIR);
+    fs.mkdirSync(TEMP_DIR);
   });
 
   afterAll(() => {
-    Deno.removeSync(TEMP_DIR, { recursive: true });
+    fs.rmdirSync(TEMP_DIR, { recursive: true });
   });
 
   const tempPricingPath = TEMP_FILE_PATH + DEMO_SAAS_PATH.split("/").pop();
 
-  before(() => {
+  beforeEach(() => {
     // Create a temp file from the TEST_PRICING_YAML_PATH file
-    Deno.copyFileSync(DEMO_SAAS_PATH, tempPricingPath);
+    fs.copyFileSync(DEMO_SAAS_PATH, tempPricingPath);
   });
 
   it(DEMO_SAAS_NAME, () => {

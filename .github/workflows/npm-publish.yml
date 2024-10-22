@@ -11,21 +11,17 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.0
   
       - name: Install Dependencies
-        run: deno install
+        run: npm ci
   
       - name: Run Tests
-        run: deno task test
+        run: npm run test
 
       - name: Build Package
-        run: deno task build
+        run: npm run build
         
       - name: Deploy Package
-        run: cd ./npm && npm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

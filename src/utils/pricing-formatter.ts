@@ -1,12 +1,12 @@
-import type { AddOn } from "../models/addon.ts";
-import type { Feature } from "../models/feature.ts";
-import type { Plan } from "../models/plan.ts";
+import type { AddOn } from "../models/addon";
+import type { Feature } from "../models/feature";
+import type { Plan } from "../models/plan";
 import {
   Pricing,
   ExtractedPricing,
   generateEmptyPricing,
-} from "../models/pricing.ts";
-import type { UsageLimit } from "../models/usage-limit.ts";
+} from "../models/pricing";
+import type { UsageLimit } from "../models/usage-limit";
 import {
   validateName,
   validateVersion,
@@ -31,7 +31,7 @@ import {
   validateAvailableFor,
   validateDependsOn,
   postValidateDependsOn
-} from "./pricing-validators.ts";
+} from "./pricing-validators";
 
 export interface ContainerFeatures{
   [key: string]: Feature;

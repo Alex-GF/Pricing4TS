@@ -1,31 +1,10 @@
-/**
- * @file parser.test.ts
- * @description This file contains unit tests for the YAML parser utility functions.
- * It uses the BDD testing style provided by the `jsr:@std/testing/bdd` module.
- * The tests ensure that the YAML parsing functionality correctly interprets
- * and retrieves pricing information from a YAML file.
- * 
- * The tests perform the following actions:
- * - Before each test, a temporary file is created from a predefined YAML file.
- * - After each test, the temporary file is removed to ensure a clean state.
- * - Positive tests verify that the YAML parsing correctly retrieves the expected pricing information.
- * - Negative tests verify that the YAML parsing throws the expected errors for invalid inputs.
- * 
- * @module tests/yaml/parser.test
- * @requires jsr:@std/testing/bdd
- * @requires ../../src/utils/yaml-utils.ts
- * @requires ../../src/models/pricing.ts
- * @requires ../../src/utils/version-manager.ts
- * @requires @std/csv
- */
-
-import { afterAll, before, beforeAll, describe, it } from "jsr:@std/testing/bdd";
-import { retrievePricingFromYaml } from "../../src/utils/yaml-utils.ts";
-import { Pricing } from "../../src/models/pricing.ts";
+import { retrievePricingFromYaml } from "../../src/utils/yaml-utils";
+import { Pricing } from "../../src/models/pricing";
 import assert from "assert";
-import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager.ts";
+import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager";
 import {v4 as uuidv4 } from "uuid";
-import { parseCSVContent, readCSVFile } from "../utils/csv-utils.ts";
+import { parseCSVContent, readCSVFile } from "../utils/csv-utils";
+import fs from "fs";
 
 const POSITIVE_TESTS_CSV_PATH = "tests/yaml/data/positive-parsing-tests.csv";
 const NEGATIVE_TESTS_CSV_PATH = "tests/yaml/data/negative-parsing-tests.csv";
@@ -50,11 +29,11 @@ const negativeTestsParameters = parseCSVContent(readCSVFile(NEGATIVE_TESTS_CSV_P
 describe("Positive Pricing2Yaml Parser Tests", () => {
 
     beforeAll(() => {
-        Deno.mkdir(TEMP_DIR);
+        fs.mkdirSync(TEMP_DIR);
     })
 
     afterAll(() => {
-        Deno.removeSync(TEMP_DIR, {recursive: true});
+        fs.rmdirSync(TEMP_DIR, {recursive: true});
     })
 
     for (const {sectionName, tests} of positiveTestsParameters){
@@ -63,9 +42,9 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
 
                 const tempPricingPath = TEMP_FILE_PATH + pricingPath.split("/").pop();
 
-                before(() => {
+                beforeEach(() => {
                     // Create a temp file from the TEST_PRICING_YAML_PATH file
-                    Deno.copyFileSync(pricingPath, tempPricingPath);
+                    fs.copyFileSync(pricingPath, tempPricingPath);
                 });
             
                 it(`${expected} parsing`, () => {
@@ -83,11 +62,11 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
 describe("Negative Pricing2Yaml Parser Tests", () => {
 
     beforeAll(() => {
-        Deno.mkdir(TEMP_DIR);
+        fs.mkdirSync(TEMP_DIR);
     })
 
     afterAll(() => {
-        Deno.removeSync(TEMP_DIR, {recursive: true});
+        fs.rmdirSync(TEMP_DIR, {recursive: true});
     })
 
     for (const {sectionName, tests} of negativeTestsParameters) {
@@ -96,9 +75,9 @@ describe("Negative Pricing2Yaml Parser Tests", () => {
 
                 const tempPricingPath = TEMP_FILE_PATH + pricingPath.split("/").pop();
 
-                before(() => {
+                beforeEach(() => {
                     // Create a temp file from the TEST_PRICING_YAML_PATH file
-                    Deno.copyFileSync(pricingPath, tempPricingPath);
+                    fs.copyFileSync(pricingPath, tempPricingPath);
                 });
             
                 it(`${testName}`, () => {

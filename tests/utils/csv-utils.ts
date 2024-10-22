@@ -1,3 +1,5 @@
+import fs from "fs";
+
 export interface Test{
     testName: string,
     pricingPath: string,
@@ -11,8 +13,8 @@ export interface TestSection{
 
 export function readCSVFile(filePath: string): string[][] {
     
-    const absolutePath: string = Deno.realPathSync(filePath);
-    const csvContent = Deno.readTextFileSync(absolutePath);
+    const absolutePath: string = fs.realpathSync(filePath);
+    const csvContent = fs.readFileSync(absolutePath, "utf-8");
     const content: string[][] = csvContent.split('\n').slice(1).map(row => row.split(','));
 
     return content;
