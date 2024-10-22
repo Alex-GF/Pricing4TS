@@ -1,10 +1,10 @@
-import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types.d.ts";
-import type { Feature } from "../models/feature.ts";
-import type { UsageLimit } from "../models/usage-limit.ts";
-import type { Pricing } from "../models/pricing.ts";
-import type { Plan } from "../models/plan.ts";
-import { ContainerFeatures, ContainerUsageLimits } from "./pricing-formatter.ts";
-import type { AddOn } from "../models/addon.ts";
+import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types.d";
+import type { Feature } from "../models/feature";
+import type { UsageLimit } from "../models/usage-limit";
+import type { Pricing } from "../models/pricing";
+import type { Plan } from "../models/plan";
+import { ContainerFeatures, ContainerUsageLimits } from "./pricing-formatter";
+import type { AddOn } from "../models/addon";
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 

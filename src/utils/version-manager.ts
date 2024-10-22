@@ -1,9 +1,9 @@
 // deno-lint-ignore-file no-explicit-any
 import semver from "semver";
-import { validateVersion } from "./pricing-validators.ts";
-import { updaters } from "./version-updaters/updaters.ts";
-import { writePricingWithErrorToYaml } from "./yaml-utils.ts";
-import { writePricingToYaml } from "./yaml-utils.ts";
+import { validateVersion } from "./pricing-validators";
+import { updaters } from "./version-updaters/updaters";
+import { writePricingWithErrorToYaml } from "./yaml-utils";
+import { writePricingToYaml } from "./yaml-utils";
 
 export const PRICING2YAML_VERSIONS: Array<string> = ["1.0", "1.1", "2.0"];
 
@@ -65,5 +65,9 @@ function _performUpdate(extractedPricing: any, pricingPath: string): void {
 }
 
 function _parseToSemver(version: string): semver.SemVer {
-  return semver.parse(validateVersion(version) + ".0");
+  const parsedVersion = semver.parse(version + ".0");
+  
+  if (parsedVersion === null) throw new Error(`Invalid version: ${version}`);
+  
+  return parsedVersion;
 }

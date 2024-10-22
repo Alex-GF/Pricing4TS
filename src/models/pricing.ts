@@ -1,7 +1,7 @@
-import { Feature } from './feature.ts';
-import { UsageLimit } from './usage-limit.ts';
-import { Plan } from './plan.ts';
-import { AddOn } from './addon.ts';
+import { Feature } from './feature';
+import { UsageLimit } from './usage-limit';
+import { Plan } from './plan';
+import { AddOn } from './addon';
 
 export interface Pricing {
     saasName: string;

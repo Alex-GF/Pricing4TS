@@ -1,5 +1,5 @@
-import { Feature } from './feature.ts';
-import { UsageLimit } from './usage-limit.ts';
+import { Feature } from './feature';
+import { UsageLimit } from './usage-limit';
 
 export interface Plan {
     name: string;
