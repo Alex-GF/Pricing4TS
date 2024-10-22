@@ -1,4 +1,4 @@
-import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types.d";
+import type { FeatureType, RenderMode, UsageLimitType, ValueType } from "../models/types";
 import type { Feature } from "../models/feature";
 import type { UsageLimit } from "../models/usage-limit";
 import type { Pricing } from "../models/pricing";
