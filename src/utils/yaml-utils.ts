@@ -4,7 +4,7 @@ import { formatPricing } from "./pricing-formatter";
 import { update } from "./version-manager";
 import fs from "fs";
 
-export function retrievePricingFromYaml(yamlPath: string): Pricing {
+export function retrievePricingFromPath(yamlPath: string): Pricing {
 
     const absolutePath: string = fs.realpathSync(yamlPath);
     let fileContent: string;
@@ -21,7 +21,18 @@ export function retrievePricingFromYaml(yamlPath: string): Pricing {
         throw new Error(`The file at path ${yamlPath} does not contain valid YAML content.`);
     }
 
-    update(extractedPricing, absolutePath);
+    update(extractedPricing, true, absolutePath);
+
+    const pricing: Pricing = formatPricing(extractedPricing);
+    
+    return pricing;
+}
+
+export function retrievePricingFromYaml(strigifiedYaml: string): Pricing {
+
+    const extractedPricing: ExtractedPricing = yaml.load(strigifiedYaml) as ExtractedPricing;
+
+    update(extractedPricing, false);
 
     const pricing: Pricing = formatPricing(extractedPricing);
     

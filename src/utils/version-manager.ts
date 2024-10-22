@@ -19,14 +19,20 @@ export function calculateNextVersion(currentVersion: string): string | null {
 
   return nextVersion;
 }
-export function update(extractedPricing: any, pricingPath: string): any {
+export function update(extractedPricing: any, useCheckpoints: boolean, pricingPath?: string): any {
+  
+  if (useCheckpoints && pricingPath === undefined) {
+    throw new Error("Pricing path is required for version checking.");
+  }
+  
   const pricingVersion = _parseToSemver(
     validateVersion(extractedPricing.version)
   );
   const latestVersion = _parseToSemver(LATEST_PRICING2YAML_VERSION);
   if (!semver.eq(pricingVersion, latestVersion)) {
     if (PRICING2YAML_VERSIONS.includes(extractedPricing.version)) {
-      _performUpdate(extractedPricing, pricingPath);
+      if (useCheckpoints) _performUpdate(extractedPricing, pricingPath);
+      else _performUpdate(extractedPricing);
     } else {
       throw new Error(
         `Unsupported version: ${pricingVersion.major}.${pricingVersion.minor}. Please, visit the changelogs of Pricing2Yaml to check the supported versions.`
@@ -41,21 +47,21 @@ export function update(extractedPricing: any, pricingPath: string): any {
   return extractedPricing;
 }
 
-function _performUpdate(extractedPricing: any, pricingPath: string): void {
+function _performUpdate(extractedPricing: any, pricingPath?: string): void {
   const currentVersion = extractedPricing.version;
   const nextVersion = calculateNextVersion(currentVersion);
 
   const updater = updaters[extractedPricing.version];
-
+  console.log(pricingPath);
   if (updater === null) {
-    writePricingToYaml(extractedPricing, pricingPath);
+    if (pricingPath !== undefined) writePricingToYaml(extractedPricing, pricingPath);
     return;
   } else {
     let updatedPricing = null;
     try {
       updatedPricing = updater(extractedPricing);
     } catch (err) {
-      writePricingWithErrorToYaml(extractedPricing, pricingPath);
+      if (pricingPath !== undefined) writePricingWithErrorToYaml(extractedPricing, pricingPath);
       throw new Error(
         `An error occurred while updating from version ${currentVersion} to ${nextVersion}. Your Pricing2Yaml model has been saved at version ${currentVersion}. Please resolve the issues and try again. Error details: ${(err as Error).message}.`
       );
