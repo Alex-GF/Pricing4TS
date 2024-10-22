@@ -1,4 +1,4 @@
-import { ValueType, UsageLimitType, RenderMode } from "./types.d";
+import { ValueType, UsageLimitType, RenderMode } from "./types";
 
 export interface UsageLimit {
     name: string;

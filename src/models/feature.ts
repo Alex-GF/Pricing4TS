@@ -1,4 +1,4 @@
-import { ValueType, FeatureType, RenderMode } from './types.d';
+import { ValueType, FeatureType, RenderMode } from './types';
 
 export type PaymentType = "CARD" | "GATEWAY" | "INVOICE" | "ACH" | "WIRE_TRANSFER" | "OTHER";
 export interface Feature {
