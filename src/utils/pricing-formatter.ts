@@ -50,7 +50,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
 
   // Format and parse features
   const formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
-  pricing.features = formattedFeatures.map((f) => formatFeature(f));
+  pricing.features = formattedFeatures.map((f) => formatFeature(f, pricing.tags));
 
   // Format and parse usage limits, considering they can be null/undefined
   if (extractedPricing.usageLimits == null || extractedPricing.usageLimits == undefined) {
@@ -103,13 +103,7 @@ function formatFeature(feature: Feature, tags?: string[]): Feature {
     feature.serverExpression = validateExpression(feature.serverExpression, 'serverExpression');
     feature.type = validateFeatureType(feature.type);
     feature.render = validateRenderMode(feature.render);
-
-    // Validate tags if provided
-    if (feature.tag && tags !== undefined && !tags.includes(feature.tag)) {
-      throw new Error(
-        `El tag '${feature.tag}' de la feature '${featureName}' no está definido en 'tags'.`
-      );
-    }
+    feature.tag = validateTag(feature.tag, tags);
   } catch (err) {
     throw new Error(`Error parsing feature ${featureName}. Error: ${(err as Error).message}`);
   }
@@ -232,6 +226,17 @@ function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
   }
 
   return addon;
+}
+
+function validateTag(tag: string | undefined, tags: string[] | undefined): string | undefined {
+  try {
+    if (tag && tags && !tags.includes(tag)) {
+      throw new Error(`Feature tag '${tag}' must be one of the values defined in 'tags'`);
+    }
+    return tag;
+  } catch (err) {
+    throw new Error(`Error validating tag: ${(err as Error).message}`);
+  }
 }
 
 // --------- UTILITY FUNCTIONS ---------

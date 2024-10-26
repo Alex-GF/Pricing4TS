@@ -5,6 +5,7 @@ currency: EUR
 hasAnnualPayment: false
 tags:
   - 'Tag 1'
+  - 'Tag 2'
 features:
   feature1:
     description: Feature 1 description
