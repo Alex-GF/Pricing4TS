@@ -9,6 +9,7 @@ export interface Pricing {
     createdAt: Date;
     currency: string;
     hasAnnualPayment: boolean;
+    tags?: string[];
     features: Feature[];
     usageLimits?: UsageLimit[];
     plans: Plan[];
@@ -30,6 +31,7 @@ export function generateEmptyPricing(): Pricing {
         features: [],
         usageLimits: [],
         plans: [],
+        tags: [],
         addOns: []
     }
 }
