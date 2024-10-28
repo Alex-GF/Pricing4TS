@@ -1,8 +1,11 @@
 saasName: PetClinic
-version: "2.0"
-createdAt: "2024-01-15"
+version: '2.0'
+createdAt: '2024-01-15'
 currency: EUR
 hasAnnualPayment: false
+tags:
+  - 'Pets Management'
+  - 'Veterinary Care'
 features:
   pets:
     description: Pets description
@@ -11,17 +14,20 @@ features:
     expression: userContext['pets'] < planContext['usageLimits']['maxPets']
     serverExpression: userContext['pets'] <= planContext['usageLimits']['maxPets']
     type: DOMAIN
+    tag: 'Pets Management'
   visits:
     description: visits description
     valueType: BOOLEAN
     defaultValue: true
     expression: userContext['visits'] < planContext['usageLimits']['maxVisitsPerMonthAndPet']
     type: DOMAIN
+    tag: 'Veterinary Care'
   supportPriority:
     description: supportPriority description
     valueType: TEXT
     defaultValue: LOW
     type: SUPPORT
+    tag: 'Veterinary Care'
   haveCalendar:
     description: haveCalendar description
     valueType: BOOLEAN
@@ -64,7 +70,7 @@ usageLimits:
     unit: pet
     type: NON_RENEWABLE
     linkedFeatures:
-    - pets
+      - pets
   maxVisitsPerMonthAndPet:
     description: ''
     valueType: NUMERIC
@@ -72,7 +78,7 @@ usageLimits:
     unit: visit
     type: RENEWABLE
     linkedFeatures:
-    - visits
+      - visits
 plans:
   BASIC:
     description: Basic plan

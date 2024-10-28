@@ -5,3 +5,5 @@ Given a pricing with a name of exactly 50 characters should parse,tests/resource
 ---------- createdAt ----------,-,-
 Given a pricing with a Date createdAt field should parse,tests/resources/pricing/positive/createdAt/pricing-date-createdAt.yml,Test
 Given a pricing with a string createdAt field should parse,tests/resources/pricing/positive/createdAt/pricing-string-createdAt.yml,Test
+---------- tags ----------,-,-
+Given pricing with a tags array should parse,tests/resources/pricing/positive/tags/pricing-tags.yml,Test

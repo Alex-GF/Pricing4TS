@@ -16,4 +16,5 @@ Given pricing with no createdAt should throw an error,tests/resources/pricing/ne
 Given pricing with null createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-null-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
 Given pricing with invalid createdAt type should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-type-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
 Given pricing with invalid createdAt format should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-format-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
-
+---------- tags ----------,-,-
+Given pricing with tag not in tags array should throw an error,tests/resources/pricing/negative/tags/pricing-tag-not-in-tags.yml,Error parsing feature feature2. Error: Error validating tag: Feature tag 'Tag 3' must be one of the values defined in 'tags'

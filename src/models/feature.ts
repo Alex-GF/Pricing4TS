@@ -4,6 +4,7 @@ export type PaymentType = "CARD" | "GATEWAY" | "INVOICE" | "ACH" | "WIRE_TRANSFE
 export interface Feature {
     name: string;
     description?: string;
+    tag?: string
     valueType: ValueType;
     defaultValue: string | number | boolean | string[];
     value?: string | number | boolean | string[];
