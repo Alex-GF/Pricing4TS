@@ -1,4 +1,42 @@
 test_name,pricing_path,expected_error
+---------- addOn.usageLimits ----------,-,-
+Given key value in usageLimits should throw an error when parsing addOn,tests/resources/pricing/negative/addOn/usageLimits/usageLimits-not-a-map.yml,Falla
+---------- addOn.usageLimitsExtensions ----------,-,-
+Given key value in usageLimitsExtensions should throw an error when parsing addOn,tests/resources/pricing/negative/addOn/usageLimitsExtensions/usageLimitsExtensions-not-a-map.yml,Falla
+---------- createdAt ----------,-,-
+Given pricing with no createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-no-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
+Given pricing with null createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-null-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
+Given pricing with invalid createdAt type should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-type-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
+Given pricing with invalid createdAt format should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-format-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
+---------- currency ----------,-,-
+Given pricing with no currency should throw an error,tests/resources/pricing/negative/currency/currency-is-null.yml,Falla
+Given pricing with boolean createdAt should throw an error,tests/resources/pricing/negative/currency/currency-is-boolean.yml,Falla
+---------- ends ----------,-,-
+Given pricing invalid date in ends should throw an error,tests/resources/pricing/negative/ends/ends-is-invalid-timestamp.yml,Falla
+---------- feature ----------,-,-
+Given key value in feature should throw an error,tests/resources/pricing/negative/feature/feature-is-key-value.yml,Falla
+Given key value in feature should throw an error,tests/resources/pricing/negative/feature/feature-null-as-key.yml,Falla
+---------- feature.type ----------,-,-
+Given feature with no type should throw an error,tests/resources/pricing/negative/feature/type/null-type.yml,Falla
+---------- feature.valueType ----------,-,-
+Given no valueType in feature should throw an error,tests/resources/pricing/negative/feature/valueType/null-valueType.yml,Falla
+Given unsupported valueType in feature should throw an error,tests/resources/pricing/negative/feature/valueType/unsupported-valueType.yml,Falla
+-------- features ----------,-,-
+Given boolean in features should throw an error,tests/resources/pricing/negative/features/features-is-boolean.yml,Falla
+Given float in features should throw an error,tests/resources/pricing/negative/features/features-is-float.yml,Falla
+Given integer in features should throw an error,tests/resources/pricing/negative/features/features-is-integer.yml,Falla
+Given list in features should throw an error,tests/resources/pricing/negative/features/features-is-list.yml,Falla
+Given null in features should throw an error,tests/resources/pricing/negative/features/features-is-null.yml,Falla
+Given string in features should throw an error,tests/resources/pricing/negative/features/features-is-string.yml,Falla
+-------- plan.price ----------,-,-
+Given pricing with no variables and a price expression using variables should throw an error,tests/resources/pricing/negative/plan/price/price-expression-no-variables.yml,Falla
+Given expression evaluating strings should throw an error,tests/resources/pricing/negative/plan/price/price-expression-string-variables.yml,Falla
+-------- plans ----------,-,-
+Given boolean in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-boolean.yml,Falla
+Given float in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-float.yml,Falla
+Given integer in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-integer.yml,Falla
+Given list in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-list.yml,Falla
+Given string in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-string.yml,Falla
 ---------- saasName ----------,-,-
 Given pricing with no saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-no-name.yml,The SaaS must have a name
 Given pricing with null saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-null-name.yml,The SaaS must have a name
@@ -6,15 +44,28 @@ Given pricing with very long saasName should throw an error,tests/resources/pric
 Given pricing with very short saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-short-name.yml,The SaaS name must have at least 3 characters
 Given pricing with empty saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-empty-name.yml,The SaaS name must not be empty
 Given pricing with invalid saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-invalid-name.yml,The SaaS name must be a string
+---------- starts ----------,-,-
+Given invalid starts format should throw an error,tests/resources/pricing/negative/starts/starts-is-invalid-timestamp.yml,Falla
+---------- tags ----------,-,-
+Given pricing with tag not in tags array should throw an error,tests/resources/pricing/negative/tags/pricing-tag-not-in-tags.yml,Error parsing feature feature2. Error: Error validating tag: Feature tag 'Tag 3' must be one of the values defined in 'tags'
+---------- variables ----------,-,-
+Given boolean  in variables array should throw an error,tests/resources/pricing/negative/variables/variables-is-boolean.yml,Falla
 ---------- version ----------,-,-
 Given pricing with no version should throw an error,tests/resources/pricing/negative/version/pricing-no-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
 Given pricing with null version should throw an error,tests/resources/pricing/negative/version/pricing-null-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
 Given pricing with invalid version format should throw an error,tests/resources/pricing/negative/version/pricing-invalid-format-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
 Given pricing with invalid version type should throw an error,tests/resources/pricing/negative/version/pricing-invalid-type-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
----------- createdAt ----------,-,-
-Given pricing with no createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-no-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
-Given pricing with null createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-null-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
-Given pricing with invalid createdAt type should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-type-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
-Given pricing with invalid createdAt format should throw an error,tests/resources/pricing/negative/createdAt/pricing-invalid-format-createdAt.yml,The createdAt field must be a valid Date object or a string in a recognized date format
----------- tags ----------,-,-
-Given pricing with tag not in tags array should throw an error,tests/resources/pricing/negative/tags/pricing-tag-not-in-tags.yml,Error parsing feature feature2. Error: Error validating tag: Feature tag 'Tag 3' must be one of the values defined in 'tags'
+---------- features ----------,-,-
+Given boolean in features format should throw an error,tests/resources/pricing/negative/features/features-is-boolean.yml,Falla
+Given float in features format should throw an error,tests/resources/pricing/negative/features/features-is-float.yml,Falla
+Given integer in features format should throw an error,tests/resources/pricing/negative/features/features-is-integer.yml,Falla
+Given list in features format should throw an error,tests/resources/pricing/negative/features/features-is-list.yml,Falla
+Given pricing with null features format should throw an error,tests/resources/pricing/negative/features/features-is-null.yml,Falla
+Given string in features format should throw an error,tests/resources/pricing/negative/features/features-is-string.yml,Falla
+---------- plans ----------,-,-
+Given boolean in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-boolean.yml,Falla
+Given float in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-float.yml,Falla
+Given integer in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-integer.yml,Falla
+Given list in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-list.yml,Falla
+Given string in plans should throw an error,tests/resources/pricing/negative/plans/plans-is-string.yml,Falla
+
