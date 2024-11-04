@@ -507,11 +507,13 @@ export function validateAddonUsageLimits(
           `Usage limit ${addonUsageLimit.name} is not defined in the global usage limits.`
         );
       }
-
+      if (!("value" in addonUsageLimit)){
+        throw new Error("When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field")
+      }
       addon.usageLimits![addonUsageLimit.name].value = addonUsageLimit.value;
     } catch (err) {
       throw new Error(
-        `Error while parsing the usage limit ${addonUsageLimit.name} of the plan ${
+        `Error while parsing the usage limit ${addonUsageLimit.name} of the add-on ${
           addon.name
         }. Error: ${(err as Error).message}`
       );
@@ -532,12 +534,14 @@ export function validateAddonUsageLimitsExtensions(
           `Usage limit ${addonUsageLimitExtension.name} is not defined in the global usage limits.`
         );
       }
-
+      if (!("value" in addonUsageLimitExtension)){
+        throw new Error("When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field")
+      }
       addon.usageLimitsExtensions![addonUsageLimitExtension.name].value =
         addonUsageLimitExtension.value;
     } catch (err) {
       throw new Error(
-        `Error while parsing the usage limit ${addonUsageLimitExtension.name} of the plan ${
+        `Error while parsing the usage limit ${addonUsageLimitExtension.name} of the add-on ${
           addon.name
         }. Error: ${(err as Error).message}`
       );
@@ -609,4 +613,46 @@ export function validateTags(tags: string[]): string[] {
   }
 
   return tags;
+}
+
+export function validatePlan(plan: Plan) {
+  if (typeof plan === 'object' && "features" in plan) {
+    return
+  }else{
+    throw new Error(`The plan must be an object of type Plan`)
+  }
+}
+
+export function validatePlans(plans: object){
+  if (!(typeof plans === 'object')) {
+    throw new Error(`The plans field must be a map of Plan objects`);
+  }
+}
+
+export function validateFeatures(features: object){
+  if (!(typeof features === 'object') || features === null || features === undefined) {
+    throw new Error(`The features field must be a map of Feature objects`);
+  }
+}
+
+export function validateFeature(feature: Feature) {
+  if (typeof feature === 'object' && "type" in feature && "valueType" in feature && "defaultValue" in feature) {
+    return
+  }else{
+    throw new Error(`The feature must be an object of type Feature`)
+  }
+}
+
+export function validateUsageLimits(usageLimits: object) {
+  if (!(typeof usageLimits === 'object')) {
+    throw new Error(`The usageLimits field must be a map of UsageLimit objects or undefined`);
+  }
+}
+
+export function validateUsageLimit(usageLimit: UsageLimit) {
+  if (typeof usageLimit === 'object' && "type" in usageLimit && "valueType" in usageLimit && "defaultValue" in usageLimit) {
+    return
+  }else{
+    throw new Error(`The usage limit must be an object of type UsageLimit`)
+  }
 }

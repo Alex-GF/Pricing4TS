@@ -1,3 +1,3 @@
-test_name,pricing_path,expected
+testName,pricingPath,expected
 ---------- Version Update Tests ----------,-,-
 Postman_v1.0,tests/resources/pricing/versions/1.0/postman.yml,Postman

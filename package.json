@@ -29,8 +29,10 @@
   },
   "homepage": "https://github.com/Alex-GF/Pricing4TS#readme",
   "dependencies": {
+    "@types/papaparse": "^5.3.15",
     "assert": "^2.1.0",
     "js-yaml": "^4.1.0",
+    "papaparse": "^5.4.1",
     "semver": "^7.6.3",
     "uuid": "^10.0.0"
   },

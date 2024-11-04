@@ -18,13 +18,13 @@ usageLimits: null
 plans:
   BASIC:
     description: Basic plan
-    price: 0.0
+    monthlyPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
   PRO:
     description: Advanced plan
-    price: 5.0
+    monthlyPrice: 5.0
     unit: user/month
     features:
       feature2:

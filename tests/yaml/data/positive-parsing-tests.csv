@@ -1,9 +1,15 @@
-test_name,pricing_path,expected
----------- saasName ----------,-,-
-Given a pricing with a name of exactly 3 characters should parse,tests/resources/pricing/positive/saasName/pricing-lower-limit-name.yml,ASD
-Given a pricing with a name of exactly 50 characters should parse,tests/resources/pricing/positive/saasName/pricing-top-limit-name.yml,This string reaches the name limit of Pricing2Yaml
+testName,pricingPath,expected
 ---------- createdAt ----------,-,-
 Given a pricing with a Date createdAt field should parse,tests/resources/pricing/positive/createdAt/pricing-date-createdAt.yml,Test
 Given a pricing with a string createdAt field should parse,tests/resources/pricing/positive/createdAt/pricing-string-createdAt.yml,Test
+---------- feature.expression ----------,-,-
+Given a feature with a null expression field should parse,tests/resources/pricing/positive/feature/expression/expression-is-null.yml,Null expression
+---------- feature.type ----------,-,-
+Given a payment feature should parse,tests/resources/pricing/positive/feature/type/payment-feature.yml,Test
+---------- plan.features ----------,-,-
+Given no features plan features value should default to root features values,tests/resources/pricing/positive/plan/features/null-features-defaults-to-root-features.yml,Test
+---------- saasName ----------,-,-
+Given a pricing with a name of exactly 3 characters should parse,tests/resources/pricing/positive/saasName/pricing-lower-limit-name.yml,ASD
+Given a pricing with a name of exactly 50 characters should parse,tests/resources/pricing/positive/saasName/pricing-top-limit-name.yml,This string reaches the name limit of Pricing2Yaml
 ---------- tags ----------,-,-
 Given pricing with a tags array should parse,tests/resources/pricing/positive/tags/pricing-tags.yml,Test

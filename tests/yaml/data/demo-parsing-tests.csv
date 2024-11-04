@@ -1,3 +1,3 @@
-test_name,pricing_path,expected
+testName,pricingPath,expected
 ---------- Demo Pricings ----------,-,-
 PetClinic,tests/resources/pricing/full/petclinic.yml,PetClinic
