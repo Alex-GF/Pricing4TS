@@ -1,4 +1,5 @@
 saasName: Test
+version: '1.0'
 day: 1
 month: 1
 year: 2024
@@ -10,8 +11,6 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-    expression: ""
-    serverExpression: ""
 usageLimits:
   limitA:
     description: Limit for Feature A

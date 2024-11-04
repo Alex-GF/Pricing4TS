@@ -1,5 +1,5 @@
-version: '2.0'
 saasName: Basic PLAN has a complex expression
+version: '2.0'
 currency: EUR
 hasAnnualPayment: false
 createdAt: '2024-08-31'
@@ -11,7 +11,7 @@ features:
 plans:
   BASIC:
     description: Basic plan
-    price: '#vip ? 0.0 : #x'
+    monthlyPrice: '#vip ? 0.0 : #x'
     unit: user/month
     features: null
     usageLimits: null

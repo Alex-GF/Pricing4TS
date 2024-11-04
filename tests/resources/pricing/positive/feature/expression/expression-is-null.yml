@@ -1,4 +1,5 @@
 saasName: Null expression
+version: '1.0'
 currency: EUR
 hasAnnualPayment: false
 day: 31

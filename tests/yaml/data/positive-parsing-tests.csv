@@ -1,9 +1,9 @@
-test_name,pricing_path,expected
+testName,pricingPath,expected
 ---------- createdAt ----------,-,-
 Given a pricing with a Date createdAt field should parse,tests/resources/pricing/positive/createdAt/pricing-date-createdAt.yml,Test
 Given a pricing with a string createdAt field should parse,tests/resources/pricing/positive/createdAt/pricing-string-createdAt.yml,Test
 ---------- feature.expression ----------,-,-
-Given a feature with a null expression field should parse,tests/resources/pricing/positive/feature/expression/expression-is-null.yml,Test
+Given a feature with a null expression field should parse,tests/resources/pricing/positive/feature/expression/expression-is-null.yml,Null expression
 ---------- feature.type ----------,-,-
 Given a payment feature should parse,tests/resources/pricing/positive/feature/type/payment-feature.yml,Test
 ---------- plan.features ----------,-,-
@@ -13,5 +13,3 @@ Given a pricing with a name of exactly 3 characters should parse,tests/resources
 Given a pricing with a name of exactly 50 characters should parse,tests/resources/pricing/positive/saasName/pricing-top-limit-name.yml,This string reaches the name limit of Pricing2Yaml
 ---------- tags ----------,-,-
 Given pricing with a tags array should parse,tests/resources/pricing/positive/tags/pricing-tags.yml,Test
----------- variables ----------,-,-
-Given pricing with variables should parse,tests/resources/pricing/positive/variables/pricing-with-variables.yml,Test

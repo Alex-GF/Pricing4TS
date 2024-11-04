@@ -1,4 +1,6 @@
-saasName: plans is a integer
+saasName: integer in plans
+version: '2.0'
+createdAt: '2024-08-31'
 currency: EUR
 hasAnnualPayment: false
 features:
@@ -7,5 +9,3 @@ features:
     valueType: TEXT
     defaultValue: baz
 plans: 1
-version: '1.1'
-createdAt: '2024-08-31'
