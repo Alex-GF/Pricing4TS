@@ -7,6 +7,7 @@ import {
   postValidateDependsOn,
   validateAddonFeatures,
   validateAddonUsageLimits,
+  validateAddonUsageLimitsExtensions,
   validateAvailableFor,
   validateCreatedAt,
   validateCurrency,
@@ -217,7 +218,7 @@ function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
       addon.usageLimitsExtensions = formatObject(
         addon.usageLimitsExtensions
       ) as ContainerUsageLimits;
-      addon.usageLimitsExtensions = validateAddonUsageLimits(addon, addonUsageLimitsExtensions);
+      addon.usageLimitsExtensions = validateAddonUsageLimitsExtensions(addon, addonUsageLimitsExtensions);
     } else {
       addon.usageLimitsExtensions = {};
     }
