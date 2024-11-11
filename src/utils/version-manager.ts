@@ -52,7 +52,7 @@ function _performUpdate(extractedPricing: any, pricingPath?: string): void {
   const nextVersion = calculateNextVersion(currentVersion);
 
   const updater = updaters[extractedPricing.version];
-  console.log(pricingPath);
+
   if (updater === null) {
     if (pricingPath !== undefined) writePricingToYaml(extractedPricing, pricingPath);
     return;

@@ -1,4 +1,5 @@
 import fs from "fs";
+import { parse, ParseResult } from "papaparse";
 
 export interface Test{
     testName: string,
@@ -11,37 +12,30 @@ export interface TestSection{
     tests: Test[]
 }
 
-export function readCSVFile(filePath: string): string[][] {
+export function readCSVFile(filePath: string): Test[] {
     
     const absolutePath: string = fs.realpathSync(filePath);
     const csvContent = fs.readFileSync(absolutePath, "utf-8");
-    const content: string[][] = csvContent.split('\n').slice(1).map(row => row.split(','));
+    const content = parse(csvContent,{header: true, skipEmptyLines: true, delimiter: ","}) as ParseResult<Test>;
 
-    return content;
+    return content.data;
 
 }
 
-export function parseCSVContent(content: string[][]): TestSection[] {
+export function parseCSVContent(content: Test[]): TestSection[] {
     const result: TestSection[] = [];
     let i = -1; // In order to match the index 0 once the first test section is added
     for (const entry of content) {
-        if (entry.length < 3) {
-            continue;
-        }
-        if (entry[1] === "-") {
+        if (entry.pricingPath === "-") {
             result.push({
-                sectionName: entry[0],
+                sectionName: entry.testName,
                 tests: []
             });
             i++;
             continue;
         }
 
-        result[i].tests.push({
-            testName: entry[0],
-            pricingPath: entry[1],
-            expected: entry[2]
-        });
+        result[i].tests.push(entry);
     }
 
     return result;
