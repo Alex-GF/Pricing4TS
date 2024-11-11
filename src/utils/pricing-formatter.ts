@@ -15,16 +15,22 @@ import {
   validateDependsOn,
   validateDescription,
   validateExpression,
+  validateFeature,
+  validateFeatures,
   validateFeatureType,
   validateHasAnnualPayment,
   validateLinkedFeatures,
   validateName,
+  validatePlan,
   validatePlanFeatures,
+  validatePlans,
   validatePlanUsageLimits,
   validatePrice,
   validateRenderMode,
   validateTags,
   validateUnit,
+  validateUsageLimit,
+  validateUsageLimits,
   validateUsageLimitType,
   validateValue,
   validateValueType,
@@ -50,23 +56,26 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   }
 
   // Format and parse features
+  validateFeatures(extractedPricing.features);
   const formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
-  pricing.features = formattedFeatures.map((f) => formatFeature(f, pricing.tags));
+  pricing.features = formattedFeatures.map(f => formatFeature(f, pricing.tags));
 
   // Format and parse usage limits, considering they can be null/undefined
   if (extractedPricing.usageLimits == null || extractedPricing.usageLimits == undefined) {
     pricing.usageLimits = [];
   } else {
+    validateUsageLimits(extractedPricing.usageLimits);
     const formattedUsageLimits = formatObjectToArray(extractedPricing.usageLimits) as UsageLimit[];
-    pricing.usageLimits = formattedUsageLimits.map((u) => formatUsageLimit(u, pricing));
+    pricing.usageLimits = formattedUsageLimits.map(u => formatUsageLimit(u, pricing));
   }
 
   // Format and parse plans, considering they can be null/undefined
   if (extractedPricing.plans == null || extractedPricing.plans == undefined) {
     pricing.plans = [];
   } else {
+    validatePlans(extractedPricing.plans)
     const formattedPlans = formatObjectToArray(extractedPricing.plans) as Plan[];
-    pricing.plans = formattedPlans.map((p) => formatPlan(p, pricing));
+    pricing.plans = formattedPlans.map(p => formatPlan(p, pricing));
   }
 
   // Format and parse add-ons, considering they can be null/undefined
@@ -74,8 +83,8 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
     pricing.addOns = [];
   } else {
     const formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
-    pricing.addOns = formattedAddOns.map((a) => formatAddOn(a, pricing));
-    pricing.addOns.forEach((a) => postValidateDependsOn(a.dependsOn, pricing));
+    pricing.addOns = formattedAddOns.map(a => formatAddOn(a, pricing));
+    pricing.addOns.forEach(a => postValidateDependsOn(a.dependsOn, pricing));
   }
 
   return pricing;
@@ -94,7 +103,8 @@ function formatBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pric
 function formatFeature(feature: Feature, tags?: string[]): Feature {
   const featureName = feature.name;
 
-  try {
+  try {  
+    validateFeature(feature);
     feature.name = validateName(feature.name, 'Feature');
     feature.description = validateDescription(feature.description);
     feature.valueType = validateValueType(feature.valueType);
@@ -114,6 +124,7 @@ function formatFeature(feature: Feature, tags?: string[]): Feature {
 
 function formatUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit {
   try {
+    validateUsageLimit(usageLimit);
     usageLimit.name = validateName(usageLimit.name, 'Usage Limit');
     usageLimit.description = validateDescription(usageLimit.description);
     usageLimit.valueType = validateValueType(usageLimit.valueType);
@@ -141,6 +152,7 @@ function formatUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit 
 
 function formatPlan(plan: Plan, pricing: Pricing): Plan {
   try {
+    validatePlan(plan);
     plan.name = validateName(plan.name, 'Plan');
     plan.description = validateDescription(plan.description);
     plan.price = validatePrice(plan.price);
@@ -178,7 +190,7 @@ function formatPlan(plan: Plan, pricing: Pricing): Plan {
 
 function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
   try {
-    addon.name = validateName(addon.name, 'Plan');
+    addon.name = validateName(addon.name, 'Addon');
     addon.description = validateDescription(addon.description);
     addon.availableFor = validateAvailableFor(addon.availableFor, pricing);
     addon.dependsOn = validateDependsOn(addon.dependsOn, pricing);
