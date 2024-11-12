@@ -307,9 +307,7 @@ export function validateFeatureType(type: string | null | undefined): FeatureTyp
 
 export function validateUnit(unit: string | null | undefined): string {
   if (unit === null || unit === undefined) {
-    throw new Error(
-      `The unit field of a usage limit must not be null or undefined. Please ensure that the unit field is present and it is a string`
-    );
+    unit = "";
   }
 
   if (typeof unit !== 'string') {
@@ -583,7 +581,7 @@ export function validateDependsOn(
   const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
 
   if (dependsOn === null || dependsOn === undefined) {
-    dependsOn = addonNames as string[];
+    dependsOn = [];
   }
 
   if (!Array.isArray(addonNames)) {

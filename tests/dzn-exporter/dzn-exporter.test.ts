@@ -9,7 +9,6 @@ import {
   getAddOnNames,
 } from '../../src/models/addon';
 import { calculatePlanFeaturesMatrix, getPlanNames } from '../../src/models/plan';
-import { saveDZNfile } from '../../src/utils/dzn-exporter';
 import { formatMatrixToString } from '../../src/utils/dzn-exporter/string-utils';
 
 const path = 'tests/resources/pricing/full/';

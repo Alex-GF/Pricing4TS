@@ -5,6 +5,7 @@ export {
 } from './utils/yaml-utils';
 
 export { pricing2DZN } from './utils/dzn-exporter/pricing-dzn-exporter';
+export { saveDZNfile } from './utils/dzn-exporter';
 
 export type { Pricing } from './models/pricing';
 export type { Feature } from './models/feature';

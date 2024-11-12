@@ -38,13 +38,16 @@ export function saveDZNfile(source: string, savePath: string): void {
 
   try {
     if (!fs.existsSync(dznFolder)) {
-      console.log('Creando carpeta temporal dzn en la raiz');
+      console.log(`Creating folder ${dznFolder}...`);
       fs.mkdirSync(savePath);
     }
-    fs.writeFileSync(path.join(savePath, `${pricing.saasName}.dzn`), file);
-    console.log('------- Archivo guardado en la carpeta dzn --------');
-    console.log('Nombre del archivo: ' + pricing.saasName + '.dzn');
+
+    const filename = `${pricing.saasName.split(' ')[0]}.dzn`;
+
+    fs.writeFileSync(path.join(savePath, filename), file);
+    console.log(`------- File Saved in ${dznFolder} --------`);
+    console.log('Filename: ' + filename);
   } catch (err) {
-    console.error(err);
+    console.error(`Error while parsing file '${source}'. Error: ${err}`);
   }
 }
