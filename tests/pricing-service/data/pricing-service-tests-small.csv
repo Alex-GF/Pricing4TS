@@ -1,0 +1,23 @@
+testName,pricingPath,expected
+---------- Pricings 2024 ----------,-,-
+Box,tests/resources/pricing/full/2024/box.yml,Box
+Buffer,tests/resources/pricing/full/2024/buffer.yml,Buffer
+ClickUp,tests/resources/pricing/full/2024/clickup.yml,ClickUp
+Clockify,tests/resources/pricing/full/2024/clockify.yml,Clockify
+Crowdcast,tests/resources/pricing/full/2024/crowdcast.yml,Crowdcast
+Deskera,tests/resources/pricing/full/2024/deskera.yml,Deskera
+Evernote,tests/resources/pricing/full/2024/evernote.yml,Evernote
+HyperContext,tests/resources/pricing/full/2024/hypercontext.yml,HyperContext
+MailChimp,tests/resources/pricing/full/2024/mailchimp.yml,MailChimp
+Microsoft365Business,tests/resources/pricing/full/2024/microsoft365Business.yml,Microsoft
+Overleaf,tests/resources/pricing/full/2024/overleaf.yml,Overleaf
+Planable,tests/resources/pricing/full/2024/planable.yml,Planable
+Postman,tests/resources/pricing/full/2024/postman.yml,Postman
+Pumble,tests/resources/pricing/full/2024/pumble.yml,Pumble
+Quip,tests/resources/pricing/full/2024/quip.yml,Quip
+Slack,tests/resources/pricing/full/2024/slack.yml,Slack
+Tableau,tests/resources/pricing/full/2024/tableau.yml,Tableau
+TrustMary,tests/resources/pricing/full/2024/trustmary.yml,TrustMary
+UserGuiding,tests/resources/pricing/full/2024/userguiding.yml,UserGuiding
+Wrike,tests/resources/pricing/full/2024/wrike.yml,Wrike
+Zapier,tests/resources/pricing/full/2024/zapier.yml,Zapier

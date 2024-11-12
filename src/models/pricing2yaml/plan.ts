@@ -19,7 +19,7 @@ export function getPlanNames(plans?: Plan[]): string[] {
   return plans.map(plan => plan.name);
 }
 
-export function getAPlanPrices(plans?: Plan[]): number[] {
+export function getPlanPrices(plans?: Plan[]): number[] {
   const prices: number[] = [];
   if (!plans) {
     return prices;
@@ -29,8 +29,8 @@ export function getAPlanPrices(plans?: Plan[]): number[] {
     const price = plans[i].price;
     if (typeof price === 'number') {
       prices.push(price);
-    } else if (i === plans.length - 1 && typeof price === 'string') {
-      prices.push(10 * (plans[i - 1].price as number));
+    } else if (typeof price === 'string') {
+      prices.push(10 * prices[i - 1]);
     }
   }
 
