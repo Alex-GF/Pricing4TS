@@ -30,18 +30,18 @@ export enum DZNKeywords {
   AddOnsDependsOn = 'addons_depends_on',
 }
 
-export function saveDZNfile(source: string): void {
+export function saveDZNfile(source: string, savePath: string): void {
   const pricing: Pricing = retrievePricingFromPath(path.resolve(source));
   const file = pricing2DZN(pricing);
 
-  const dznFolder = path.resolve('dzn');
+  const dznFolder = path.resolve(savePath);
 
   try {
     if (!fs.existsSync(dznFolder)) {
       console.log('Creando carpeta temporal dzn en la raiz');
-      fs.mkdirSync('dzn');
+      fs.mkdirSync(savePath);
     }
-    fs.writeFileSync(path.join('dzn', `${pricing.saasName}.dzn`), file);
+    fs.writeFileSync(path.join(savePath, `${pricing.saasName}.dzn`), file);
     console.log('------- Archivo guardado en la carpeta dzn --------');
     console.log('Nombre del archivo: ' + pricing.saasName + '.dzn');
   } catch (err) {
