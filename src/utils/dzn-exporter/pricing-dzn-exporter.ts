@@ -10,21 +10,21 @@ import {
   calculateAddOnsUsageLimitsMatrix,
   getAddOnNames,
   getAddOnPrices,
-} from '../../models/addon';
+} from '../../models/pricing2yaml/addon';
 import {
   calculatePlanFeaturesMatrix,
   calculatePlanUsageLimitsMatrix,
   getAPlanPrices,
   getPlanNames,
   Plan,
-} from '../../models/plan';
-import { getFeatureNames, getNumberOfFeatures } from '../../models/feature';
+} from '../../models/pricing2yaml/plan';
+import { getFeatureNames, getNumberOfFeatures } from '../../models/pricing2yaml/feature';
 import {
   calculateLinkedFeaturesMatrix,
   getNumberOfUsageLimits,
   getUsageLimitNames,
   UsageLimit,
-} from '../../models/usage-limit';
+} from '../../models/pricing2yaml/usage-limit';
 import { formatMatrixToString, generateChunk, generateChunkBlock } from './string-utils';
 
 export function pricing2DZN(pricing: Pricing): string {

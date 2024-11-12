@@ -1,4 +1,4 @@
-import { calculateOverriddenRow } from '../utils/dzn-exporter/number-utils';
+import { calculateOverriddenRow } from '../../utils/dzn-exporter/number-utils';
 import { Feature } from './feature';
 import { UsageLimit } from './usage-limit';
 

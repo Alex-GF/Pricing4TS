@@ -1,5 +1,5 @@
 import { retrievePricingFromPath } from "../../src/utils/yaml-utils";
-import { Pricing } from "../../src/models/pricing";
+import { Pricing } from "../../src/models/pricing2yaml/pricing";
 import assert from "assert";
 import { readCSVFile, parseCSVContent } from "../utils/csv-utils";
 import {v4 as uuidv4 } from "uuid";

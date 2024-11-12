@@ -1,7 +1,7 @@
 import assert from 'assert';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
-import { Pricing } from '../../src/models/pricing';
+import { Pricing } from '../../src/models/pricing2yaml/pricing';
 import { LATEST_PRICING2YAML_VERSION } from '../../src/utils/version-manager';
 import { retrievePricingFromPath, retrievePricingFromYaml } from '../../src/utils/yaml-utils';
 
