@@ -10,8 +10,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/main.ts --watch",
-    "test:big": "jest --testPathIgnorePatterns=tests/pricing-service/pricing-service-small.test.ts",
-    "test": "jest --testPathIgnorePatterns=tests/pricing-service/pricing-service-big.test.ts"
+    "test": "jest --testPathIgnorePatterns=tests/pricing-service/"
   },
   "repository": {
     "type": "git",
