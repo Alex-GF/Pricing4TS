@@ -1,5 +1,5 @@
 import yaml from "js-yaml";
-import { Pricing, ExtractedPricing } from "../models/pricing";
+import { Pricing, ExtractedPricing } from "../models/pricing2yaml/pricing";
 import { formatPricing } from "./pricing-formatter";
 import { update } from "./version-manager";
 import fs from "fs";

@@ -1,9 +1,9 @@
-import type { AddOn } from '../models/addon';
-import type { Feature } from '../models/feature';
-import type { Plan } from '../models/plan';
-import type { Pricing } from '../models/pricing';
-import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/types';
-import type { UsageLimit } from '../models/usage-limit';
+import type { AddOn } from '../models/pricing2yaml/addon';
+import type { Feature } from '../models/pricing2yaml/feature';
+import type { Plan } from '../models/pricing2yaml/plan';
+import type { Pricing } from '../models/pricing2yaml/pricing';
+import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
+import type { UsageLimit } from '../models/pricing2yaml/usage-limit';
 import { ContainerFeatures, ContainerUsageLimits } from './pricing-formatter';
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
@@ -307,9 +307,7 @@ export function validateFeatureType(type: string | null | undefined): FeatureTyp
 
 export function validateUnit(unit: string | null | undefined): string {
   if (unit === null || unit === undefined) {
-    throw new Error(
-      `The unit field of a usage limit must not be null or undefined. Please ensure that the unit field is present and it is a string`
-    );
+    unit = "";
   }
 
   if (typeof unit !== 'string') {
@@ -583,7 +581,7 @@ export function validateDependsOn(
   const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
 
   if (dependsOn === null || dependsOn === undefined) {
-    dependsOn = addonNames as string[];
+    dependsOn = [];
   }
 
   if (!Array.isArray(addonNames)) {

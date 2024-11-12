@@ -1,8 +1,8 @@
-import type { AddOn } from '../models/addon';
-import type { Feature } from '../models/feature';
-import type { Plan } from '../models/plan';
-import { ExtractedPricing, generateEmptyPricing, Pricing } from '../models/pricing';
-import type { UsageLimit } from '../models/usage-limit';
+import type { AddOn } from '../models/pricing2yaml/addon';
+import type { Feature } from '../models/pricing2yaml/feature';
+import type { Plan } from '../models/pricing2yaml/plan';
+import { ExtractedPricing, generateEmptyPricing, Pricing } from '../models/pricing2yaml/pricing';
+import type { UsageLimit } from '../models/pricing2yaml/usage-limit';
 import {
   postValidateDependsOn,
   validateAddonFeatures,
