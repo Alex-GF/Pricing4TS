@@ -77,7 +77,7 @@ export function pricing2DZN(pricing: Pricing): string {
 
 function generatePricesChunk(plans: Plan[], addOns?: AddOn[]) {
   const plansPrices = getPlanPrices(plans);
-  if (plans && plansPrices.every(p => p === null)) {
+  if (plans && plans.length !== 0 && plansPrices.every(p => p === null)) {
     throw new Error(`Either prices are not defined for all plans, or they are not numbers. Current parsed prices: ${plansPrices}`);
   }
   const addOnPrices = getAddOnPrices(addOns);
