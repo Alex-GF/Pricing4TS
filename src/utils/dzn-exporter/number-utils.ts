@@ -6,10 +6,11 @@ export function calculateOverriddenRow(items: Feature[] | UsageLimit[]): number[
 
   for (let i = 0; i < items.length; i++) {
     let value;
+
     if (items[i].valueType === 'NUMERIC' && items[i].value) {
-      value = items[i].value as number;
+      value = items[i].value === Infinity ? 1000000000 : items[i].value as number;
     } else if (items[i].valueType === 'NUMERIC' && items[i].defaultValue) {
-      value = items[i].defaultValue as number;
+      value = items[i].defaultValue === Infinity ? 1000000000 : items[i].defaultValue as number;
     } else if (items[i].valueType === 'BOOLEAN' && items[i].value) {
       value = items[i].value ? 1 : 0;
     } else if (items[i].valueType === 'BOOLEAN' && items[i].defaultValue) {
@@ -29,7 +30,7 @@ export function valueToNumber(value?: string | number | boolean | string[]): num
     case 'boolean':
       return value ? 1 : 0;
     case 'number':
-      return value;
+      return value === Infinity ? 1000000000 : value;
     case 'object':
     case 'string':
       return 1;

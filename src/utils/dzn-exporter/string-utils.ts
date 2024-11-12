@@ -31,8 +31,6 @@ export function formatMatrixToString(target: string[], dataMatrix: number[][]): 
   }
 
   if (dataMatrix.length != target.length) {
-    console.log(dataMatrix.length);
-    console.log(target.length);
     throw Error('Names array has to be equal to the number of rows of the matrix');
   }
 
