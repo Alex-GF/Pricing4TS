@@ -12,7 +12,7 @@ export interface PricingAnalytics {
 
 export default class PricingService {
 
-  private pricing: Pricing;
+  private readonly pricing: Pricing;
 
   constructor(pricing: Pricing){
     this.pricing = pricing;

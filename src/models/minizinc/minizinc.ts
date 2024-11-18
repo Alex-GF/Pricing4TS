@@ -3,32 +3,16 @@ import fs from 'fs';
 import path from 'path';
 
 const filePaths = {
-  PricingModel: path.resolve('src/models/minizinc/raw-models/PricingModel.mzn'),
-  ValidPricingOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/validation/valid-pricing.mzn'
-  ),
-  ValidSubscriptionOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/validation/valid-subscription.mzn'
-  ),
-  CheapestSubscriptionAnalysisOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/analysis/cheapest-subscription.mzn'
-  ),
-  ConfigurationSpaceAnalysisOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/analysis/configuration-space.mzn'
-  ),
-  MostExpensiveSubscriptionAnalysisOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/analysis/most-expensive-subscription.mzn'
-  ),
-  FilterOperation: path.resolve('src/models/minizinc/raw-models/operations/filter/filter.mzn'),
-  CheapestFilterOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/filter/cheapest-filtered-subscription.mzn'
-  ),
-  ConfigurationSpaceFilterOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/filter/filtered-configuration-space.mzn'
-  ),
-  MostExpensiveFilterOperation: path.resolve(
-    'src/models/minizinc/raw-models/operations/filter/most-expensive-filtered-subscription.mzn'
-  ),
+  PricingModel: path.join(__dirname, 'raw-models/PricingModel.mzn'),
+  ValidPricingOperation: path.join(__dirname, 'raw-models/operations/validation/valid-pricing.mzn'),
+  ValidSubscriptionOperation: path.join(__dirname, 'raw-models/operations/validation/valid-subscription.mzn'),
+  CheapestSubscriptionAnalysisOperation: path.join(__dirname, 'raw-models/operations/analysis/cheapest-subscription.mzn'),
+  ConfigurationSpaceAnalysisOperation: path.join(__dirname, 'raw-models/operations/analysis/configuration-space.mzn'),
+  MostExpensiveSubscriptionAnalysisOperation: path.join(__dirname, 'raw-models/operations/analysis/most-expensive-subscription.mzn'),
+  FilterOperation: path.join(__dirname, 'raw-models/operations/filter/filter.mzn'),
+  CheapestFilterOperation: path.join(__dirname, 'raw-models/operations/filter/cheapest-filtered-subscription.mzn'),
+  ConfigurationSpaceFilterOperation: path.join(__dirname, 'raw-models/operations/filter/filtered-configuration-space.mzn'),
+  MostExpensiveFilterOperation: path.join(__dirname, 'raw-models/operations/filter/most-expensive-filtered-subscription.mzn'),
 };
 
 export enum PricingOperation {

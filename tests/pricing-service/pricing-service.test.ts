@@ -7,7 +7,7 @@ import {v4 as uuidv4 } from "uuid";
 import fs from "fs";
 import { ErrorMessage } from 'minizinc';
 
-const OLD_VERSION_SAAS_CSV_PATH = "tests/pricing-service/data/pricing-service-tests-big.csv";
+const OLD_VERSION_SAAS_CSV_PATH = "tests/pricing-service/data/pricing-service-tests.csv";
 const suiteUUID = uuidv4();
 const TEMP_FILE_PATH = `tests/resources/temp-${suiteUUID}/test_`;
 const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
@@ -58,9 +58,9 @@ describe('Given pricing should return its analytics', () => {
                 });
             
                 it(`Get analytics of ${expected}`, async () => {
-                    jest.setTimeout(10000);
                     try{
                         const analytics = await pricingService!.getAnalytics();
+                        console.log(expected, analytics.configurationSpaceSize);
                         assert.equal(pricing.saasName.split(" ")[0], expected);
                     }catch(e){
                         errors.push({pricingPath, error: `"${(e as ErrorMessage).message}"`});
