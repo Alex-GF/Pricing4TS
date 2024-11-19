@@ -1,4 +1,4 @@
-include "filter.mzn";
+include "./filter.mzn";
 
 output [
   "Selected plan = ", show(selected_plan), "\n",

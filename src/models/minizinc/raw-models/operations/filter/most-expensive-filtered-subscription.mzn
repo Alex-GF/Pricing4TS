@@ -1,4 +1,4 @@
-include "filter.mzn";
+include "./filter.mzn";
 
 solve maximize subscription_cost;
 

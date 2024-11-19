@@ -1,4 +1,4 @@
-include "valid-pricing.mzn";
+include "./valid-pricing.mzn";
 
 % C4: All the features included within the subscription must correspond to a combination of one plan and 0..n add-ons or zero plans and 1..n add-ons.
 
