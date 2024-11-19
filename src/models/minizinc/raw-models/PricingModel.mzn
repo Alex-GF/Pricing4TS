@@ -39,15 +39,15 @@ array[ADDONS, ADDONS] of int: addons_depends_on; % The position (i,j) indicates 
 % ---------------------
 
 array[FEATURES] of var 0..1: subscription_features;
-array[USAGE_LIMITS] of var 0..unlimited: subscription_usage_limits;
+array[USAGE_LIMITS] of var 0.0..unlimited: subscription_usage_limits;
 
-var 0..num_plans: selected_plan;
+var int: selected_plan;
 
 array[ADDONS] of var 0..1: selected_addons;
 array[FEATURES] of var 0..1: features_included_in_selected_addons;
-array[USAGE_LIMITS] of var 0..unlimited: usage_limits_included_in_selected_addons;
+array[USAGE_LIMITS] of var 0.0..unlimited: usage_limits_included_in_selected_addons;
 
-var 0..unlimited: subscription_cost;
+var float: subscription_cost;
 
 % -----------------------
 % ----- CONSTRAINTS -----

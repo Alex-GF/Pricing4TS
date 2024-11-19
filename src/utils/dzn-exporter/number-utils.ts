@@ -1,5 +1,7 @@
 import { Feature, UsageLimit } from '../../main';
 
+const unlimitedValue = 100000000;
+
 export function calculateOverriddenRow(items: Feature[] | UsageLimit[]): number[] {
   const values = [];
   const defaultValue = 0;
@@ -8,9 +10,9 @@ export function calculateOverriddenRow(items: Feature[] | UsageLimit[]): number[
     let value;
 
     if (item.valueType === 'NUMERIC' && item.value) {
-      value = item.value === Infinity ? 1000000000 : item.value as number;
+      value = (item.value as number) > unlimitedValue ? unlimitedValue : item.value as number;
     } else if (item.valueType === 'NUMERIC' && item.defaultValue) {
-      value = item.defaultValue === Infinity ? 1000000000 : item.defaultValue as number;
+      value = (item.defaultValue as number) > unlimitedValue ? unlimitedValue : item.defaultValue as number;
     } else if (item.valueType === 'BOOLEAN' && item.value) {
       value = item.value ? 1 : 0;
     } else if (item.valueType === 'BOOLEAN' && item.defaultValue) {

@@ -28,9 +28,7 @@ export default class PricingService {
         configurationSpaceSize: configurationSpaceSize.statistics.nSolutions,
       };
     }catch(e){
-      console.error(e);
-      const dznPricing = pricing2DZN(this.pricing);
-      console.error(dznPricing);
+      console.log(e);
       throw new Error((e as ErrorMessage).message);
     }
   }
