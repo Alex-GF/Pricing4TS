@@ -16,7 +16,7 @@ jobs:
         run: npm ci
   
       - name: Run Tests
-        run: npm run test
+        run: npm run test:small
 
       - name: Build Package
         run: npm run build

@@ -11,8 +11,8 @@
     "build": "tsc && npm run copy-mzn",
     "copy-mzn": "copyfiles -u 1 src/**/*.mzn dist",
     "dev": "nodemon src/main.ts --watch",
-    "test": "jest --testPathIgnorePatterns=tests/pricing-service/",
-    "test:big": "jest"
+    "test": "jest",
+    "test:small": "jest --testPathIgnorePatterns=tests/pricing-service/"
   },
   "repository": {
     "type": "git",

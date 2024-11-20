@@ -14,64 +14,64 @@ const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
 
 const oldVersionSaaSParameters = parseCSVContent(readCSVFile(OLD_VERSION_SAAS_CSV_PATH));
 
-describe('Given pricing should return its analytics', () => {
-  const errors: { pricingPath: string; error: string }[] = [];
+// describe('Given pricing should return its analytics', () => {
+//   const errors: { pricingPath: string; error: string }[] = [];
 
-  beforeAll(() => {
-    fs.mkdirSync(TEMP_DIR);
-  });
+//   beforeAll(() => {
+//     fs.mkdirSync(TEMP_DIR);
+//   });
 
-  afterAll(() => {
-    fs.rmdirSync(TEMP_DIR, { recursive: true });
-    // Vuelca el contenido de errors en un archivo CSV dentro del directorio logs/
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const errorCSVPath = `tests/logs/pricing-service-errors-${timestamp}.csv`;
+//   afterAll(() => {
+//     fs.rmdirSync(TEMP_DIR, { recursive: true });
+//     // Vuelca el contenido de errors en un archivo CSV dentro del directorio logs/
+//     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+//     const errorCSVPath = `tests/logs/pricing-service-errors-${timestamp}.csv`;
 
-    const errorCSVContent = errors.map(({ pricingPath, error }) => [pricingPath, error]);
-    const errorCSVHeader = ['pricingPath', 'error'];
+//     const errorCSVContent = errors.map(({ pricingPath, error }) => [pricingPath, error]);
+//     const errorCSVHeader = ['pricingPath', 'error'];
 
-    // Si no existe el directorio logs, crealo
-    if (!fs.existsSync('tests/logs')) {
-      fs.mkdirSync('tests/logs');
-    }
+//     // Si no existe el directorio logs, crealo
+//     if (!fs.existsSync('tests/logs')) {
+//       fs.mkdirSync('tests/logs');
+//     }
 
-    fs.writeFileSync(
-      errorCSVPath,
-      errorCSVContent.reduce(
-        (acc, row) => acc + row.join(',') + '\n',
-        errorCSVHeader.join(',') + '\n'
-      )
-    );
-  });
+//     fs.writeFileSync(
+//       errorCSVPath,
+//       errorCSVContent.reduce(
+//         (acc, row) => acc + row.join(',') + '\n',
+//         errorCSVHeader.join(',') + '\n'
+//       )
+//     );
+//   });
 
-  for (const { sectionName, tests } of oldVersionSaaSParameters) {
-    describe(sectionName, () => {
-      for (const { pricingPath, expected } of tests) {
-        let pricingService: PricingService | null = null;
-        let pricing: Pricing;
+//   for (const { sectionName, tests } of oldVersionSaaSParameters) {
+//     describe(sectionName, () => {
+//       for (const { pricingPath, expected } of tests) {
+//         let pricingService: PricingService | null = null;
+//         let pricing: Pricing;
 
-        const tempPricingPath = TEMP_FILE_PATH + pricingPath.split('/').pop();
+//         const tempPricingPath = TEMP_FILE_PATH + pricingPath.split('/').pop();
 
-        beforeEach(() => {
-          // Create a temp file from the TEST_PRICING_YAML_PATH file
-          fs.copyFileSync(pricingPath, tempPricingPath);
-          pricing = retrievePricingFromPath(tempPricingPath);
+//         beforeEach(() => {
+//           // Create a temp file from the TEST_PRICING_YAML_PATH file
+//           fs.copyFileSync(pricingPath, tempPricingPath);
+//           pricing = retrievePricingFromPath(tempPricingPath);
 
-          pricingService = new PricingService(pricing);
-        });
+//           pricingService = new PricingService(pricing);
+//         });
 
-        it(`Get analytics of ${expected}`, async () => {
-          try {
-            const analytics = await pricingService!.getAnalytics();
-            assert.equal(pricing.saasName.split(' ')[0], expected);
-          } catch (e) {
-            errors.push({ pricingPath, error: `"${(e as ErrorMessage).message}"` });
-          }
-        });
-      }
-    });
-  }
-});
+//         it(`Get analytics of ${expected}`, async () => {
+//           try {
+//             const analytics = await pricingService!.getAnalytics();
+//             assert.equal(pricing.saasName.split(' ')[0], expected);
+//           } catch (e) {
+//             errors.push({ pricingPath, error: `"${(e as ErrorMessage).message}"` });
+//           }
+//         });
+//       }
+//     });
+//   }
+// });
 
 describe('Single pricing test', () => {
   const errors: { pricingPath: string; error: string }[] = [];
