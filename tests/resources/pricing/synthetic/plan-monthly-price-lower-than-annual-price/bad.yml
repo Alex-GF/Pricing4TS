@@ -1,0 +1,22 @@
+saasName: annual price higher than monthly price
+version: "1.1"
+createdAt: 2024-11-19
+currency: EUR
+hasAnnualPayment: true
+features:
+  feature1:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: true
+    type: DOMAIN
+  feature2:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: true
+    type: INFORMATION
+plans:
+  plan1:
+    monthlyPrice: 10
+    annualPrice: 240 
+    features: null
+

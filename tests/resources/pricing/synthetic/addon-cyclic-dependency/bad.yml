@@ -1,0 +1,33 @@
+saasName: Cyclic dependency between A and B addons
+version: "2.0"
+createdAt: 2024-11-19
+currency: EUR
+hasAnnualPayment: false
+features:
+  feature1:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: false
+    type: DOMAIN
+  feature2:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: false
+    type: DOMAIN
+addOns:
+  foo:
+    price: 10
+    unit: ""
+    features:
+      feature1:
+        value: true
+    dependsOn:
+      - bar
+  bar:
+    price: 10
+    unit: ""
+    features:
+      feature2:
+        value: true
+    dependsOn:
+      - foo

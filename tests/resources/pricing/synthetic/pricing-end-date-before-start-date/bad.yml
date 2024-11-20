@@ -1,0 +1,17 @@
+saasName: pricing is not operable
+version: "2.0"
+createdAt: 2024-11-19
+starts: 2024-11-20 12:00
+ends: 2024-11-19 12:00
+currency: EUR
+hasAnnualPayment: false
+features:
+  feature1:
+    valueType: BOOLEAN
+    defaultValue: true
+    type: DOMAIN
+plans:
+  FREE:
+    price: 0.00
+    features: null
+
