@@ -50,9 +50,9 @@ export default class PricingService {
       const numberOfNonRenewableUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "NON_RENEWABLE").length : 0;
       const numberOfResponseDrivenUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "RESPONSE_DRIVEN").length : 0;
       const numberOfTimeDrivenUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "TIME_DRIVEN").length : 0;
-      const numberOfPlans: number = this.pricing.plans.length;
-      const numberOfFreePlans: number = this.pricing.plans.filter(p => p.price === 0).length;
-      const numberOfPaidPlans: number = this.pricing.plans.filter(p => typeof(p.price) === "number" ? p.price > 0 : true).length;
+      const numberOfPlans: number = this.pricing.plans ? this.pricing.plans.length : 0;
+      const numberOfFreePlans: number = this.pricing.plans ? this.pricing.plans.filter(p => p.price === 0).length : 0;
+      const numberOfPaidPlans: number = this.pricing.plans ? this.pricing.plans.filter(p => typeof(p.price) === "number" ? p.price > 0 : true).length : 0;
       const numberOfAddOns: number = this.pricing.addOns ? this.pricing.addOns.length : 0;
       const numberOfReplacementAddons: number = this.pricing.addOns ? this.pricing.addOns.filter(a => a.features || a.usageLimits).length : 0;
       const numberOfExtensionAddons: number = this.pricing.addOns ? this.pricing.addOns.filter(a => a.features || a.usageLimits ? false : a.usageLimitsExtensions).length : 0;

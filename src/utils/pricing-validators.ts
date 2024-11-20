@@ -553,7 +553,7 @@ export function validateAvailableFor(
   availableFor: string[] | undefined | null,
   pricing: Pricing
 ): string[] {
-  const planNames = pricing.plans.map((p) => p.name);
+  const planNames = pricing.plans ? pricing.plans.map((p) => p.name) : [];
 
   if (availableFor === null || availableFor === undefined) {
     availableFor = planNames as string[];

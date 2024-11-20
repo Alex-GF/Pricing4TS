@@ -45,6 +45,14 @@ export interface ContainerUsageLimits {
   [key: string]: UsageLimit;
 }
 
+export interface ContainerPlans {
+  [key: string]: Plan;
+}
+
+export interface ContainerAddOns {
+  [key: string]: AddOn;
+}
+
 export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   const pricing: Pricing = generateEmptyPricing();
 
@@ -85,6 +93,10 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
     const formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
     pricing.addOns = formattedAddOns.map(a => formatAddOn(a, pricing));
     pricing.addOns.forEach(a => postValidateDependsOn(a.dependsOn, pricing));
+  }
+
+  if (!pricing.plans && !pricing.addOns) {
+    throw new Error('At least one of the following must be provided: plans, addOns');
   }
 
   return pricing;
@@ -272,9 +284,9 @@ export function formatObject(object: object): ContainerFeatures | ContainerUsage
 }
 
 export function formatArrayIntoObject(
-  array: Feature[] | UsageLimit[]
-): ContainerFeatures | ContainerUsageLimits {
-  return array.reduce((acc: ContainerFeatures | ContainerUsageLimits, { name, ...rest }) => {
+  array: Feature[] | UsageLimit[] | Plan[] | AddOn[]
+): ContainerFeatures | ContainerUsageLimits | ContainerPlans | ContainerAddOns {
+  return array.reduce((acc: ContainerFeatures | ContainerUsageLimits | ContainerPlans | ContainerAddOns, { name, ...rest }) => {
     acc[name] = { name, ...rest };
     return acc;
   }, {} as ContainerFeatures | ContainerUsageLimits);

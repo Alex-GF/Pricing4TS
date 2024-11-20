@@ -2,6 +2,7 @@ import { Feature } from './feature';
 import { UsageLimit } from './usage-limit';
 import { Plan } from './plan';
 import { AddOn } from './addon';
+import { ContainerAddOns, ContainerPlans } from '../../utils/pricing-formatter';
 
 export interface Pricing {
     saasName: string;
@@ -12,13 +13,18 @@ export interface Pricing {
     tags?: string[];
     features: Feature[];
     usageLimits?: UsageLimit[];
-    plans: Plan[];
+    plans?: Plan[];
     addOns?: AddOn[];
 }
 
 export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'> {
     version: string;
     createdAt: string | Date;
+}
+
+export interface PricingToBeWritten extends Omit<Pricing, 'plans' | 'addOns'> {
+    plans?: Plan[] | ContainerPlans;
+    addOns?: AddOn[] | ContainerAddOns;
 }
 
 export function generateEmptyPricing(): Pricing {
