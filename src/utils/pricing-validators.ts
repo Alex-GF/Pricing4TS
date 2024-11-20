@@ -1,10 +1,9 @@
 import type { AddOn } from '../models/pricing2yaml/addon';
-import type { Feature } from '../models/pricing2yaml/feature';
+import type { ContainerFeatures, Feature } from '../models/pricing2yaml/feature';
 import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
-import type { UsageLimit } from '../models/pricing2yaml/usage-limit';
-import { ContainerFeatures, ContainerUsageLimits } from './pricing-formatter';
+import type { ContainerUsageLimits, UsageLimit } from '../models/pricing2yaml/usage-limit';
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 

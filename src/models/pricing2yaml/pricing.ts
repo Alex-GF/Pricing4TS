@@ -1,8 +1,7 @@
-import { Feature } from './feature';
-import { UsageLimit } from './usage-limit';
-import { Plan } from './plan';
-import { AddOn } from './addon';
-import { ContainerAddOns, ContainerPlans } from '../../utils/pricing-formatter';
+import { ContainerFeatures, Feature } from './feature';
+import { ContainerUsageLimits, UsageLimit } from './usage-limit';
+import { ContainerPlans, Plan } from './plan';
+import { AddOn, ContainerAddOns } from './addon';
 
 export interface Pricing {
     saasName: string;
@@ -22,9 +21,11 @@ export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'>
     createdAt: string | Date;
 }
 
-export interface PricingToBeWritten extends Omit<Pricing, 'plans' | 'addOns'> {
-    plans?: Plan[] | ContainerPlans;
-    addOns?: AddOn[] | ContainerAddOns;
+export interface PricingToBeWritten extends Omit<Pricing, 'features' | 'usageLimits' | 'plans' | 'addOns'> {
+    features: ContainerFeatures,
+    usageLimits?: ContainerUsageLimits;
+    plans?: ContainerPlans;
+    addOns?: ContainerAddOns;
 }
 
 export function generateEmptyPricing(): Pricing {
@@ -39,5 +40,20 @@ export function generateEmptyPricing(): Pricing {
         plans: [],
         tags: [],
         addOns: []
+    }
+}
+
+export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
+    return {
+        saasName: "",
+        version: "0.0",
+        createdAt: new Date(),
+        currency: "",
+        hasAnnualPayment: false,
+        features: {},
+        usageLimits: {},
+        plans: {},
+        tags: [],
+        addOns: {}
     }
 }

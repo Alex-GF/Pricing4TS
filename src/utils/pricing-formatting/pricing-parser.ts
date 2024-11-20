@@ -1,8 +1,8 @@
-import type { AddOn } from '../models/pricing2yaml/addon';
-import type { Feature } from '../models/pricing2yaml/feature';
-import type { Plan } from '../models/pricing2yaml/plan';
-import { ExtractedPricing, generateEmptyPricing, Pricing } from '../models/pricing2yaml/pricing';
-import type { UsageLimit } from '../models/pricing2yaml/usage-limit';
+import type { AddOn } from '../../models/pricing2yaml/addon';
+import type { ContainerFeatures, Feature } from '../../models/pricing2yaml/feature';
+import type { Plan } from '../../models/pricing2yaml/plan';
+import { ExtractedPricing, generateEmptyPricing, Pricing } from '../../models/pricing2yaml/pricing';
+import type { ContainerUsageLimits, UsageLimit } from '../../models/pricing2yaml/usage-limit';
 import {
   postValidateDependsOn,
   validateAddonFeatures,
@@ -35,28 +35,12 @@ import {
   validateValue,
   validateValueType,
   validateVersion,
-} from './pricing-validators';
+} from '../pricing-validators';
 
-export interface ContainerFeatures {
-  [key: string]: Feature;
-}
-
-export interface ContainerUsageLimits {
-  [key: string]: UsageLimit;
-}
-
-export interface ContainerPlans {
-  [key: string]: Plan;
-}
-
-export interface ContainerAddOns {
-  [key: string]: AddOn;
-}
-
-export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
+export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
   const pricing: Pricing = generateEmptyPricing();
 
-  formatBasicAttributes(extractedPricing, pricing);
+  parseBasicAttributes(extractedPricing, pricing);
 
   // Validate and format tags if provided
   if (extractedPricing.tags !== null && extractedPricing.tags !== undefined) {
@@ -66,7 +50,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   // Format and parse features
   validateFeatures(extractedPricing.features);
   const formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
-  pricing.features = formattedFeatures.map(f => formatFeature(f, pricing.tags));
+  pricing.features = formattedFeatures.map(f => parseFeature(f, pricing.tags));
 
   // Format and parse usage limits, considering they can be null/undefined
   if (extractedPricing.usageLimits == null || extractedPricing.usageLimits == undefined) {
@@ -74,7 +58,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   } else {
     validateUsageLimits(extractedPricing.usageLimits);
     const formattedUsageLimits = formatObjectToArray(extractedPricing.usageLimits) as UsageLimit[];
-    pricing.usageLimits = formattedUsageLimits.map(u => formatUsageLimit(u, pricing));
+    pricing.usageLimits = formattedUsageLimits.map(u => parseUsageLimit(u, pricing));
   }
 
   // Format and parse plans, considering they can be null/undefined
@@ -83,7 +67,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   } else {
     validatePlans(extractedPricing.plans)
     const formattedPlans = formatObjectToArray(extractedPricing.plans) as Plan[];
-    pricing.plans = formattedPlans.map(p => formatPlan(p, pricing));
+    pricing.plans = formattedPlans.map(p => parsePlan(p, pricing));
   }
 
   // Format and parse add-ons, considering they can be null/undefined
@@ -91,7 +75,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
     pricing.addOns = [];
   } else {
     const formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
-    pricing.addOns = formattedAddOns.map(a => formatAddOn(a, pricing));
+    pricing.addOns = formattedAddOns.map(a => parseAddOn(a, pricing));
     pricing.addOns.forEach(a => postValidateDependsOn(a.dependsOn, pricing));
   }
 
@@ -104,7 +88,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
 
 // --------- PRICING ELEMENTS FORMATTERS ---------
 
-function formatBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
+function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
   pricing.version = validateVersion(extractedPricing.version); // Assumes that the version has been processed to be the last one
   pricing.saasName = validateName(extractedPricing.saasName, 'SaaS');
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
@@ -112,7 +96,7 @@ function formatBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pric
   pricing.hasAnnualPayment = validateHasAnnualPayment(extractedPricing.hasAnnualPayment);
 }
 
-function formatFeature(feature: Feature, tags?: string[]): Feature {
+function parseFeature(feature: Feature, tags?: string[]): Feature {
   const featureName = feature.name;
 
   try {  
@@ -134,7 +118,7 @@ function formatFeature(feature: Feature, tags?: string[]): Feature {
   return feature;
 }
 
-function formatUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit {
+function parseUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit {
   try {
     validateUsageLimit(usageLimit);
     usageLimit.name = validateName(usageLimit.name, 'Usage Limit');
@@ -162,7 +146,7 @@ function formatUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit 
   return usageLimit;
 }
 
-function formatPlan(plan: Plan, pricing: Pricing): Plan {
+function parsePlan(plan: Plan, pricing: Pricing): Plan {
   try {
     validatePlan(plan);
     plan.name = validateName(plan.name, 'Plan');
@@ -200,7 +184,7 @@ function formatPlan(plan: Plan, pricing: Pricing): Plan {
   return plan;
 }
 
-function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
+function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
   try {
     addon.name = validateName(addon.name, 'Addon');
     addon.description = validateDescription(addon.description);
@@ -284,9 +268,9 @@ export function formatObject(object: object): ContainerFeatures | ContainerUsage
 }
 
 export function formatArrayIntoObject(
-  array: Feature[] | UsageLimit[] | Plan[] | AddOn[]
-): ContainerFeatures | ContainerUsageLimits | ContainerPlans | ContainerAddOns {
-  return array.reduce((acc: ContainerFeatures | ContainerUsageLimits | ContainerPlans | ContainerAddOns, { name, ...rest }) => {
+  array: Feature[] | UsageLimit[]
+): ContainerFeatures | ContainerUsageLimits {
+  return array.reduce((acc: ContainerFeatures | ContainerUsageLimits, { name, ...rest }) => {
     acc[name] = { name, ...rest };
     return acc;
   }, {} as ContainerFeatures | ContainerUsageLimits);

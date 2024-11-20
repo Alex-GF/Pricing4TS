@@ -11,6 +11,10 @@ export interface Plan {
   usageLimits?: { [key: string]: UsageLimit };
 }
 
+export interface ContainerPlans{
+  [key: string]: Plan;
+}
+
 export function getPlanNames(plans?: Plan[]): string[] {
   if (!plans) {
     return [];

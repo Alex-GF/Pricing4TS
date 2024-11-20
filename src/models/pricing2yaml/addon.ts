@@ -14,6 +14,10 @@ export interface AddOn {
   usageLimitsExtensions?: { [key: string]: UsageLimit };
 }
 
+export interface ContainerAddOns {
+  [key: string]: AddOn;
+}
+
 export function getAddOnNames(addOns?: AddOn[]): string[] {
   if (!addOns) {
     return [];

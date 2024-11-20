@@ -14,6 +14,10 @@ export interface Feature {
   render: RenderMode;
 }
 
+export interface ContainerFeatures{
+  [key: string]: Feature;
+}
+
 export function getNumberOfFeatures(features: Feature[]) {
   return features.length;
 }
