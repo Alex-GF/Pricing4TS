@@ -14,6 +14,21 @@
             "cwd": "${workspaceFolder}",  // Asegúrate de que sea el directorio raíz del proyecto
             "attachSimplePort": 9229,  // Puerto para la depuración remota
             "outputCapture": "std"  // Captura de la salida estándar
-          }
+          },
+          {
+            "type": "node",
+            "request": "launch",
+            "name": "Test pricing parsing",
+            "runtimeExecutable": "ts-node",
+            "args": [
+                "${workspaceFolder}/scripts/parse-pricing-to-new-file.ts",
+                "./tests/resources/pricing/real/github/2024.yml"
+            ],
+            "port": 9229,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "skipFiles": ["<node_internals>/**"],
+            // "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+        }
     ]
 }
