@@ -21,7 +21,8 @@ export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'>
     createdAt: string | Date;
 }
 
-export interface PricingToBeWritten extends Omit<Pricing, 'features' | 'usageLimits' | 'plans' | 'addOns'> {
+export interface PricingToBeWritten extends Omit<Pricing, 'createdAt' | 'features' | 'usageLimits' | 'plans' | 'addOns'> {
+    createdAt: string;
     features: ContainerFeatures,
     usageLimits?: ContainerUsageLimits;
     plans?: ContainerPlans;
@@ -47,7 +48,7 @@ export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
     return {
         saasName: "",
         version: "0.0",
-        createdAt: new Date(),
+        createdAt: "",
         currency: "",
         hasAnnualPayment: false,
         features: {},

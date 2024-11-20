@@ -39,10 +39,10 @@ export function serializePricing(pricing: Pricing): PricingToBeWritten {
 function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
   pricingToBeWritten.saasName = pricing.saasName;
   pricingToBeWritten.version = pricing.version;
-  pricingToBeWritten.createdAt = pricing.createdAt;
+  pricingToBeWritten.createdAt = pricing.createdAt.toISOString().split('T')[0];
   pricingToBeWritten.currency = pricing.currency;
   pricingToBeWritten.hasAnnualPayment = pricing.hasAnnualPayment;
-  pricingToBeWritten.tags = pricing.tags ? pricing.tags : undefined;
+  pricingToBeWritten.tags = Array.isArray(pricing.tags) && pricing.tags.length > 0 ? pricing.tags : undefined;
 }
 
 function serializeFeatures(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
@@ -65,20 +65,8 @@ function serializePlans(pricing: Pricing, pricingToBeWritten: PricingToBeWritten
   pricingToBeWritten.plans &&
     Object.keys(pricingToBeWritten.plans).forEach(planName => {
       const plan: any = (pricingToBeWritten.plans! as ContainerPlans)[planName];
-      const fieldsToFormat = ["features", "usageLimit"];
-
-      for (let field of fieldsToFormat) {
-        if (plan[field]){
-          plan[field] = Object.entries(plan[field]).reduce(
-            (acc: { [key: string]: Omit<Feature | UsageLimit, 'name'> }, [key, value]) => {
-              const { name, ...rest } = value as Feature | UsageLimit;
-              acc[key] = { ...rest };
-              return acc;
-            },
-            {} as { [key: string]: Omit<Feature | UsageLimit, 'name'> }
-          );
-        }
-      }
+      
+      _formatPricingContainerFields(plan, "plan");
     });
 }
 
@@ -90,21 +78,33 @@ function serializeAddOns(pricing: Pricing, pricingToBeWritten: PricingToBeWritte
   pricingToBeWritten.addOns &&
     Object.keys(pricingToBeWritten.addOns).forEach(addOnName => {
       const addOn: any = (pricingToBeWritten.addOns! as ContainerAddOns)[addOnName];
-      const fieldsToFormat = [addOn.features, addOn.usageLimit, addOn.usageLimitExtensions];
+      
+      addOn.dependsOn = Array.isArray(addOn.dependsOn) && addOn.dependsOn.length > 0 ? addOn.dependsOn : undefined;
 
-      for (let field of fieldsToFormat) {
-        if (addOn[field]) {
-          addOn[field] = Object.entries(addOn[field]).reduce(
-            (acc: { [key: string]: Omit<Feature | UsageLimit, 'name'> }, [key, value]) => {
-              const { name, ...rest } = value as Feature | UsageLimit;
-              acc[key] = { ...rest };
-              return acc;
-            },
-            {} as { [key: string]: Omit<Feature | UsageLimit, 'name'> }
-          );
-        }
-      }
+      _formatPricingContainerFields(addOn, "addOn");
     });
+}
+
+function _formatPricingContainerFields(pricingContainer: any, pricingContainerType: "plan" | "addOn") {
+  const fieldsToFormat = pricingContainerType === "plan" ? ["features", "usageLimits"] : ["features", "usageLimits", "usageLimitsExtensions"];
+
+  for (let field of fieldsToFormat) {
+
+    if (pricingContainer[field]) {
+
+      const serializedField = Object.entries(pricingContainer[field]).reduce(
+        (acc: { [key: string]: {value: string | number | boolean | string[]} | undefined }, [key, value]) => {
+          if ((value as Feature | UsageLimit).value){
+            acc[key] = { value: (value as Feature | UsageLimit).value! };
+          }
+          return acc;
+        },
+        {} as { [key: string]: {value: string | number | boolean | string[]} }
+      );
+
+      pricingContainer[field] = Object.keys(serializedField).length === 0 ? null : serializedField;
+    }
+  }
 }
 
 function _formatArrayIntoObjectForWriting(
