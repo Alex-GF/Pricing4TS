@@ -1,4 +1,4 @@
-include "valid-pricing.mzn";
+include "./valid-pricing.mzn";
 
 % C4: All the features included within the subscription must correspond to a combination of one plan and 0..n add-ons or zero plans and 1..n add-ons.
 
@@ -16,12 +16,12 @@ constraint
     then forall(u in USAGE_LIMITS)(
       if num_addons > 0 
         then
-          usage_limits_included_in_selected_ADDONS[u] = 
+          usage_limits_included_in_selected_addons[u] = 
               max(a in ADDONS)(if selected_addons[a] = 1 then addons_usage_limits[a, u] else 0 endif)
               +
               sum(a in ADDONS)(if selected_addons[a] = 1 then addons_usage_limits_extensions[a, u] else 0 endif)
         else
-          usage_limits_included_in_selected_ADDONS[u] = 0
+          usage_limits_included_in_selected_addons[u] = 0
       endif
     )
   endif;
@@ -33,7 +33,7 @@ constraint forall(f in FEATURES)(
 constraint
   if num_usage_limits > 0
     then forall(u in USAGE_LIMITS)(
-      subscription_usage_limits[u] = if num_plans > 0 then plans_usage_limits[selected_plan, u] else false endif + usage_limits_included_in_selected_ADDONS[u]
+      subscription_usage_limits[u] = if num_plans > 0 then plans_usage_limits[selected_plan, u] else false endif + usage_limits_included_in_selected_addons[u]
     )
   endif;
 

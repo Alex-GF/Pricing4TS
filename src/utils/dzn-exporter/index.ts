@@ -31,22 +31,21 @@ export enum DZNKeywords {
 }
 
 export function saveDZNfile(source: string, savePath: string): void {
-  const pricing: Pricing = retrievePricingFromPath(path.resolve(source));
-  const file = pricing2DZN(pricing);
-
-  const dznFolder = path.resolve(savePath);
-
   try {
+    const pricing: Pricing = retrievePricingFromPath(path.resolve(source));
+    const file = pricing2DZN(pricing);
+
+    const dznFolder = path.resolve(savePath);
+
     if (!fs.existsSync(dznFolder)) {
       console.log(`Creating folder ${dznFolder}...`);
-      fs.mkdirSync(savePath);
+      fs.mkdirSync(savePath, {recursive: true});
     }
 
-    const filename = `${pricing.saasName.split(' ')[0]}.dzn`;
+    const filename = path.basename(source, ".yml") + '.dzn';
 
     fs.writeFileSync(path.join(savePath, filename), file);
-    console.log(`------- File Saved in ${dznFolder} --------`);
-    console.log('Filename: ' + filename);
+    console.log(`\t DZN File Saved in ./${path.join(savePath, filename)}`);
   } catch (err) {
     console.error(`Error while parsing file '${source}'. Error: ${err}`);
   }

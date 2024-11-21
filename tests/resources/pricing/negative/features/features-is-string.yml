@@ -3,4 +3,4 @@ version: '1.1'
 createdAt: '2024-08-31'
 currency: EUR
 hasAnnualPayment: false
-features: Invalid string
+features: Features as strig

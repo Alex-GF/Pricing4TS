@@ -62,7 +62,7 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
 describe("Negative Pricing2Yaml Parser Tests", () => {
 
     beforeAll(() => {
-        fs.mkdirSync(TEMP_DIR);
+        fs.mkdirSync(TEMP_DIR, {recursive: true});
     })
 
     afterAll(() => {

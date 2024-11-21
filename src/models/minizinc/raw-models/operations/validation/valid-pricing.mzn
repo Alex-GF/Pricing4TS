@@ -1,4 +1,4 @@
-include "PricingModel.mzn";
+include "../../PricingModel.mzn";
 
 % C2: All features linked to a usage limit included within a plan are afected by its restriction.
 

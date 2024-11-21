@@ -1,3 +1,5 @@
+import PricingService from './services/pricing.service';
+
 export {
   retrievePricingFromPath,
   retrievePricingFromYaml,
@@ -6,6 +8,8 @@ export {
 
 export { pricing2DZN } from './utils/dzn-exporter/pricing-dzn-exporter';
 export { saveDZNfile } from './utils/dzn-exporter';
+
+export { PricingService };
 
 export type { Pricing } from './models/pricing2yaml/pricing';
 export type { Feature } from './models/pricing2yaml/feature';

@@ -105,7 +105,7 @@ describe('Given pricing should produce a Minizinc data file', () => {
     ];
 
     const pricing: Pricing = retrievePricingFromPath(path + 'box.yml');
-    const actualPlanFeatures = calculatePlanFeaturesMatrix(pricing.plans);
+    const actualPlanFeatures = calculatePlanFeaturesMatrix(pricing.plans!);
 
     expect(actualPlanFeatures).toStrictEqual(planFeatures);
   });
@@ -119,17 +119,5 @@ describe('Formatter suite tests', () => {
   });
   it('Given 1d array should return empty', () => {
     expect(formatMatrixToString([], [])).toBe('');
-  });
-  it('Zoom dump', () => {
-    const pricing: Pricing = retrievePricingFromPath(path + 'zoom.yml');
-    console.log(pricing2DZN(pricing));
-  });
-  it('Box dump', () => {
-    const pricing: Pricing = retrievePricingFromPath(path + 'box.yml');
-    console.log(pricing2DZN(pricing));
-  });
-  it('Pricing without pricing dump', () => {
-    const pricing: Pricing = retrievePricingFromPath(path + 'without-plans.yml');
-    console.log(pricing2DZN(pricing));
   });
 });

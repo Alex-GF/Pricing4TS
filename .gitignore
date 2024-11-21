@@ -131,3 +131,7 @@ dist
 
 # Package build outsource
 npm/
+
+# Testing temp folders
+
+tests/resources/pricing/temp*

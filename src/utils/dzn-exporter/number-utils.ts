@@ -1,21 +1,23 @@
 import { Feature, UsageLimit } from '../../main';
 
+const unlimitedValue = 100000000;
+
 export function calculateOverriddenRow(items: Feature[] | UsageLimit[]): number[] {
   const values = [];
   const defaultValue = 0;
 
-  for (let i = 0; i < items.length; i++) {
+  for (const item of items) {
     let value;
 
-    if (items[i].valueType === 'NUMERIC' && items[i].value) {
-      value = items[i].value === Infinity ? 1000000000 : items[i].value as number;
-    } else if (items[i].valueType === 'NUMERIC' && items[i].defaultValue) {
-      value = items[i].defaultValue === Infinity ? 1000000000 : items[i].defaultValue as number;
-    } else if (items[i].valueType === 'BOOLEAN' && items[i].value) {
-      value = items[i].value ? 1 : 0;
-    } else if (items[i].valueType === 'BOOLEAN' && items[i].defaultValue) {
-      value = items[i].defaultValue ? 1 : 0;
-    } else if (items[i].valueType === 'TEXT') {
+    if (item.valueType === 'NUMERIC' && item.value) {
+      value = (item.value as number) > unlimitedValue ? unlimitedValue : item.value as number;
+    } else if (item.valueType === 'NUMERIC' && item.defaultValue) {
+      value = (item.defaultValue as number) > unlimitedValue ? unlimitedValue : item.defaultValue as number;
+    } else if (item.valueType === 'BOOLEAN' && item.value) {
+      value = item.value ? 1 : 0;
+    } else if (item.valueType === 'BOOLEAN' && item.defaultValue) {
+      value = item.defaultValue ? 1 : 0;
+    } else if (item.valueType === 'TEXT') {
       value = 1;
     } else {
       value = defaultValue;
