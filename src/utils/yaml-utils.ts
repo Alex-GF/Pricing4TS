@@ -57,11 +57,12 @@ export function writePricingToYaml(pricing: Pricing, yamlPath: string): void {
 export function writePricingWithErrorToYaml(pricing: any, yamlPath: string): void {
   try {
     const absolutePath: string = fs.realpathSync(yamlPath);
-    const yamlString: string = yaml.dump(pricing);
+    const pricingToBeWritten: PricingToBeWritten = serializePricing(pricing);
+    const yamlString: string = yaml.dump(pricingToBeWritten);
     fs.writeFileSync(absolutePath, yamlString);
   } catch (_error) {
     throw new Error(
-      `Failed to write the file at path ${yamlPath}. Please check that the path is correct and that the file exists.`
+      `Failed to write the file at path '${yamlPath}' after failing in the version update process. Please check that the path is correct and that the file exists. Received pricing: \n ${pricing}`
     );
   }
 }

@@ -39,7 +39,9 @@ export function serializePricing(pricing: Pricing): PricingToBeWritten {
 function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
   pricingToBeWritten.saasName = pricing.saasName;
   pricingToBeWritten.version = pricing.version;
-  pricingToBeWritten.createdAt = pricing.createdAt.toISOString().split('T')[0];
+  pricingToBeWritten.createdAt = pricing.createdAt instanceof Date
+    ? pricing.createdAt.toISOString().split('T')[0]
+    : (pricing.createdAt as string).split('T')[0];
   pricingToBeWritten.currency = pricing.currency;
   pricingToBeWritten.hasAnnualPayment = pricing.hasAnnualPayment;
   pricingToBeWritten.tags = Array.isArray(pricing.tags) && pricing.tags.length > 0 ? pricing.tags : undefined;
@@ -110,6 +112,11 @@ function _formatPricingContainerFields(pricingContainer: any, pricingContainerTy
 function _formatArrayIntoObjectForWriting(
   array: Array<{ name: string; [key: string]: any }>
 ): object | undefined {
+  
+  if(!Array.isArray(array)){
+    return array;
+  }
+  
   if (array.length === 0) {
     return undefined;
   }

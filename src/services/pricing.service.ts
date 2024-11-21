@@ -34,17 +34,38 @@ export default class PricingService {
         this._getMinSubscriptionPrice(dznPricing),
         this._getMaxSubscriptionPrice(dznPricing)
       ]);
+
+      // Extract the list of features and usage limits by type
       
+      const informationFeatures = this.pricing.features.filter(f => f.type === "INFORMATION");
+      const integrationFeatures = this.pricing.features.filter(f => f.type === "INTEGRATION");
+      const domainFeatures = this.pricing.features.filter(f => f.type === "DOMAIN");
+      const automationFeatures = this.pricing.features.filter(f => f.type === "AUTOMATION");
+      const managementFeatures = this.pricing.features.filter(f => f.type === "MANAGEMENT");
+      const guaranteeFeatures = this.pricing.features.filter(f => f.type === "GUARANTEE");
+      const supportFeatures = this.pricing.features.filter(f => f.type === "SUPPORT");
+      const paymentFeatures = this.pricing.features.filter(f => f.type === "PAYMENT");
+
       // Extraction of the analytics
       const numberOfFeatures: number = this.pricing.features.length;
-      const numberOfInformationFeatures: number = this.pricing.features.filter(f => f.type === "INFORMATION").length;
-      const numberOfIntegrationFeatures: number = this.pricing.features.filter(f => f.type === "INTEGRATION").length;
-      const numberOfDomainFeatures: number = this.pricing.features.filter(f => f.type === "DOMAIN").length;
-      const numberOfAutomationFeatures: number = this.pricing.features.filter(f => f.type === "AUTOMATION").length;
-      const numberOfManagementFeatures: number = this.pricing.features.filter(f => f.type === "MANAGEMENT").length;
-      const numberOfGuaranteeFeatures: number = this.pricing.features.filter(f => f.type === "GUARANTEE").length;
-      const numberOfSupportFeatures: number = this.pricing.features.filter(f => f.type === "SUPPORT").length;
-      const numberOfPaymentFeatures: number = this.pricing.features.filter(f => f.type === "PAYMENT").length;
+      const numberOfInformationFeatures: number = informationFeatures.length;
+      const numberOfIntegrationFeatures: number = integrationFeatures.length;
+      const numberOfIntegrationApiFeatures: number = integrationFeatures.filter(f => f.integrationType === "API").length;
+      const numberOfIntegrationExtensionFeatures: number = integrationFeatures.filter(f => f.integrationType === "EXTENSION").length;
+      const numberOfIntegrationIdentityProviderFeatures: number = integrationFeatures.filter(f => f.integrationType === "IDENTITY_PROVIDER").length;
+      const numberOfIntegrationWebSaaSFeatures: number = integrationFeatures.filter(f => f.integrationType === "WEB_SAAS").length;
+      const numberOfIntegrationMarketplaceFeatures: number = integrationFeatures.filter(f => f.integrationType === "MARKETPLACE").length;
+      const numberOfIntegrationExternalDeviceFeatures: number = integrationFeatures.filter(f => f.integrationType === "EXTERNAL_DEVICE").length;
+      const numberOfDomainFeatures: number = domainFeatures.length;
+      const numberOfAutomationFeatures: number = automationFeatures.length;
+      const numberOfBotAutomationFeatures: number = automationFeatures.filter(f => f.automationType === "BOT").length;
+      const numberOfFilteringAutomationFeatures: number = automationFeatures.filter(f => f.automationType === "FILTERING").length;
+      const numberOfTrackingAutomationFeatures: number = automationFeatures.filter(f => f.automationType === "TRACKING").length;
+      const numberOfTaskAutomationFeatures: number = automationFeatures.filter(f => f.automationType === "TASK_AUTOMATION").length;
+      const numberOfManagementFeatures: number = managementFeatures.length;
+      const numberOfGuaranteeFeatures: number = guaranteeFeatures.length;
+      const numberOfSupportFeatures: number = supportFeatures.length;
+      const numberOfPaymentFeatures: number = paymentFeatures.length;
       const numberOfUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.length : 0;
       const numberOfRenewableUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "RENEWABLE").length : 0;
       const numberOfNonRenewableUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "NON_RENEWABLE").length : 0;
@@ -64,8 +85,18 @@ export default class PricingService {
         numberOfFeatures: numberOfFeatures,
         numberOfInformationFeatures: numberOfInformationFeatures,
         numberOfIntegrationFeatures: numberOfIntegrationFeatures,
+        numberOfIntegrationApiFeatures: numberOfIntegrationApiFeatures,
+        numberOfIntegrationExtensionFeatures: numberOfIntegrationExtensionFeatures,
+        numberOfIntegrationIdentityProviderFeatures: numberOfIntegrationIdentityProviderFeatures,
+        numberOfIntegrationWebSaaSFeatures: numberOfIntegrationWebSaaSFeatures,
+        numberOfIntegrationMarketplaceFeatures: numberOfIntegrationMarketplaceFeatures,
+        numberOfIntegrationExternalDeviceFeatures: numberOfIntegrationExternalDeviceFeatures,
         numberOfDomainFeatures: numberOfDomainFeatures,
         numberOfAutomationFeatures: numberOfAutomationFeatures,
+        numberOfBotAutomationFeatures: numberOfBotAutomationFeatures,
+        numberOfFilteringAutomationFeatures: numberOfFilteringAutomationFeatures,
+        numberOfTrackingAutomationFeatures: numberOfTrackingAutomationFeatures,
+        numberOfTaskAutomationFeatures: numberOfTaskAutomationFeatures,
         numberOfManagementFeatures: numberOfManagementFeatures,
         numberOfGuaranteeFeatures: numberOfGuaranteeFeatures,
         numberOfSupportFeatures: numberOfSupportFeatures,

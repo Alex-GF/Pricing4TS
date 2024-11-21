@@ -16,6 +16,8 @@ import {
   validateDescription,
   validateExpression,
   validateFeature,
+  validateFeatureAutomationType,
+  validateFeatureIntegrationType,
   validateFeatures,
   validateFeatureType,
   validateHasAnnualPayment,
@@ -65,7 +67,7 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
   if (extractedPricing.plans == null || extractedPricing.plans == undefined) {
     pricing.plans = [];
   } else {
-    validatePlans(extractedPricing.plans)
+    validatePlans(extractedPricing.plans);
     const formattedPlans = formatObjectToArray(extractedPricing.plans) as Plan[];
     pricing.plans = formattedPlans.map(p => parsePlan(p, pricing));
   }
@@ -99,7 +101,7 @@ function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Prici
 function parseFeature(feature: Feature, tags?: string[]): Feature {
   const featureName = feature.name;
 
-  try {  
+  try {
     validateFeature(feature);
     feature.name = validateName(feature.name, 'Feature');
     feature.description = validateDescription(feature.description);
@@ -109,6 +111,8 @@ function parseFeature(feature: Feature, tags?: string[]): Feature {
     feature.expression = validateExpression(feature.expression, 'expression');
     feature.serverExpression = validateExpression(feature.serverExpression, 'serverExpression');
     feature.type = validateFeatureType(feature.type);
+    feature.integrationType = validateFeatureIntegrationType(feature.integrationType);
+    feature.automationType = validateFeatureAutomationType(feature.automationType);
     feature.render = validateRenderMode(feature.render);
     feature.tag = validateTag(feature.tag, tags);
   } catch (err) {
@@ -226,7 +230,10 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
       addon.usageLimitsExtensions = formatObject(
         addon.usageLimitsExtensions
       ) as ContainerUsageLimits;
-      addon.usageLimitsExtensions = validateAddonUsageLimitsExtensions(addon, addonUsageLimitsExtensions);
+      addon.usageLimitsExtensions = validateAddonUsageLimitsExtensions(
+        addon,
+        addonUsageLimitsExtensions
+      );
     } else {
       addon.usageLimitsExtensions = {};
     }
