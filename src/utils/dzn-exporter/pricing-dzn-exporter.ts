@@ -30,7 +30,7 @@ import { formatMatrixToString, generateChunk, generateChunkBlock } from './strin
 export function pricing2DZN(pricing: Pricing): string {
   const numFeatures = getNumberOfFeatures(pricing.features);
   const numUsageLimits = getNumberOfUsageLimits(pricing.usageLimits);
-  const numPlans = pricing.plans.length;
+  const numPlans = pricing.plans ? pricing.plans.length : 0;
   const numAddOns = pricing.addOns ? pricing.addOns.length : 0;
 
   const variableChunks: Chunk[] = [
@@ -75,7 +75,7 @@ export function pricing2DZN(pricing: Pricing): string {
   );
 }
 
-function generatePricesChunk(plans: Plan[], addOns?: AddOn[]) {
+function generatePricesChunk(plans?: Plan[], addOns?: AddOn[]) {
   const plansPrices = getPlanPrices(plans);
   if (plans && plans.length !== 0 && plansPrices.every(p => p === null)) {
     throw new Error(`Either prices are not defined for all plans, or they are not numbers. Current parsed prices: ${plansPrices}`);
@@ -96,7 +96,11 @@ function generatePricesChunk(plans: Plan[], addOns?: AddOn[]) {
   return generateChunkBlock(pricesChunks);
 }
 
-function generatePlanChunks(usageLimits: UsageLimit[], plans: Plan[]): string {
+function generatePlanChunks(usageLimits: UsageLimit[], plans?: Plan[]): string {
+  if (!plans){
+    return '';
+  }
+  
   const planNames = plans.map(plan => plan.name);
   const planFeaturesMatrix = calculatePlanFeaturesMatrix(plans);
   const planUsageLimitsMatrix = calculatePlanUsageLimitsMatrix(usageLimits, plans);

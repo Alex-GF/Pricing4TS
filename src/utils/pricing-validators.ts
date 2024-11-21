@@ -1,10 +1,9 @@
 import type { AddOn } from '../models/pricing2yaml/addon';
-import type { Feature } from '../models/pricing2yaml/feature';
+import type { AutomationType, ContainerFeatures, Feature, IntegrationType, PaymentType } from '../models/pricing2yaml/feature';
 import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
-import type { UsageLimit } from '../models/pricing2yaml/usage-limit';
-import { ContainerFeatures, ContainerUsageLimits } from './pricing-formatter';
+import type { ContainerUsageLimits, UsageLimit } from '../models/pricing2yaml/usage-limit';
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 
@@ -144,7 +143,7 @@ export function validateValueType(valueType: string | null): ValueType {
 export function validateDefaultValue(
   elem: Feature | UsageLimit,
   item: string
-): number | boolean | string | string[] {
+): number | boolean | string | PaymentType[] {
   if (elem.defaultValue === null || elem.defaultValue === undefined) {
     throw new Error(
       `The defaultValue field of a ${item} must not be null or undefined. Please ensure that the defaultValue field is present and its defaultValue type correspond to the declared valueType`
@@ -219,7 +218,7 @@ export function validateExpression(
 export function validateValue(
   elem: Feature | UsageLimit,
   item: string
-): number | boolean | string | string[] | undefined {
+): number | boolean | string | PaymentType[] | undefined {
   if (elem.value === null || elem.value === undefined) {
     elem.value = undefined;
   }
@@ -303,6 +302,30 @@ export function validateFeatureType(type: string | null | undefined): FeatureTyp
   }
 
   return type as FeatureType;
+}
+
+export function validateFeatureIntegrationType(integrationType: IntegrationType | null | undefined){
+  if (integrationType === null || integrationType === undefined) {
+    integrationType = undefined;
+  }
+
+  if (integrationType && typeof integrationType !== 'string') {
+    throw new Error(`The integrationType field of a feature must be an IntegrationType ('API' | 'EXTENSION' | 'IDENTITY_PROVIDER' | 'WEB_SAAS' | 'MARKETPLACE' | 'EXTERNAL_DEVICE'). Received: ${integrationType}`);
+  }
+
+  return integrationType;
+}
+
+export function validateFeatureAutomationType(automationType: AutomationType | null | undefined){
+  if (automationType === null || automationType === undefined) {
+    automationType = undefined;
+  }
+
+  if (automationType && typeof automationType !== 'string') {
+    throw new Error(`The automationType field of a feature must be an AutomationType ('BOT' | 'FILTERING' | 'TRACKING' | 'TASK_AUTOMATION'). Received: ${automationType}`);
+  }
+
+  return automationType;
 }
 
 export function validateUnit(unit: string | null | undefined): string {
@@ -553,7 +576,7 @@ export function validateAvailableFor(
   availableFor: string[] | undefined | null,
   pricing: Pricing
 ): string[] {
-  const planNames = pricing.plans.map((p) => p.name);
+  const planNames = pricing.plans ? pricing.plans.map((p) => p.name) : [];
 
   if (availableFor === null || availableFor === undefined) {
     availableFor = planNames as string[];

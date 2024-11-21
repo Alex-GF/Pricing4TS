@@ -1,8 +1,8 @@
-import type { AddOn } from '../models/pricing2yaml/addon';
-import type { Feature } from '../models/pricing2yaml/feature';
-import type { Plan } from '../models/pricing2yaml/plan';
-import { ExtractedPricing, generateEmptyPricing, Pricing } from '../models/pricing2yaml/pricing';
-import type { UsageLimit } from '../models/pricing2yaml/usage-limit';
+import type { AddOn } from '../../models/pricing2yaml/addon';
+import type { ContainerFeatures, Feature } from '../../models/pricing2yaml/feature';
+import type { Plan } from '../../models/pricing2yaml/plan';
+import { ExtractedPricing, generateEmptyPricing, Pricing } from '../../models/pricing2yaml/pricing';
+import type { ContainerUsageLimits, UsageLimit } from '../../models/pricing2yaml/usage-limit';
 import {
   postValidateDependsOn,
   validateAddonFeatures,
@@ -16,6 +16,8 @@ import {
   validateDescription,
   validateExpression,
   validateFeature,
+  validateFeatureAutomationType,
+  validateFeatureIntegrationType,
   validateFeatures,
   validateFeatureType,
   validateHasAnnualPayment,
@@ -35,20 +37,12 @@ import {
   validateValue,
   validateValueType,
   validateVersion,
-} from './pricing-validators';
+} from '../pricing-validators';
 
-export interface ContainerFeatures {
-  [key: string]: Feature;
-}
-
-export interface ContainerUsageLimits {
-  [key: string]: UsageLimit;
-}
-
-export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
+export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
   const pricing: Pricing = generateEmptyPricing();
 
-  formatBasicAttributes(extractedPricing, pricing);
+  parseBasicAttributes(extractedPricing, pricing);
 
   // Validate and format tags if provided
   if (extractedPricing.tags !== null && extractedPricing.tags !== undefined) {
@@ -58,7 +52,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   // Format and parse features
   validateFeatures(extractedPricing.features);
   const formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
-  pricing.features = formattedFeatures.map(f => formatFeature(f, pricing.tags));
+  pricing.features = formattedFeatures.map(f => parseFeature(f, pricing.tags));
 
   // Format and parse usage limits, considering they can be null/undefined
   if (extractedPricing.usageLimits == null || extractedPricing.usageLimits == undefined) {
@@ -66,16 +60,16 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
   } else {
     validateUsageLimits(extractedPricing.usageLimits);
     const formattedUsageLimits = formatObjectToArray(extractedPricing.usageLimits) as UsageLimit[];
-    pricing.usageLimits = formattedUsageLimits.map(u => formatUsageLimit(u, pricing));
+    pricing.usageLimits = formattedUsageLimits.map(u => parseUsageLimit(u, pricing));
   }
 
   // Format and parse plans, considering they can be null/undefined
   if (extractedPricing.plans == null || extractedPricing.plans == undefined) {
     pricing.plans = [];
   } else {
-    validatePlans(extractedPricing.plans)
+    validatePlans(extractedPricing.plans);
     const formattedPlans = formatObjectToArray(extractedPricing.plans) as Plan[];
-    pricing.plans = formattedPlans.map(p => formatPlan(p, pricing));
+    pricing.plans = formattedPlans.map(p => parsePlan(p, pricing));
   }
 
   // Format and parse add-ons, considering they can be null/undefined
@@ -83,8 +77,12 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
     pricing.addOns = [];
   } else {
     const formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
-    pricing.addOns = formattedAddOns.map(a => formatAddOn(a, pricing));
+    pricing.addOns = formattedAddOns.map(a => parseAddOn(a, pricing));
     pricing.addOns.forEach(a => postValidateDependsOn(a.dependsOn, pricing));
+  }
+
+  if (!pricing.plans && !pricing.addOns) {
+    throw new Error('At least one of the following must be provided: plans, addOns');
   }
 
   return pricing;
@@ -92,7 +90,7 @@ export function formatPricing(extractedPricing: ExtractedPricing): Pricing {
 
 // --------- PRICING ELEMENTS FORMATTERS ---------
 
-function formatBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
+function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
   pricing.version = validateVersion(extractedPricing.version); // Assumes that the version has been processed to be the last one
   pricing.saasName = validateName(extractedPricing.saasName, 'SaaS');
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
@@ -100,10 +98,10 @@ function formatBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pric
   pricing.hasAnnualPayment = validateHasAnnualPayment(extractedPricing.hasAnnualPayment);
 }
 
-function formatFeature(feature: Feature, tags?: string[]): Feature {
+function parseFeature(feature: Feature, tags?: string[]): Feature {
   const featureName = feature.name;
 
-  try {  
+  try {
     validateFeature(feature);
     feature.name = validateName(feature.name, 'Feature');
     feature.description = validateDescription(feature.description);
@@ -113,6 +111,8 @@ function formatFeature(feature: Feature, tags?: string[]): Feature {
     feature.expression = validateExpression(feature.expression, 'expression');
     feature.serverExpression = validateExpression(feature.serverExpression, 'serverExpression');
     feature.type = validateFeatureType(feature.type);
+    feature.integrationType = validateFeatureIntegrationType(feature.integrationType);
+    feature.automationType = validateFeatureAutomationType(feature.automationType);
     feature.render = validateRenderMode(feature.render);
     feature.tag = validateTag(feature.tag, tags);
   } catch (err) {
@@ -122,7 +122,7 @@ function formatFeature(feature: Feature, tags?: string[]): Feature {
   return feature;
 }
 
-function formatUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit {
+function parseUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit {
   try {
     validateUsageLimit(usageLimit);
     usageLimit.name = validateName(usageLimit.name, 'Usage Limit');
@@ -150,7 +150,7 @@ function formatUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit 
   return usageLimit;
 }
 
-function formatPlan(plan: Plan, pricing: Pricing): Plan {
+function parsePlan(plan: Plan, pricing: Pricing): Plan {
   try {
     validatePlan(plan);
     plan.name = validateName(plan.name, 'Plan');
@@ -188,7 +188,7 @@ function formatPlan(plan: Plan, pricing: Pricing): Plan {
   return plan;
 }
 
-function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
+function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
   try {
     addon.name = validateName(addon.name, 'Addon');
     addon.description = validateDescription(addon.description);
@@ -230,7 +230,10 @@ function formatAddOn(addon: AddOn, pricing: Pricing): AddOn {
       addon.usageLimitsExtensions = formatObject(
         addon.usageLimitsExtensions
       ) as ContainerUsageLimits;
-      addon.usageLimitsExtensions = validateAddonUsageLimitsExtensions(addon, addonUsageLimitsExtensions);
+      addon.usageLimitsExtensions = validateAddonUsageLimitsExtensions(
+        addon,
+        addonUsageLimitsExtensions
+      );
     } else {
       addon.usageLimitsExtensions = {};
     }

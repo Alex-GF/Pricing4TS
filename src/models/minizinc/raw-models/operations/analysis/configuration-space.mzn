@@ -1,4 +1,6 @@
-include "valid-subscription.mzn";
+include "../validation/valid-subscription.mzn";
+
+solve satisfy;
 
 output [
   "Selected plan = ", show(selected_plan), "\n",

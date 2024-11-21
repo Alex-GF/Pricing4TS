@@ -12,6 +12,10 @@ export interface UsageLimit {
   render: RenderMode;
 }
 
+export interface ContainerUsageLimits {
+  [key: string]: UsageLimit;
+}
+
 export function getNumberOfUsageLimits(usageLimits?: UsageLimit[]): number {
   return usageLimits ? usageLimits.length : 0;
 }

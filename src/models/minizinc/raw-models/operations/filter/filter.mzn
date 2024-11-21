@@ -1,4 +1,4 @@
-include "valid-subscription.mzn";
+include "../validation/valid-subscription.mzn";
 
 % ----------------------
 % ----- INPUT DATA -----
