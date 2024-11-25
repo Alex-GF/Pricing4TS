@@ -1,0 +1,30 @@
+saasName: Offering less storage quota for higher price
+version: "2.0"
+createdAt: 2024-11-19
+currency: EUR
+hasAnnualPayment: false
+features:
+  cloudStorage:
+    description: Store your files in the cloud
+    valueType: BOOLEAN
+    defaultValue: true
+    type: DOMAIN
+usageLimits:
+  storageQuota:
+    type: NON_RENEWABLE
+    valueType: NUMERIC
+    defaultValue: 10
+    unit: GB
+    linkedFeatures:
+      - cloudStorage
+plans:
+  STANDARD:
+    price: 10.99
+    features: null
+    usageLimits: null
+  PRO:
+    price: 29.99
+    features: null
+    usageLimits:
+      storageQuota:
+        value: 5
