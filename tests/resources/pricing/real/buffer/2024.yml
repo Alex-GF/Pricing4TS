@@ -1,5 +1,6 @@
 saasName: Buffer
 version: '2.0'
+createdAt: '2024-07-02'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -600,7 +601,7 @@ usageLimits:
     linkedFeatures:
       - twitterThreads
 plans:
-  - name: FREE
+  FREE:
     description: For individuals and businesses getting started with social media.
     monthlyPrice: 0
     annualPrice: 0
@@ -608,7 +609,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: ESSENTIALS
+  ESSENTIALS:
     description: For professionals who use publishing, analytics & engagement tools.
     monthlyPrice: 6
     annualPrice: 5
@@ -690,7 +691,7 @@ plans:
       useTwitterThreadsLimit:
         value: 10000000
     price: 6
-  - name: TEAM
+  TEAM:
     description: For teams who want unlimited users, collaboration, and reporting.
     monthlyPrice: 12
     annualPrice: 10
@@ -784,7 +785,7 @@ plans:
       useIncludedUsersLimit:
         value: 10000000
     price: 12
-  - name: AGENCY
+  AGENCY:
     description: For marketing agencies with 10 or more channels.
     monthlyPrice: 120
     annualPrice: 100
@@ -879,7 +880,7 @@ plans:
         value: 10000000
     price: 120
 addOns:
-  - name: essentialsExtraChannels
+  essentialsExtraChannels:
     availableFor:
       - ESSENTIALS
     monthlyPrice: 6
@@ -891,7 +892,7 @@ addOns:
       socialChannelsLimit:
         value: 1
     price: 6
-  - name: teamExtraChannels
+  teamExtraChannels:
     availableFor:
       - TEAM
     monthlyPrice: 12
@@ -903,7 +904,7 @@ addOns:
       socialChannelsLimit:
         value: 1
     price: 12
-  - name: agencyExtraChannels
+  agencyExtraChannels:
     availableFor:
       - AGENCY
     monthlyPrice: 6
@@ -915,4 +916,3 @@ addOns:
       socialChannelsLimit:
         value: 1
     price: 6
-createdAt: '2024-07-02'

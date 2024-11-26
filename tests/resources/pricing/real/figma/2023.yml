@@ -1,5 +1,6 @@
 saasName: Figma
 version: '2.0'
+createdAt: '2023-11-08'
 currency: EUR
 hasAnnualPayment: true
 features:
@@ -405,7 +406,7 @@ usageLimits:
     linkedFeatures:
       - modes
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -413,7 +414,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: FIGMA_PROFESSIONAL
+  FIGMA_PROFESSIONAL:
     description: ''
     monthlyPrice: 15
     annualPrice: 12
@@ -455,7 +456,7 @@ plans:
       modesLimits:
         value: 4
     price: 15
-  - name: FIGMA_ORGANIZATION
+  FIGMA_ORGANIZATION:
     description: ''
     monthlyPrice: null
     annualPrice: 45
@@ -527,7 +528,7 @@ plans:
       modesLimits:
         value: 4
     price: 45
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: null
     annualPrice: 75
@@ -629,8 +630,6 @@ plans:
         value: true
       onboardingPlanningAndSupport:
         value: true
-        dedicatedAccountManager:
-          value: true
     usageLimits:
       versionHistoryDepth:
         value: .inf
@@ -639,5 +638,3 @@ plans:
       modesLimits:
         value: 40
     price: 75
-addOns: null
-createdAt: '2023-11-08'

@@ -1,5 +1,6 @@
-saasName: TrustMary - Full
+saasName: Trustmary - Full
 version: '2.0'
+createdAt: '2020-10-31'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -194,14 +195,14 @@ usageLimits:
     linkedFeatures:
       - collectWithEmail
 plans:
-  - name: LIGHT
+  LIGHT:
     description: ''
     monthlyPrice: Contact Sales
     unit: /month
     features: null
     usageLimits: null
     price: Contact Sales
-  - name: PLUS
+  PLUS:
     description: ''
     monthlyPrice: Contact Sales
     unit: /month
@@ -246,7 +247,7 @@ plans:
       emailsLimit:
         value: 1000
     price: Contact Sales
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     unit: /month
@@ -293,5 +294,3 @@ plans:
       emailsLimit:
         value: .inf
     price: Contact Sales
-addOns: null
-createdAt: '2020-10-31'

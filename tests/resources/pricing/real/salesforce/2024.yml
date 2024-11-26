@@ -1,5 +1,6 @@
 saasName: Salesforce - SalesCloud
 version: '2.0'
+createdAt: '2024-07-15'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -771,7 +772,7 @@ usageLimits:
     linkedFeatures:
       - partnerRelationshipDataStorage
 plans:
-  - name: STARTER_SUITE
+  STARTER_SUITE:
     description: ''
     annualPrice: 25
     unit: user/month
@@ -780,7 +781,7 @@ plans:
         value: true
     usageLimits: null
     price: 25
-  - name: PRO_SUITE
+  PRO_SUITE:
     description: ''
     annualPrice: 100
     unit: user/month
@@ -825,7 +826,7 @@ plans:
         value: true
     usageLimits: null
     price: 100
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     annualPrice: 165
     unit: user/month
@@ -909,7 +910,7 @@ plans:
         value: .inf
     price: 165
 addOns:
-  - name: einsteinForProSuite
+  einsteinForProSuite:
     availableFor:
       - PRO_SUITE
     price: 75
@@ -921,7 +922,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: einsteinForEnterprise
+  einsteinForEnterprise:
     availableFor:
       - ENTERPRISE
     price: 75
@@ -941,7 +942,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: slackSalesElevate
+  slackSalesElevate:
     availableFor:
       - PRO_SUITE
       - ENTERPRISE
@@ -952,7 +953,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: slackIntegration
+  slackIntegration:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -964,7 +965,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: flowOrchestration
+  flowOrchestration:
     availableFor:
       - PRO_SUITE
       - ENTERPRISE
@@ -975,7 +976,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: salesProgram
+  salesProgram:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -999,7 +1000,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: revenueIntelligence
+  revenueIntelligence:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -1025,7 +1026,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: revenueIntelligenceWithTableau
+  revenueIntelligenceWithTableau:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -1053,7 +1054,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: cpq
+  cpq:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -1069,7 +1070,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: cpqPlus
+  cpqPlus:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -1097,7 +1098,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: partnerRelationshipManagement
+  partnerRelationshipManagement:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -1123,7 +1124,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: partnerRelationshipManagementWithExternalApps
+  partnerRelationshipManagementWithExternalApps:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -1159,7 +1160,7 @@ addOns:
       partnerRelationshipApiCallsLimitLogin:
         value: 400
     usageLimitsExtensions: null
-  - name: developerProSandbox
+  developerProSandbox:
     availableFor:
       - PRO_SUITE
       - ENTERPRISE
@@ -1170,7 +1171,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: fullSandbox
+  fullSandbox:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -1180,4 +1181,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-15'

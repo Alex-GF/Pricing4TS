@@ -1,5 +1,6 @@
 saasName: HyperContext
 version: '2.0'
+createdAt: '2022-10-13'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -304,7 +305,7 @@ usageLimits:
       - fileAttachments
       - cloudLinkIntegrations
 plans:
-  - name: BASIC
+  BASIC:
     description: Best for people who want to take Hypercontext for a spin.
     monthlyPrice: 0
     annualPrice: 0
@@ -312,7 +313,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: Best for managers with too much on their plate.
     monthlyPrice: 7
     annualPrice: 5.6
@@ -340,7 +341,7 @@ plans:
       storageLimit:
         value: 250
     price: 7
-  - name: BUSINESS
+  BUSINESS:
     description: Best for standardizing meetings and hitting goals.
     monthlyPrice: 11
     annualPrice: 8.8
@@ -395,7 +396,7 @@ plans:
         value: .inf
     price: 11
 addOns:
-  - name: customSSO
+  customSSO:
     availableFor:
       - BUSINESS
     price: Contact Sales
@@ -405,4 +406,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2022-10-13'

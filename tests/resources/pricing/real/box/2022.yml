@@ -1,5 +1,6 @@
 saasName: Box
 version: '2.0'
+createdAt: '2022-11-28'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -307,14 +308,12 @@ usageLimits:
     description: ''
     valueType: NUMERIC
     defaultValue: 3
-    unit: users
     type: NON_RENEWABLE
     linkedFeatures: null
   maxUsers:
     description: ''
     valueType: NUMERIC
     defaultValue: 10
-    unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   apiCallsLimit:
@@ -342,14 +341,14 @@ usageLimits:
     linkedFeatures:
       - boxSignVia3rdPartyAndCustomApps
 plans:
-  - name: BUSINESS_STARTER
+  BUSINESS_STARTER:
     description: ''
     monthlyPrice: 5
     unit: user/month
     features: null
     usageLimits: null
     price: 5
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 15
     unit: user/month
@@ -390,7 +389,7 @@ plans:
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 100
     price: 15
-  - name: BUSINESS_PLUS
+  BUSINESS_PLUS:
     description: ''
     monthlyPrice: 25
     unit: user/month
@@ -459,7 +458,7 @@ plans:
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 150
     price: 25
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: 35
     unit: user/month
@@ -542,7 +541,7 @@ plans:
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 250
     price: 35
-  - name: ENTERPRISE_PLUS
+  ENTERPRISE_PLUS:
     description: ''
     monthlyPrice: Contact Sales
     unit: user/month
@@ -629,5 +628,3 @@ plans:
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 1000
     price: Contact Sales
-addOns: null
-createdAt: '2022-11-28'

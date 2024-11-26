@@ -1,5 +1,6 @@
-saasName: GitHub
+saasName: Github
 version: '2.0'
+createdAt: '2022-11-29'
 currency: EUR
 hasAnnualPayment: true
 features:
@@ -382,7 +383,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesFreeTier:
     description: Free tier usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - protectedBranches
@@ -405,7 +406,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesTeamTier:
     description: Team tear usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - enviromentProtectionRules
@@ -430,7 +431,7 @@ usageLimits:
     linkedFeatures:
       - githubPackages
 plans:
-  - name: FREE
+  FREE:
     description: The basics for individuals and organizations
     monthlyPrice: 0
     annualPrice: 0
@@ -440,7 +441,7 @@ plans:
       githubOnlyForPublicRepositoriesFreeTier:
         value: true
     price: 0
-  - name: TEAM
+  TEAM:
     description: Advanced collaboration for individuals and organizations
     monthlyPrice: 4
     annualPrice: 4
@@ -458,24 +459,12 @@ plans:
       diskSpaceForGithubPackages:
         value: 2
     price: 4
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Security, compliance, and flexible deployment
     monthlyPrice: 21
     annualPrice: 21
     unit: user/month
     features:
-      codeScanning:
-        value: false
-      secretScanning:
-        value: false
-      dependencyReview:
-        value: false
-      dependabotSecurityUpdates:
-        value: false
-      dependabotVersionUpdates:
-        value: false
-      githubSecurityAdvisories:
-        value: false
       auditLogAPI:
         value: true
       githubConnect:
@@ -497,7 +486,7 @@ plans:
         value: 50
     price: 21
 addOns:
-  - name: githubCodespaces2Core
+  githubCodespaces2Core:
     availableFor:
       - FREE
       - TEAM
@@ -509,7 +498,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces4Core
+  githubCodespaces4Core:
     availableFor:
       - FREE
       - TEAM
@@ -521,7 +510,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces8Core
+  githubCodespaces8Core:
     availableFor:
       - FREE
       - TEAM
@@ -533,7 +522,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces16Core
+  githubCodespaces16Core:
     availableFor:
       - FREE
       - TEAM
@@ -545,7 +534,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces32Core
+  githubCodespaces32Core:
     availableFor:
       - FREE
       - TEAM
@@ -557,7 +546,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespacesStorage
+  githubCodespacesStorage:
     availableFor:
       - FREE
       - TEAM
@@ -569,7 +558,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubAdvancedSecurity
+  githubAdvancedSecurity:
     availableFor:
       - ENTERPRISE
     price: 49
@@ -583,7 +572,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: premiumSupport
+  premiumSupport:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -595,7 +584,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseServer
+  enterpriseServer:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -607,7 +596,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseCloud
+  enterpriseCloud:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -623,4 +612,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2022-11-29'

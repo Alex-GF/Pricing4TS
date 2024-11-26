@@ -1,5 +1,6 @@
 saasName: Overleaf - Individual
 version: '2.0'
+createdAt: '2023-11-27'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -159,7 +160,7 @@ usageLimits:
       - fastCompileServers
       - fastestCompileServers
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -167,7 +168,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: STANDARD
+  STANDARD:
     description: ''
     monthlyPrice: 21
     annualPrice: 16.59
@@ -201,7 +202,7 @@ plans:
       compileTimeoutLimit:
         value: 4
     price: 21
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 42
     annualPrice: 33.25
@@ -235,5 +236,3 @@ plans:
       compileTimeoutLimit:
         value: 4
     price: 42
-addOns: null
-createdAt: '2023-11-27'

@@ -1,146 +1,148 @@
 saasName: OpenPhone
-version: '2.0'
+day: 29
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   usAndCanadaCalling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   usAndCanadaMessaging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   internationalCalling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   internationalMessaging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   phoneNumbers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   portPhoneNumbersFromOtherCarriers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharedPhoneNumbers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   snippets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   internalThreads:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharedContacts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   contactNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   businessHours:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   voicemailToText:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   callRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   autoReplies:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   scheduledMessages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   basicAutoAtendant:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   advancedAutoAtendant:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   userGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   callerID:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   groupCalling:
-    description: Coming Soon
+    description: "Coming Soon"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   callMonitoring:
-    description: Coming Soon
+    description: "Coming Soon"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   callWhispering:
-    description: Coming Soon
+    description: "Coming Soon"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   callTransfers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   roundRobin:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   emailIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -148,7 +150,7 @@ features:
     pricingURLs:
       - https://slack.com/pricing
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -156,7 +158,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   smsViaZapier:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -164,7 +166,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   googleContactsIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -172,7 +174,7 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   hubSpotCRMIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -180,13 +182,13 @@ features:
     pricingURLs:
       - https://www.hubspot.com/pricing
   webhooksIntegration:
-    description: Beta
+    description: "Beta"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   salesforceIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -194,7 +196,7 @@ features:
     pricingURLs:
       - https://www.salesforce.com/products/sales-cloud/pricing/
   gongIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -202,94 +204,93 @@ features:
     pricingURLs:
       - https://www.gong.io/pricing/
   userRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   userManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   supervisorRoles:
-    description: Coming Soon
+    description: "Coming Soon"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   analytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   reporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   auditLog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   samlSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   phoneNumbersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: phone number
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - phoneNumbers
   sharedPhoneNumbersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: user
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - sharedPhoneNumbers
   smsViaZapierAddonLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: message
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - smsViaZapier
 plans:
-  - name: STANDARD
-    description: ''
-    monthlyPrice: 13
-    annualPrice: 10
+  STANDARD:
+    description: ""
+    monthlyPrice: 13.0
+    annualPrice: 10.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 13
-  - name: PREMIUM
-    description: ''
-    monthlyPrice: 25
-    annualPrice: 20
+  PREMIUM:
+    description: ""
+    monthlyPrice: 25.0
+    annualPrice: 20.0
     unit: user/month
     features:
       advancedAutoAtendant:
@@ -319,9 +320,8 @@ plans:
     usageLimits:
       sharedPhoneNumbersLimit:
         value: .inf
-    price: 25
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -361,21 +361,20 @@ plans:
     usageLimits:
       sharedPhoneNumbersLimit:
         value: .inf
-    price: Contact Sales
 addOns:
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STANDARD
       - PREMIUM
       - ENTERPRISE
-    price: 5
+    price: 5.0
     unit: phoneNumber/month
     features: null
     usageLimits: null
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-  - name: internationalCallingAndMessaging
+  internationalCallingAndMessaging:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -389,7 +388,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsViaZapierAddon
+  smsViaZapierAddon:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -401,4 +400,3 @@ addOns:
     usageLimitsExtensions:
       smsViaZapierAddonLimit:
         value: 1
-createdAt: '2022-11-28'

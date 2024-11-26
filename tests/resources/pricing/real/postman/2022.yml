@@ -1,5 +1,6 @@
 saasName: Postman
 version: '2.0'
+createdAt: '2022-11-23'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -289,7 +290,7 @@ usageLimits:
     linkedFeatures:
       - apiMockServer
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -297,7 +298,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BASIC
+  BASIC:
     description: ''
     monthlyPrice: 15
     annualPrice: 12
@@ -318,7 +319,7 @@ plans:
       recoverDeletedCollectionsThreshold:
         value: 30
     price: 15
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 36
     annualPrice: 29
@@ -353,7 +354,7 @@ plans:
       recoverDeletedCollectionsThreshold:
         value: 90
     price: 36
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: null
     annualPrice: 99
@@ -423,7 +424,7 @@ plans:
         value: 90
     price: 99
 addOns:
-  - name: monitoringPayAsYouGo
+  monitoringPayAsYouGo:
     availableFor:
       - FREE
       - BASIC
@@ -437,7 +438,7 @@ addOns:
     usageLimitsExtensions:
       monitoringCallsFixedLimit:
         value: 1000
-  - name: monitoringMonthly
+  monitoringMonthly:
     availableFor:
       - FREE
       - BASIC
@@ -452,7 +453,7 @@ addOns:
     usageLimitsExtensions:
       monitoringCallsMonthlyLimit:
         value: 50000
-  - name: mockServersPayAsYouGo
+  mockServersPayAsYouGo:
     availableFor:
       - FREE
       - BASIC
@@ -466,7 +467,7 @@ addOns:
     usageLimitsExtensions:
       mockServerCallsFixedLimit:
         value: 1000
-  - name: mockServersMonthly
+  mockServersMonthly:
     availableFor:
       - FREE
       - BASIC
@@ -481,7 +482,7 @@ addOns:
     usageLimitsExtensions:
       mockServerCallsMonthlyLimit:
         value: 50000
-  - name: customDomains
+  customDomains:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -493,4 +494,3 @@ addOns:
     usageLimitsExtensions:
       customDomainsLimit:
         value: 1
-createdAt: '2022-11-23'

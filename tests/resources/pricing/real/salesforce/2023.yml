@@ -1,5 +1,6 @@
 saasName: Salesforce - SalesCloud
 version: '2.0'
+createdAt: '2023-12-02'
 currency: EUR
 hasAnnualPayment: true
 features:
@@ -495,7 +496,7 @@ usageLimits:
     linkedFeatures:
       - fullSandbox
 plans:
-  - name: STARTER
+  STARTER:
     description: Start fast with sales, service, and email outreach tools
     monthlyPrice: 25
     annualPrice: 300
@@ -507,7 +508,7 @@ plans:
         value: true
     usageLimits: null
     price: 25
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: Complete sales solution for any size team
     monthlyPrice: 80
     annualPrice: 960
@@ -545,7 +546,7 @@ plans:
         value: true
     usageLimits: null
     price: 80
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Deeply customizable sales CRM for your business
     monthlyPrice: 165
     annualPrice: 1980
@@ -617,7 +618,7 @@ plans:
       numberOfRecordTypes:
         value: .inf
     price: 165
-  - name: UNLIMITED
+  UNLIMITED:
     description: The ultimate platform for growth
     monthlyPrice: 330
     annualPrice: 3960
@@ -714,7 +715,7 @@ plans:
         value: 1
     price: 330
 addOns:
-  - name: inbox
+  inbox:
     availableFor:
       - PROFESSIONAL
       - ENTERPRISE
@@ -725,7 +726,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: workQueue
+  workQueue:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -735,7 +736,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: predictiveForeCasting
+  predictiveForeCasting:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -745,7 +746,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: leadScoring
+  leadScoring:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -755,7 +756,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: pipelineInspection
+  pipelineInspection:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -765,7 +766,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: conversationInsights
+  conversationInsights:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -775,7 +776,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: developerProSandbox
+  developerProSandbox:
     availableFor:
       - PROFESSIONAL
       - ENTERPRISE
@@ -786,7 +787,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: premiumActivityCapture
+  premiumActivityCapture:
     availableFor:
       - PROFESSIONAL
       - ENTERPRISE
@@ -797,7 +798,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: salesCadences
+  salesCadences:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -807,4 +808,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2023-12-02'

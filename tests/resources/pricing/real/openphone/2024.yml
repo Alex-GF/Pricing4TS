@@ -1,5 +1,6 @@
 saasName: OpenPhone
 version: '2.0'
+createdAt: '2024-07-16'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -185,7 +186,7 @@ features:
   smsViaZapier:
     description: ''
     valueType: BOOLEAN
-    defaultValue: true
+    defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
@@ -306,7 +307,7 @@ usageLimits:
     linkedFeatures:
       - smsViaZapier
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 19
     annualPrice: 15
@@ -314,7 +315,7 @@ plans:
     features: null
     usageLimits: null
     price: 19
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 33
     annualPrice: 23
@@ -354,7 +355,7 @@ plans:
       sharedPhoneNumbersLimit:
         value: .inf
     price: 33
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -401,7 +402,7 @@ plans:
         value: .inf
     price: Contact Sales
 addOns:
-  - name: carrierReviewAndSetupFeesForUsCanadaMessaging
+  carrierReviewAndSetupFeesForUsCanadaMessaging:
     availableFor:
       - STARTER
       - BUSINESS
@@ -413,7 +414,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: useCanadaMessagingFee
+  useCanadaMessagingFee:
     availableFor:
       - STARTER
       - BUSINESS
@@ -425,7 +426,7 @@ addOns:
       useCanadaMessagingFeePayed:
         value: true
     usageLimitsExtensions: null
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STARTER
       - BUSINESS
@@ -437,7 +438,7 @@ addOns:
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-  - name: internationalCallingAndMessaging
+  internationalCallingAndMessaging:
     availableFor:
       - STARTER
       - BUSINESS
@@ -451,11 +452,27 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsViaZapierAddon
+  smsViaZapierAddon:
     availableFor:
       - STARTER
       - BUSINESS
       - ENTERPRISE
+    price: 0.01
+    unit: message
+    features:
+      smsViaZapier:
+        value: true
+    usageLimits: null
+    usageLimitsExtensions:
+      smsViaZapierAddonLimit:
+        value: 1
+  extraSmsViaZapier:
+    availableFor:
+      - STARTER
+      - BUSINESS
+      - ENTERPRISE
+    dependsOn:
+      - smsViaZapierAddon
     price: 0.01
     unit: message
     features: null
@@ -463,7 +480,7 @@ addOns:
     usageLimitsExtensions:
       smsViaZapierAddonLimit:
         value: 1
-  - name: soc2ReportAddOn
+  soc2ReportAddOn:
     availableFor:
       - STARTER
       - BUSINESS
@@ -475,4 +492,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-16'

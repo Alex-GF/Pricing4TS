@@ -1,5 +1,6 @@
 saasName: Crowdcast
 version: '2.0'
+createdAt: '2024-07-14'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -130,7 +131,7 @@ usageLimits:
     linkedFeatures:
       - multistreaming
 plans:
-  - name: LITE
+  LITE:
     description: For creators and small businesses looking to grow their audience
     monthlyPrice: 49
     annualPrice: 34
@@ -138,7 +139,7 @@ plans:
     features: null
     usageLimits: null
     price: 49
-  - name: PRO
+  PRO:
     description: >-
       For professional creators and businesses to consistently host live video
       events
@@ -158,7 +159,7 @@ plans:
       hostSeatsLimit:
         value: 2
     price: 89
-  - name: BUSINESS
+  BUSINESS:
     description: For startups and companies looking to engage their customers
     monthlyPrice: 195
     annualPrice: 139
@@ -182,5 +183,3 @@ plans:
       sessionsLimit:
         value: 6
     price: 195
-addOns: null
-createdAt: '2024-07-14'

@@ -1,348 +1,349 @@
 saasName: Deskera
-version: '2.0'
+day: 5
+month: 12
+year: 2022
 currency: USD
 hasAnnualPayment: false
 features:
   dedicatedSuccessManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   allInOneDashboard:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   movileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   createInvoices:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createBills:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createRecurringInvoices:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   connectYourBanks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   collectPaymentOnline:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   inviteYourAccountant:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiCurrency:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   addCustomFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   standardReports:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   smartReports:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   automationWorkflows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   standardInventoryTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   pickPackShip:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiWarehouse:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   productVariants:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   batchTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   serialTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   billOfMaterials:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   landedCost:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   wipTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   finishedGoodsTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   multiLevelBom:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   productionSchedulling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   jobOrders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   qualityCheck:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   yieldCalculation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   demandPlanning:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   demandForecasting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   substituteBOM:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   contacts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   manageAllSalesConversation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   trackSalesActivities:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dragAndDropCustomForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   standardIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   salesAutomationWorkflows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   marketingAutomationWorkflows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   chat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sendEmailBlasts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   noCodeLandingPages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   scheduleMeetings:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   setupEmailHelpdesk:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   hiringManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   runPayroll:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   submitExpenses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   approveExpenses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   applyLeaves:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   approveLeaves:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   paySlipDesigner:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   attendanceManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   shiftManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   geoFencing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   phoneSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   accessToHelpCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   deskeraAcademy:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   reportsCustomization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   integrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   customDashboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
 usageLimits: null
 plans:
-  - name: ALL_IN_ONE
-    description: ''
-    monthlyPrice: 200
+  ALL_IN_ONE:
+    description: ""
+    monthlyPrice: 200.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 200
-  - name: ESSENTIAL
-    description: ''
-    monthlyPrice: 300
+  ESSENTIAL:
+    description: ""
+    monthlyPrice: 300.0
     unit: user/month
     features:
       dedicatedSuccessManager:
@@ -368,9 +369,8 @@ plans:
       substituteBOM:
         value: true
     usageLimits: null
-    price: 300
-  - name: PROFESSIONAL
-    description: ''
+  PROFESSIONAL:
+    description: ""
     monthlyPrice: Contact Sales
     unit: user/month
     features:
@@ -403,6 +403,4 @@ plans:
       customDashboards:
         value: true
     usageLimits: null
-    price: Contact Sales
 addOns: null
-createdAt: '2022-12-04'

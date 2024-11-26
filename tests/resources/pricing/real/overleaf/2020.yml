@@ -1,5 +1,6 @@
 saasName: Overleaf
 version: '2.0'
+createdAt: '2020-11-24'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -95,7 +96,7 @@ usageLimits:
     linkedFeatures:
       - latexCompilation
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -103,7 +104,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PERSONAL
+  PERSONAL:
     description: ''
     monthlyPrice: 10
     annualPrice: 10
@@ -127,7 +128,7 @@ plans:
       compileTimeoutLimit:
         value: 4
     price: 10
-  - name: COLLABORATOR
+  COLLABORATOR:
     description: ''
     monthlyPrice: 15
     annualPrice: 15
@@ -155,7 +156,7 @@ plans:
       compileTimeoutLimit:
         value: 4
     price: 15
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 30
     annualPrice: 30
@@ -183,5 +184,3 @@ plans:
       compileTimeoutLimit:
         value: 4
     price: 30
-addOns: null
-createdAt: '2020-11-24'

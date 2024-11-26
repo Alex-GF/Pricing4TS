@@ -1,183 +1,175 @@
 saasName: Clockify
-version: '2.0'
+day: 30
+month: 11
+year: 2020
 currency: USD
 hasAnnualPayment: true
 features:
   unlimitedTracking:
-    description: Track as much time as you want, without any limits.
+    description: "Track as much time as you want, without any limits."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   unlimitedProjects:
-    description: Organize time by project, client, task, and tag.
+    description: "Organize time by project, client, task, and tag."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   unlimitedReports:
-    description: Generate as many reports as you need.
+    description: "Generate as many reports as you need."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   apps:
-    description: Track time using a mobile app, desktop app, and browser extension.
+    description: "Track time using a mobile app, desktop app, and browser extension."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   integrations:
-    description: Connect Clockify with other apps and services.
+    description: "Connect Clockify with other apps and services."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   api:
-    description: Push and pull data to and from Clockify, and connect with your systems.
+    description: "Push and pull data to and from Clockify, and connect with your systems."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   hideTimeFromUsers:
-    description: Prevent users from seeing their time entries.
+    description: "Prevent users from seeing their time entries."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   lockTimesheets:
-    description: Prevent users from changing their past timesheets.
+    description: "Prevent users from changing their past timesheets."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   requiredFields:
-    description: Don't allow saving time with missing fields and information.
+    description: "Don't allow saving time with missing fields and information."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   timeRounding:
-    description: Set rounding up, down, or to nearest X minutes in reports and invoices.
+    description: "Set rounding up, down, or to nearest X minutes in reports and invoices."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   timeAudit:
-    description: >-
-      Find entries without project and task, and with suspicious duration (too
-      short or too long).
+    description: "Find entries without project and task, and with suspicious duration (too short or too long)."
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   brandedReports:
-    description: Add your company's name and logo to reports.
+    description: "Add your company's name and logo to reports."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   targetsAndReminders:
-    description: Automatic emails when someone forgets to log time or tracks too much.
+    description: "Automatic emails when someone forgets to log time or tracks too much."
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   addTimeForOthers:
-    description: Edit your team's timesheet and calendar, and log time on their behalf.
+    description: "Edit your team's timesheet and calendar, and log time on their behalf."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   projectTemplates:
-    description: Create new projects with the same structure from existing ones.
+    description: "Create new projects with the same structure from existing ones."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   alerts:
-    description: Automated alert when a project is close to meeting its budget.
+    description: "Automated alert when a project is close to meeting its budget."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   bulkEdit:
-    description: Update multiple time entries, projects, and users at once.
+    description: "Update multiple time entries, projects, and users at once."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   hidePages:
-    description: >-
-      Prevent users from seeing projects, reports, and other members and their
-      time entries.
+    description: "Prevent users from seeing projects, reports, and other members and their time entries."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   automaticLock:
-    description: Automatically lock timesheets after a certain period.
+    description: "Automatically lock timesheets after a certain period."
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   phoneSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   singleSignOn:
-    description: >-
-      Eliminate user-managed passwords and improve security by using your
-      company's authentication system (SAML, Office 365, Okta, Google, etc.).
+    description: "Eliminate user-managed passwords and improve security by using your company's authentication system (SAML, Office 365, Okta, Google, etc.)."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   customSubdomain:
-    description: >-
-      Move workspace to custom subdomain, prevent people from having multiple
-      workspaces, and let new users join your workspace automatically.
+    description: "Move workspace to custom subdomain, prevent people from having multiple workspaces, and let new users join your workspace automatically."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   controlAccounts:
-    description: Manage and edit accounts of your users by logging in as them.
+    description: "Manage and edit accounts of your users by logging in as them."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   customFields:
-    description: Add additional information to time entries.
+    description: "Add additional information to time entries."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   laborCostAndProfit:
-    description: Compare what you pay your team vs what you charge your clients.
+    description: "Compare what you pay your team vs what you charge your clients."
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   timeApproval:
-    description: Submit timesheets for manager review and approval.
+    description: "Submit timesheets for manager review and approval."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   managerRole:
-    description: >-
-      Give manager rights to users so they can manage projects and approve
-      timesheets.
+    description: "Give manager rights to users so they can manage projects and approve timesheets."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   forceTimer:
-    description: Prevent users from entering time manually or changing start/end time.
+    description: "Prevent users from entering time manually or changing start/end time."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   scheduledReports:
-    description: Receive a custom report via email each day, week, or month.
+    description: "Receive a custom report via email each day, week, or month."
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
 usageLimits:
   trackingLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: track
@@ -185,7 +177,7 @@ usageLimits:
     linkedFeatures:
       - unlimitedTracking
   projectsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: project
@@ -193,7 +185,7 @@ usageLimits:
     linkedFeatures:
       - unlimitedProjects
   reportsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: report
@@ -201,16 +193,15 @@ usageLimits:
     linkedFeatures:
       - unlimitedReports
 plans:
-  - name: FREE
-    description: For teams that just need a simple and easy to use time tracker
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "For teams that just need a simple and easy to use time tracker"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PLUS
-    description: For companies that need a bit more control over who can do what.
+  PLUS:
+    description: "For companies that need a bit more control over who can do what."
     monthlyPrice: 9.99
     annualPrice: 8.33
     unit: user/month
@@ -230,9 +221,8 @@ plans:
       targetsAndReminders:
         value: true
     usageLimits: null
-    price: 9.99
-  - name: PREMIUM
-    description: For companies that need a robust full-featured time tracker.
+  PREMIUM:
+    description: "For companies that need a robust full-featured time tracker."
     monthlyPrice: 29.99
     annualPrice: 24.99
     unit: user/month
@@ -255,7 +245,7 @@ plans:
         value: true
       projectTemplates:
         value: true
-      alerts:
+      alerts: 
         value: true
       bulkEdit:
         value: true
@@ -264,9 +254,8 @@ plans:
       automaticLock:
         value: true
     usageLimits: null
-    price: 29.99
-  - name: ENTERPRISE
-    description: For organizations that need complete control over their data.
+  ENTERPRISE:
+    description: "For organizations that need complete control over their data."
     monthlyPrice: 9.99
     annualPrice: 8.33
     unit: user/month
@@ -289,7 +278,7 @@ plans:
         value: true
       projectTemplates:
         value: true
-      alerts:
+      alerts: 
         value: true
       bulkEdit:
         value: true
@@ -309,7 +298,7 @@ plans:
         value: true
       laborCostAndProfit:
         value: true
-      timeApproval:
+      timeApproval: 
         value: true
       managerRole:
         value: true
@@ -318,6 +307,4 @@ plans:
       scheduledReports:
         value: true
     usageLimits: null
-    price: 9.99
 addOns: null
-createdAt: '2020-11-29'

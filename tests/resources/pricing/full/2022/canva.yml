@@ -1,216 +1,218 @@
 saasName: Canva
-version: '2.0'
+day: 9
+month: 2
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   freeTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   freeLogos:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   freeFonts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   freePhotos:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   freeGraphics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   premiumStockImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   createDesignsWithCustomDimesions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportDesignsAsPDF:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportDesignsAsPNG:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportDesignsAsJPG:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   builtInSocialSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   presentationMode:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   canvaApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   oneClickDesignResizing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   oneClickPhotoBackgroundRemoval:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   createCustomTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   uploadYourPhotosAndFonts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   downloadDesignsWithTransparentBackground:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizeDownloadQuality:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   exportDesignsAsAnimatedGIF:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportDesignsAsMP4:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createAndPublishToSocialMediaFromCanva:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   teamSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   shareView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   editAccessToDesigns:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   addCommentsToDesigns:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   assignTasksToTeamMembers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   approvalsWorkflow:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   brandKit:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   brandControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   advancedTemplateLocking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   cloudStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   folders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   24/7support:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   twoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
 usageLimits:
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: users
     type: NON_RENEWABLE
     linkedFeatures: null
   publishToSocialMediaOnlyAllowedToAdmins:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
     linkedFeatures:
       - createAndPublishToSocialMediaFromCanva
   brandKitUnits:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
-    unit: Brand Kit
+    unit: "Brand Kit"
     type: NON_RENEWABLE
     linkedFeatures:
       - brandKit
   cloudStorageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: GB
@@ -218,7 +220,7 @@ usageLimits:
     linkedFeatures:
       - cloudStorage
   foldersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: folder
@@ -226,18 +228,15 @@ usageLimits:
     linkedFeatures:
       - folders
 plans:
-  - name: FREE
-    description: Everything you need to start designing
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Everything you need to start designing"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PRO
-    description: >-
-      Designing together just got better. Professional design made easy with
-      unlimited access to premium tools and content.
+  PRO:
+    description: "Designing together just got better. Professional design made easy with unlimited access to premium tools and content."
     monthlyPrice: 12.99
     annualPrice: 9.99
     unit: user/month
@@ -271,11 +270,8 @@ plans:
         value: 100
       foldersLimit:
         value: 1000000000
-    price: 12.99
-  - name: ENTERPRISE
-    description: >-
-      Empower your team, manage your brand, and scale your content all in one
-      place
+  ENTERPRISE:
+    description: "Empower your team, manage your brand, and scale your content all in one place"
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -317,6 +313,4 @@ plans:
         value: 1000000000
       foldersLimit:
         value: 1000000000
-    price: Contact Sales
 addOns: null
-createdAt: '2022-02-08'

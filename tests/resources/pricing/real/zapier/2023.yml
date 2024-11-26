@@ -1,5 +1,6 @@
 saasName: Zapier
 version: '2.0'
+createdAt: '2023-11-28'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -311,7 +312,7 @@ usageLimits:
     linkedFeatures:
       - premiumApps
 plans:
-  - name: FREE
+  FREE:
     description: Anyone can automate their work. Start with the basics.
     monthlyPrice: 0
     annualPrice: 0
@@ -319,7 +320,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: STARTER
+  STARTER:
     description: Unleash the power of automation.
     monthlyPrice: 24.99
     annualPrice: 19.99
@@ -347,7 +348,7 @@ plans:
       premiumAppsLimit:
         value: 3
     price: 24.99
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: Advanced tools to take your work to the next level.
     monthlyPrice: 61.25
     annualPrice: 49
@@ -391,7 +392,7 @@ plans:
       premiumAppsLimit:
         value: .inf
     price: 61.25
-  - name: TEAM
+  TEAM:
     description: Bring your team together to collaborate on automation.
     monthlyPrice: 446.27
     annualPrice: 299
@@ -455,7 +456,7 @@ plans:
       premiumAppsLimit:
         value: .inf
     price: 446.27
-  - name: COMPANY
+  COMPANY:
     description: Automation plus enterprise-grade features.
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -537,5 +538,3 @@ plans:
       premiumAppsLimit:
         value: .inf
     price: Contact Sales
-addOns: null
-createdAt: '2023-11-28'

@@ -1,141 +1,131 @@
 saasName: Planable
-version: '2.0'
+day: 30
+month: 10
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   posts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
-    type: DOMAIN
+    type: DOMAIN  
   socialMediaPages:
-    description: >-
-      Number of social media pages allowed in each workspace. It can be multiple
-      pages from the same platform.
+    description: "Number of social media pages allowed in each workspace. It can be multiple pages from the same platform."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   saveAsAnAd:
-    description: >-
-      The option to send your Facebook drafts as a dark post to your Ads
-      Manager.
+    description: "The option to send your Facebook drafts as a dark post to your Ads Manager."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   workspaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   feedView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   calendarView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   gridView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   listView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   labels:
-    description: >-
-      Categorize posts per campaign, topic or content pillar with color-coded
-      labels.
+    description: "Categorize posts per campaign, topic or content pillar with color-coded labels."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   mediaStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   syncPreviousContent:
-    description: Import content published outside of Planable.
+    description: "Import content published outside of Planable."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   noneApprovalWorkflows:
-    description: Set workflows that do not require approval for publishing.
+    description: "Set workflows that do not require approval for publishing."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   optionalApprovalWorkflows:
-    description: >-
-      Set workflows that have approvals enabled, but aren't required for
-      publishing.
+    description: "Set workflows that have approvals enabled, but aren't required for publishing."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   requiredApprovalWorkflows:
-    description: Set workflows that require an approvals for publishing.
+    description: "Set workflows that require an approvals for publishing."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   multiLevelApprovalWorkflows:
-    description: Set workflows that require 2 or more approvals for publishing.
+    description: "Set workflows that require 2 or more approvals for publishing."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   internalAndExternalCollaboration:
-    description: >-
-      Have the option to hold conversations and posts behind the scenes, out of
-      approver’s sight.
+    description: "Have the option to hold conversations and posts behind the scenes, out of approver’s sight."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   versionHistory:
-    description: >-
-      See who did what and when. Preview & restore previous versions of your
-      posts.
+    description: "See who did what and when. Preview & restore previous versions of your posts."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   helpCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   liveChat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   personalizedOnboarding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   paymentOptions:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue:
       - CARD
     type: PAYMENT
-usageLimits:
+usageLimits: 
   postsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: posts
@@ -143,7 +133,7 @@ usageLimits:
     linkedFeatures:
       - posts
   postsPerMonthLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10000000
     unit: posts/month
@@ -151,7 +141,7 @@ usageLimits:
     linkedFeatures:
       - posts
   socialMediaPagesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 4
     unit: pages/workspace
@@ -159,7 +149,7 @@ usageLimits:
     linkedFeatures:
       - socialMediaPages
   workspacesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: worspace
@@ -167,7 +157,7 @@ usageLimits:
     linkedFeatures:
       - workspaces
   numberOfLabels:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: label
@@ -175,7 +165,7 @@ usageLimits:
     linkedFeatures:
       - labels
   mediaStorageCapacity:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: GB
@@ -183,7 +173,7 @@ usageLimits:
     linkedFeatures:
       - mediaStorage
   versionHistoryThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 7
     unit: day
@@ -191,10 +181,10 @@ usageLimits:
     linkedFeatures:
       - versionHistory
 plans:
-  - name: FREE
-    description: For anyone wanting to test Planable out
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "For anyone wanting to test Planable out"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: /month
     features:
       saveAsAnAd:
@@ -224,19 +214,17 @@ plans:
         value: 1000000
       versionHistoryThreshold:
         value: 1000000
-    price: 0
-  - name: BASIC
-    description: For businesses getting started with social media
-    monthlyPrice: 13
-    annualPrice: 11
+  BASIC:
+    description: "For businesses getting started with social media"
+    monthlyPrice: 13.0
+    annualPrice: 11.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 13
-  - name: PRO
-    description: For growing social media teams
-    monthlyPrice: 26
-    annualPrice: 22
+  PRO:
+    description: "For growing social media teams"
+    monthlyPrice: 26.0
+    annualPrice: 22.0
     unit: user/month
     features:
       saveAsAnAd:
@@ -262,9 +250,8 @@ plans:
         value: 50
       versionHistoryThreshold:
         value: 30
-    price: 26
-  - name: ENTERPRISE
-    description: For large social media teams wanting to scale
+  ENTERPRISE:
+    description: "For large social media teams wanting to scale"
     monthlyPrice: Custom
     annualPrice: Custom
     unit: user/month
@@ -306,10 +293,9 @@ plans:
         value: 1000000
       versionHistoryThreshold:
         value: 1000000
-    price: Custom
 addOns:
-  - name: extraWorkspace
-    description: Add an extra workspace to your account.
+  extraWorkspace:
+    description: "Add an extra workspace to your account."
     availableFor:
       - BASIC
       - PRO
@@ -321,5 +307,3 @@ addOns:
     usageLimitsExtensions:
       workspacesLimit:
         value: 1
-    price: 20
-createdAt: '2022-10-29'

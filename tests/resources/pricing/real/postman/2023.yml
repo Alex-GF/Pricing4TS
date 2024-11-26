@@ -1,5 +1,6 @@
 saasName: Postman
 version: '2.0'
+createdAt: '2023-11-04'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -330,7 +331,7 @@ usageLimits:
     linkedFeatures:
       - postmanFlows
 plans:
-  - name: BASIC
+  BASIC:
     description: ''
     monthlyPrice: 19
     annualPrice: 14
@@ -338,7 +339,7 @@ plans:
     features: null
     usageLimits: null
     price: 19
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 39
     annualPrice: 29
@@ -374,7 +375,7 @@ plans:
       collectionRecoveryLimit:
         value: 90
     price: 39
-  - name: ENTERPRISE_ESSENTIALS
+  ENTERPRISE_ESSENTIALS:
     description: ''
     monthlyPrice: 49
     annualPrice: 49
@@ -382,8 +383,6 @@ plans:
     features:
       privateWorkspaces:
         value: true
-      localPerformanceTesting:
-        value: false
       nativeGitSupport:
         value: Cloud only
       rolesAndPermissions:
@@ -415,16 +414,10 @@ plans:
         value: 1000000
       numberOfIntegrations:
         value: 50
-      collectionViewers:
-        value: 0
       customDomainsLimit:
         value: 25
       localCollectionRunnerLimit:
         value: 250
-      localPerformanceTestingUserLimit:
-        value: 0
-      localPerformanceTestingRunsLimit:
-        value: 0
       monitoringCallsLimit:
         value: 10000
       mockServersCallsLimit:
@@ -434,7 +427,7 @@ plans:
       historyDepth:
         value: 14
     price: 49
-  - name: ENTERPRISE_ULTIMATE
+  ENTERPRISE_ULTIMATE:
     description: ''
     monthlyPrice: Contact Sales
     annualPrice: null
@@ -444,8 +437,6 @@ plans:
         value: true
       partnerWorkspaces:
         value: true
-      localPerformanceTesting:
-        value: false
       apiGovernance:
         value: true
       privateApiNetwork:
@@ -487,16 +478,10 @@ plans:
         value: 1000000
       numberOfIntegrations:
         value: 100
-      collectionViewers:
-        value: 0
       customDomainsLimit:
         value: 25
       localCollectionRunnerLimit:
         value: .inf
-      localPerformanceTestingUserLimit:
-        value: 0
-      localPerformanceTestingRunsLimit:
-        value: 0
       monitoringCallsLimit:
         value: 100000
       mockServersCallsLimit:
@@ -507,7 +492,7 @@ plans:
         value: 14
     price: Contact Sales
 addOns:
-  - name: postmanForInternalApiManagement
+  postmanForInternalApiManagement:
     availableFor:
       - ENTERPRISE_ESSENTIALS
     price: 49
@@ -521,7 +506,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: postmanForApiTestAutomation
+  postmanForApiTestAutomation:
     availableFor:
       - ENTERPRISE_ESSENTIALS
     price: 49
@@ -533,7 +518,7 @@ addOns:
       localCollectionRunnerLimit:
         value: .inf
     usageLimitsExtensions: null
-  - name: monitoringPayAsYouGo
+  monitoringPayAsYouGo:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -545,7 +530,7 @@ addOns:
     usageLimitsExtensions:
       monitoringCallsLimit:
         value: 1000
-  - name: monitoringMonthly
+  monitoringMonthly:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -558,7 +543,7 @@ addOns:
     usageLimitsExtensions:
       monitoringCallsLimit:
         value: 50000
-  - name: mockServersPayAsYouGo
+  mockServersPayAsYouGo:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -570,7 +555,7 @@ addOns:
     usageLimitsExtensions:
       mockServersCallsLimit:
         value: 1000
-  - name: mockServersMonthly
+  mockServersMonthly:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -583,7 +568,7 @@ addOns:
     usageLimitsExtensions:
       mockServersCallsLimit:
         value: 50000
-  - name: customDomains
+  customDomains:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -596,7 +581,7 @@ addOns:
     usageLimitsExtensions:
       customDomainsLimit:
         value: 1
-  - name: postmanFlowsBasic
+  postmanFlowsBasic:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -617,7 +602,7 @@ addOns:
         value: 1
     usageLimitsExtensions: null
     price: 15
-  - name: postmanFlowsProfessional
+  postmanFlowsProfessional:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -638,7 +623,7 @@ addOns:
         value: 5
     usageLimitsExtensions: null
     price: 25
-  - name: postbot
+  postbot:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -651,4 +636,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2023-11-04'

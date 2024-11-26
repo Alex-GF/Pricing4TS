@@ -1,5 +1,6 @@
 saasName: Databox
 version: '2.0'
+createdAt: '2022-11-07'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -316,7 +317,7 @@ usageLimits:
     type: NON_RENEWABLE
     linkedFeatures: null
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -324,7 +325,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 169
     annualPrice: 135
@@ -356,7 +357,7 @@ plans:
       usersLimit:
         value: 25
     price: 169
-  - name: PERFORMER
+  PERFORMER:
     description: ''
     monthlyPrice: 289
     annualPrice: 231
@@ -397,7 +398,7 @@ plans:
         value: 1000000000
     price: 289
 addOns:
-  - name: brandingAndWhiteLabelling
+  brandingAndWhiteLabelling:
     availableFor:
       - PROFESSIONAL
       - PERFORMER
@@ -408,4 +409,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2022-11-07'

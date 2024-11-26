@@ -1,5 +1,6 @@
 saasName: Quip
 version: '2.0'
+createdAt: '2019-11-25'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -98,15 +99,14 @@ features:
     defaultValue: false
     type: INTEGRATION
     integrationType: API
-  embedQuipDocumentComponentsInAllObjects:
+  embedQuipDocumentComponentsInSalesforce:
     description: ''
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
-usageLimits: null
 plans:
-  - name: STARTER
+  STARTER:
     description: Powerful collaboration for your team or small business.
     monthlyPrice: 12
     annualPrice: 10
@@ -114,7 +114,7 @@ plans:
     features: null
     usageLimits: null
     price: 12
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Secure productivity platform for large and complex teams.
     monthlyPrice: null
     annualPrice: 25
@@ -128,7 +128,7 @@ plans:
         value: true
     usageLimits: null
     price: 25
-  - name: CUSTOMER360
+  CUSTOMER360:
     description: >-
       Real-time alerts and collaboration inside Salesforce for sales and service
       teams.
@@ -148,9 +148,7 @@ plans:
         value: true
       salesforceRecordLiveApp:
         value: true
-      embedQuipDocumentComponentsInAllObjects:
+      embedQuipDocumentComponentsInSalesforce:
         value: true
     usageLimits: null
     price: Contact Sales
-addOns: null
-createdAt: '2019-11-25'

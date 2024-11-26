@@ -1,88 +1,90 @@
-saasName: TrustMary - Full
-version: '2.0'
+saasName: Trustmary - Full
+day: 1
+month: 11
+year: 2020
 currency: USD
 hasAnnualPayment: false
 features:
   nps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   csat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   forms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   collectingFeedback:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   standardForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   collectWithEmail:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   shareablelink:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   qrCode:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   thirteenQuestionTypes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   importingContacts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   smartContactLists:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   embedSurbeysToWebsite:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   textReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   videoReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   importReviewsFromGoogle:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -90,7 +92,7 @@ features:
     pricingURLs:
       - https://www.google.com/
   importReviewsFromFacebook:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -98,111 +100,110 @@ features:
     pricingURLs:
       - https://www.facebook.com/
   requestGoogleReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   embedReviewsToWebsite:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   embedTestimonialsToWebsite:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   customizeEmbeds:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   socialMediaShare:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   popupNotifications:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   measureConversions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   phoneSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   designatedExpert:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   formsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: form
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - forms
   textReviewsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 50
     unit: review
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - textReviews
   embedsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: embed
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - embedSurbeysToWebsite
       - embedReviewsToWebsite
       - embedTestimonialsToWebsite
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   emailsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000
     unit: email/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - collectWithEmail
 plans:
-  - name: LIGHT
-    description: ''
+  LIGHT:
+    description: ""
     monthlyPrice: Contact Sales
     unit: /month
     features: null
     usageLimits: null
-    price: Contact Sales
-  - name: PLUS
-    description: ''
+  PLUS:
+    description: ""
     monthlyPrice: Contact Sales
     unit: /month
     features:
@@ -245,9 +246,8 @@ plans:
         value: 5
       emailsLimit:
         value: 1000
-    price: Contact Sales
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     unit: /month
     features:
@@ -281,7 +281,7 @@ plans:
         value: true
       designatedExpert:
         value: true
-    usageLimits:
+    usageLimits: 
       formsLimit:
         value: .inf
       textReviewsLimit:
@@ -292,6 +292,4 @@ plans:
         value: .inf
       emailsLimit:
         value: .inf
-    price: Contact Sales
 addOns: null
-createdAt: '2020-10-31'

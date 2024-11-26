@@ -1,5 +1,6 @@
 saasName: Wrike
 version: '2.0'
+createdAt: '2020-11-23'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -283,7 +284,7 @@ usageLimits:
     linkedFeatures:
       - automationEngine
 plans:
-  - name: FREE
+  FREE:
     description: A simple, shared task list for small teams
     monthlyPrice: 0
     annualPrice: 0
@@ -291,7 +292,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: Full project planning & collaboration
     monthlyPrice: 9.8
     annualPrice: 9.8
@@ -315,7 +316,7 @@ plans:
       useStorage:
         value: 5
     price: 9.8
-  - name: BUSINESS
+  BUSINESS:
     description: Robust work management with customization & exec reporting
     monthlyPrice: 24.8
     annualPrice: 24.8
@@ -365,7 +366,7 @@ plans:
       useStorage:
         value: 50
     price: 24.8
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Comprehensive solution with advanced security & controls
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -434,7 +435,7 @@ plans:
         value: 100
     price: Contact Sales
 addOns:
-  - name: wrikeResource
+  wrikeResource:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -442,7 +443,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeProof
+  wrikeProof:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -450,7 +451,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikePublish
+  wrikePublish:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -458,7 +459,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeAnalyze
+  wrikeAnalyze:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -466,7 +467,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeIntegrate
+  wrikeIntegrate:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -474,7 +475,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeTwoWaySync
+  wrikeTwoWaySync:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -482,11 +483,10 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeLock
+  wrikeLock:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2020-11-23'

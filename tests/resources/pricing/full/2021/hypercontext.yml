@@ -1,227 +1,229 @@
 saasName: HyperContext
-version: '2.0'
+day: 10
+month: 10
+year: 2021
 currency: USD
 hasAnnualPayment: true
 features:
   oneToOneMeetings:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   teamMeetings:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   meetingNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   calendarIntegrationAndSync:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   meetingArchives:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   meetingSearch:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   realTimeCollaboration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   realTimeEmployeesFeedback:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   conversationStarters:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileAttachments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   cloudLinkIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   googleMeetAgendaOverlay:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
-    pricingURLs:
+    pricingURLs: 
       - https://workspace.google.com/pricing
   personalicedHomepage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   markdownEditor:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   privateMeetingScratchpad:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   publicMeetingScratchpad:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   nextSteps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   favoriteItems:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   meetingInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   itemVoting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customPersonalAgendaTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customOrgWideAgendaTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   goalSetting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   milestones:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   okrExampleLibrary:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   largeGroupDiscussions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   99%uptimeSLA:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   adminReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   engagementInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   dedicatedCSM:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   dedicatedQBR:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   guestUsers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   teamTraining:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   teamOnboarding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   googleSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   slackSOO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   microsoftSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   azureSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   emailSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   customSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   googleWorkspace:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -229,7 +231,7 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   googleCalendar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -237,7 +239,7 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   googleMeet:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -245,89 +247,86 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   chromeMeetingExtension:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   slackbot:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
-    pricingURLs:
+    pricingURLs: 
       - https://slack.com/pricing
   microsoftTeams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
-    pricingURLs:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options
+    pricingURLs: 
+      - https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options
   outlookCalendar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
-    pricingURLs:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/outlook/compare-microsoft-outlook-email-plans
+    pricingURLs: 
+      - https://www.microsoft.com/en-us/microsoft-365/outlook/compare-microsoft-outlook-email-plans
   mobileApps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   zapier:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
-    pricingURLs:
+    pricingURLs: 
       - https://zapier.com/pricing
 usageLimits:
   meetingSearchThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 30
     unit: day
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - meetingSearch
   storageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - fileAttachments
       - cloudLinkIntegrations
   payForGuestUsers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - guestUsers
 plans:
-  - name: BASIC
-    description: Best for people who want to take Hypercontext for a spin.
-    monthlyPrice: 0
-    annualPrice: 0
+  BASIC:
+    description: "Best for people who want to take Hypercontext for a spin."
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: person/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PRO
-    description: Best for managers with too much on their plate.
-    monthlyPrice: 7
-    annualPrice: 5.6
+  PRO:
+    description: "Best for managers with too much on their plate."
+    monthlyPrice: 7.0
+    annualPrice: 5.60
     unit: person/month
     features:
       realTimeCollaboration:
@@ -351,11 +350,10 @@ plans:
         value: 1000000000
       storageLimit:
         value: 250
-    price: 7
-  - name: BUSINESS
-    description: Best for standardizing meetings and hitting goals.
-    monthlyPrice: 11
-    annualPrice: 8.8
+  BUSINESS:
+    description: "Best for standardizing meetings and hitting goals."
+    monthlyPrice: 11.0
+    annualPrice: 8.80
     unit: person/month
     features:
       realTimeCollaboration:
@@ -405,9 +403,8 @@ plans:
         value: 1000000000
       payForGuestUsers:
         value: false
-    price: 11
-addOns:
-  - name: customSSO
+addOns: 
+  customSSO:
     availableFor:
       - BUSINESS
     price: Contact Sales
@@ -417,4 +414,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2021-10-09'

@@ -1,159 +1,160 @@
 saasName: Zapier
-version: '2.0'
+day: 13
+month: 11
+year: 2019
 currency: USD
 hasAnnualPayment: true
 features:
   tasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   zaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   singleStepZaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiStepZaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   premiumApps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   filters:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   formatters:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   paths:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   autoReplay:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   folderPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   premierSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   sharedAppConnections:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   sharedWorkspace:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   userProvisioning:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   appsAccessControl:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   samlSingleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   customDataRetention:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   accountCapture:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
-usageLimits:
+usageLimits: 
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   tasksLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: task/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - tasks
   zapsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: zap/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - zaps
   updateTimeThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 15
     unit: min
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - tasks
       - zaps
   premiumAppsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: app
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - premiumApps
 plans:
-  - name: FREE
-    description: Anyone can automate their work. Start with the basics.
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Anyone can automate their work. Start with the basics."
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: /month
     features: null
     usageLimits: null
-    price: 0
-  - name: STARTER
-    description: Unleash the power of automation.
+  STARTER:
+    description: "Unleash the power of automation."
     monthlyPrice: 24.99
     annualPrice: 19.99
     unit: /month
@@ -177,11 +178,10 @@ plans:
         value: 15
       premiumAppsLimit:
         value: 3
-    price: 24.99
-  - name: PROFESSIONAL
-    description: Advanced tools to take your work to the next level.
+  PROFESSIONAL:
+    description: "Advanced tools to take your work to the next level."
     monthlyPrice: 61.25
-    annualPrice: 49
+    annualPrice: 49.0
     unit: /month
     features:
       multiStepZaps:
@@ -207,11 +207,10 @@ plans:
         value: 2
       premiumAppsLimit:
         value: .inf
-    price: 61.25
-  - name: TEAM
-    description: Bring your team together to collaborate on automation.
+  TEAM:
+    description: "Bring your team together to collaborate on automation."
     monthlyPrice: 373.75
-    annualPrice: 299
+    annualPrice: 299.0
     unit: /month
     features:
       multiStepZaps:
@@ -247,11 +246,10 @@ plans:
         value: 1
       premiumAppsLimit:
         value: .inf
-    price: 373.75
-  - name: COMPANY
-    description: Automation plus enterprise-grade features.
+  COMPANY:
+    description: "Automation plus enterprise-grade features."
     monthlyPrice: 748.75
-    annualPrice: 599
+    annualPrice: 599.0
     unit: /month
     features:
       multiStepZaps:
@@ -297,6 +295,4 @@ plans:
         value: 1
       premiumAppsLimit:
         value: .inf
-    price: 748.75
 addOns: null
-createdAt: '2019-11-12'

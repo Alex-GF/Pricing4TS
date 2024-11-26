@@ -1,401 +1,358 @@
 saasName: Microsoft 365 - For Business
-version: '2.0'
+day: 24
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   cloudStorage:
-    description: Store and access files securely in the cloud
+    description: "Store and access files securely in the cloud"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customBusinessEmail:
-    description: Use a custom business email (name@yourbusiness.com)
+    description: "Use a custom business email (name@yourbusiness.com)"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   mailbox:
-    description: Host and administer email with a 50-GB mailbox
+    description: "Host and administer email with a 50-GB mailbox"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   businessClassEmail:
-    description: >-
-      Business-class email on mobile devices, tablets, desktops, and the web
-      with Exchange
+    description: "Business-class email on mobile devices, tablets, desktops, and the web with Exchange"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   sharedCalendars:
-    description: Easily schedule meetings and respond to invitations using shared calendars
+    description: "Easily schedule meetings and respond to invitations using shared calendars"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   calendar:
-    description: >-
-      Manage your calendar, share available meeting times, schedule meetings,
-      and get reminders
+    description: "Manage your calendar, share available meeting times, schedule meetings, and get reminders"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   manageEmail:
-    description: >-
-      Set up new user emails, restore deleted accounts, create custom scripts,
-      and more from anywhere
+    description: "Set up new user emails, restore deleted accounts, create custom scripts, and more from anywhere"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   exchangeOnlineArchiving:
-    description: >-
-      Enable large cloud archive and long-term preservation policies with
-      Exchange Online Archiving
+    description: "Enable large cloud archive and long-term preservation policies with Exchange Online Archiving"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   realTimeCollaboration:
-    description: Collaborate in the same file with real-time coauthoring and editing
+    description: "Collaborate in the same file with real-time coauthoring and editing"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiplatformFileAccess:
-    description: Access your files from your computer, tablet, or phone
+    description: "Access your files from your computer, tablet, or phone"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileStoring:
-    description: Keep your files securely stored, up to date, and accessible across devices
+    description: "Keep your files securely stored, up to date, and accessible across devices"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileSharing:
-    description: Share files with external contacts by providing access or guest links
+    description: "Share files with external contacts by providing access or guest links"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharingManagement:
-    description: >-
-      Securely share documents and send emails so only those with the right
-      permissions can access the information
+    description: "Securely share documents and send emails so only those with the right permissions can access the information"
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   chat:
-    description: >-
-      Chat one-on-one or in a group chat, pin chats, and save messages for quick
-      access
+    description: "Chat one-on-one or in a group chat, pin chats, and save messages for quick access"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   onlineMeetings:
-    description: >-
-      Host secure, organized meetings with audio, video, screen-sharing, and the
-      option to record
+    description: "Host secure, organized meetings with audio, video, screen-sharing, and the option to record"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   microsoftSharePoint:
-    description: >-
-      Create team sites to share information, content, and files throughout your
-      intranet using SharePoint
+    description: "Create team sites to share information, content, and files throughout your intranet using SharePoint"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   audioConferencing:
-    description: Join meetings on the go with a dial-in number using Audio Conferencing
+    description: "Join meetings on the go with a dial-in number using Audio Conferencing"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   emailSpamFilter:
-    description: >-
-      Help protect your business against spam and malware with cloud-based email
-      filtering
+    description: "Help protect your business against spam and malware with cloud-based email filtering"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: FILTERING
   securityStandardsAndPrivacyControls:
-    description: >-
-      Meets key international, regional, and industry-specific standards and
-      terms, with more than 1,000 security and privacy controls
+    description: "Meets key international, regional, and industry-specific standards and terms, with more than 1,000 security and privacy controls"
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   passwordPolicies:
-    description: Manage security threats by creating password policies
+    description: "Manage security threats by creating password policies"
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   securityGroups:
-    description: >-
-      Control access to business information with security groups and custom
-      permissions
+    description: "Control access to business information with security groups and custom permissions"
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   defender:
-    description: Defender for Business
+    description: "Defender for Business"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   microsoftDataProcessor:
-    description: Microsoft acts as a processor for data
+    description: "Microsoft acts as a processor for data"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftDataController:
-    description: Microsoft acts as a controller for data
+    description: "Microsoft acts as a controller for data"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
-  microsoftLists:
-    description: Manage workflow and track important tasks with Microsoft Lists
+  microsoftLists: 
+    description: "Manage workflow and track important tasks with Microsoft Lists"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   microsoftForms:
-    description: >-
-      Quickly and easily create custom surveys and analyze results with
-      Microsoft Forms
+    description: "Quickly and easily create custom surveys and analyze results with Microsoft Forms"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftVisio:
-    description: >-
-      Create, edit, share, and coauthor professional diagrams and flowcharts
-      with Microsoft Visio for the web
+    description: "Create, edit, share, and coauthor professional diagrams and flowcharts with Microsoft Visio for the web"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftBookings:
-    description: >-
-      Streamline client scheduling and manage appointments with Microsoft
-      Bookings
+    description: "Streamline client scheduling and manage appointments with Microsoft Bookings"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   phoneAndOnlineSupport:
-    description: Contact phone and online support anytime
+    description: "Contact phone and online support anytime"
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   uptimeGuarantee:
-    description: Have peace of mind with a financially backed 99% uptime guarantee
+    description: "Have peace of mind with a financially backed 99% uptime guarantee"
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   license:
-    description: Licensed for commercial use
+    description: "Licensed for commercial use"
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   microsoftWordWebApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftExcelWebApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftPowerPointWebApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftOneNoteWebApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftOutlookWebApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   microsoftWordMobileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftExcelMobileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftPowerPointMobileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftOneNoteMobileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftOutlookMobileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   microsoftTeams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   microsoftWordDesktopApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftExcelDesktopApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftPowerPointDesktopApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftOneNoteDesktopApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftOutlookDesktopApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftPublisher:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   microsoftAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   webinars:
-    description: Schedule and host webinars for up to 300 people
+    description: "Schedule and host webinars for up to 300 people"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   webinarInvitationManagement:
-    description: >-
-      Host webinars that include attendee registration pages and email
-      confirmations
+    description: "Host webinars that include attendee registration pages and email confirmations"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   enterpriseGradeEndpointSecurity:
-    description: >-
-      Enable enterprise-grade endpoint security across devices to protect
-      against ransomware and other cyberthreats
+    description: "Enable enterprise-grade endpoint security across devices to protect against ransomware and other cyberthreats"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   emailThreatsProtection:
-    description: >-
-      Help protect against email threats, such as phishing that’s hidden in
-      email attachments and links
+    description: "Help protect against email threats, such as phishing that’s hidden in email attachments and links"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: FILTERING
   informationRightsManagement:
-    description: >-
-      Restrict access to sensitive business information with Information Rights
-      Management
+    description: "Restrict access to sensitive business information with Information Rights Management"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   securityPoliciesApplication:
-    description: >-
-      Apply security policies to help protect work data on company-owned and
-      employee devices
+    description: "Apply security policies to help protect work data on company-owned and employee devices"
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   dataEnvironmentManagement:
-    description: >-
-      Keep company data within approved apps across iOS, Android, and Windows
-      PCs
+    description: "Keep company data within approved apps across iOS, Android, and Windows PCs"
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   remoteInformationRemoval:
-    description: Remotely remove business data from lost or stolen devices
+    description: "Remotely remove business data from lost or stolen devices"
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   preBreachThreatResistance:
-    description: >-
-      Apply policies that provide pre-breach threat resistance in Windows 11 and
-      Windows 10 with attack surface reduction and exploit protection
-      capabilities
+    description: "Apply policies that provide pre-breach threat resistance in Windows 11 and Windows 10 with attack surface reduction and exploit protection capabilities"
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   helpEmployeesSecurelyAccessBusinessApps:
-    description: >-
-      Help employees securely access business apps wherever they work with
-      conditional access, while helping prevent unauthorized access
+    description: "Help employees securely access business apps wherever they work with conditional access, while helping prevent unauthorized access"
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   configureAndDeployAppsAndConfigsForWindows10And11:
-    description: Configure and deploy apps and configurations for Windows 10 and 11
+    description: "Configure and deploy apps and configurations for Windows 10 and 11"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
 usageLimits:
   maxUsers:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 300
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   maxMobileDevices:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: device
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - microsoftWordMobileApp
       - microsoftExcelMobileApp
       - microsoftPowerPointMobileApp
       - microsoftOneNoteMobileApp
       - microsoftOutlookMobileApp
   maxTabletDevices:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: device
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - microsoftWordMobileApp
       - microsoftExcelMobileApp
       - microsoftPowerPointMobileApp
       - microsoftOneNoteMobileApp
       - microsoftOutlookMobileApp
   maxDesktopDevices:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: device
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - microsoftWordDesktopApp
       - microsoftExcelDesktopApp
       - microsoftPowerPointDesktopApp
       - microsoftOneNoteDesktopApp
       - microsoftOutlookDesktopApp
   cloudStorageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000
     unit: GB
@@ -403,42 +360,41 @@ usageLimits:
     linkedFeatures:
       - cloudStorage
   slaMaxUptime:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 99.9
-    unit: '%'
+    unit: "%"
     type: NON_RENEWABLE
     linkedFeatures:
       - uptimeGuarantee
   mailboxMaxCapacity:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 50
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - mailbox
   webinarsMaxLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 300
     unit: people
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - chat
       - onlineMeetings
       - webinars
 plans:
-  - name: APPS_FOR_BUSINESS
-    description: ''
+  APPS_FOR_BUSINESS:
+    description: ""
     monthlyPrice: 9.9
     annualPrice: 8.25
     unit: user/month
     features: null
     usageLimits: null
-    price: 9.9
-  - name: BUSINESS_BASIC
-    description: ''
+  BUSINESS_BASIC:
+    description: ""
     monthlyPrice: 7.2
     annualPrice: 6
     unit: user/month
@@ -490,9 +446,8 @@ plans:
       microsoftAccess:
         value: false
     usageLimits: null
-    price: 7.2
-  - name: BUSINESS_STANDARD
-    description: ''
+  BUSINESS_STANDARD:
+    description: ""
     monthlyPrice: 15
     annualPrice: 12.5
     unit: user/month
@@ -532,9 +487,8 @@ plans:
       webinarInvitationManagement:
         value: true
     usageLimits: null
-    price: 15
-  - name: BUSINESS_PREMIUM
-    description: ''
+  BUSINESS_PREMIUM:
+    description: ""
     monthlyPrice: 26.4
     annualPrice: 22
     unit: user/month
@@ -596,9 +550,8 @@ plans:
       configureAndDeployAppsAndConfigsForWindows10And11:
         value: true
     usageLimits: null
-    price: 26.4
 addOns:
-  - name: defenderForBusiness
+  defenderForBusiness:
     availableFor:
       - BUSINESS_BASIC
       - BUSINESS_STANDARD
@@ -609,7 +562,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: defenderForBusinessServers
+  defenderForBusinessServers:
     availableFor:
       - BUSINESS_PREMIUM
     price: 3
@@ -617,7 +570,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: teamsAudioConferencing
+  teamsAudioConferencing:
     availableFor:
       - BUSINESS_BASIC
       - BUSINESS_STANDARD
@@ -629,4 +582,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2022-11-23'

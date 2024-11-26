@@ -1,5 +1,6 @@
 saasName: Salesforce - SalesCloud
 version: '2.0'
+createdAt: '2019-11-25'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -473,14 +474,14 @@ usageLimits:
     linkedFeatures:
       - fullSandbox
 plans:
-  - name: STARTER
+  STARTER:
     description: Start fast with sales, service, and email outreach tools
     annualPrice: 25
     unit: user/month
     features: null
     usageLimits: null
     price: 25
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: Complete sales solution for any size team
     annualPrice: 75
     unit: user/month
@@ -525,7 +526,7 @@ plans:
         value: true
     usageLimits: null
     price: 75
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Deeply customizable sales CRM for your business
     annualPrice: 150
     unit: user/month
@@ -602,7 +603,7 @@ plans:
       numberOfRecordTypes:
         value: .inf
     price: 150
-  - name: UNLIMITED
+  UNLIMITED:
     description: The ultimate platform for growth
     annualPrice: 300
     unit: user/month
@@ -686,7 +687,7 @@ plans:
         value: 1
     price: 300
 addOns:
-  - name: developerProSandbox
+  developerProSandbox:
     availableFor:
       - PROFESSIONAL
       - ENTERPRISE
@@ -697,7 +698,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: fullSandbox
+  fullSandbox:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -707,7 +708,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: webServicesAPI
+  webServicesAPI:
     availableFor:
       - PROFESSIONAL
     price: 25
@@ -717,4 +718,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2019-11-25'

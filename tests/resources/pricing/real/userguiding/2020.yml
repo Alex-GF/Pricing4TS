@@ -1,5 +1,6 @@
 saasName: UserGuiding
 version: '2.0'
+createdAt: '2020-11-24'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -159,7 +160,7 @@ usageLimits:
     linkedFeatures:
       - customization
 plans:
-  - name: STARTUP
+  STARTUP:
     description: ''
     monthlyPrice: 199
     annualPrice: 165.83
@@ -167,14 +168,12 @@ plans:
     features: null
     usageLimits: null
     price: 199
-  - name: GROWTH
+  GROWTH:
     description: ''
     monthlyPrice: 399
     annualPrice: 332.5
     unit: /month
     features:
-      userGuidingBranding:
-        value: false
       successCoaching:
         value: true
     usaeLimits:
@@ -191,14 +190,12 @@ plans:
       limitedCustomization:
         value: false
     price: 399
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: 999
     annualPrice: 832.5
     unit: /month
     features:
-      userGuidingBranding:
-        value: false
       successCoaching:
         value: true
       customCSS:
@@ -218,8 +215,4 @@ plans:
         value: 1000000000
       activeOnboardingChecklistsLimit:
         value: 1000000000
-      limitedCustomization:
-        value: false
     price: 999
-addOns: null
-createdAt: '2020-11-24'

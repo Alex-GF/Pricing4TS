@@ -103,8 +103,8 @@ describe('Single pricing test', () => {
     );
   });
 
-  const pricingPath = 'tests/resources/pricing/full/2021/evernote.yml';
-  const expected = 'Evernote';
+  const pricingPath = 'tests/resources/pricing/real/salesforce/2019.yml';
+  const expected = 'Salesforce - SalesCloud';
   let pricingService: PricingService | null = null;
   let pricing: Pricing;
 

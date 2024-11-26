@@ -1,5 +1,6 @@
 saasName: Clockify
 version: '2.0'
+createdAt: '2021-11-24'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -244,7 +245,7 @@ usageLimits:
     linkedFeatures:
       - unlimitedReports
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -252,7 +253,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BASIC
+  BASIC:
     description: Administration
     monthlyPrice: 4.99
     annualPrice: 3.99
@@ -280,7 +281,7 @@ plans:
         value: true
     usageLimits: null
     price: 4.99
-  - name: STANDARD
+  STANDARD:
     description: Timesheeting & billing
     monthlyPrice: 6.99
     annualPrice: 5.49
@@ -326,7 +327,7 @@ plans:
         value: true
     usageLimits: null
     price: 6.99
-  - name: PRO
+  PRO:
     description: Profit & Productivity
     monthlyPrice: 9.99
     annualPrice: 7.99
@@ -390,7 +391,7 @@ plans:
         value: true
     usageLimits: null
     price: 9.99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Control & Security
     monthlyPrice: 14.99
     annualPrice: 11.99
@@ -460,5 +461,3 @@ plans:
         value: true
     usageLimits: null
     price: 14.99
-addOns: null
-createdAt: '2021-11-24'

@@ -1,5 +1,6 @@
 saasName: Slack
 version: '2.0'
+createdAt: '2020-10-21'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -249,7 +250,7 @@ usageLimits:
     linkedFeatures:
       - workspaces
 plans:
-  - name: FREE
+  FREE:
     description: For small teams trying Slack for an unlimited period
     monthlyPrice: 0
     annualPrice: 0
@@ -257,7 +258,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: STANDARD
+  STANDARD:
     description: For small and medium-sized businesses
     monthlyPrice: 8
     annualPrice: 6.67
@@ -265,8 +266,6 @@ plans:
     features:
       customSections:
         value: true
-      storageByAccount:
-        value: false
       storageByTeamMember:
         value: true
       slackConnect:
@@ -293,14 +292,12 @@ plans:
       useStorageByTeamMember:
         value: 10
     price: 8
-  - name: PLUS
+  PLUS:
     description: For slightly larger companies or those with advanced administrative needs
     monthlyPrice: 15
     annualPrice: 12.5
     unit: user/month
     features:
-      storageByAccount:
-        value: false
       storageByTeamMember:
         value: true
       customSections:
@@ -343,14 +340,12 @@ plans:
       useStorageByTeamMember:
         value: 20
     price: 15
-  - name: ENTERPRISE_GRID
+  ENTERPRISE_GRID:
     description: For large enterprises or those in regulated industries
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
     features:
-      storageByAccount:
-        value: false
       storageByTeamMember:
         value: true
       customSections:
@@ -408,7 +403,7 @@ plans:
         value: 10000000000000
     price: Contact Sales
 addOns:
-  - name: slackEnterpriseKeys
+  slackEnterpriseKeys:
     availableFor:
       - ENTERPRISE_GRID
     monthlyPrice: Contact Sales
@@ -420,4 +415,3 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: Contact Sales
-createdAt: '2020-10-21'

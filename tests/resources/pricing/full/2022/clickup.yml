@@ -1,465 +1,463 @@
 saasName: ClickUp
-version: '2.0'
+day: 28
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   tasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   spaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   listsPerFolder:
-    description: 100 Lists per Space, includes Lists in Folders
+    description: "100 Lists per Space, includes Lists in Folders"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   foldersPerSpace:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   fileStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   privacy:
-    description: Hide Folders, Lists, or tasks from other users in your Workspace
+    description: "Hide Folders, Lists, or tasks from other users in your Workspace"
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   sharing:
-    description: >-
-      Invite members to private items and invite guests to private or public
-      items
+    description: "Invite members to private items and invite guests to private or public items"
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   guests:
-    description: Invite guests to your Workspace
+    description: "Invite guests to your Workspace"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   guestsPermissions:
-    description: Control what guests can see and do in your Workspace
+    description: "Control what guests can see and do in your Workspace"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   customFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   templateEverything:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   list:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   board:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   calendar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   box:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   gantt:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   activity:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   timeline:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workload:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workloadCustomCapacityAndAdditionalGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   table:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   map:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   mindMaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   whiteboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   doc:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   chat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   form:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   formBrandingAndCustomization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   embed:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customStatuses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customTasksIDs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   superRichEditing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   automations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   multipleActionsInAutomations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   portfolios:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   portfoliosPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   portfoliosSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   futureRecurringTasksOnCalendar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   multipleAssignees:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multitaskToolbar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   taskChecklists:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dependencies:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   whiteLabeling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   relationships:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   tags:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   priorities:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   columnCalculations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   apiCalls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   docTags:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   proofing:
-    description: >-
-      Image & PDF Annotation: Add and assign comments directly to task
-      attachments such as design mockups, PDF documents, and more.
+    description: "Image & PDF Annotation: Add and assign comments directly to task attachments such as design mockups, PDF documents, and more."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   publiclyShare:
-    description: Everything View
+    description: "Everything View"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   inAppVideoRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   emailInClickUp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   teams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   teamSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   teamSharingForSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   guestVisibility:
-    description: Hide Time Tracking, Time Estimates and Tags from guests.
+    description: "Hide Time Tracking, Time Estimates and Tags from guests."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   naturalLanguageProcessing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   smartNotifications:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   assignComments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   delegateReminders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   privateDocs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   cloudStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   tasksInMultipleLists:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   subtasksInMultipleLists:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   goals:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   goalFolders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   dashboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dashboardsWidget:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: NONE
     type: DOMAIN
   timeTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   granularTimeEstimates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   timeInStatus:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   sprints:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sprintPoints:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   pulseLiveOverview:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   pulseLiveOverviewHistoricalData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   milestones:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   homeAndScheduling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workloadProfiles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   everything:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workInProgressLimits:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   customExporting:
-    description: X exports of List Views, Table View and Form View
+    description: "X exports of List Views, Table View and Form View"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   criticalPathAndSlackTime:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   timeTrackingWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   timeTrackingWidgetsBillableReportsAndTimesheets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   nativeIntegrations:
-    description: 50+ Native Integrations
+    description: "50+ Native Integrations"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   timeTrackingNotesLabelsAndBillableTime:
-    description: Notes, labels & billable time
+    description: "Notes, labels & billable time"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   timeSheets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   zapier:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -467,7 +465,7 @@ features:
     pricingUrls:
       - https://zapier.com/app/planbuilder/pricing
   make:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -475,7 +473,7 @@ features:
     pricingURLs:
       - https://www.make.com/en/pricing
   googleDrive:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -483,7 +481,7 @@ features:
     pricingURLs:
       - https://one.google.com/about/plans
   dropbox:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -491,7 +489,7 @@ features:
     pricingURLs:
       - https://www.dropbox.com/plans
   boxCloudStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -499,168 +497,162 @@ features:
     pricingURLs:
       - https://www.box.com/pricing
   oneDriveCloudStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans
+      - https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans
   tableauWebConnector:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   twoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   smsTwoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   requireTwoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   googleSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   microsoftSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   customSamlSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   oktaSSO:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   oktaSupportForCustomRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   sessionManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   hipaaCompliance:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: None
     type: GUARANTEE
   contractAndLegalReview:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: None
     type: SUPPORT
   customPermissions:
-    description: Change the default settings for Guests, Members & Admins
+    description: "Change the default settings for Guests, Members & Admins"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   customRoles:
-    description: Create unique roles to suit your team's needs
+    description: "Create unique roles to suit your team's needs"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   restrictPublicSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   managePrivateSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   restrictWhoCanAddGuests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   defaultPersonalViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   addAndRemoveUsersViaAPI:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   anytimeSupport:
-    description: 24/7 Support
+    description: "24/7 Support"
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   liveChatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   prioritySupport:
-    description: >-
-      Receive an enhanced level of support to quickly resolve your highest
-      priority issues
+    description: "Receive an enhanced level of support to quickly resolve your highest priority issues"
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedCustomerSuccessManager:
-    description: >-
-      Enterprise Plan customers are eligible for receiving a Dedicated Success
-      Manager. Conditions apply.
+    description: "Enterprise Plan customers are eligible for receiving a Dedicated Success Manager. Conditions apply."
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   onboardingTrainingWorkshop:
-    description: >-
-      Live, virtual, workshop-style classroom training delivered by ClickUp
-      Experts.
+    description: "Live, virtual, workshop-style classroom training delivered by ClickUp Experts."
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   adminTrainingWebinar:
-    description: Get exclusive access to our weekly admin training webinar.
+    description: "Get exclusive access to our weekly admin training webinar."
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   accessToManagedServices:
-    description: Add on Admin Services or Enterprise Support for an additional fee
+    description: "Add on Admin Services or Enterprise Support for an additional fee"
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
+
 usageLimits:
   useUsers:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   useTasks:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: task
@@ -668,7 +660,7 @@ usageLimits:
     linkedFeatures:
       - tasks
   useSpaces:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: space
@@ -676,7 +668,7 @@ usageLimits:
     linkedFeatures:
       - spaces
   useListsPerFolder:
-    description: X Lists per Space, includes Lists in Folders
+    description: "X Lists per Space, includes Lists in Folders"
     valueType: NUMERIC
     defaultValue: 100
     unit: list
@@ -684,7 +676,7 @@ usageLimits:
     linkedFeatures:
       - listsPerFolder
   useFoldersPerSpace:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 400
     unit: folder
@@ -692,7 +684,7 @@ usageLimits:
     linkedFeatures:
       - foldersPerSpace
   useCustomViews:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: view
@@ -700,7 +692,7 @@ usageLimits:
     linkedFeatures:
       - customViews
   useFileStorage:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: MB
@@ -708,7 +700,7 @@ usageLimits:
     linkedFeatures:
       - fileStorage
   useGuests:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000
     unit: guest
@@ -716,7 +708,7 @@ usageLimits:
     linkedFeatures:
       - guests
   useGuestsPermissions:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000
     unit: guest
@@ -724,7 +716,7 @@ usageLimits:
     linkedFeatures:
       - guestsPermissions
   useCustomFields:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -732,7 +724,7 @@ usageLimits:
     linkedFeatures:
       - customFields
   useGantt:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -740,7 +732,7 @@ usageLimits:
     linkedFeatures:
       - gantt
   useActivity:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: day
@@ -748,7 +740,7 @@ usageLimits:
     linkedFeatures:
       - activity
   useTimeline:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -756,7 +748,7 @@ usageLimits:
     linkedFeatures:
       - timeline
   useWorkload:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -764,7 +756,7 @@ usageLimits:
     linkedFeatures:
       - workload
   useMap:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -772,7 +764,7 @@ usageLimits:
     linkedFeatures:
       - map
   useMindMaps:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -780,7 +772,7 @@ usageLimits:
     linkedFeatures:
       - mindMaps
   useWhiteboards:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: whiteboard
@@ -788,7 +780,7 @@ usageLimits:
     linkedFeatures:
       - whiteboards
   useChat:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -796,7 +788,7 @@ usageLimits:
     linkedFeatures:
       - chat
   useAutomations:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: automation/month
@@ -804,7 +796,7 @@ usageLimits:
     linkedFeatures:
       - automations
   usePortfolios:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -812,7 +804,7 @@ usageLimits:
     linkedFeatures:
       - portfolios
   useApiCalls:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: call/minute
@@ -820,7 +812,7 @@ usageLimits:
     linkedFeatures:
       - apiCalls
   useDocTags:
-    description: null
+    description:
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -828,7 +820,7 @@ usageLimits:
     linkedFeatures:
       - docTags
   useEmailInClickUp:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -836,7 +828,7 @@ usageLimits:
     linkedFeatures:
       - emailInClickUp
   useEmailAccountsInClickUp:
-    description: The number of email accounts per Workspace
+    description: "The number of email accounts per Workspace"
     valueType: NUMERIC
     defaultValue: 1
     unit: account
@@ -844,7 +836,7 @@ usageLimits:
     linkedFeatures:
       - emailInClickUp
   useTeams:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: team
@@ -852,7 +844,7 @@ usageLimits:
     linkedFeatures:
       - teams
   useTasksInMultipleLists:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: use
@@ -860,7 +852,7 @@ usageLimits:
     linkedFeatures:
       - tasksInMultipleLists
   useSubtasksInMultipleLists:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -868,7 +860,7 @@ usageLimits:
     linkedFeatures:
       - subtasksInMultipleLists
   useGoals:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -876,7 +868,7 @@ usageLimits:
     linkedFeatures:
       - goals
   useDashboards:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -884,7 +876,7 @@ usageLimits:
     linkedFeatures:
       - dashboards
   useSprintPoints:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -892,7 +884,7 @@ usageLimits:
     linkedFeatures:
       - sprintPoints
   usePulseLiveOverview:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -900,7 +892,7 @@ usageLimits:
     linkedFeatures:
       - pulseLiveOverview
   useMilestones:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: use
@@ -908,7 +900,7 @@ usageLimits:
     linkedFeatures:
       - milestones
   useCustomExporting:
-    description: X exports of List View and X exports of Table View
+    description: "X exports of List View and X exports of Table View"
     valueType: NUMERIC
     defaultValue: 5
     unit: export
@@ -916,7 +908,7 @@ usageLimits:
     linkedFeatures:
       - customExporting
   useCriticalPathAndSlackTime:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: use
@@ -924,26 +916,26 @@ usageLimits:
     linkedFeatures:
       - criticalPathAndSlackTime
   useCustomRoles:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: role
     type: NON_RENEWABLE
     linkedFeatures:
       - customRoles
+
 plans:
-  - name: FREE
-    description: Best for personal use
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Best for personal use"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: member/month
     features: null
     usageLimits: null
-    price: 0
-  - name: UNLIMITED
-    description: Best for small teams
-    monthlyPrice: 9
-    annualPrice: 5
+  UNLIMITED:
+    description: "Best for small teams"
+    monthlyPrice: 9.0
+    annualPrice: 5.0
     unit: member/month
     features:
       guestsPermissions:
@@ -1007,11 +999,10 @@ plans:
         value: 1000000000
       useDashboards:
         value: 1000000000
-    price: 9
-  - name: BUSINESS
-    description: Best for mid-sized teams
-    monthlyPrice: 19
-    annualPrice: 12
+  BUSINESS:
+    description: "Best for mid-sized teams"
+    monthlyPrice: 19.0
+    annualPrice: 12.0
     unit: member/month
     features:
       guestsPermissions:
@@ -1129,11 +1120,10 @@ plans:
         value: 1000000000
       useCriticalPathAndSlackTime:
         value: 1000000000
-    price: 19
-  - name: BUSINESS_PLUS
-    description: Best for multiple teams
-    monthlyPrice: 29
-    annualPrice: 19
+  BUSINESS_PLUS:
+    description: "Best for multiple teams"
+    monthlyPrice: 29.0
+    annualPrice: 19.0
     unit: member/month
     features:
       guestsPermissions:
@@ -1273,9 +1263,8 @@ plans:
         value: 1000000000
       useCriticalPathAndSlackTime:
         value: 1000000000
-    price: 29
-  - name: ENTERPRISE
-    description: Best for many large teams
+  ENTERPRISE:
+    description: "Best for many large teams"
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: member/month
@@ -1453,9 +1442,9 @@ plans:
         value: 1000000000
       useCustomRoles:
         value: 1000000000
-    price: Contact Sales
+
 addOns:
-  - name: extraEmailAccountInClickUp
+  extraEmailAccountInClickUp:
     availableFor:
       - UNLIMITED
       - BUSINESS
@@ -1469,5 +1458,3 @@ addOns:
     usageLimitsExtensions:
       useEmailAccountsInClickUp:
         value: 1
-    price: 2
-createdAt: '2022-11-27'

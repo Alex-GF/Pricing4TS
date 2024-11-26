@@ -1,5 +1,6 @@
 saasName: Box
 version: '2.0'
+createdAt: '2020-11-28'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -258,14 +259,12 @@ usageLimits:
     description: ''
     valueType: NUMERIC
     defaultValue: 3
-    unit: users
     type: NON_RENEWABLE
     linkedFeatures: null
   maxUsers:
     description: ''
     valueType: NUMERIC
     defaultValue: 10
-    unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   apiCallsLimit:
@@ -277,14 +276,14 @@ usageLimits:
     linkedFeatures:
       - boxApi
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 5
     unit: user/month
     features: null
     usageLimits: null
     price: 5
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 15
     unit: user/month
@@ -317,7 +316,7 @@ plans:
       apiCallsLimit:
         value: 50000
     price: 15
-  - name: BUSINESS_PLUS
+  BUSINESS_PLUS:
     description: ''
     monthlyPrice: 25
     unit: user/month
@@ -380,7 +379,7 @@ plans:
       apiCallsLimit:
         value: 50000
     price: 25
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     unit: user/month
@@ -455,5 +454,3 @@ plans:
       apiCallsLimit:
         value: 100000
     price: Contact Sales
-addOns: null
-createdAt: '2020-11-28'

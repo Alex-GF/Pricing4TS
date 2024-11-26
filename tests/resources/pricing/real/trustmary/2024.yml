@@ -1,5 +1,6 @@
-saasName: TrustMary - Collect
+saasName: Trustmary - Collect
 version: '2.0'
+createdAt: '2024-07-14'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -285,7 +286,7 @@ usageLimits:
     linkedFeatures:
       - reviewPlatform
 plans:
-  - name: SOLO
+  SOLO:
     description: Essentials to get more reviews and feedback
     monthlyPrice: 0
     annualPrice: 0
@@ -293,7 +294,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: STARTER
+  STARTER:
     description: For smaller teams, more responses and automations
     monthlyPrice: 29
     annualPrice: 24
@@ -333,7 +334,7 @@ plans:
       reviewPlatformConnectionsLimit:
         value: 3
     price: 29
-  - name: BUSINESS
+  BUSINESS:
     description: The best Collect plan for growing companies
     monthlyPrice: 79
     annualPrice: 65
@@ -379,7 +380,7 @@ plans:
       reviewPlatformConnectionsLimit:
         value: 10
     price: 79
-  - name: SCALE
+  SCALE:
     description: ''
     monthlyPrice: 159
     annualPrice: 132
@@ -426,7 +427,7 @@ plans:
         value: 25
     price: 159
 addOns:
-  - name: onboardingPackageAddOn
+  onboardingPackageAddOn:
     availableFor:
       - SOLO
       - STARTER
@@ -439,4 +440,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-14'

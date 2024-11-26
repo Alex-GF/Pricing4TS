@@ -1,5 +1,6 @@
 saasName: Canva
 version: '2.0'
+createdAt: '2019-09-05'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -116,7 +117,7 @@ usageLimits:
     linkedFeatures:
       - folders
 plans:
-  - name: FREE
+  FREE:
     description: Everything you need to start designing
     monthlyPrice: 0
     annualPrice: 0
@@ -124,7 +125,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: >-
       Designing together just got better. Professional design made easy with
       unlimited access to premium tools and content.
@@ -155,7 +156,7 @@ plans:
       foldersLimit:
         value: 1000000000
     price: 12.95
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: >-
       Empower your team, manage your brand, and scale your content all in one
       place
@@ -196,5 +197,3 @@ plans:
       foldersLimit:
         value: 1000000000
     price: Contact Sales
-addOns: null
-createdAt: '2019-09-05'

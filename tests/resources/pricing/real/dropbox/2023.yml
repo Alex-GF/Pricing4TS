@@ -1,5 +1,6 @@
 saasName: Dropbox
 version: '2.0'
+createdAt: '2023-12-02'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -266,6 +267,11 @@ features:
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
+  advancedPdfEditing:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: false
+    type: DOMAIN
   annotatePDFs:
     description: ''
     valueType: BOOLEAN
@@ -501,13 +507,6 @@ usageLimits:
     type: NON_RENEWABLE
     linkedFeatures:
       - largeFileDelivery
-  advancedPdfEditing:
-    description: ''
-    valueType: BOOLEAN
-    defaultValue: false
-    type: NON_RENEWABLE
-    linkedFeatures:
-      - pdfEditing
   apiAccessToDataTransportPlatformPartnersLimit:
     description: ''
     valueType: NUMERIC
@@ -517,14 +516,14 @@ usageLimits:
     linkedFeatures:
       - apiAccessToDataTransportPlatformPartners
 plans:
-  - name: PLUS
+  PLUS:
     description: ''
     monthlyPrice: 9.99
     unit: /month
     features: null
     usageLimits: null
     price: 9.99
-  - name: ESSENTIALS
+  ESSENTIALS:
     description: ''
     monthlyPrice: 16.58
     unit: /month
@@ -551,6 +550,8 @@ plans:
         value: true
       viewerHistory:
         value: true
+      advancedPdfEditing:
+        value: true
     usageLimits:
       storageLimit:
         value: 3000
@@ -572,10 +573,8 @@ plans:
         value: 10
       largeFileDeliveryLimit:
         value: 100
-      advancedPdfEditing:
-        value: true
     price: 16.58
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 15
     unit: user/month
@@ -640,6 +639,8 @@ plans:
         value: true
       phoneSupportDuringBusinessHours:
         value: true
+      advancedPdfEditing:
+        value: true
     usageLimits:
       storageLimit:
         value: 9000
@@ -663,10 +664,8 @@ plans:
         value: 10
       largeFileDeliveryLimit:
         value: 100
-      advancedPdfEditing:
-        value: true
     price: 15
-  - name: BUSINESS_PLUS
+  BUSINESS_PLUS:
     description: ''
     monthlyPrice: 24
     unit: user/month
@@ -737,6 +736,8 @@ plans:
         value: true
       phoneSupportDuringBusinessHours:
         value: true
+      advancedPdfEditing:
+        value: true
     usageLimits:
       storageLimit:
         value: .inf
@@ -760,8 +761,4 @@ plans:
         value: .inf
       largeFileDeliveryLimit:
         value: 250
-      advancedPdfEditing:
-        value: true
     price: 24
-addOns: null
-createdAt: '2023-12-02'

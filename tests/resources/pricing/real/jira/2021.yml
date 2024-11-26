@@ -1,5 +1,6 @@
 saasName: Jira
 version: '2.0'
+createdAt: '2021-09-24'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -223,14 +224,14 @@ usageLimits:
     linkedFeatures:
       - automation
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     unit: user/month
     features: null
     usageLimits: null
     price: 0
-  - name: STANDARD
+  STANDARD:
     description: ''
     monthlyPrice: 7
     unit: user/month
@@ -253,7 +254,7 @@ plans:
       storageLimit:
         value: 250
     price: 7
-  - name: PREMIUM
+  PREMIUM:
     description: ''
     monthlyPrice: 14
     unit: user/month
@@ -298,7 +299,7 @@ plans:
       projectWithAutomationsLimit:
         value: .inf
     price: 14
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     unit: user/month
@@ -352,7 +353,7 @@ plans:
         value: .inf
     price: Contact Sales
 addOns:
-  - name: atlassianAccessAddOn
+  atlassianAccessAddOn:
     availableFor:
       - FREE
       - STANDARD
@@ -364,4 +365,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2021-09-24'

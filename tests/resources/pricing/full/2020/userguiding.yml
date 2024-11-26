@@ -1,175 +1,176 @@
 saasName: UserGuiding
-version: '2.0'
+day: 25
+month: 11
+year: 2020
 currency: USD
 hasAnnualPayment: true
 features:
   users:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   userGuidingBranding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   teams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   guides:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   hotspots:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   onboardingChecklist:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   npsSurveys:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   personalization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   segmentation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   userIdentification:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   userGuidingAPI:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   usageAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   usageReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   integrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   successCoaching:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   customCSS:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   sla:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
-usageLimits:
+usageLimits: 
   activeUsersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 20000
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   teamMembersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: member
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - teams
   activeGuidesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: guide
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - guides
   activeHotspotsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: hotspot
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - hotspots
   activeOnboardingChecklistsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: checklist
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - onboardingChecklist
   limitedCustomization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - customization
 plans:
-  - name: STARTUP
-    description: ''
-    monthlyPrice: 199
+  STARTUP:
+    description: ""
+    monthlyPrice: 199.0
     annualPrice: 165.83
     unit: /month
     features: null
     usageLimits: null
-    price: 199
-  - name: GROWTH
-    description: ''
-    monthlyPrice: 399
+  GROWTH:
+    description: ""
+    monthlyPrice: 399.0
     annualPrice: 332.5
     unit: /month
     features:
@@ -190,10 +191,9 @@ plans:
         value: 1000000000
       limitedCustomization:
         value: false
-    price: 399
-  - name: ENTERPRISE
-    description: ''
-    monthlyPrice: 999
+  ENTERPRISE:
+    description: ""
+    monthlyPrice: 999.0
     annualPrice: 832.5
     unit: /month
     features:
@@ -220,6 +220,4 @@ plans:
         value: 1000000000
       limitedCustomization:
         value: false
-    price: 999
 addOns: null
-createdAt: '2020-11-24'

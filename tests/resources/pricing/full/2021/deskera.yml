@@ -1,153 +1,154 @@
 saasName: Deskera
-version: '2.0'
+day: 14
+month: 10
+year: 2021
 currency: USD
 hasAnnualPayment: true
 features:
   allInOneDashboard:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createInvoices:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createBills:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   connectYourBanks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   runPayroll:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createSalesPipelines:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   emailMarketing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   accessToHelpCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   deskeraAcademy:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   noCodeLandingPages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiCurrency:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   applyLeaves:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   approveLeaves:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   dragAndDropCustomForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   addCustomFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   completeInventoryManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   applyExpenses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   approveExpenses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   salesAutomation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   automateTasksOnDealStages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
-usageLimits:
+usageLimits: 
   invoiceAndBillsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 30
     unit: invoices/bills
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - createInvoices
       - createBills
   runPayrollLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 15
     unit: employee
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - runPayroll
 plans:
-  - name: STARTUP
-    description: ''
-    monthlyPrice: 35
-    annualPrice: 29
+  STARTUP:
+    description: ""
+    monthlyPrice: 35.0
+    annualPrice: 29.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 35
-  - name: ESSENTIAL
-    description: ''
-    monthlyPrice: 58
-    annualPrice: 49
+  ESSENTIAL:
+    description: ""
+    monthlyPrice: 58.0
+    annualPrice: 49.0
     unit: user/month
     features:
       multiCurrency:
@@ -163,11 +164,10 @@ plans:
         value: .inf
       runPayrollLimit:
         value: 30
-    price: 58
-  - name: PROFESSIONAL
-    description: ''
-    monthlyPrice: 119
-    annualPrice: 99
+  PROFESSIONAL:
+    description: ""
+    monthlyPrice: 119.0
+    annualPrice: 99.0
     unit: user/month
     features:
       multiCurrency:
@@ -195,6 +195,4 @@ plans:
         value: .inf
       runPayrollLimit:
         value: 100
-    price: 119
 addOns: null
-createdAt: '2021-10-13'

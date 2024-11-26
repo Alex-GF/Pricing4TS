@@ -1,5 +1,6 @@
 saasName: Pumble
 version: '2.0'
+createdAt: '2024-07-15'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -257,7 +258,7 @@ usageLimits:
     linkedFeatures:
       - integrations
 plans:
-  - name: FREE
+  FREE:
     description: Communication
     monthlyPrice: 0
     annualPrice: 0
@@ -265,7 +266,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: Organization
     monthlyPrice: 2.99
     annualPrice: 2.49
@@ -273,8 +274,6 @@ plans:
     features:
       messageSchedule:
         value: true
-      fileStoragePerAccount:
-        value: false
       fileStoragePerUser:
         value: true
       customizableSections:
@@ -291,7 +290,7 @@ plans:
       useIntegrations:
         value: 10
     price: 2.99
-  - name: BUSINESS
+  BUSINESS:
     description: Administration
     monthlyPrice: 4.99
     annualPrice: 3.99
@@ -299,8 +298,6 @@ plans:
     features:
       messageSchedule:
         value: true
-      fileStoragePerAccount:
-        value: false
       fileStoragePerUser:
         value: true
       customizableSections:
@@ -327,7 +324,7 @@ plans:
       useIntegrations:
         value: 1000000000
     price: 4.99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Control & Security
     monthlyPrice: 7.99
     annualPrice: 6.99
@@ -335,8 +332,6 @@ plans:
     features:
       messageSchedule:
         value: true
-      fileStoragePerAccount:
-        value: false
       fileStoragePerUser:
         value: true
       customizableSections:
@@ -367,5 +362,3 @@ plans:
       useIntegrations:
         value: 1000000000
     price: 7.99
-addOns: null
-createdAt: '2024-07-15'

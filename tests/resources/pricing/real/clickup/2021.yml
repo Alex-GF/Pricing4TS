@@ -1,5 +1,6 @@
 saasName: ClickUp
 version: '2.0'
+createdAt: '2021-11-01'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -877,7 +878,7 @@ usageLimits:
     linkedFeatures:
       - customRoles
 plans:
-  - name: FREE
+  FREE:
     description: Best for personal use
     monthlyPrice: 0
     annualPrice: 0
@@ -885,7 +886,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: UNLIMITED
+  UNLIMITED:
     description: Best for small teams
     monthlyPrice: 9
     annualPrice: 5
@@ -951,7 +952,7 @@ plans:
       useDashboards:
         value: 1000000000
     price: 9
-  - name: BUSINESS
+  BUSINESS:
     description: Best for mid-sized teams
     monthlyPrice: 19
     annualPrice: 9
@@ -1067,7 +1068,7 @@ plans:
       useCriticalPathAndSlackTime:
         value: 1000000000
     price: 19
-  - name: BUSINESS_PLUS
+  BUSINESS_PLUS:
     description: Best for multiple teams
     monthlyPrice: 29
     annualPrice: 19
@@ -1195,7 +1196,7 @@ plans:
       useCriticalPathAndSlackTime:
         value: 1000000000
     price: 29
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Best for many large teams
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -1360,7 +1361,7 @@ plans:
         value: 1000000000
     price: Contact Sales
 addOns:
-  - name: extraEmailAccountInClickUp
+  extraEmailAccountInClickUp:
     availableFor:
       - UNLIMITED
       - BUSINESS
@@ -1375,4 +1376,3 @@ addOns:
       useEmailAccountsInClickUp:
         value: 1
     price: 2
-createdAt: '2021-11-01'

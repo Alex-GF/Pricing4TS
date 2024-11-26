@@ -1,134 +1,136 @@
 saasName: Postman
-version: '2.0'
+day: 30
+month: 11
+year: 2021
 currency: USD
 hasAnnualPayment: true
 features:
   collaboration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   rolesAndPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   userGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   privateWorkspaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   apis:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   integrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   postmanAPI:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   publicApiDocumentation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   apiMockServer:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   apiMonitoringCalls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   recoverDeletedCollections:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customDomains:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   staticIpAddresses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   auditLogs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   reporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   userProvisioning:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   domainCapture:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   trainingAndOnboarding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   priorityEmailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   paymentOptions:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue:
       - CARD
     type: PAYMENT
   standardEULA:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   customEULA:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
 usageLimits:
   teamMembersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: member
@@ -136,7 +138,7 @@ usageLimits:
     linkedFeatures:
       - collaboration
   maxNumberOfIntegrations:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: integration
@@ -144,7 +146,7 @@ usageLimits:
     linkedFeatures:
       - integrations
   callsToPostmanApi:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000
     unit: call/month
@@ -152,7 +154,7 @@ usageLimits:
     linkedFeatures:
       - postmanAPI
   apiMockServerCallsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000
     unit: call/month
@@ -160,7 +162,7 @@ usageLimits:
     linkedFeatures:
       - apiMockServer
   apiMonitoringCallsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000
     unit: call/month
@@ -168,7 +170,7 @@ usageLimits:
     linkedFeatures:
       - apiMockServer
   customDomainsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: domain
@@ -176,7 +178,7 @@ usageLimits:
     linkedFeatures:
       - customDomains
   recoverDeletedCollectionsThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: day
@@ -184,20 +186,19 @@ usageLimits:
     linkedFeatures:
       - recoverDeletedCollections
 plans:
-  - name: FREE
-    description: ''
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: ""
+    monthlyPrice: 0.00
+    annualPrice: 0.00
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: TEAM
-    description: ''
-    monthlyPrice: 15
-    annualPrice: 12
+  TEAM:
+    description: ""
+    monthlyPrice: 15.00
+    annualPrice: 12.00
     unit: user/month
-    features:
+    features: 
       customDomains:
         value: true
     usageLimits:
@@ -215,11 +216,10 @@ plans:
         value: 1
       recoverDeletedCollectionsThreshold:
         value: 30
-    price: 15
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 30
-    annualPrice: 24
+  BUSINESS:
+    description: ""
+    monthlyPrice: 30.00
+    annualPrice: 24.00
     unit: user/month
     features:
       singleSignOn:
@@ -249,11 +249,10 @@ plans:
         value: 5
       recoverDeletedCollectionsThreshold:
         value: 90
-    price: 30
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: null
-    annualPrice: 69
+    annualPrice: 69.00
     unit: user/month
     features:
       singleSignOn:
@@ -302,9 +301,8 @@ plans:
         value: 25
       recoverDeletedCollectionsThreshold:
         value: 90
-    price: 69
 addOns:
-  - name: monitoringPayAsYouGo
+  monitoringPayAsYouGo:
     availableFor:
       - FREE
       - TEAM
@@ -316,20 +314,20 @@ addOns:
     usageLimitsExtensions:
       apiMonitoringCallsLimit:
         value: 1000
-  - name: monitoringMonthly
+  monitoringMonthly:
     availableFor:
       - FREE
       - TEAM
       - BUSINESS
       - ENTERPRISE
-    price: 20
+    price: 20.0
     unit: block/month
     features: null
     usageLimits: null
     usageLimitsExtensions:
       apiMonitoringCallsLimit:
         value: 50000
-  - name: mockServersPayAsYouGo
+  mockServersPayAsYouGo:
     availableFor:
       - FREE
       - TEAM
@@ -341,29 +339,28 @@ addOns:
     usageLimitsExtensions:
       apiMockServerCallsLimit:
         value: 1000
-  - name: mockServersMonthly
+  mockServersMonthly:
     availableFor:
       - FREE
       - TEAM
       - BUSINESS
       - ENTERPRISE
-    price: 20
+    price: 20.0
     unit: block/month
     features: null
     usageLimits: null
     usageLimitsExtensions:
       apiMockServerCallsLimit:
         value: 50000
-  - name: customDomains
+  customDomains:
     availableFor:
       - TEAM
       - BUSINESS
       - ENTERPRISE
-    price: 10
+    price: 10.00
     unit: domain/month
     features: null
     usageLimits: null
     usageLimitsExtensions:
       customDomainsLimit:
         value: 1
-createdAt: '2021-11-29'

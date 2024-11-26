@@ -1,252 +1,241 @@
 saasName: Tableau
-version: '2.0'
+day: 29
+month: 11
+year: 2023
 currency: USD
 hasAnnualPayment: true
 features:
   manageUserPermissions:
-    description: Manage site roles, content ownership, and user permissions.
+    description: "Manage site roles, content ownership, and user permissions."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   curateDataSources:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   shareDataSources:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   manageContent:
-    description: Manage projects and workbooks.
+    description: "Manage projects and workbooks."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   certifyDataSources:
-    description: Manage data sources certification
+    description: "Manage data sources certification"
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   authorFromCuratedData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   viewLineageAndImpact:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   setDataQualityWarnings:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   advancedDeploymentMonitoring:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   programmaticContentMigration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   interactWithVisualizations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   interactWithDashboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createCustomViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   shareCustomViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   downloadVisualizationAsImages:
-    description: >-
-      Download a snapshot of a visualization or dashboard as either a .pdf or
-      .png file.
+    description: "Download a snapshot of a visualization or dashboard as either a .pdf or .png file."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   downloadSummaryData:
-    description: Download only the aggregate data used by the visualization or dashboard.
+    description: "Download only the aggregate data used by the visualization or dashboard."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   downloadFullData:
-    description: Download the full data set associated with the visualization or dashboard.
+    description: "Download the full data set associated with the visualization or dashboard."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   seeDataQualityWarnings:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   consumePredictiveModels:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   commentOnDashboard:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   commentOnVisualization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createASubscriptionForYourself:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   receiveDataDrivenAlerts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   createSubscriptionsForOthers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   createDataDrivenAlerts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   editExistingWorkbooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   editExistingVisualizations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   createAndPublishNewWorkbookFromExistingDataSource:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   askData:
-    description: >-
-      Explore an existing data source published to Tableau Server or Tableau
-      Online with Ask Data.
+    description: "Explore an existing data source published to Tableau Server or Tableau Online with Ask Data."
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   createAndPublishNewWorkbookFromNewDataSources:
-    description: >-
-      Create and share content by connecting to a new data source, including raw
-      data. You're not restricted to existing, published data sources.
+    description: "Create and share content by connecting to a new data source, including raw data. You're not restricted to existing, published data sources."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   createAndPublishNewDataSources:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   createNewWorkbooksBasedOnPreBuiltDashboardStarters:
-    description: >-
-      Dashboard Starters allow you to connect prebuilt dashboards to common
-      enterprise applications.
+    description: "Dashboard Starters allow you to connect prebuilt dashboards to common enterprise applications."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   createNewDataFlows:
-    description: Combine, shape and clean data, and save the process as a data flow.
+    description: "Combine, shape and clean data, and save the process as a data flow."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   editDataFlow:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   exportData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   publishFlows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   runFlows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   scheduleFlows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   monitorFlowPerformance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   monitorFlowHealth:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
 usageLimits:
   flowsLimit:
-    description: The maximum number of flows that can be created and run by a user.
+    description: "The maximum number of flows that can be created and run by a user."
     valueType: NUMERIC
     defaultValue: 0
     unit: flow
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - runFlows
 plans:
-  - name: VIEWER
-    description: >-
-      View and interact with dashboards and visualizations in a secure,
-      easy-to-use platform.
+  VIEWER:
+    description: "View and interact with dashboards and visualizations in a secure, easy-to-use platform."
     monthlyPrice: null
-    annualPrice: 15
+    annualPrice: 15.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 15
-  - name: EXPLORER
-    description: >-
-      Explore trusted data and answer your own questions faster with full
-      self-service analytics.
+  EXPLORER:
+    description: "Explore trusted data and answer your own questions faster with full self-service analytics."
     monthlyPrice: null
-    annualPrice: 42
+    annualPrice: 42.0
     unit: user/month
     features:
       manageUserPermissions:
@@ -274,13 +263,10 @@ plans:
       createAndPublishNewWorkbookFromExistingDataSource:
         value: true
     usageLimits: null
-    price: 42
-  - name: CREATOR
-    description: >-
-      Discover insights with a powerful suite of products that support your
-      end-to-end analytics workflow.
+  CREATOR:
+    description: "Discover insights with a powerful suite of products that support your end-to-end analytics workflow."
     monthlyPrice: null
-    annualPrice: 75
+    annualPrice: 75.0
     unit: user/month
     features:
       manageUserPermissions:
@@ -330,9 +316,8 @@ plans:
     usageLimits:
       flowsLimit:
         value: 1
-    price: 75
 addOns:
-  - name: dataManagementViewer
+  dataManagementViewer:
     availableFor:
       - VIEWER
     price: Contact Sales
@@ -344,7 +329,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: dataManagementExplorer
+  dataManagementExplorer:
     availableFor:
       - EXPLORER
     price: Contact Sales
@@ -360,7 +345,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: dataManagementCreator
+  dataManagementCreator:
     availableFor:
       - CREATOR
     price: Contact Sales
@@ -380,7 +365,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: advancedManagement
+  advancedManagement:
     availableFor:
       - CREATOR
     price: Contact Sales
@@ -392,7 +377,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: einsteinDiscovery
+  einsteinDiscovery:
     availableFor:
       - VIEWER
       - EXPLORER
@@ -404,4 +389,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2023-11-28'

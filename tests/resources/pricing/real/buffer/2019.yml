@@ -1,5 +1,6 @@
 saasName: Buffer - Publish
 version: '2.0'
+createdAt: '2019-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -263,7 +264,7 @@ usageLimits:
     linkedFeatures:
       - postsReport
 plans:
-  - name: PRO
+  PRO:
     description: Ideal for getting started
     monthlyPrice: 15
     annualPrice: 12
@@ -271,7 +272,7 @@ plans:
     features: null
     usageLimits: null
     price: 15
-  - name: PREMIUM
+  PREMIUM:
     description: Ideal for growing brands
     monthlyPrice: 65
     annualPrice: 56
@@ -299,7 +300,7 @@ plans:
       postsReportTemporalThreshold:
         value: 10000000
     price: 65
-  - name: BUSINESS
+  BUSINESS:
     description: Ideal for larger teams
     monthlyPrice: 99
     annualPrice: 85
@@ -329,5 +330,3 @@ plans:
       postsReportTemporalThreshold:
         value: 10000000
     price: 99
-addOns: null
-createdAt: '2019-11-29'

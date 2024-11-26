@@ -1,5 +1,6 @@
 saasName: Quip
 version: '2.0'
+createdAt: '2020-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -97,9 +98,8 @@ features:
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
-usageLimits: null
 plans:
-  - name: STARTER
+  STARTER:
     description: Powerful collaboration for your team or small business.
     monthlyPrice: 12
     annualPrice: 10
@@ -107,7 +107,7 @@ plans:
     features: null
     usageLimits: null
     price: 12
-  - name: PLUS
+  PLUS:
     description: Secure productivity platform for large and complex teams.
     monthlyPrice: null
     annualPrice: 25
@@ -123,7 +123,7 @@ plans:
         value: true
     usageLimits: null
     price: 25
-  - name: SALESFORCE_ANYWHERE_ADVANCED
+  SALESFORCE_ANYWHERE_ADVANCED:
     description: >-
       Real-time alerts and collaboration inside Salesforce for sales and service
       teams.
@@ -151,5 +151,3 @@ plans:
         value: true
     usageLimits: null
     price: 75
-addOns: null
-createdAt: '2020-11-29'

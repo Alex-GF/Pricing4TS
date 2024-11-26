@@ -1,5 +1,6 @@
 saasName: Slack
 version: '2.0'
+createdAt: '2019-10-30'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -193,7 +194,7 @@ usageLimits:
     linkedFeatures:
       - storageByTeamMember
 plans:
-  - name: FREE
+  FREE:
     description: For small teams that want to try Slack for an unlimited period.
     monthlyPrice: 0
     annualPrice: 0
@@ -201,7 +202,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: STANDARD
+  STANDARD:
     description: >-
       For teams and businesses that want to make Slack the center of their
       projects and communications.
@@ -229,8 +230,6 @@ plans:
         value: true
       outlinedMessages:
         value: true
-      storageByAccount:
-        value: false
       storageByTeamMember:
         value: true
       support:
@@ -243,7 +242,7 @@ plans:
       useVoiceAndVideoCalls:
         value: 15
     price: 8
-  - name: PLUS
+  PLUS:
     description: >-
       For businesses that need single sign-on, data export, and guaranteed
       uptime in a single Slack workspace.
@@ -283,8 +282,6 @@ plans:
         value: true
       outlinedMessages:
         value: true
-      storageByAccount:
-        value: false
       storageByTeamMember:
         value: true
       support:
@@ -301,5 +298,3 @@ plans:
       useStorageByTeamMember:
         value: 20
     price: 15
-addOns: null
-createdAt: '2019-10-30'

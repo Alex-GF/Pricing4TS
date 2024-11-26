@@ -1,5 +1,6 @@
 saasName: Evernote
 version: '2.0'
+createdAt: '2020-11-29'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -295,14 +296,14 @@ usageLimits:
     type: RENEWABLE
     linkedFeatures: null
 plans:
-  - name: BASIC
+  BASIC:
     description: TAKE GREAT NOTES.
     monthlyPrice: 0
     unit: /month
     features: null
     usageLimits: null
     price: 0
-  - name: PREMIUM
+  PREMIUM:
     description: BE MORE PRODUCTIVE.
     monthlyPrice: 7.99
     unit: /month
@@ -337,7 +338,7 @@ plans:
       globalMonthlyUploadLimit:
         value: 10240
     price: 7.99
-  - name: BUSINESS
+  BUSINESS:
     description: COLLABORATE ACROSS YOUR COMPANY.
     monthlyPrice: 14.99
     unit: user/month
@@ -386,5 +387,3 @@ plans:
       monthlyUploadLimitByUser:
         value: 2048
     price: 14.99
-addOns: null
-createdAt: '2020-11-29'

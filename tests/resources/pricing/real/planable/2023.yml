@@ -1,5 +1,6 @@
 saasName: Planable
 version: '2.0'
+createdAt: '2023-10-20'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -236,7 +237,7 @@ usageLimits:
     linkedFeatures:
       - versionHistory
 plans:
-  - name: FREE
+  FREE:
     description: For anyone wanting to test Planable out
     monthlyPrice: 0
     annualPrice: 0
@@ -270,17 +271,15 @@ plans:
       versionHistoryThreshold:
         value: 1000000
     price: 0
-  - name: BASIC
+  BASIC:
     description: For businesses getting started with social media
     monthlyPrice: 13
     annualPrice: 11
     unit: user/month
-    features:
-      publishTweets:
-        value: false
+    features: null
     usageLimits: null
     price: 13
-  - name: PRO
+  PRO:
     description: For growing social media teams
     monthlyPrice: 26
     annualPrice: 22
@@ -310,7 +309,7 @@ plans:
       versionHistoryThreshold:
         value: 30
     price: 26
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For large social media teams wanting to scale
     monthlyPrice: Custom
     annualPrice: Custom
@@ -361,7 +360,7 @@ plans:
         value: 1000000
     price: Custom
 addOns:
-  - name: extraWorkspace
+  extraWorkspace:
     description: Add an extra workspace to your account.
     availableFor:
       - BASIC
@@ -375,4 +374,3 @@ addOns:
       workspacesLimit:
         value: 1
     price: 20
-createdAt: '2023-10-20'

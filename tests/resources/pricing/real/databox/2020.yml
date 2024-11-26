@@ -1,5 +1,6 @@
 saasName: Databox
 version: '2.0'
+createdAt: '2020-11-30'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -210,7 +211,7 @@ usageLimits:
     linkedFeatures:
       - historicalData
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -218,7 +219,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BASIC
+  BASIC:
     description: ''
     monthlyPrice: 59
     annualPrice: 49
@@ -236,7 +237,7 @@ plans:
       databoardsLimit:
         value: 10
     price: 59
-  - name: PLUS
+  PLUS:
     description: ''
     monthlyPrice: 119
     annualPrice: 99
@@ -262,7 +263,7 @@ plans:
       historicalDataThreshold:
         value: 24
     price: 119
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 299
     annualPrice: 248
@@ -292,5 +293,3 @@ plans:
       historicalDataThreshold:
         value: 1000000000
     price: 299
-addOns: null
-createdAt: '2020-11-30'

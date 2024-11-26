@@ -1,5 +1,6 @@
 saasName: Evernote
 version: '2.0'
+createdAt: '2024-07-06'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -249,7 +250,7 @@ usageLimits:
     linkedFeatures:
       - externalCalendars
 plans:
-  - name: FREE
+  FREE:
     description: Capture ideas and find them quickly
     monthlyPrice: 0
     annualPrice: 0
@@ -257,7 +258,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PERSONAL
+  PERSONAL:
     description: Keep home and family on track
     monthlyPrice: 12.99
     annualPrice: 10.83
@@ -277,7 +278,7 @@ plans:
       syncAccrossDevicesLimit:
         value: 1000000000
     price: 12.99
-  - name: PROFESIONAL
+  PROFESIONAL:
     description: Tackle any project, at work or at home
     monthlyPrice: 16.99
     annualPrice: 14.16
@@ -307,7 +308,7 @@ plans:
       externalCalendarsLimit:
         value: 5
     price: 16.99
-  - name: TEAMS
+  TEAMS:
     description: Collaborate and share among your team
     monthlyPrice: 24.99
     annualPrice: 20.83
@@ -351,5 +352,3 @@ plans:
       externalCalendarsLimit:
         value: 5
     price: 24.99
-addOns: null
-createdAt: '2024-07-06'

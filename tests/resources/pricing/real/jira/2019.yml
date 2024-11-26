@@ -1,5 +1,6 @@
 saasName: Jira
 version: '2.0'
+createdAt: '2019-10-29'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -91,14 +92,14 @@ usageLimits:
     linkedFeatures:
       - storage
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     unit: user/month
     features: null
     usageLimits: null
     price: 0
-  - name: STANDARD
+  STANDARD:
     description: ''
     monthlyPrice: 7
     unit: user/month
@@ -117,7 +118,7 @@ plans:
       storageLimit:
         value: 250
     price: 7
-  - name: PREMIUM
+  PREMIUM:
     description: ''
     monthlyPrice: 14
     unit: user/month
@@ -140,5 +141,3 @@ plans:
       storageLimit:
         value: .inf
     price: 14
-addOns: null
-createdAt: '2019-10-29'
