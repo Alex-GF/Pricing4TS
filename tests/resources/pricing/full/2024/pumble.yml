@@ -1,156 +1,140 @@
 saasName: Pumble
-version: '2.0'
+day: 16
+month: 7
+year: 2024
 currency: USD
 hasAnnualPayment: true
 features:
   privateChannels:
-    description: Only invited users can send messages in a private channel.
+    description: "Only invited users can send messages in a private channel."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   publicChannels:
-    description: Everyone can join and send messages in public channels.
+    description: "Everyone can join and send messages in public channels."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   directMessages:
-    description: >-
-      Share business information, send files and images, or share links to
-      others, one-on-one.
+    description: "Share business information, send files and images, or share links to others, one-on-one."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   threads:
-    description: >-
-      Spin off side conversations into threads to keep the channel
-      distraction-free.
+    description: "Spin off side conversations into threads to keep the channel distraction-free."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   mentions:
-    description: Mention others to notify them.
+    description: "Mention others to notify them."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   reactions:
-    description: React to messages with emojis.
+    description: "React to messages with emojis."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   pin:
-    description: Pin important messages so everyone can access them later.
+    description: "Pin important messages so everyone can access them later."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   saveMessages:
-    description: Save messages to access them later.
+    description: "Save messages to access them later."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   messageHistory:
-    description: >-
-      Access all your messages that have ever been sent to get context for past
-      decisions or get new team members up to speed faster.
+    description: "Access all your messages that have ever been sent to get context for past decisions or get new team members up to speed faster."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   shareFilesAndLinks:
-    description: >-
-      Share images, videos, documents or links with your teammates and search
-      for them later via File browser.
+    description: "Share images, videos, documents or links with your teammates and search for them later via File browser."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   voiceMessages:
-    description: Tap, talk, and send to give updates, share ideas, and be more expressive.
+    description: "Tap, talk, and send to give updates, share ideas, and be more expressive."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   messageFormatting:
-    description: >-
-      Highlight important information within conversation or markup your code
-      blocks.
+    description: "Highlight important information within conversation or markup your code blocks."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   messageSchedule:
-    description: Schedule messages to be sent at a later time.
+    description: "Schedule messages to be sent at a later time."
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   reminders:
-    description: Set reminders for important tasks.
+    description: "Set reminders for important tasks."
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   fileStoragePerAccount:
-    description: Share images, documents, and other files, and access them later in Pumble.
+    description: "Share images, documents, and other files, and access them later in Pumble."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileStoragePerUser:
-    description: Share images, documents, and other files, and access them later in Pumble.
+    description: "Share images, documents, and other files, and access them later in Pumble."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizableSections:
-    description: >-
-      Organize channels and conversations into custom, collapsible sections in
-      your sidebar.
+    description: "Organize channels and conversations into custom, collapsible sections in your sidebar."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   voiceCalls:
-    description: Start a voice call in real time.
+    description: "Start a voice call in real time."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   videoCalls:
-    description: Start a video call in real time.
+    description: "Start a video call in real time."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   screenSharing:
-    description: Start a video call or share your screen in real time.
+    description: "Start a video call or share your screen in real time."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   userGroups:
-    description: Mention user group to notify everybody in the group.
+    description: "Mention user group to notify everybody in the group."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   guestAccess:
-    description: >-
-      Work with people outside your company and give them access only to the
-      specific channels.
+    description: "Work with people outside your company and give them access only to the specific channels."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   permissions:
-    description: >-
-      Manage who can create and archive channels, invite members, remove them
-      from channels, post in public channels and other permissions.
+    description: "Manage who can create and archive channels, invite members, remove them from channels, post in public channels and other permissions."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   channelPostingPermissions:
-    description: >-
-      Customize channel posting permissions and mention usage to ensure a
-      focused and distraction-free environment.
+    description: "Customize channel posting permissions and mention usage to ensure a focused and distraction-free environment."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   integrations:
-    description: Integrate Pumble with other apps.
+    description: "Integrate Pumble with other apps."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   importFromSlack:
-    description: Import public channels, messages and your team from Slack.
+    description: "Import public channels, messages and your team from Slack."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -158,58 +142,57 @@ features:
     pricingURLs:
       - https://www.slack.com/
   dataEncryption:
-    description: Pumble encrypts all data at rest and in transit.
+    description: "Pumble encrypts all data at rest and in transit."
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   soc2:
-    description: >-
-      Annual audit certification for Service Organization Controls Trust
-      Services Principles.
+    description: "Annual audit certification for Service Organization Controls Trust Services Principles."
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   singleSignOn:
-    description: Manage access using SSO (SAML2, OAuth2).
+    description: "Manage access using SSO (SAML2, OAuth2)."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   dataRetention:
-    description: Decide for how long you want to have your messages and files.
+    description: "Decide for how long you want to have your messages and files."
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   phoneSupport:
-    description: Contact Pumble’s customer support and get answer within 24 hours.
+    description: "Contact Pumble’s customer support and get answer within 24 hours."
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: Contact Pumble’s customer support and get answer within 24 hours.
+    description: "Contact Pumble’s customer support and get answer within 24 hours."
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   emailSupport:
-    description: Contact Pumble’s customer support and get answer within 24 hours.
+    description: "Contact Pumble’s customer support and get answer within 24 hours."
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   priorityCustomerSupport:
-    description: Get a guaranteed answer from customer support within a few hours.
+    description: "Get a guaranteed answer from customer support within a few hours."
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
+
 usageLimits:
   users:
-    description: The number of users who can use Pumble.
+    description: "The number of users who can use Pumble."
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   useMessageHistory:
-    description: The number of days that can be searched for the messageHistory.
+    description: "The number of days that can be searched for the messageHistory."
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: day
@@ -217,7 +200,7 @@ usageLimits:
     linkedFeatures:
       - messageHistory
   useFileStoragePerAccount:
-    description: The amount of storage that can be used per account.
+    description: "The amount of storage that can be used per account."
     valueType: NUMERIC
     defaultValue: 10
     unit: GB/account
@@ -225,7 +208,7 @@ usageLimits:
     linkedFeatures:
       - fileStoragePerAccount
   useFileStoragePerUser:
-    description: The amount of storage that can be used per user or team member.
+    description: "The amount of storage that can be used per user or team member."
     valueType: NUMERIC
     defaultValue: 10
     unit: GB/user
@@ -233,7 +216,7 @@ usageLimits:
     linkedFeatures:
       - fileStoragePerUser
   useVoiceCalls:
-    description: The number of users that can join the same voice call.
+    description: "The number of users that can join the same voice call."
     valueType: NUMERIC
     defaultValue: 1
     unit: user
@@ -241,7 +224,7 @@ usageLimits:
     linkedFeatures:
       - voiceCalls
   useVideoCalls:
-    description: The number of users that can join the same video call.
+    description: "The number of users that can join the same video call."
     valueType: NUMERIC
     defaultValue: 1
     unit: user
@@ -249,24 +232,24 @@ usageLimits:
     linkedFeatures:
       - videoCalls
   useIntegrations:
-    description: The number of integrations that can be used.
+    description: "The number of integrations that can be used."
     valueType: NUMERIC
     defaultValue: 3
     unit: integration
     type: NON_RENEWABLE
     linkedFeatures:
       - integrations
+
 plans:
-  - name: FREE
-    description: Communication
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Communication"
+    monthlyPrice: 0.00
+    annualPrice: 0.00
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PRO
-    description: Organization
+  PRO:
+    description: "Organization"
     monthlyPrice: 2.99
     annualPrice: 2.49
     unit: user/month
@@ -290,9 +273,8 @@ plans:
         value: 25
       useIntegrations:
         value: 10
-    price: 2.99
-  - name: BUSINESS
-    description: Administration
+  BUSINESS:
+    description: "Administration"
     monthlyPrice: 4.99
     annualPrice: 3.99
     unit: user/month
@@ -326,9 +308,8 @@ plans:
         value: 50
       useIntegrations:
         value: 1000000000
-    price: 4.99
-  - name: ENTERPRISE
-    description: Control & Security
+  ENTERPRISE:
+    description: "Control & Security"
     monthlyPrice: 7.99
     annualPrice: 6.99
     unit: user/month
@@ -366,6 +347,5 @@ plans:
         value: 50
       useIntegrations:
         value: 1000000000
-    price: 7.99
+        
 addOns: null
-createdAt: '2024-07-15'

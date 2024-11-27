@@ -1,5 +1,6 @@
 saasName: MailChimp - Marketing
 version: '2.0'
+createdAt: '2023-11-29'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -483,14 +484,14 @@ usageLimits:
     linkedFeatures:
       - personalizedOnboarding
 plans:
-  - name: FREE
+  FREE:
     description: All the basics for businesses that are just getting started.
     monthlyPrice: 0
     unit: /month
     features: null
     usageLimits: null
     price: 0
-  - name: ESSENTIALS
+  ESSENTIALS:
     description: Must-have features for email senders who want added support.
     monthlyPrice: 9.99
     unit: /month
@@ -523,7 +524,7 @@ plans:
       dailyEmailSends:
         value: .inf
     price: 9.99
-  - name: STANDARD
+  STANDARD:
     description: Better insights for growing businesses that want more customers.
     monthlyPrice: 14.99
     unit: /month
@@ -608,7 +609,7 @@ plans:
       personalizedOnboardingSessionsLimit:
         value: 1
     price: 14.99
-  - name: PREMIUM
+  PREMIUM:
     description: Advanced features for pros who need more customization.
     monthlyPrice: 299
     unit: /month
@@ -698,7 +699,7 @@ plans:
         value: 4
     price: 299
 addOns:
-  - name: transactionalEmailsAddOn
+  transactionalEmailsAddOn:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -709,7 +710,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsAndMmsMarketingAddOnForEssentialsTier
+  smsAndMmsMarketingAddOnForEssentialsTier:
     availableFor:
       - ESSENTIALS
     price: Contact Sales
@@ -723,7 +724,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsAndMmsMarketingAddOnForStandardTier
+  smsAndMmsMarketingAddOnForStandardTier:
     availableFor:
       - STANDARD
     price: Contact Sales
@@ -741,7 +742,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsAndMmsMarketingAddOnForPremiumTier
+  smsAndMmsMarketingAddOnForPremiumTier:
     availableFor:
       - PREMIUM
     price: Contact Sales
@@ -763,4 +764,3 @@ addOns:
       standardVettingIncludedCredits:
         value: .inf
     usageLimitsExtensions: null
-createdAt: '2023-11-29'

@@ -1,5 +1,6 @@
 saasName: Clockify
 version: '2.0'
+createdAt: '2024-07-05'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -415,9 +416,8 @@ features:
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
-usageLimits: null
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -425,7 +425,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BASIC
+  BASIC:
     description: Administration
     monthlyPrice: 4.99
     annualPrice: 3.99
@@ -465,7 +465,7 @@ plans:
         value: true
     usageLimits: null
     price: 4.99
-  - name: STANDARD
+  STANDARD:
     description: Timesheeting & billing
     monthlyPrice: 6.99
     annualPrice: 5.49
@@ -529,7 +529,7 @@ plans:
         value: true
     usageLimits: null
     price: 6.99
-  - name: PRO
+  PRO:
     description: Profit & Productivity
     monthlyPrice: 9.99
     annualPrice: 7.99
@@ -625,7 +625,7 @@ plans:
         value: true
     usageLimits: null
     price: 9.99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: 14.99
     annualPrice: 11.99
@@ -729,7 +729,7 @@ plans:
         value: true
     usageLimits: null
     price: 14.99
-  - name: CAKE_BUNDLE
+  CAKE_BUNDLE:
     description: ''
     monthlyPrice: 15.99
     annualPrice: 12.99
@@ -836,7 +836,7 @@ plans:
     usageLimits: null
     price: 15.99
 addOns:
-  - name: kioskBasic
+  kioskBasic:
     availableFor:
       - BASIC
     monthlyPrice: 0.99
@@ -848,7 +848,7 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: 0.99
-  - name: kioskStandard
+  kioskStandard:
     availableFor:
       - STANDARD
     monthlyPrice: 1.49
@@ -860,7 +860,7 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: 1.49
-  - name: kioskPro
+  kioskPro:
     availableFor:
       - PRO
     monthlyPrice: 1.99
@@ -872,7 +872,7 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: 1.99
-  - name: kioskEnterprise
+  kioskEnterprise:
     availableFor:
       - ENTERPRISE
     monthlyPrice: 2.99
@@ -884,4 +884,3 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: 2.99
-createdAt: '2024-07-05'

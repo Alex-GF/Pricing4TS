@@ -1,121 +1,122 @@
-saasName: TrustMary - Full Suite
-version: '2.0'
+saasName: Trustmary - Full Suite
+day: 30
+month: 11
+year: 2021
 currency: USD
 hasAnnualPayment: true
 features:
   surveys:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   testimonials:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   reviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   shareableLinks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   feedbackRequestInEmail:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   abTesting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   analytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   videoTestimonials:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   surveyEditor:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   feedbackRequestViaEmail:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   feedbackRequestViaQR:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   feedbackRequestViaWebsite:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   automations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   integrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
-usageLimits:
+usageLimits: 
   surveysLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 200
     unit: survey/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - surveys
   testimonialsOrReviewsAtTheSameTime:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25
     unit: testimonial or review
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - testimonials
       - reviews
   feedbackRequestViaEmailLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3000
     unit: email/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - feedbackRequestViaEmail
 plans:
-  - name: STARTER
-    description: ''
-    monthlyPrice: 290
+  STARTER:
+    description: ""
+    monthlyPrice: 290.0
     annualPrice: 249.17
     unit: /month
     features: null
     usageLimits: null
-    price: 290
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 390
+  BUSINESS:
+    description: ""
+    monthlyPrice: 390.0
     annualPrice: 332.5
     unit: /month
     features: null
@@ -124,18 +125,15 @@ plans:
         value: 400
       testimonialsOrReviewsAtTheSameTime:
         value: 100
-    price: 390
-  - name: PRO
-    description: ''
+  PRO:
+    description: ""
     monthlyPrice: 590
     annualPrice: 499.9
     unit: /month
     features: null
-    usageLimits:
+    usageLimits: 
       surveysLimit:
         value: 2000
       testimonialsOrReviewsAtTheSameTime:
         value: 1000
-    price: 590
 addOns: null
-createdAt: '2021-11-29'

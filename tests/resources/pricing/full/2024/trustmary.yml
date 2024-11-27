@@ -1,199 +1,207 @@
-saasName: TrustMary - Collect
-version: '2.0'
+saasName: Trustmary - Collect
+day: 15
+month: 7
+year: 2024
 currency: USD
 hasAnnualPayment: true
 features:
   3in1Surveys:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   teams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   surveys:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   responses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
+  # apiAccess:
+  #   description: ""
+  #   valueType: BOOLEAN
+  #   defaultValue: true
+  #   type: INTEGRATION
+  #   integrationType: API
   requestsViaEmail:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   reviewPlatform:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   combinedReview:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   feedbackCollection:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   surveyLogic:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customTheme:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   quickPreview:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multilanguage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   emailNotificationsForNewResponses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   surveyTemplateLibrary:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   surveyStatus:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   progressBar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   urlResponses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   emailResponses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   htmlEmbeds:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   popupSurvey:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   emailSignature:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   qrCode:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   smsRequests:
-    description: In europe
+    description: "In europe"
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   npsForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   csatForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizableForms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   eighteenQuestionTypes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   anonymizedResponses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   analyzeFeedback:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   manageReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   tagReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   autotagReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   createReviewsManually:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   importReviewsFromSpreadsheets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   publicReviewProfilePage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   syncReviewsAutomatically:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -201,7 +209,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   makeIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -209,7 +217,7 @@ features:
     pricingURLs:
       - https://www.make.com/pricing
   hubspotIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -217,7 +225,7 @@ features:
     pricingURLs:
       - https://www.hubspot.com/pricing/marketing/starter
   pipedriveIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -225,78 +233,77 @@ features:
     pricingURLs:
       - https://www.pipedrive.com/en/pricing
   freeSurveyHelp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   phoneSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   onboardingPackage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   unlimitedTeamMembers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - teams
   unlimitedSuveys:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - surveys
   surveyResponsesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: response/month
     type: RENEWABLE
   requestsViaEmailLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: request/month
     type: RENEWABLE
   reviewPlatformConnectionsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: connection
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - reviewPlatform
 plans:
-  - name: SOLO
-    description: Essentials to get more reviews and feedback
-    monthlyPrice: 0
-    annualPrice: 0
+  SOLO:
+    description: "Essentials to get more reviews and feedback"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: /month
     features: null
     usageLimits: null
-    price: 0
-  - name: STARTER
-    description: For smaller teams, more responses and automations
-    monthlyPrice: 29
-    annualPrice: 24
+  STARTER:
+    description: "For smaller teams, more responses and automations"
+    monthlyPrice: 29.0
+    annualPrice: 24.0
     unit: /month
     features:
       surveyTemplateLibrary:
@@ -332,11 +339,10 @@ plans:
         value: 200
       reviewPlatformConnectionsLimit:
         value: 3
-    price: 29
-  - name: BUSINESS
-    description: The best Collect plan for growing companies
-    monthlyPrice: 79
-    annualPrice: 65
+  BUSINESS:
+    description: "The best Collect plan for growing companies"
+    monthlyPrice: 79.0
+    annualPrice: 65.0
     unit: /month
     features:
       surveyTemplateLibrary:
@@ -367,7 +373,7 @@ plans:
         value: true
       phoneSupport:
         value: true
-    usageLimits:
+    usageLimits: 
       unlimitedTeamMembers:
         value: true
       unlimitedSuveys:
@@ -378,11 +384,10 @@ plans:
         value: 600
       reviewPlatformConnectionsLimit:
         value: 10
-    price: 79
-  - name: SCALE
-    description: ''
-    monthlyPrice: 159
-    annualPrice: 132
+  SCALE:
+    description: ""
+    monthlyPrice: 159.0
+    annualPrice: 132.0
     unit: /month
     features:
       surveyTemplateLibrary:
@@ -413,7 +418,7 @@ plans:
         value: true
       phoneSupport:
         value: true
-    usageLimits:
+    usageLimits: 
       unlimitedTeamMembers:
         value: true
       unlimitedSuveys:
@@ -424,19 +429,17 @@ plans:
         value: 6000
       reviewPlatformConnectionsLimit:
         value: 25
-    price: 159
-addOns:
-  - name: onboardingPackageAddOn
-    availableFor:
+addOns: 
+  onboardingPackageAddOn:
+    availableFor: 
       - SOLO
       - STARTER
       - BUSINESS
       - SCALE
-    price: 990
+    price: 990.0
     unit: one time payment
     features:
       onboardingPackage:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-14'

@@ -1,33 +1,35 @@
-saasName: TrustMary - Collect
-version: '2.0'
+saasName: Trustmary - Collect
+day: 31
+month: 10
+year: 2023
 currency: USD
 hasAnnualPayment: true
 features:
   responses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   apiAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   requestsViaEmail:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   automations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -35,7 +37,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   hubspotIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -43,7 +45,7 @@ features:
     pricingURLs:
       - https://www.hubspot.com/pricing/marketing/starter
   pipedriveIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -51,181 +53,180 @@ features:
     pricingURLs:
       - https://www.pipedrive.com/en/pricing
   domains:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   widgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   reviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   removeTrustmaryBranding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   views:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   reviewPlatform:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   manageReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   tagReviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   syncReviewsAutomatically:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   addReviewsManually:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   importReviewsFromSpreadsheets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   reviewSchema.orgMarkup:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   trustMaryAiScore:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   publicReviewProfilePage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   goalTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TRACKING
   reviewWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   formWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   badgeWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   popupWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   ctaWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   reviewFiltering:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: FILTERING
   freeWidgetInstallationHelp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   phoneSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   responsesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: response/month
     type: RENEWABLE
   requestsViaEmailLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: request/month
     type: RENEWABLE
   viewsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 200
     unit: view/month
     type: RENEWABLE
   reviewPlatformConnectionsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: connection
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - reviewPlatform
 plans:
-  - name: SOLO
-    description: Essentials to get more reviews and feedback
-    monthlyPrice: 0
-    annualPrice: 0
+  SOLO:
+    description: "Essentials to get more reviews and feedback"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: /month
     features: null
     usageLimits: null
-    price: 0
-  - name: STARTER
-    description: For smaller teams, more responses and automations
-    monthlyPrice: 29
-    annualPrice: 24
+  STARTER:
+    description: "For smaller teams, more responses and automations"
+    monthlyPrice: 29.0
+    annualPrice: 24.0
     unit: /month
     features:
       automations:
@@ -241,10 +242,9 @@ plans:
         value: 5000
       reviewPlatformConnectionsLimit:
         value: 3
-    price: 29
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 79
+  BUSINESS:
+    description: ""
+    monthlyPrice: 79.0
     annualPrice: 65.9
     unit: /month
     features:
@@ -260,7 +260,7 @@ plans:
         value: true
       phoneSupport:
         value: true
-    usageLimits:
+    usageLimits: 
       responsesLimit:
         value: 100
       requestsViaEmailLimit:
@@ -269,10 +269,9 @@ plans:
         value: 25000
       reviewPlatformConnectionsLimit:
         value: 10
-    price: 79
-  - name: SCALE
-    description: ''
-    monthlyPrice: 189
+  SCALE:
+    description: ""
+    monthlyPrice: 189.0
     annualPrice: 157.5
     unit: /month
     features:
@@ -290,7 +289,7 @@ plans:
         value: true
       dedicatedAccountManager:
         value: true
-    usageLimits:
+    usageLimits: 
       responsesLimit:
         value: 500
       requestsViaEmailLimit:
@@ -299,6 +298,4 @@ plans:
         value: 100000
       reviewPlatformConnectionsLimit:
         value: 25
-    price: 189
 addOns: null
-createdAt: '2023-10-30'

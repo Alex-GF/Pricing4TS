@@ -1,5 +1,6 @@
-saasName: GitHub
+saasName: Github
 version: '2.0'
+createdAt: '2019-11-29'
 currency: EUR
 hasAnnualPayment: false
 features:
@@ -278,7 +279,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesFreeTier:
     description: Free tier usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - draftPullRequests
@@ -293,7 +294,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesProTier:
     description: Pro tear usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - draftPullRequests
@@ -303,7 +304,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesTeamTier:
     description: Team tier usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - advancedVulnerabilityScanning
@@ -312,7 +313,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesEnterpriseTier:
     description: Enterprise tier usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - githubSecurityAdvisories
@@ -342,7 +343,7 @@ usageLimits:
     linkedFeatures:
       - collaboratorsForPrivateRepositories
 plans:
-  - name: FREE
+  FREE:
     description: The basics for individuals and organizations
     monthlyPrice: 0
     unit: user/month
@@ -351,7 +352,7 @@ plans:
       githubOnlyForPublicRepositoriesFreeTier:
         value: true
     price: 0
-  - name: PRO
+  PRO:
     description: Pro tools for developers with advanced requirements
     monthlyPrice: 7
     unit: user/month
@@ -364,7 +365,7 @@ plans:
       collaboratorsForPrivateRepositoriesLimit:
         value: 1000000000
     price: 7
-  - name: TEAM
+  TEAM:
     description: Advanced collaboration for individuals and organizations
     monthlyPrice: 9
     unit: user/month
@@ -385,7 +386,7 @@ plans:
       collaboratorsForPrivateRepositoriesLimit:
         value: 1000000000
     price: 9
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Security, compliance, and flexible deployment
     monthlyPrice: 21
     annualPrice: 21
@@ -420,7 +421,7 @@ plans:
         value: 1000000000
     price: 21
 addOns:
-  - name: premiumSupport
+  premiumSupport:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -430,7 +431,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseServer
+  enterpriseServer:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -442,7 +443,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseCloud
+  enterpriseCloud:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -456,4 +457,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2019-11-29'

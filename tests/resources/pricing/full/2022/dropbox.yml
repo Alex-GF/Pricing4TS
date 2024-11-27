@@ -1,409 +1,409 @@
 saasName: Dropbox
-version: '2.0'
+day: 16
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: false
 features:
   storage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   bestInClassSyncTechnology:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   anytimeAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   anywhereAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   easyAndSecureSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   256BitAES:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   SSL/TLSEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   eSignatures:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   dropboxBackup:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileRecovery:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   versionHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dropboxRewind:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharedLinkControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   externalSharingControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   externalSharingReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   dataClassification:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   ransomwareDetectionAndRecovery:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   alertsAndNotifications:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   dropboxPasswords:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   dropboxVault:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   watermarking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   accountTransferTool:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   enableMultiFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   enableHIPAACompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   remoteDeviceWipe:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   deviceApprovals:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   familyRoom:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   dropboxPaper:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dropboxCapture:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dropboxTransfer:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileLocking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   integratedCloudContent:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   brandedSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   webPreviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   webComments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   plusButton:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileRequests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fullTextSearch:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   viewerHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   adminConsole:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   multiTeamAdminLogin:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   centralizedBilling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: PAYMENT
   companyManagedGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   apiAccessToSecurityPlatformPartners:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   apiAccessToProductivityPlatformPartners:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   apiAccessToDataTransportPlatformPartners:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   tieredAdminRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   signInAsUser:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   auditLogsWithFileEventTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   inviteEnforcement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   priorityEmailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   liveChatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   phoneSupportDuringBusinessHours:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   storageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2000
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - storage
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   fileRecoveryAndVersionHistoryThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 30
     unit: day
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - fileRecovery
       - versionHistory
   dropboxRewindThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 30
     unit: day
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxRewind
   dropboxCaptureRecordingTimeLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 120
     unit: min
     type: TIME_DRIVEN
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxCapture
   dropboxCaptureFullHDQuality:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxCapture
   dropboxCapture4kQuality:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxCapture
   dropboxCaptureAdvancedVideoEditing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxCapture
   dropboxTransferLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: GB/transfer
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxTransfer
   includeCustomizationOptionsInDropboxTransfer:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - dropboxTransfer
   eSignaturesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: signature/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - eSignatures
   apiAccessToDataTransportPlatformPartnersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: request/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - apiAccessToDataTransportPlatformPartners
 plans:
-  - name: PLUS
-    description: ''
+  PLUS:
+    description: ""
     monthlyPrice: 9.99
     unit: /month
     features: null
     usageLimits: null
-    price: 9.99
-  - name: FAMILY
-    description: ''
+  FAMILY:
+    description: ""
     monthlyPrice: 16.99
     unit: /month
     features:
-      familyRoom:
+      familyRoom: 
         value: true
-      centralizedBilling:
+      centralizedBilling: 
         value: true
     usageLimits:
-      usersLimit:
+      usersLimit: 
         value: 6
-    price: 16.99
-  - name: PROFESSIONAL
-    description: ''
+  PROFESSIONAL:
+    description: ""
     monthlyPrice: 16.58
     unit: /month
     features:
       sharedLinkControls:
         value: true
-      watermarking:
+      watermarking: 
         value: true
       fileLocking:
         value: true
@@ -428,10 +428,9 @@ plans:
         value: 100
       includeCustomizationOptionsInDropboxTransfer:
         value: true
-    price: 16.58
-  - name: STANDARD
-    description: ''
-    monthlyPrice: 15
+  STANDARD:
+    description: ""
+    monthlyPrice: 15.0
     unit: user/month
     features:
       sharedLinkControls:
@@ -442,7 +441,7 @@ plans:
         value: true
       dropboxVault:
         value: false
-      watermarking:
+      watermarking: 
         value: true
       accountTransferTool:
         value: true
@@ -485,10 +484,9 @@ plans:
         value: true
       dropboxTransferLimit:
         value: 2
-    price: 15
-  - name: ADVANCED
-    description: ''
-    monthlyPrice: 24
+  ADVANCED:
+    description: ""
+    monthlyPrice: 24.0
     unit: user/month
     features:
       sharedLinkControls:
@@ -505,7 +503,7 @@ plans:
         value: true
       dropboxVault:
         value: false
-      watermarking:
+      watermarking: 
         value: true
       accountTransferTool:
         value: true
@@ -562,6 +560,4 @@ plans:
         value: 100
       includeCustomizationOptionsInDropboxTransfer:
         value: true
-    price: 24
 addOns: null
-createdAt: '2022-11-15'

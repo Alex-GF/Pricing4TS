@@ -1,5 +1,6 @@
 saasName: OpenPhone
 version: '2.0'
+createdAt: '2021-11-17'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -193,7 +194,7 @@ usageLimits:
     linkedFeatures:
       - smsViaZapier
 plans:
-  - name: STANDARD
+  STANDARD:
     description: The essentials to get you up and running.
     monthlyPrice: 10
     annualPrice: 10
@@ -201,7 +202,7 @@ plans:
     features: null
     usageLimits: null
     price: 10
-  - name: PREMIUM
+  PREMIUM:
     description: >-
       For power users and teams looking for more integrations and collaboration
       features.
@@ -222,7 +223,7 @@ plans:
       prioritySupport:
         value: true
     price: 25
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For organizations with complex requirements.
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -246,7 +247,7 @@ plans:
         value: true
     price: Contact Sales
 addOns:
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -258,7 +259,7 @@ addOns:
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-  - name: internationalCallingAndMessaging
+  internationalCallingAndMessaging:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -272,7 +273,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsViaZapierAddon
+  smsViaZapierAddon:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -286,4 +287,3 @@ addOns:
     usageLimitsExtensions:
       smsViaZapierAddonLimit:
         value: 1
-createdAt: '2021-11-17'

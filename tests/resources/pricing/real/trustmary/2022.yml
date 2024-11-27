@@ -1,5 +1,6 @@
-saasName: TrustMary
+saasName: Trustmary
 version: '2.0'
+createdAt: '2022-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -183,7 +184,7 @@ usageLimits:
     type: NON_RENEWABLE
     linkedFeatures: null
 plans:
-  - name: SOLO
+  SOLO:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -191,7 +192,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 90
     annualPrice: 82.5
@@ -211,7 +212,7 @@ plans:
       activeWidgetsLimit:
         value: .inf
     price: 90
-  - name: AUTOMATE
+  AUTOMATE:
     description: ''
     monthlyPrice: 290
     annualPrice: 249
@@ -249,7 +250,7 @@ plans:
       usersLimit:
         value: .inf
     price: 290
-  - name: PRO
+  PRO:
     description: ''
     monthlyPrice: 590
     annualPrice: 499
@@ -305,5 +306,3 @@ plans:
       usersLimit:
         value: .inf
     price: 590
-addOns: null
-createdAt: '2022-11-29'

@@ -1,46 +1,49 @@
 saasName: Crowdcast
-version: '2.0'
+day: 30
+month: 11
+year: 2020
 currency: USD
 hasAnnualPayment: true
 features:
   liveStreaming:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   transactionFee:
-    description: ''
-    valueType: TEXT
-    defaultValue: "5%"
+    description: ""
+    valueType: NUMERIC
+    defaultValue: 5.0
+    unit: \%
     type: DOMAIN
   hdLiveVideoWithRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiSessionEvents:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   rtmpSudio:
-    description: Broadcast with OBS, Wirecast, Ecamm Live and StreamYard
+    description: "Broadcast with OBS, Wirecast, Ecamm Live and StreamYard"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   patreonIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -48,23 +51,23 @@ features:
     pricingURLs:
       - https://www.patreon.com/pricing
   stripeIntegration:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue:
       - GATEWAY
     type: PAYMENT
   eventAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   sessionAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -72,7 +75,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   convertKitIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -80,7 +83,7 @@ features:
     pricingURLs:
       - https://convertkit.com/pricing
   dripIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -88,38 +91,38 @@ features:
     pricingURLs:
       - https://www.drip.com/pricing
   exportEmailAddresses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   exportChat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   exportData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   multistreaming:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   presentOnManyScreens:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customRegistrationFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-usageLimits:
+usageLimits: 
   liveAttendeesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 50
     unit: attendee
@@ -127,7 +130,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   liveHoursPerMonthLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: hour/month
@@ -135,7 +138,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   sessionsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: hour/session
@@ -143,7 +146,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   multistreamLocationsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: location
@@ -151,7 +154,7 @@ usageLimits:
     linkedFeatures:
       - multistreaming
   screensLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: screen
@@ -160,18 +163,17 @@ usageLimits:
       - liveStreaming
       - presentOnManyScreens
 plans:
-  - name: STARTER
-    description: Perfect for creators just getting started with live video
-    monthlyPrice: 29
-    annualPrice: 20
+  STARTER:
+    description: "Perfect for creators just getting started with live video"
+    monthlyPrice: 29.0
+    annualPrice: 20.0
     unit: /month
     features: null
     usageLimits: null
-    price: 29
-  - name: LITE
-    description: For creators and small businesses looking to grow their audience
-    monthlyPrice: 49
-    annualPrice: 34
+  LITE:
+    description: "For creators and small businesses looking to grow their audience"
+    monthlyPrice: 49.0
+    annualPrice: 34.0
     unit: /month
     features:
       zapierIntegration:
@@ -191,13 +193,10 @@ plans:
         value: 100
       liveHoursPerMonthLimit:
         value: 10
-    price: 49
-  - name: PRO
-    description: >-
-      For professional creators and businesses to consistently host live video
-      events
-    monthlyPrice: 89
-    annualPrice: 62
+  PRO:
+    description: "For professional creators and businesses to consistently host live video events"
+    monthlyPrice: 89.0
+    annualPrice: 62.0
     unit: /month
     features:
       zapierIntegration:
@@ -225,11 +224,10 @@ plans:
         value: 20
       screensLimit:
         value: 6
-    price: 89
-  - name: BUSINESS
-    description: For startups and companies looking to engage their customers
-    monthlyPrice: 199
-    annualPrice: 139
+  BUSINESS:
+    description: "For startups and companies looking to engage their customers"
+    monthlyPrice: 199.0
+    annualPrice: 139.0
     unit: /month
     features:
       zapierIntegration:
@@ -251,7 +249,7 @@ plans:
       customRegistrationFields:
         value: true
       transactionFee:
-        value: "2%"
+        value: 2.0
     usageLimits:
       liveAttendeesLimit:
         value: 1000
@@ -263,6 +261,4 @@ plans:
         value: 3
       sessionsLimit:
         value: 6
-    price: 199
 addOns: null
-createdAt: '2020-11-29'

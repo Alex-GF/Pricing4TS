@@ -1,5 +1,6 @@
 saasName: Buffer - Publish
 version: '2.0'
+createdAt: '2020-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -275,7 +276,7 @@ usageLimits:
     type: NON_RENEWABLE
     linkedFeatures: null
 plans:
-  - name: PRO
+  PRO:
     description: Ideal for getting started
     monthlyPrice: 15
     annualPrice: 12
@@ -283,7 +284,7 @@ plans:
     features: null
     usageLimits: null
     price: 15
-  - name: PREMIUM
+  PREMIUM:
     description: Ideal for growing brands
     monthlyPrice: 65
     annualPrice: 56
@@ -309,7 +310,7 @@ plans:
       usersLimit:
         value: 2
     price: 65
-  - name: BUSINESS
+  BUSINESS:
     description: Ideal for larger teams
     monthlyPrice: 99
     annualPrice: 85
@@ -337,7 +338,7 @@ plans:
       usersLimit:
         value: 6
     price: 99
-  - name: MEDIUM_BUSINESS
+  MEDIUM_BUSINESS:
     description: >-
       For medium-sized businesses that need to scale their social media
       presence.
@@ -347,7 +348,7 @@ plans:
     features: null
     usageLimits: null
     price: 199
-  - name: LARGE_BUSINESS
+  LARGE_BUSINESS:
     description: >-
       For large businesses that need to manage a lot of social media accounts
       and users.
@@ -357,7 +358,7 @@ plans:
     features: null
     usageLimits: null
     price: 399
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For enterprise-level businesses that need a custom solution.
     monthlyPrice: Contact us
     annualPrice: null
@@ -365,5 +366,3 @@ plans:
     features: null
     usageLimits: null
     price: Contact us
-addOns: null
-createdAt: '2020-11-29'

@@ -1,310 +1,311 @@
-saasName: Figma
-version: '2.0'
+saasName: Figma 
+day: 30
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   versionHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   figmaEditor:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedDrawingTools:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   autoLayout:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   styles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   pluginsAndWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
     pricingUrls: null
   fileStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   crossPlatform:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sketchImport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   interactivePrototypes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   videosInPrototypes:
-    description: ''
+    description: ""
     valueType: TEXT
-    defaultValue: Choose videos from the Figma Community
+    defaultValue: "Choose videos from the Figma Community"
     type: DOMAIN
   overlays:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   transitions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedAnimations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   pdfPngJpgSvgExport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiplayer:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   shareableLinks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   onCanvasCommenting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   observationMode:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   privateProjects:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   prototypeSharingPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   audioConversations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   teams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   branchingAndMerging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customWorkspaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   components:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   teamLibraries:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   organizationWideDesignSystems:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   sharedFonts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   designSystemAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   restApis:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   thirdPartyIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   liveEmbeds:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   privatePluginsAndWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   webhooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   passwordProtection:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   pluginAndWidgetManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   centralizedAdministration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   domainCapture:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   linkAccessControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   centralizedContentManagent:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   activityLogs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   workspaceAdministration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   guestAccessControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   defaultRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   defaultTeams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   roleAssigmentViaSCIM:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   passwordProtectionRequired:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   figmaSupportForum:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   figmaHelpCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   onboardingPlanningAndSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
 usageLimits:
   versionHistoryDepth:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 30
     unit: day
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - versionHistory
   unlimitedTeamsPermitted:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - teams
 plans:
-  - name: STARTER
-    description: ''
-    monthlyPrice: 0
-    annualPrice: 0
+  STARTER:
+    description: ""
+    monthlyPrice: 00.00
+    annualPrice: 00.00
     unit: editor/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PROFESSIONAL
-    description: ''
-    monthlyPrice: 15
-    annualPrice: 12
+  PROFESSIONAL:
+    description: ""
+    monthlyPrice: 15.00
+    annualPrice: 12.00
     unit: editor/month
     features:
       privateProjects:
@@ -320,11 +321,10 @@ plans:
     usageLimits:
       versionHistoryDepth:
         value: .inf
-    price: 15
-  - name: ORGANIZATION
-    description: ''
+  ORGANIZATION:
+    description: ""
     monthlyPrice: null
-    annualPrice: 45
+    annualPrice: 45.00
     unit: editor/month
     features:
       privateProjects:
@@ -368,11 +368,10 @@ plans:
         value: .inf
       unlimitedTeamsPermitted:
         value: true
-    price: 45
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: null
-    annualPrice: 75
+    annualPrice: 75.00
     unit: editor/month
     features:
       privateProjects:
@@ -432,6 +431,4 @@ plans:
         value: .inf
       unlimitedTeamsPermitted:
         value: true
-    price: 75
 addOns: null
-createdAt: '2022-11-29'

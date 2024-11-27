@@ -1,5 +1,6 @@
-saasName: Microsoft
+saasName: Office 365 - For Business
 version: '2.0'
+createdAt: '2019-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -329,7 +330,7 @@ usageLimits:
       - onlineMeetings
       - webinars
 plans:
-  - name: BUSINESS
+  BUSINESS:
     description: ''
     monthlyPrice: 10
     annualPrice: 8.25
@@ -337,7 +338,7 @@ plans:
     features: null
     usageLimits: null
     price: 10
-  - name: BUSINESS_ESSENTIALS
+  BUSINESS_ESSENTIALS:
     description: ''
     monthlyPrice: 6
     annualPrice: 5
@@ -369,23 +370,9 @@ plans:
         value: true
       microsoftTeams:
         value: true
-      microsoftWordDesktopApp:
-        value: false
-      microsoftExcelDesktopApp:
-        value: false
-      microsoftPowerPointDesktopApp:
-        value: false
-      microsoftOneNoteDesktopApp:
-        value: false
-      microsoftOutlookDesktopApp:
-        value: false
-      microsoftPublisher:
-        value: false
-      microsoftAccess:
-        value: false
     usageLimits: null
     price: 6
-  - name: BUSINESS_PREMIUM
+  BUSINESS_PREMIUM:
     description: ''
     monthlyPrice: 15
     annualPrice: 12.5
@@ -427,5 +414,3 @@ plans:
         value: true
     usageLimits: null
     price: 15
-addOns: null
-createdAt: '2019-11-29'

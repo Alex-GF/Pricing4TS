@@ -1,5 +1,6 @@
 saasName: Tableau
 version: '2.0'
+createdAt: '2022-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -231,7 +232,7 @@ usageLimits:
     linkedFeatures:
       - runFlows
 plans:
-  - name: VIEWER
+  VIEWER:
     description: >-
       View and interact with dashboards and visualizations in a secure,
       easy-to-use platform.
@@ -241,7 +242,7 @@ plans:
     features: null
     usageLimits: null
     price: 15
-  - name: EXPLORER
+  EXPLORER:
     description: >-
       Explore trusted data and answer your own questions faster with full
       self-service analytics.
@@ -275,7 +276,7 @@ plans:
         value: true
     usageLimits: null
     price: 42
-  - name: CREATOR
+  CREATOR:
     description: >-
       Discover insights with a powerful suite of products that support your
       end-to-end analytics workflow.
@@ -326,7 +327,7 @@ plans:
     usageLimits: null
     price: 70
 addOns:
-  - name: dataManagementViewer
+  dataManagementViewer:
     availableFor:
       - VIEWER
     price: Contact Sales
@@ -338,7 +339,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: dataManagementExplorer
+  dataManagementExplorer:
     availableFor:
       - EXPLORER
     price: Contact Sales
@@ -354,7 +355,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: dataManagementCreator
+  dataManagementCreator:
     availableFor:
       - CREATOR
     price: Contact Sales
@@ -380,7 +381,7 @@ addOns:
       flowsLimit:
         value: 1
     usageLimitsExtensions: null
-  - name: advancedManagement
+  advancedManagement:
     availableFor:
       - CREATOR
     price: Contact Sales
@@ -392,7 +393,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: einsteinDiscovery
+  einsteinDiscovery:
     availableFor:
       - VIEWER
       - EXPLORER
@@ -404,4 +405,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2022-11-29'

@@ -1,5 +1,6 @@
 saasName: Clockify
 version: '2.0'
+createdAt: '2019-11-11'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -163,7 +164,7 @@ usageLimits:
     linkedFeatures:
       - unlimitedReports
 plans:
-  - name: FREE
+  FREE:
     description: For teams that just need a simple and easy to use time tracker
     monthlyPrice: 0
     annualPrice: 0
@@ -171,7 +172,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PLUS
+  PLUS:
     description: For companies that need a bit more control over who can do what.
     monthlyPrice: 9.99
     annualPrice: 8.33
@@ -193,7 +194,7 @@ plans:
         value: true
     usageLimits: null
     price: 9.99
-  - name: PREMIUM
+  PREMIUM:
     description: For companies that need a robust full-featured time tracker.
     monthlyPrice: 29.99
     annualPrice: 24.99
@@ -227,7 +228,7 @@ plans:
         value: true
     usageLimits: null
     price: 29.99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For organizations that need complete control over their data.
     monthlyPrice: 9.99
     annualPrice: 8.33
@@ -267,5 +268,3 @@ plans:
         value: true
     usageLimits: null
     price: 9.99
-addOns: null
-createdAt: '2019-11-11'

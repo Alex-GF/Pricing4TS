@@ -1,5 +1,6 @@
 saasName: Slack
 version: '2.0'
+createdAt: '2023-10-23'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -369,7 +370,7 @@ usageLimits:
     linkedFeatures:
       - slackConnect
 plans:
-  - name: FREE
+  FREE:
     description: The fastest and easiest way to try Slack
     monthlyPrice: 0
     annualPrice: 0
@@ -377,7 +378,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: More control for small teams looking to enhance collaboration
     monthlyPrice: 8.75
     annualPrice: 7.25
@@ -417,7 +418,7 @@ plans:
       useSlackConnect:
         value: 10000000000000
     price: 8.75
-  - name: BUSINESS_PLUS
+  BUSINESS_PLUS:
     description: Expand your business, increase productivity, and keep your teams connected
     monthlyPrice: 15
     annualPrice: 12.5
@@ -477,7 +478,7 @@ plans:
       useSlackConnect:
         value: 10000000000000
     price: 15
-  - name: ENTERPRISE_GRID
+  ENTERPRISE_GRID:
     description: >-
       Slack's plan for the most demanding enterprises. Includes the flexibility
       to meet regulatory requirements and the power to support your performance
@@ -557,7 +558,7 @@ plans:
         value: 10000000000000
     price: Contact Sales
 addOns:
-  - name: slackEnterpriseKeys
+  slackEnterpriseKeys:
     availableFor:
       - ENTERPRISE_GRID
     monthlyPrice: Contact Sales
@@ -569,4 +570,3 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: Contact Sales
-createdAt: '2023-10-23'

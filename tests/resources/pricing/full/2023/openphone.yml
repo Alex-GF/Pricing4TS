@@ -1,157 +1,159 @@
 saasName: OpenPhone
-version: '2.0'
+day: 20
+month: 11
+year: 2023
 currency: USD
 hasAnnualPayment: true
 features:
   usAndCanadaCalling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   usAndCanadaMessaging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   internationalCalling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   internationalMessaging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   phoneNumbers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   portPhoneNumbersFromOtherCarriers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharedPhoneNumbers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   snippets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   aiMessageResponses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   internalThreads:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharedContacts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   contactNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   businessHours:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   voicemailTranscripts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   manualCallRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   automaticCallRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   autoReplies:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   scheduledMessages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   userGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   groupMessaging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   phoneMenus:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   aiCallSummaries:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   aiCallTranscripts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   groupCalling:
-    description: Coming Soon
+    description: "Coming Soon"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   callHold:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   callTransfers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   ringOrder:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   emailIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -159,7 +161,7 @@ features:
     pricingURLs:
       - https://slack.com/pricing
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -167,7 +169,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   smsViaZapier:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -175,7 +177,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   googleContactsIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -183,13 +185,13 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   webhooksIntegration:
-    description: Beta
+    description: "Beta"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   hubSpotCRMIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -197,7 +199,7 @@ features:
     pricingURLs:
       - https://www.hubspot.com/pricing
   salesforceIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -205,7 +207,7 @@ features:
     pricingURLs:
       - https://www.salesforce.com/products/sales-cloud/pricing/
   gongIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -213,95 +215,94 @@ features:
     pricingURLs:
       - https://www.gong.io/pricing/
   userRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   userManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   analytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   reporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   auditLog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   SOC2Report:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   standardSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   useCanadaMessagingFeePayed:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - usAndCanadaMessaging
   phoneNumbersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: phone number
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - phoneNumbers
   sharedPhoneNumbersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: user
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - sharedPhoneNumbers
   smsViaZapierAddonLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: message
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - smsViaZapier
 plans:
-  - name: STARTER
-    description: ''
-    monthlyPrice: 19
-    annualPrice: 15
+  STARTER:
+    description: ""
+    monthlyPrice: 19.0
+    annualPrice: 15.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 19
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 33
-    annualPrice: 23
+  BUSINESS:
+    description: ""
+    monthlyPrice: 33.0
+    annualPrice: 23.0
     unit: user/month
     features:
       automaticCallRecording:
@@ -333,9 +334,8 @@ plans:
     usageLimits:
       sharedPhoneNumbersLimit:
         value: .inf
-    price: 33
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -375,21 +375,20 @@ plans:
     usageLimits:
       sharedPhoneNumbersLimit:
         value: .inf
-    price: Contact Sales
 addOns:
-  - name: carrierReviewAndSetupFeesForUsCanadaMessaging
+  carrierReviewAndSetupFeesForUsCanadaMessaging:
     availableFor:
       - STARTER
       - BUSINESS
       - ENTERPRISE
-    price: 19
+    price: 19.0
     unit: one-time payment
     features:
       usAndCanadaMessaging:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: useCanadaMessagingFee
+  useCanadaMessagingFee:
     availableFor:
       - STARTER
       - BUSINESS
@@ -401,19 +400,19 @@ addOns:
       useCanadaMessagingFeePayed:
         value: true
     usageLimitsExtensions: null
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STARTER
       - BUSINESS
       - ENTERPRISE
-    price: 5
+    price: 5.0
     unit: phoneNumber/month
     features: null
     usageLimits: null
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-  - name: internationalCallingAndMessaging
+  internationalCallingAndMessaging:
     availableFor:
       - STARTER
       - BUSINESS
@@ -427,7 +426,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsViaZapierAddon
+  smsViaZapierAddon:
     availableFor:
       - STARTER
       - BUSINESS
@@ -439,7 +438,7 @@ addOns:
     usageLimitsExtensions:
       smsViaZapierAddonLimit:
         value: 1
-  - name: soc2ReportAddOn
+  soc2ReportAddOn:
     availableFor:
       - STARTER
       - BUSINESS
@@ -451,4 +450,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2023-11-19'

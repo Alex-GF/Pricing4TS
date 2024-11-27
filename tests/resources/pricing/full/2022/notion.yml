@@ -1,250 +1,252 @@
 saasName: Notion
-version: '2.0'
+day: 30
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: true
 features:
   pages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   blocks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   guests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileUploads:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   versionHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   realTimeCollaboration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   linkSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   collaborativeWorkspace:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   openTeamSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   closeTeamSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   privateTeamSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   advancedTeamSpacePermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   webApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   desktopApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   mobileApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   blockContentTypes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   starterTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   wikis:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   docs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   notes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   databases:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   tableView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   listView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   calendarView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   kanbanBoardView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   galleryView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   timelineView:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   syncDatabases:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   linkPreviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   api:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   bulkExport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   adminTools:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   permissionGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   advancedPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   advancedSecurityControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   samlSso:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   userProvisioning:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   membershipAdmin:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   auditLog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   bulkPdfExport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedCustomerManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   customContract:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: PAYMENT
   invoicing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: PAYMENT
   accessFeaturesEarly:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-usageLimits:
+usageLimits: 
   membersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: member
     type: NON_RENEWABLE
     linkedFeatures: null
   guestsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: guest
@@ -252,7 +254,7 @@ usageLimits:
     linkedFeatures:
       - guests
   fileUploadsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: MB
@@ -260,7 +262,7 @@ usageLimits:
     linkedFeatures:
       - fileUploads
   versionHistoryThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 30
     unit: days
@@ -268,7 +270,7 @@ usageLimits:
     linkedFeatures:
       - versionHistory
   syncDatabasesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: database
@@ -276,18 +278,17 @@ usageLimits:
     linkedFeatures:
       - syncDatabases
 plans:
-  - name: PERSONAL
-    description: ''
-    monthlyPrice: 0
-    annualPrice: 0
+  PERSONAL:
+    description: ""
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PERSONAL_PRO
-    description: ''
-    monthlyPrice: 5
-    annualPrice: 4
+  PERSONAL_PRO:
+    description: ""
+    monthlyPrice: 5.0
+    annualPrice: 4.0
     unit: user/month
     features:
       versionHistory:
@@ -301,11 +302,10 @@ plans:
         value: .inf
       syncDatabasesLimit:
         value: .inf
-    price: 5
-  - name: TEAM
-    description: ''
-    monthlyPrice: 10
-    annualPrice: 8
+  TEAM:
+    description: ""
+    monthlyPrice: 10.0
+    annualPrice: 8.0
     unit: user/month
     features:
       versionHistory:
@@ -333,9 +333,8 @@ plans:
         value: .inf
       syncDatabasesLimit:
         value: .inf
-    price: 10
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -391,6 +390,4 @@ plans:
         value: .inf
       syncDatabasesLimit:
         value: .inf
-    price: Contact Sales
 addOns: null
-createdAt: '2022-11-29'

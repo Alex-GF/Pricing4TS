@@ -1,5 +1,6 @@
-saasName: Clockify
+saasName: clockify
 version: '2.0'
+createdAt: '2023-12-02'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -391,9 +392,8 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
-usageLimits: null
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -401,7 +401,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BASIC
+  BASIC:
     description: Administration
     monthlyPrice: 4.99
     annualPrice: 3.99
@@ -435,7 +435,7 @@ plans:
         value: true
     usageLimits: null
     price: 4.99
-  - name: STANDARD
+  STANDARD:
     description: Timesheeting & billing
     monthlyPrice: 6.99
     annualPrice: 5.49
@@ -493,7 +493,7 @@ plans:
         value: true
     usageLimits: null
     price: 6.99
-  - name: PRO
+  PRO:
     description: Profit & Productivity
     monthlyPrice: 9.99
     annualPrice: 7.99
@@ -583,7 +583,7 @@ plans:
         value: true
     usageLimits: null
     price: 9.99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: 14.99
     annualPrice: 11.99
@@ -682,7 +682,7 @@ plans:
     usageLimits: null
     price: 14.99
 addOns:
-  - name: kioskBasic
+  kioskBasic:
     availableFor:
       - BASIC
     price: 0.99
@@ -692,7 +692,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: kioskStandard
+  kioskStandard:
     availableFor:
       - STANDARD
     price: 1.49
@@ -702,7 +702,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: kioskPro
+  kioskPro:
     availableFor:
       - PRO
     price: 1.99
@@ -712,7 +712,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: kioskEnterprise
+  kioskEnterprise:
     availableFor:
       - ENTERPRISE
     price: 2.99
@@ -722,4 +722,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2023-12-02'

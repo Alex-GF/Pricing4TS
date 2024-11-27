@@ -1,5 +1,6 @@
 saasName: OpenPhone
 version: '2.0'
+createdAt: '2020-11-11'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -125,7 +126,7 @@ usageLimits:
     linkedFeatures:
       - usAndCanadaMessaging
 plans:
-  - name: STANDARD
+  STANDARD:
     description: For individuals, teams and companies.
     monthlyPrice: 10
     annualPrice: 10
@@ -133,7 +134,7 @@ plans:
     features: null
     usageLimits: null
     price: 10
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For organizations with more requirements.
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -153,7 +154,7 @@ plans:
         value: true
     price: Contact Sales
 addOns:
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STANDARD
       - ENTERPRISE
@@ -164,4 +165,3 @@ addOns:
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-createdAt: '2020-11-11'

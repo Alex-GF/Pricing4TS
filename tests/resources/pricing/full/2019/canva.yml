@@ -1,106 +1,108 @@
 saasName: Canva
-version: '2.0'
+day: 6
+month: 9
+year: 2019
 currency: USD
 hasAnnualPayment: false
 features:
   templates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   uploadYourOwnImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   cloudStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   folders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   exclusiveAccessToPhotosIllustrattionsAndTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   magicResize:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   uploadCustomFonts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   setBrandColorPalletes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   saveTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   designSearch:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   createDesignsWithCustomDimesions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   downloadDesignsWithTransparentBackground:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   exportDesignsAsAnimatedGIF:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   teamAdministrativeControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   teamPricingPlans:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   onboardingIncentives:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   99.9UptimeSLA:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
 usageLimits:
   cloudStorageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: GB
@@ -108,7 +110,7 @@ usageLimits:
     linkedFeatures:
       - cloudStorage
   foldersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: folder
@@ -116,18 +118,15 @@ usageLimits:
     linkedFeatures:
       - folders
 plans:
-  - name: FREE
-    description: Everything you need to start designing
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Everything you need to start designing"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PRO
-    description: >-
-      Designing together just got better. Professional design made easy with
-      unlimited access to premium tools and content.
+  PRO:
+    description: "Designing together just got better. Professional design made easy with unlimited access to premium tools and content."
     monthlyPrice: 12.95
     unit: user/month
     features:
@@ -154,11 +153,8 @@ plans:
         value: 1000000000
       foldersLimit:
         value: 1000000000
-    price: 12.95
-  - name: ENTERPRISE
-    description: >-
-      Empower your team, manage your brand, and scale your content all in one
-      place
+  ENTERPRISE:
+    description: "Empower your team, manage your brand, and scale your content all in one place"
     monthlyPrice: Contact Sales
     unit: user/month
     features:
@@ -195,6 +191,4 @@ plans:
         value: 1000000000
       foldersLimit:
         value: 1000000000
-    price: Contact Sales
 addOns: null
-createdAt: '2019-09-05'

@@ -1,5 +1,6 @@
 saasName: Dropbox
 version: '2.0'
+createdAt: '2022-11-15'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -376,14 +377,14 @@ usageLimits:
     linkedFeatures:
       - apiAccessToDataTransportPlatformPartners
 plans:
-  - name: PLUS
+  PLUS:
     description: ''
     monthlyPrice: 9.99
     unit: /month
     features: null
     usageLimits: null
     price: 9.99
-  - name: FAMILY
+  FAMILY:
     description: ''
     monthlyPrice: 16.99
     unit: /month
@@ -396,7 +397,7 @@ plans:
       usersLimit:
         value: 6
     price: 16.99
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 16.58
     unit: /month
@@ -429,7 +430,7 @@ plans:
       includeCustomizationOptionsInDropboxTransfer:
         value: true
     price: 16.58
-  - name: STANDARD
+  STANDARD:
     description: ''
     monthlyPrice: 15
     unit: user/month
@@ -440,8 +441,6 @@ plans:
         value: true
       externalSharingReporting:
         value: true
-      dropboxVault:
-        value: false
       watermarking:
         value: true
       accountTransferTool:
@@ -486,7 +485,7 @@ plans:
       dropboxTransferLimit:
         value: 2
     price: 15
-  - name: ADVANCED
+  ADVANCED:
     description: ''
     monthlyPrice: 24
     unit: user/month
@@ -503,8 +502,6 @@ plans:
         value: true
       alertsAndNotifications:
         value: true
-      dropboxVault:
-        value: false
       watermarking:
         value: true
       accountTransferTool:
@@ -563,5 +560,3 @@ plans:
       includeCustomizationOptionsInDropboxTransfer:
         value: true
     price: 24
-addOns: null
-createdAt: '2022-11-15'

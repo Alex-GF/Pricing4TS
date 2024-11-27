@@ -1,5 +1,6 @@
 saasName: Zapier
 version: '2.0'
+createdAt: '2024-07-02'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -296,7 +297,7 @@ usageLimits:
       - tasks
       - zaps
 plans:
-  - name: FREE
+  FREE:
     description: Anyone can automate their work. Start with the basics.
     monthlyPrice: 0
     annualPrice: 0
@@ -304,7 +305,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: Advanced tools to take your work to the next level.
     monthlyPrice: 61.25
     annualPrice: 49
@@ -344,7 +345,7 @@ plans:
       pollingTimeThreshold:
         value: 2
     price: 61.25
-  - name: TEAM
+  TEAM:
     description: Bring your team together to collaborate on automation.
     monthlyPrice: 446.27
     annualPrice: 299
@@ -400,7 +401,7 @@ plans:
       pollingTimeThreshold:
         value: 1
     price: 446.27
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Automation plus enterprise-grade features.
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -430,7 +431,6 @@ plans:
         value: true
       customDataRetention:
         value: true
-        valueType: true
       observabilityAPI:
         value: true
       analytics:
@@ -488,7 +488,7 @@ plans:
         value: 1
     price: Contact Sales
 addOns:
-  - name: samlSingleSignOnAddOn
+  samlSingleSignOnAddOn:
     availableFor:
       - TEAM
     price: Contact Sales
@@ -498,7 +498,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: tablesPremiumAddOn
+  tablesPremiumAddOn:
     availableFor:
       - FREE
       - PROFESSIONAL
@@ -511,7 +511,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: interfacesPremiumAddOn
+  interfacesPremiumAddOn:
     availableFor:
       - FREE
       - PROFESSIONAL
@@ -524,7 +524,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: chatBotsPremiumAddOn
+  chatBotsPremiumAddOn:
     availableFor:
       - FREE
       - PROFESSIONAL
@@ -537,4 +537,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-02'

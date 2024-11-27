@@ -1,119 +1,114 @@
 saasName: Evernote
-version: '2.0'
+day: 7
+month: 7
+year: 2024
 currency: USD
 hasAnnualPayment: true
 features:
   notes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   notebooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   syncAcrossDevices:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForIOS:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForAndroid:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForWindows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForMac:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForWeb:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   tasks:
-    description: Add dates, set reminders, assign tasks to others
+    description: "Add dates, set reminders, assign tasks to others"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   evernoteCalendar:
-    description: Access and create events
+    description: "Access and create events"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   externalCalendars:
-    description: Connect your Google or Microsoft Office calendars
+    description: "Connect your Google or Microsoft Office calendars"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
       - https://workspace.google.com/pricing
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/microsoft-outlook-email-and-calendar-software
+      - https://www.microsoft.com/en-us/microsoft-365/microsoft-outlook-email-and-calendar-software
   attachFilesToNotes:
-    description: >-
-      Attach photos, PDFs, spreadsheets, Google Docs, and other files to your
-      notes
+    description: "Attach photos, PDFs, spreadsheets, Google Docs, and other files to your notes"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedSearch:
-    description: >-
-      Find anything in your account with Boolean, geographic, and filtered
-      searches
+    description: "Find anything in your account with Boolean, geographic, and filtered searches"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedOrganization:
-    description: Add tags and reminders to notes
+    description: "Add tags and reminders to notes"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   offlineNotes:
-    description: Access notes from anywhere
+    description: "Access notes from anywhere"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   easySharing:
-    description: >-
-      Email content into Evernote, email notes to collaborators, export notes
-      and notebooks as PDFs
+    description: "Email content into Evernote, email notes to collaborators, export notes and notebooks as PDFs"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   aiPoweredSearch:
-    description: Use natural language to search your notes
+    description: "Use natural language to search your notes"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   aiEdit:
-    description: Use AI to write, summarize, tidy, and translate your notes
+    description: "Use AI to write, summarize, tidy, and translate your notes"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   googleIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -121,16 +116,15 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   microsoftIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/microsoft-outlook-email-and-calendar-software
+      - https://www.microsoft.com/en-us/microsoft-365/microsoft-outlook-email-and-calendar-software
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -138,64 +132,64 @@ features:
     pricingURLs:
       - https://slack.com/pricing
   twoStepVerification:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   applyInNoteEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   helpAndLearningCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   communityForum:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   supportTickets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   spaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   maintainBusinessDataOwnership:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   centralizedAccountAdministration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   centralizedUserManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   userActivityLogs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
-usageLimits:
+usageLimits: 
   notesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 50
     unit: notes
@@ -203,7 +197,7 @@ usageLimits:
     linkedFeatures:
       - notes
   notebooksLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: notebooks
@@ -211,29 +205,29 @@ usageLimits:
     linkedFeatures:
       - notebooks
   maximumNoteSize:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25
     unit: MB/note
     type: NON_RENEWABLE
     linkedFeatures:
-      - notes
+      - notes  
   globalMonthlyUploadLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 60
     unit: MB
     type: RENEWABLE
     linkedFeatures: null
   monthlyUploadLimitByUser:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: MB
     type: RENEWABLE
     linkedFeatures: null
   syncAccrossDevicesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: devices
@@ -241,7 +235,7 @@ usageLimits:
     linkedFeatures:
       - syncAcrossDevices
   externalCalendarsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: calendars
@@ -249,16 +243,15 @@ usageLimits:
     linkedFeatures:
       - externalCalendars
 plans:
-  - name: FREE
-    description: Capture ideas and find them quickly
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Capture ideas and find them quickly"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: /month
     features: null
     usageLimits: null
-    price: 0
-  - name: PERSONAL
-    description: Keep home and family on track
+  PERSONAL:
+    description: "Keep home and family on track"
     monthlyPrice: 12.99
     annualPrice: 10.83
     unit: /month
@@ -270,15 +263,14 @@ plans:
         value: 150000
       notebooksLimit:
         value: 2000
-      maximumNoteSize:
+      maximumNoteSize: 
         value: 200
-      globalMonthlyUploadLimit:
+      globalMonthlyUploadLimit: 
         value: 10240
       syncAccrossDevicesLimit:
         value: 1000000000
-    price: 12.99
-  - name: PROFESIONAL
-    description: Tackle any project, at work or at home
+  PROFESIONAL:
+    description: "Tackle any project, at work or at home"
     monthlyPrice: 16.99
     annualPrice: 14.16
     unit: /month
@@ -293,22 +285,21 @@ plans:
         value: true
       supportTickets:
         value: true
-    usageLimits:
+    usageLimits: 
       notesLimit:
         value: 150000
       notebooksLimit:
         value: 2000
-      maximumNoteSize:
+      maximumNoteSize: 
         value: 200
-      globalMonthlyUploadLimit:
+      globalMonthlyUploadLimit: 
         value: 20480
       syncAccrossDevicesLimit:
         value: 1000000000
       externalCalendarsLimit:
         value: 5
-    price: 16.99
-  - name: TEAMS
-    description: Collaborate and share among your team
+  TEAMS:
+    description: "Collaborate and share among your team"
     monthlyPrice: 24.99
     annualPrice: 20.83
     unit: user/month
@@ -335,14 +326,14 @@ plans:
         value: true
       singleSignOn:
         value: true
-    usageLimits:
+    usageLimits: 
       notesLimit:
         value: 500000
       notebooksLimit:
         value: 10000
-      maximumNoteSize:
+      maximumNoteSize: 
         value: 200
-      globalMonthlyUploadLimit:
+      globalMonthlyUploadLimit: 
         value: 20480
       monthlyUploadLimitByUser:
         value: 2048
@@ -350,6 +341,4 @@ plans:
         value: 1000000000
       externalCalendarsLimit:
         value: 5
-    price: 24.99
 addOns: null
-createdAt: '2024-07-06'

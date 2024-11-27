@@ -1,5 +1,6 @@
 saasName: Deskera
 version: '2.0'
+createdAt: '2024-07-15'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -539,16 +540,15 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-usageLimits: null
 plans:
-  - name: GROWTH
+  GROWTH:
     description: ''
     annualPrice: 199
     unit: user/month
     features: null
     usageLimits: null
     price: 199
-  - name: ESSENTIAL
+  ESSENTIAL:
     description: ''
     annualPrice: 249
     unit: user/month
@@ -569,7 +569,7 @@ plans:
         value: true
     usageLimits: null
     price: 249
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     annualPrice: Contact Sales
     unit: user/month
@@ -602,5 +602,3 @@ plans:
         value: true
     usageLimits: null
     price: Contact Sales
-addOns: null
-createdAt: '2024-07-15'

@@ -1,257 +1,258 @@
-saasName: Jira
-version: '2.0'
+saasName: Jira 
+day: 30
+month: 11
+year: 2022
 currency: USD
 hasAnnualPayment: false
 features:
   sites:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   scrumAndKanbanBoards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   backlog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   agileReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   customizableWorkflows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   appsAndIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   automation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   basicRoadmaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedRoadmaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   basicDependencyManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedDependencyManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   capacityPlanning:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   projectArchiving:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   atlassianAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   atlassianDataLake:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   dataConnectors:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   domainVerification:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   accountCapture:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sessionDurationManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   projectRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   advancedPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   adminInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   sandbox:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   releaseTracks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   atlassianAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   passwordPolicies:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   encryptionInTransitAndAtRest:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   businessContinuityAndDisasterRecovery:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   mobileDeviceManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   auditLogs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   anonymousAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   ipAllowlisting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   dataResidency:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   storage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   communitySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   localBusinessHoursSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   24x7Support:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   enterpriseSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   uptimeSLA:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   centralizedUserSubscriptions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: PAYMENT
 usageLimits:
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: user/site
     type: NON_RENEWABLE
     linkedFeatures: null
   sitesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: site
     type: NON_RENEWABLE
     linkedFeatures: null
   storageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - storage
   projectWithAutomationsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: project
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - automation
 plans:
-  - name: FREE
-    description: ''
-    monthlyPrice: 0
+  FREE:
+    description: ""
+    monthlyPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: STANDARD
-    description: ''
+  STANDARD:
+    description: ""
     monthlyPrice: 7.16
     unit: user/month
     features:
-      projectRoles:
+      projectRoles: 
         value: true
       advancedPermissions:
         value: true
@@ -268,9 +269,8 @@ plans:
         value: 35000
       storageLimit:
         value: 250
-    price: 7.16
-  - name: PREMIUM
-    description: ''
+  PREMIUM:
+    description: ""
     monthlyPrice: 12.48
     unit: user/month
     features:
@@ -282,7 +282,7 @@ plans:
         value: true
       projectArchiving:
         value: true
-      projectRoles:
+      projectRoles: 
         value: true
       advancedPermissions:
         value: true
@@ -313,9 +313,8 @@ plans:
         value: .inf
       projectWithAutomationsLimit:
         value: .inf
-    price: 12.48
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     unit: user/month
     features:
@@ -333,7 +332,7 @@ plans:
         value: true
       dataConnectors:
         value: true
-      projectRoles:
+      projectRoles: 
         value: true
       advancedPermissions:
         value: true
@@ -372,9 +371,8 @@ plans:
         value: .inf
       projectWithAutomationsLimit:
         value: .inf
-    price: Contact Sales
 addOns:
-  - name: atlassianAccessAddOn
+  atlassianAccessAddOn:
     availableFor:
       - FREE
       - STANDARD
@@ -386,4 +384,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2022-11-29'

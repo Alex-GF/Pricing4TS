@@ -1,5 +1,6 @@
 saasName: ClickUp
 version: '2.0'
+createdAt: '2020-10-01'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -601,7 +602,7 @@ usageLimits:
     linkedFeatures:
       - teams
 plans:
-  - name: FREE
+  FREE:
     description: Everything you need to be productive
     monthlyPrice: 0
     annualPrice: 0
@@ -609,7 +610,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: UNLIMITED
+  UNLIMITED:
     description: Unlimited storage and advanced features
     monthlyPrice: 9
     annualPrice: 5
@@ -671,7 +672,7 @@ plans:
       teamsLimit:
         value: 1
     price: 9
-  - name: BUSINESS
+  BUSINESS:
     description: Business class features and security
     monthlyPrice: 19
     annualPrice: 9
@@ -781,7 +782,7 @@ plans:
       teamsLimit:
         value: 1000000000
     price: 19
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -923,5 +924,3 @@ plans:
       teamsLimit:
         value: 1000000000
     price: Contact Sales
-addOns: null
-createdAt: '2020-10-01'

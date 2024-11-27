@@ -1,5 +1,6 @@
 saasName: Wrike
 version: '2.0'
+createdAt: '2021-11-23'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -350,7 +351,7 @@ usageLimits:
     linkedFeatures:
       - automationEngine
 plans:
-  - name: FREE
+  FREE:
     description: 'For teams getting started: Centralized task management'
     monthlyPrice: 0
     annualPrice: 0
@@ -358,14 +359,12 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: 'For fast growing teams: Project planning and team collaboration'
     monthlyPrice: 9.8
     annualPrice: 9.8
     unit: user/month
     features:
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       shareableDashboards:
@@ -380,7 +379,7 @@ plans:
       maxNumberOfUsers:
         value: 200
     price: 9.8
-  - name: BUSINESS
+  BUSINESS:
     description: >-
       For all teams across an organization: Customizable platform for any team
       or use case
@@ -388,8 +387,6 @@ plans:
     annualPrice: 24.8
     unit: user/month
     features:
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       shareableDashboards:
@@ -444,14 +441,12 @@ plans:
       useStorage:
         value: 5
     price: 24.8
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: 'For large teams: Enterprise-grade security and scalability'
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
     features:
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       shareableDashboards:
@@ -518,15 +513,13 @@ plans:
       useAutomations:
         value: 1000
     price: Contact Sales
-  - name: PINNACLE
+  PINNACLE:
     description: >-
       For teams with complex work needs: Advanced tools and analytics for
       complex work
     monthlyPrice: Contact sales
     annualPrice: Contact sales
     features:
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       shareableDashboards:
@@ -610,7 +603,7 @@ plans:
         value: 1500
     price: Contact sales
 addOns:
-  - name: wrikeMarketingInsights
+  wrikeMarketingInsights:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -619,7 +612,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeIntegrate
+  wrikeIntegrate:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -628,7 +621,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeTwoWaySync
+  wrikeTwoWaySync:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -637,7 +630,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeLock
+  wrikeLock:
     availableFor:
       - ENTERPRISE
       - PINNACLE
@@ -645,4 +638,3 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2021-11-23'

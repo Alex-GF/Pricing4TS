@@ -1,5 +1,6 @@
 saasName: Planable
 version: '2.0'
+createdAt: '2019-05-23'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -61,7 +62,7 @@ usageLimits:
     linkedFeatures:
       - workspaces
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 24
     annualPrice: 24
@@ -69,7 +70,7 @@ plans:
     features: null
     usageLimits: null
     price: 24
-  - name: PREMIUM
+  PREMIUM:
     description: For small agencies & brands
     monthlyPrice: 99
     annualPrice: 99
@@ -83,7 +84,7 @@ plans:
       workspacesLimit:
         value: 5
     price: 99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For large organizations
     monthlyPrice: Contact Us
     annualPrice: Contact Us
@@ -101,5 +102,3 @@ plans:
       workspacesLimit:
         value: 1000000000000
     price: Contact Us
-addOns: null
-createdAt: '2019-05-23'

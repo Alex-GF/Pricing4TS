@@ -1,5 +1,6 @@
 saasName: Canva
-version: '2.0'
+version: "2.0"
+createdAt: "2023-11-24"
 currency: EUR
 hasAnnualPayment: true
 features:
@@ -9,7 +10,7 @@ features:
     defaultValue: 1+ million
     type: DOMAIN
   freeFonts:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: 1,000+
     type: DOMAIN
@@ -123,31 +124,31 @@ features:
     defaultValue: Manually sync your video footage to your soundtrack
     type: DOMAIN
   magicSwitch:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   magicMorph:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   magicGrab:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   magicExpand:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   magicAnimate:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
@@ -158,112 +159,112 @@ features:
     defaultValue: false
     type: MANAGEMENT
   comments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   linkSharing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   teamOnlyLinks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   assignTasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   approvals:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   approvalsNotifications:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   teamReports:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   teamPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   ownerShipTransfer:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   inviteTeamMembers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   basicContentPlanner:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   basicDesignInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   workplaceSocialMedia:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workplacePrint:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workplacePresentations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workplaceVideo:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workplaceSites:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workplaceWhiteboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workplaceDocuments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   brandControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   brandTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   brandKits:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
@@ -273,7 +274,7 @@ features:
     defaultValue: false
     type: DOMAIN
   elementLockingAndApprovalWorkflows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
@@ -283,12 +284,12 @@ features:
     defaultValue: false
     type: DOMAIN
   cloudStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   folders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
@@ -299,7 +300,7 @@ features:
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   payAsYouGrowBilling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
@@ -310,23 +311,23 @@ features:
     type: GUARANTEE
     docUrl: https://www.canva.com/pricing/
   contactMethod:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: Forms
     type: SUPPORT
   location:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: MNL
     type: SUPPORT
   availability:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue: 24x7
     type: SUPPORT
 usageLimits:
   magicDesignUsageTokens:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: use
@@ -334,7 +335,7 @@ usageLimits:
     linkedFeatures:
       - magicDesign
   brandKitsUnits:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: kit
@@ -342,7 +343,7 @@ usageLimits:
     linkedFeatures:
       - brandKits
   cloudStorageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: GB
@@ -350,7 +351,7 @@ usageLimits:
     linkedFeatures:
       - cloudStorage
 plans:
-  - name: FREE
+  FREE:
     description: >-
       For anyone to design anything, on their own or with family, friends, or
       others. No experience required.
@@ -360,7 +361,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: >-
       For individuals, solopreneurs and freelance designers who want unlimited
       access to premium content, to create professional designs with ease and
@@ -441,7 +442,7 @@ plans:
       cloudStorageLimit:
         value: 1000
     price: 11.99
-  - name: TEAMS
+  TEAMS:
     description: >-
       All the great features of Canva Pro, plus we think you'll love these
       features designed to allow teams of all sizes to collaborate with ease.
@@ -537,5 +538,3 @@ plans:
       cloudStorageLimit:
         value: 1000
     price: 23
-addOns: null
-createdAt: '2023-11-24'

@@ -1,5 +1,6 @@
 saasName: UserGuiding
 version: '2.0'
+createdAt: '2022-11-22'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -311,7 +312,7 @@ usageLimits:
     linkedFeatures:
       - domains
 plans:
-  - name: BASIC
+  BASIC:
     description: >-
       Onboard new users and engage customers throughout their lifecycles. Ideal
       for startups and SMBs.
@@ -321,7 +322,7 @@ plans:
     features: null
     usageLimits: null
     price: 99
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: >-
       Maximize activation, customer revenue, and retention. Ideal for rapidly
       growing companies.
@@ -365,7 +366,7 @@ plans:
       domainsLimit:
         value: 5
     price: 399
-  - name: CORPORATE
+  CORPORATE:
     description: >-
       Transform your product experience. Ideal for enterprises with multiple
       products.
@@ -409,5 +410,3 @@ plans:
       domainsLimit:
         value: 1000000000
     price: 699
-addOns: null
-createdAt: '2022-11-22'

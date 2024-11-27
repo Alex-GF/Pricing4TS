@@ -1,5 +1,6 @@
 saasName: Figma
 version: '2.0'
+createdAt: '2024-07-05'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -100,6 +101,11 @@ features:
     description: ''
     valueType: BOOLEAN
     defaultValue: true
+    type: MANAGEMENT
+  unlimitedTeams:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: false
     type: MANAGEMENT
   branchingAndMerging:
     description: ''
@@ -489,15 +495,8 @@ usageLimits:
     type: NON_RENEWABLE
     linkedFeatures:
       - variableModes
-  unlimitedTeamsPermitted:
-    description: ''
-    valueType: BOOLEAN
-    defaultValue: false
-    type: NON_RENEWABLE
-    linkedFeatures:
-      - teams
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -505,7 +504,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 15
     annualPrice: 12
@@ -567,7 +566,7 @@ plans:
       variableModesLimits:
         value: 4
     price: 15
-  - name: ORGANIZATION
+  ORGANIZATION:
     description: ''
     monthlyPrice: null
     annualPrice: 45
@@ -651,15 +650,15 @@ plans:
         value: true
       activityLogs:
         value: true
+      unlimitedTeams:
+        value: true
     usageLimits:
       versionHistoryDepth:
         value: .inf
       variableModesLimits:
         value: 4
-      unlimitedTeamsPermitted:
-        value: true
     price: 45
-  - name: DEV_MODE_ORGANIZATION
+  DEV_MODE_ORGANIZATION:
     description: ''
     monthlyPrice: null
     annualPrice: 25
@@ -695,7 +694,7 @@ plans:
         value: true
     usageLimits: null
     price: 25
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: null
     annualPrice: 75
@@ -823,15 +822,15 @@ plans:
         value: true
       onboardingPlanningAndSupport:
         value: true
+      unlimitedTeams:
+        value: true
     usageLimits:
       versionHistoryDepth:
         value: .inf
       variableModesLimits:
         value: 40
-      unlimitedTeamsPermitted:
-        value: true
     price: 75
-  - name: DEV_MODE_ENTERPRISE
+  DEV_MODE_ENTERPRISE:
     description: ''
     monthlyPrice: null
     annualPrice: 35
@@ -873,5 +872,3 @@ plans:
         value: true
     usageLimits: null
     price: 35
-addOns: null
-createdAt: '2024-07-05'

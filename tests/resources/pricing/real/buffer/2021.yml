@@ -1,5 +1,6 @@
 saasName: Buffer
 version: '2.0'
+createdAt: '2021-11-29'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -496,7 +497,7 @@ usageLimits:
     linkedFeatures:
       - dataStorage
 plans:
-  - name: FREE
+  FREE:
     description: Publishing tools for individuals getting started with social media.
     monthlyPrice: 0
     annualPrice: 0
@@ -504,7 +505,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: ESSENTIALS
+  ESSENTIALS:
     description: Publishing, analytics & engagement tools for social media geeks.
     monthlyPrice: 6
     annualPrice: 5
@@ -581,7 +582,7 @@ plans:
         value: 1000000000000
     price: 6
 addOns:
-  - name: teamPack
+  teamPack:
     availableFor:
       - ESSENTIALS
     monthlyPrice: 6
@@ -611,7 +612,7 @@ addOns:
         value: 10000000000
     usageLimitsExtensions: null
     price: 6
-  - name: extraChannels
+  extraChannels:
     availableFor:
       - ESSENTIALS
     monthlyPrice: 6
@@ -622,4 +623,3 @@ addOns:
       socialChannelsLimit:
         value: 1
     price: 6
-createdAt: '2021-11-29'

@@ -1,123 +1,124 @@
 saasName: Quip
-version: '2.0'
+day: 26
+month: 11
+year: 2019
 currency: USD
 hasAnnualPayment: true
 features:
   documents:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   spreadsheets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   slides:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   basicLiveApps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   groupChat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   1to1messages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   desktopAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   tabletAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   mobileAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   teamManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   secureProductivity:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
-    docURL: https://quip.com/security/governance-and-compliance
+    docURL: "https://quip.com/security/governance-and-compliance"
   customAndAdvancedLiveApps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   enterpriseAPI:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   quipComponent:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   spreadsheetsWithLiveSalesforceData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   salesforceRecordLiveApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
-  embedQuipDocumentComponentsInAllObjects:
-    description: ''
+  embedQuipDocumentComponentsInAllObjectsInSalesforce:
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
 usageLimits: null
 plans:
-  - name: STARTER
-    description: Powerful collaboration for your team or small business.
-    monthlyPrice: 12
-    annualPrice: 10
+  STARTER:
+    description: "Powerful collaboration for your team or small business."
+    monthlyPrice: 12.0
+    annualPrice: 10.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 12
-  - name: ENTERPRISE
-    description: Secure productivity platform for large and complex teams.
+  ENTERPRISE:
+    description: "Secure productivity platform for large and complex teams."
     monthlyPrice: null
-    annualPrice: 25
+    annualPrice: 25.0
     unit: user/month
     features:
       customAndAdvancedLiveApps:
@@ -127,11 +128,8 @@ plans:
       enterpriseAPI:
         value: true
     usageLimits: null
-    price: 25
-  - name: CUSTOMER360
-    description: >-
-      Real-time alerts and collaboration inside Salesforce for sales and service
-      teams.
+  CUSTOMER360:
+    description: "Real-time alerts and collaboration inside Salesforce for sales and service teams."
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -148,9 +146,7 @@ plans:
         value: true
       salesforceRecordLiveApp:
         value: true
-      embedQuipDocumentComponentsInAllObjects:
+      embedQuipDocumentComponentsInAllObjectsInSalesforce:
         value: true
     usageLimits: null
-    price: Contact Sales
 addOns: null
-createdAt: '2019-11-25'

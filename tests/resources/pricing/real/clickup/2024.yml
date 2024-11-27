@@ -1,5 +1,6 @@
 saasName: ClickUp
 version: '2.0'
+createdAt: '2024-07-04'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -1034,7 +1035,7 @@ usageLimits:
     linkedFeatures:
       - criticalPathAndSlackTime
 plans:
-  - name: FREE
+  FREE:
     description: Best for personal use
     monthlyPrice: 0
     annualPrice: 0
@@ -1042,7 +1043,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: UNLIMITED
+  UNLIMITED:
     description: Best for small teams
     monthlyPrice: 10
     annualPrice: 7
@@ -1136,7 +1137,7 @@ plans:
       usePulseLiveOverview:
         value: 1000000000
     price: 10
-  - name: BUSINESS
+  BUSINESS:
     description: Best for mid-sized teams
     monthlyPrice: 19
     annualPrice: 12
@@ -1292,7 +1293,7 @@ plans:
       useCriticalPathAndSlackTime:
         value: 1000000000
     price: 19
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Best for many large teams
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -1513,7 +1514,7 @@ plans:
         value: 1000000000
     price: Contact Sales
 addOns:
-  - name: extraEmailAccountInClickUp
+  extraEmailAccountInClickUp:
     availableFor:
       - UNLIMITED
       - BUSINESS
@@ -1527,7 +1528,7 @@ addOns:
       useEmailAccountsInClickUp:
         value: 1
     price: 2
-  - name: clickUpAI
+  clickUpAI:
     availableFor:
       - UNLIMITED
       - BUSINESS
@@ -1539,4 +1540,3 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: 7
-createdAt: '2024-07-04'

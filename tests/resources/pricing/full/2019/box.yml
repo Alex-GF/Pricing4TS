@@ -1,266 +1,265 @@
 saasName: Box
-version: '2.0'
+day: 14
+month: 11
+year: 2019
 currency: USD
 hasAnnualPayment: false
 features:
   secureStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   accessAndDetailedControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   desktopAccessToBoxFiles:
     valueType: BOOLEAN
-    description: ''
+    description: ""
     defaultValue: true
     type: DOMAIN
   mobileAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   versionHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sslEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   atRestEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   twoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   standardEnterpriseSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   userManagement:
-    description: User management
+    description: "User management"
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   boxApi:
-    description: API
+    description: "API"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   advancedSecurityReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   advancedUserReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   activeDirectoryIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   customBranding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   mobileSecurityControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   emmIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   dataLossPrevention:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   unlimitedExternalCollaborators:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   completeContentVisibility:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   completeContentManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   userActivityTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   adminRoleDelegation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   customMetadata:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customTermsOfService:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   pciDssCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   boxGovernance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   boxKeySafe:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   boxZones:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   hipaaCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   hitechCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   fedrampCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   unlimitedIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   usersGroup:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   workAutomation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   deviceTrust:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   passwordPolicy:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   documentWatermark:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-usageLimits:
+usageLimits: 
   secureStorageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - secureStorage
   uploadSizeLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - secureStorage
   minUsers:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
-    unit: users
     type: NON_RENEWABLE
     linkedFeatures: null
   maxUsers:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
-    unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   apiCallsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25000
     unit: calls/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - boxApi
 plans:
-  - name: STARTER
-    description: ''
-    monthlyPrice: 5
+  STARTER:
+    description: ""
+    monthlyPrice: 5.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 5
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 15
+  BUSINESS:
+    description: ""
+    monthlyPrice: 15.0
     unit: user/month
     features:
       advancedSecurityReporting:
@@ -288,10 +287,9 @@ plans:
         value: .inf
       apiCallsLimit:
         value: 50000
-    price: 15
-  - name: BUSINESS_PLUS
-    description: ''
-    monthlyPrice: 25
+  BUSINESS_PLUS:
+    description: ""
+    monthlyPrice: 25.0
     unit: user/month
     features:
       advancedSecurityReporting:
@@ -343,9 +341,8 @@ plans:
         value: .inf
       apiCallsLimit:
         value: 50000
-    price: 25
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     unit: user/month
     features:
@@ -408,6 +405,4 @@ plans:
         value: .inf
       apiCallsLimit:
         value: 100000
-    price: Contact Sales
 addOns: null
-createdAt: '2019-11-13'

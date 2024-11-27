@@ -1,5 +1,6 @@
 saasName: UserGuiding
 version: '2.0'
+createdAt: '2024-11-09'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -393,7 +394,7 @@ usageLimits:
     linkedFeatures:
       - domains
 plans:
-  - name: BASIC
+  BASIC:
     description: >-
       Onboard new users and engage customers throughout their lifecycles. Ideal
       for startups and SMBs.
@@ -403,7 +404,7 @@ plans:
     features: null
     usageLimits: null
     price: 129
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: >-
       Maximize activation, customer revenue, and retention. Ideal for rapidly
       growing companies.
@@ -455,7 +456,7 @@ plans:
       domainsLimit:
         value: 5
     price: 399
-  - name: CORPORATE
+  CORPORATE:
     description: >-
       Transform your product experience. Ideal for enterprises with multiple
       products.
@@ -512,7 +513,7 @@ plans:
         value: 1000000000
     price: Let's Talk
 addOns:
-  - name: euDataHostingAddOn
+  euDataHostingAddOn:
     availableFor:
       - BASIC
     monthlyPrice: Contact Sales
@@ -524,4 +525,3 @@ addOns:
     usageLimits: null
     usageLimitsExtensions: null
     price: Contact Sales
-createdAt: '2024-07-09'

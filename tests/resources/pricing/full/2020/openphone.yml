@@ -1,57 +1,59 @@
 saasName: OpenPhone
-version: '2.0'
+day: 12
+month: 11
+year: 2020
 currency: USD
 hasAnnualPayment: false
 features:
   usAndCanadaCalling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   usAndCanadaMessaging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   voicemailToText:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   phoneNumbers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   portPhoneNumbersFromOtherCarriers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   callRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sharedPhoneNumbers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   ivrAutoAtendant:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   emailIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -59,49 +61,49 @@ features:
     pricingURLs:
       - https://slack.com/pricing
   crmIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
   analytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   reporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   auditLog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   smsSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   phoneSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedAccountManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
 usageLimits:
   phoneNumbersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: phone number
@@ -109,7 +111,7 @@ usageLimits:
     linkedFeatures:
       - phoneNumbers
   usAndCanadCallsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10000000000000
     unit: call
@@ -117,7 +119,7 @@ usageLimits:
     linkedFeatures:
       - usAndCanadaCalling
   usAndCanadaMessagesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10000000000000
     unit: message
@@ -125,16 +127,15 @@ usageLimits:
     linkedFeatures:
       - usAndCanadaMessaging
 plans:
-  - name: STANDARD
-    description: For individuals, teams and companies.
-    monthlyPrice: 10
-    annualPrice: 10
+  STANDARD:
+    description: "For individuals, teams and companies."
+    monthlyPrice: 10.0
+    annualPrice: 10.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 10
-  - name: ENTERPRISE
-    description: For organizations with more requirements.
+  ENTERPRISE:
+    description: "For organizations with more requirements."
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -151,17 +152,15 @@ plans:
         value: true
       dedicatedAccountManager:
         value: true
-    price: Contact Sales
 addOns:
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STANDARD
       - ENTERPRISE
-    price: 5
+    price: 5.0
     unit: phoneNumber/month
     features: null
     usageLimits: null
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-createdAt: '2020-11-11'

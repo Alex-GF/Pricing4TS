@@ -1,5 +1,6 @@
 saasName: Overleaf
 version: '2.0'
+createdAt: '2019-11-03'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -75,7 +76,7 @@ usageLimits:
     linkedFeatures:
       - realTimeCollaboration
 plans:
-  - name: PERSONAL
+  PERSONAL:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -83,7 +84,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: COLLABORATOR
+  COLLABORATOR:
     description: ''
     monthlyPrice: 15
     annualPrice: 15
@@ -107,7 +108,7 @@ plans:
       maxCollaboratorsPerProject:
         value: 10
     price: 15
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 30
     annualPrice: 30
@@ -131,5 +132,3 @@ plans:
       maxCollaboratorsPerProject:
         value: .inf
     price: 30
-addOns: null
-createdAt: '2019-11-03'

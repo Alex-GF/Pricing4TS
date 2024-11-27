@@ -1,105 +1,107 @@
 saasName: Evernote
-version: '2.0'
+day: 24
+month: 11
+year: 2023
 currency: USD
 hasAnnualPayment: true
 features:
   appForIOS:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForAndroid:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForWindows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForMac:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForLinux:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   appForWeb:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   syncAcrossDevices:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   notes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   ad-free:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   tasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   addDueDatesToTasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   addRemindersToTasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   addNotificationsToTasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   createAndEditRecurringTasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   tasksManagementView:
-    description: Edit, track, and manage tasks from a single view
+    description: "Edit, track, and manage tasks from a single view"
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizeHomeWithTasksWidget:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   customizeHomeWithFilteredNotesWidget:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   connectWithPrimaryGoogleCalendar:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -107,19 +109,19 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   getNotifiedWhenItsTimeToTakeNotes:
-    description: Get notified when it's time to take notes
+    description: "Get notified when it's time to take notes"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   openNotesForCalendarEvents:
-    description: Open notes for your calendar events
+    description: "Open notes for your calendar events"
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   connectWithMultipleGoogleCalendarAccounts:
-    description: Connect your personal and workplace Google Calendar accounts to Evernote
+    description: "Connect your personal and workplace Google Calendar accounts to Evernote"
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -127,156 +129,154 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   assignTasksToOthers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   trackOthersProgressOnTasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   customizeHomeWithPinnedNotesWidget:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   customizeHomeWithScratchPadWidget:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   useBooleanTermsToRefineSearch:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   findContentByLocation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   exportNotebooksAsPDFs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   homeDashboard:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   richFormatting:
-    description: Use a variety of fonts, highlight colors, and formatting tools
+    description: "Use a variety of fonts, highlight colors, and formatting tools"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   webClipper:
-    description: Clip, organize, and share web pages with Web Clipper
+    description: "Clip, organize, and share web pages with Web Clipper"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTENSION
   attachFilesToNotes:
-    description: >-
-      Attach photos, PDFs, spreadsheets, Google Docs, and other files to your
-      notes
+    description: "Attach photos, PDFs, spreadsheets, Google Docs, and other files to your notes"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   scanHadWrittenNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   scanWhiteboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   scanReceipts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   scanMore:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   recordAudioNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   playAudioNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   annotateImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   annotatePdfs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   forwardEmailsIntoEvernote:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   createCustomTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   saveCustomTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   scanAndDigitalizeBusinessCardsToCreateContacts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   addRemindersToNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   searchNotes:
-    description: Find any note using search filters and get suggestions as you type
+    description: "Find any note using search filters and get suggestions as you type"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   getSearchSugestionsAsYourType:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   saveSearches:
-    description: Save searches to grab results quickly for your most-used searches
+    description: "Save searches to grab results quickly for your most-used searches"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createOwnFilingSystem:
-    description: Create your own filing system with notebooks and keyword tags
+    description: "Create your own filing system with notebooks and keyword tags"
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   connectWithGmail:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -284,23 +284,23 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   customizeHomeWithMoreWidgets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   customizeHomeWithBackgroundImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   accessNotesOffline:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   connectWithGoogleDrive:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -308,84 +308,84 @@ features:
     pricingURLs:
       - https://one.google.com/about/plans
   searchTextInsideImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   searchTextInsideHandwrittenNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   searchTextInsideDocuments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   searchTextInsidePDFs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   versionHistoryOfNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   restoreNotesFromOlderVersions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   quicklySwitchBetweenAccounts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   shareNotesWithPeople:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   shareNotebooksWithPeople:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   setPermissionsForEdittingNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   setPermissionsForEdittingNotebooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   setPermissionsForViewingNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   setPermissionsForViewingNotebooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   sendEmailsWithNotesCopies:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs: null
   advancedPdfExportControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   connectWithSlack:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -393,66 +393,64 @@ features:
     pricingUrls:
       - https://slack.com/pricing
   connectWithTeams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingUrls:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software
+      - https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software
   dataNotForSale:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
   twoStepVerification:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   forumSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   applyInNoteEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   supportTickets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   maximumNoteSize:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25
     unit: MB/note
     type: NON_RENEWABLE
     linkedFeatures:
-      - notes
+      - notes  
   globalMonthlyUploadLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 60
     unit: MB
     type: RENEWABLE
     linkedFeatures: null
 plans:
-  - name: FREE
-    description: Capture ideas and find them quickly
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Capture ideas and find them quickly"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: /month
     features: null
     usageLimits: null
-    price: 0
-  - name: PERSONAL
-    description: Keep home and family on track
+  PERSONAL:
+    description: "Keep home and family on track"
     monthlyPrice: 12.99
     annualPrice: 10.83
     unit: /month
@@ -516,13 +514,12 @@ plans:
       supportTickets:
         value: true
     usageLimits:
-      maximumNoteSize:
+      maximumNoteSize: 
         value: 200
-      globalMonthlyUploadLimit:
+      globalMonthlyUploadLimit: 
         value: 10240
-    price: 12.99
-  - name: PROFESIONAL
-    description: Tackle any project, at work or at home
+  PROFESIONAL:
+    description: "Tackle any project, at work or at home"
     monthlyPrice: 16.99
     annualPrice: 14.16
     unit: /month
@@ -607,11 +604,9 @@ plans:
         value: true
       supportTickets:
         value: true
-    usageLimits:
-      maximumNoteSize:
+    usageLimits: 
+      maximumNoteSize: 
         value: 200
-      globalMonthlyUploadLimit:
+      globalMonthlyUploadLimit: 
         value: 20480
-    price: 16.99
 addOns: null
-createdAt: '2023-11-23'

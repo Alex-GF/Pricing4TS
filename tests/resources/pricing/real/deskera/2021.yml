@@ -1,5 +1,6 @@
 saasName: Deskera
 version: '2.0'
+createdAt: '2021-10-13'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -136,7 +137,7 @@ usageLimits:
     linkedFeatures:
       - runPayroll
 plans:
-  - name: STARTUP
+  STARTUP:
     description: ''
     monthlyPrice: 35
     annualPrice: 29
@@ -144,7 +145,7 @@ plans:
     features: null
     usageLimits: null
     price: 35
-  - name: ESSENTIAL
+  ESSENTIAL:
     description: ''
     monthlyPrice: 58
     annualPrice: 49
@@ -164,7 +165,7 @@ plans:
       runPayrollLimit:
         value: 30
     price: 58
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 119
     annualPrice: 99
@@ -196,5 +197,3 @@ plans:
       runPayrollLimit:
         value: 100
     price: 119
-addOns: null
-createdAt: '2021-10-13'

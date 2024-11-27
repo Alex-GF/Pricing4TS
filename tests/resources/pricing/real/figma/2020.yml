@@ -1,5 +1,6 @@
 saasName: Figma
 version: '2.0'
+createdAt: '2020-11-26'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -210,7 +211,7 @@ usageLimits:
     linkedFeatures:
       - versionHistory
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -218,7 +219,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: null
     annualPrice: 12
@@ -234,7 +235,7 @@ plans:
       versionHistoryDepth:
         value: .inf
     price: 12
-  - name: ORGANIZATION
+  ORGANIZATION:
     description: ''
     monthlyPrice: null
     annualPrice: 45
@@ -274,5 +275,3 @@ plans:
       versionHistoryDepth:
         value: .inf
     price: 45
-addOns: null
-createdAt: '2020-11-26'

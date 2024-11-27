@@ -1,5 +1,6 @@
 saasName: Canva
 version: '2.0'
+createdAt: '2022-02-08'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -114,7 +115,13 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
-    integrationType: WEB_SAAS
+    integrationType: MARKETPLACE
+    pricingURLs: null
+  publishToSocialMediaOnlyAllowedToAdmins:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: false
+    type: MANAGEMENT
     pricingURLs: null
   teamSharing:
     description: ''
@@ -194,13 +201,6 @@ usageLimits:
     unit: users
     type: NON_RENEWABLE
     linkedFeatures: null
-  publishToSocialMediaOnlyAllowedToAdmins:
-    description: ''
-    valueType: BOOLEAN
-    defaultValue: false
-    type: NON_RENEWABLE
-    linkedFeatures:
-      - createAndPublishToSocialMediaFromCanva
   brandKitUnits:
     description: ''
     valueType: NUMERIC
@@ -226,7 +226,7 @@ usageLimits:
     linkedFeatures:
       - folders
 plans:
-  - name: FREE
+  FREE:
     description: Everything you need to start designing
     monthlyPrice: 0
     annualPrice: 0
@@ -234,7 +234,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: >-
       Designing together just got better. Professional design made easy with
       unlimited access to premium tools and content.
@@ -272,7 +272,7 @@ plans:
       foldersLimit:
         value: 1000000000
     price: 12.99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: >-
       Empower your team, manage your brand, and scale your content all in one
       place
@@ -296,6 +296,8 @@ plans:
         value: true
       createAndPublishToSocialMediaFromCanva:
         value: true
+      publishToSocialMediaOnlyAllowedToAdmins:
+        value: true
       approvalsWorkflow:
         value: true
       brandKit:
@@ -309,8 +311,6 @@ plans:
       singleSignOn:
         value: true
     usageLimits:
-      publishToSocialMediaOnlyAllowedToAdmins:
-        value: true
       brandKitUnits:
         value: 500
       cloudStorageLimit:
@@ -318,5 +318,3 @@ plans:
       foldersLimit:
         value: 1000000000
     price: Contact Sales
-addOns: null
-createdAt: '2022-02-08'

@@ -1,5 +1,6 @@
 saasName: Microsoft 365 - For Business
 version: '2.0'
+createdAt: '2021-11-18'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -396,7 +397,7 @@ usageLimits:
       - onlineMeetings
       - webinars
 plans:
-  - name: APPS_FOR_BUSINESS
+  APPS_FOR_BUSINESS:
     description: ''
     monthlyPrice: 10
     annualPrice: 8.25
@@ -404,7 +405,7 @@ plans:
     features: null
     usageLimits: null
     price: 10
-  - name: BUSINESS_BASIC
+  BUSINESS_BASIC:
     description: ''
     monthlyPrice: 6
     annualPrice: 5
@@ -440,23 +441,9 @@ plans:
         value: true
       microsoftTeams:
         value: true
-      microsoftWordDesktopApp:
-        value: false
-      microsoftExcelDesktopApp:
-        value: false
-      microsoftPowerPointDesktopApp:
-        value: false
-      microsoftOneNoteDesktopApp:
-        value: false
-      microsoftOutlookDesktopApp:
-        value: false
-      microsoftPublisher:
-        value: false
-      microsoftAccess:
-        value: false
     usageLimits: null
     price: 6
-  - name: BUSINESS_STANDARD
+  BUSINESS_STANDARD:
     description: ''
     monthlyPrice: 15
     annualPrice: 12.5
@@ -498,7 +485,7 @@ plans:
         value: true
     usageLimits: null
     price: 15
-  - name: BUSINESS_PREMIUM
+  BUSINESS_PREMIUM:
     description: ''
     monthlyPrice: 20
     annualPrice: 20
@@ -557,7 +544,7 @@ plans:
     usageLimits: null
     price: 20
 addOns:
-  - name: teamsAudioConferencing
+  teamsAudioConferencing:
     availableFor:
       - BUSINESS_BASIC
       - BUSINESS_STANDARD
@@ -569,4 +556,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2021-11-18'

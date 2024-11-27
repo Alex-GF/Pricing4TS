@@ -1,5 +1,6 @@
-saasName: GitHub
+saasName: Github
 version: '2.0'
+createdAt: '2020-11-29'
 currency: EUR
 hasAnnualPayment: true
 features:
@@ -344,7 +345,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesFreeTier:
     description: Free tier usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - protectedBranches
@@ -362,7 +363,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesTeamTier:
     description: Team tear usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - automatedCodeScanning
@@ -370,7 +371,7 @@ usageLimits:
   onlyForPublicRepositoriesEnterpriseAndOneTiers:
     description: Enterprise and One tiers usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - automatedCodeScanning
@@ -391,7 +392,7 @@ usageLimits:
     linkedFeatures:
       - githubPackages
 plans:
-  - name: FREE
+  FREE:
     description: The basics for individuals and organizations
     monthlyPrice: 0
     annualPrice: 0
@@ -401,7 +402,7 @@ plans:
       githubOnlyForPublicRepositoriesFreeTier:
         value: true
     price: 0
-  - name: TEAM
+  TEAM:
     description: Advanced collaboration for individuals and organizations
     monthlyPrice: 4
     annualPrice: 4
@@ -417,18 +418,12 @@ plans:
       diskSpaceForGithubPackages:
         value: 2
     price: 4
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Security, compliance, and flexible deployment
     monthlyPrice: 21
     annualPrice: 21
     unit: user/month
     features:
-      publicSecretScanning:
-        value: false
-      dependabotSecurityUpdates:
-        value: false
-      githubSecurityAdvisories:
-        value: false
       auditLogAPI:
         value: true
       githubConnect:
@@ -451,16 +446,12 @@ plans:
       diskSpaceForGithubPackages:
         value: 50
     price: 21
-  - name: ONE
+  ONE:
     description: All of our best tools, support, and services
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
     features:
-      publicSecretScanning:
-        value: false
-      dependabotSecurityUpdates:
-        value: false
       githubSecurityAdvisories:
         value: true
       auditLogAPI:
@@ -488,7 +479,7 @@ plans:
         value: 50
     price: Contact Sales
 addOns:
-  - name: premiumSupport
+  premiumSupport:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -500,7 +491,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseServer
+  enterpriseServer:
     availableFor:
       - ENTERPRISE
       - ONE
@@ -513,7 +504,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseCloud
+  enterpriseCloud:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -529,7 +520,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: oneEnterpriseCloud
+  oneEnterpriseCloud:
     availableFor:
       - ONE
     price: Contact Sales
@@ -543,4 +534,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2020-11-29'

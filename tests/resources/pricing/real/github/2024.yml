@@ -1,5 +1,6 @@
-saasName: GitHub
+saasName: Github
 version: '2.0'
+createdAt: '2024-06-07'
 currency: EUR
 hasAnnualPayment: true
 features:
@@ -573,7 +574,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesFreeTier:
     description: Free tier usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - protectedBranches
@@ -596,7 +597,7 @@ usageLimits:
   githubOnlyForPublicRepositoriesTeamTier:
     description: Team tear usage limit for public repositories
     valueType: BOOLEAN
-    defaultValue: false
+    defaultValue: true
     type: NON_RENEWABLE
     linkedFeatures:
       - enviromentProtectionRules
@@ -661,7 +662,7 @@ usageLimits:
     linkedFeatures:
       - gitLFS
 plans:
-  - name: FREE
+  FREE:
     description: The basics for individuals and organizations
     monthlyPrice: 0
     annualPrice: 0
@@ -671,7 +672,7 @@ plans:
       githubOnlyForPublicRepositoriesFreeTier:
         value: true
     price: 0
-  - name: TEAM
+  TEAM:
     description: Advanced collaboration for individuals and organizations
     monthlyPrice: 4
     annualPrice: 4
@@ -693,20 +694,12 @@ plans:
       gitLFSMaximunFileSize:
         value: 4
     price: 4
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Security, compliance, and flexible deployment
     monthlyPrice: 21
     annualPrice: 21
     unit: user/month
     features:
-      codeScanning:
-        value: false
-      secretScanning:
-        value: false
-      dependencyReview:
-        value: false
-      githubSecurityAdvisories:
-        value: false
       securityOverview:
         value: true
       repositoryRules:
@@ -736,7 +729,7 @@ plans:
         value: 5
     price: 21
 addOns:
-  - name: githubCopilotIndividuals
+  githubCopilotIndividuals:
     availableFor:
       - FREE
       - TEAM
@@ -775,7 +768,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCopilotBusiness
+  githubCopilotBusiness:
     availableFor:
       - TEAM
       - ENTERPRISE
@@ -822,7 +815,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCopilotEnterprise
+  githubCopilotEnterprise:
     availableFor:
       - ENTERPRISE
     price: 39
@@ -884,7 +877,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces2Core
+  githubCodespaces2Core:
     availableFor:
       - FREE
       - TEAM
@@ -896,7 +889,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces4Core
+  githubCodespaces4Core:
     availableFor:
       - FREE
       - TEAM
@@ -908,7 +901,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces8Core
+  githubCodespaces8Core:
     availableFor:
       - FREE
       - TEAM
@@ -920,7 +913,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces16Core
+  githubCodespaces16Core:
     availableFor:
       - FREE
       - TEAM
@@ -932,7 +925,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespaces32Core
+  githubCodespaces32Core:
     availableFor:
       - FREE
       - TEAM
@@ -944,7 +937,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: githubCodespacesStorage
+  githubCodespacesStorage:
     availableFor:
       - FREE
       - TEAM
@@ -956,7 +949,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: gitLFSDataPack
+  gitLFSDataPack:
     availableFor:
       - FREE
       - TEAM
@@ -971,7 +964,7 @@ addOns:
       gitLFSBandwithLimit:
         value: 50
     price: 5
-  - name: githubAdvancedSecurity
+  githubAdvancedSecurity:
     availableFor:
       - ENTERPRISE
     price: 49
@@ -985,7 +978,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: premiumSupport
+  premiumSupport:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -995,7 +988,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseServer
+  enterpriseServer:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -1007,7 +1000,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: enterpriseCloud
+  enterpriseCloud:
     availableFor:
       - ENTERPRISE
     price: Contact Sales
@@ -1019,4 +1012,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-06-07'

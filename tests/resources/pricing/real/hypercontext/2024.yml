@@ -1,5 +1,6 @@
 saasName: HyperContext
 version: '2.0'
+createdAt: '2024-07-15'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -339,9 +340,8 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
-usageLimits: null
 plans:
-  - name: FREE
+  FREE:
     description: Best for people who want to take Hypercontext for a spin.
     monthlyPrice: 0
     annualPrice: 0
@@ -349,7 +349,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: Best for managers with too much on their plate.
     monthlyPrice: 7
     annualPrice: 5.6
@@ -397,7 +397,7 @@ plans:
         value: true
     usageLimits: null
     price: 7
-  - name: BUSINESS
+  BUSINESS:
     description: Best for standardizing meetings and hitting goals.
     monthlyPrice: 11
     annualPrice: 8.8
@@ -477,7 +477,7 @@ plans:
         value: true
     usageLimits: null
     price: 11
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Best for standardizing meetings and hitting goals.
     annualPrice: 12.8
     unit: person/month
@@ -598,5 +598,3 @@ plans:
         value: true
     usageLimits: null
     price: 12.8
-addOns: null
-createdAt: '2024-07-15'

@@ -1,5 +1,6 @@
 saasName: Databox
 version: '2.0'
+createdAt: '2021-11-22'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -13,6 +14,12 @@ features:
     valueType: TEXT
     defaultValue: daily
     type: GUARANTEE
+  15minPriorityConnections:
+    description: ''
+    valueType: BOOLEAN
+    defaultValue: false
+    type: INTEGRATION
+    integrationType: API
   historicalData:
     description: >-
       The maximum amount of historical data that you can access in your Databox
@@ -251,16 +258,16 @@ usageLimits:
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
-  15minPriorityConnections:
+  15minPriorityConnectionsLimit:
     description: ''
     valueType: NUMERIC
     defaultValue: 0
     unit: connection
     type: RENEWABLE
     linkedFeatures:
-      - dataSyncFrequency
+      - 15minPriorityConnections
 plans:
-  - name: STARTER
+  STARTER:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -268,7 +275,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 169
     annualPrice: 135
@@ -300,7 +307,7 @@ plans:
       usersLimit:
         value: 25
     price: 169
-  - name: PERFORMER
+  PERFORMER:
     description: ''
     monthlyPrice: 289
     annualPrice: 231
@@ -337,7 +344,7 @@ plans:
         value: 1000000000
     price: 289
 addOns:
-  - name: brandingAndWhiteLabelling
+  brandingAndWhiteLabelling:
     availableFor:
       - PROFESSIONAL
       - PERFORMER
@@ -348,7 +355,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: priorityDataUpdate
+  priorityDataUpdate:
     availableFor:
       - PROFESSIONAL
       - PERFORMER
@@ -359,8 +366,9 @@ addOns:
         value: 15 mins
       prioritySupport:
         value: true
-    usageLimits:
       15minPriorityConnections:
+        value: true
+    usageLimits:
+      15minPriorityConnectionsLimit:
         value: 5
     usageLimitsExtensions: null
-createdAt: '2021-11-22'

@@ -1,62 +1,65 @@
 saasName: Crowdcast
-version: '2.0'
+day: 15
+month: 7
+year: 2024
 currency: USD
 hasAnnualPayment: true
 features:
   liveStreaming:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   transactionFee:
-    description: ''
-    valueType: TEXT
-    defaultValue: "5%"
+    description: ""
+    valueType: NUMERIC
+    defaultValue: 5.0
+    unit: \%
     type: DOMAIN
   hdLiveVideoWithRecording:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multiSessionEvents:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   rtmpSudio:
-    description: Broadcast with OBS, Wirecast, Ecamm Live and StreamYard
+    description: "Broadcast with OBS, Wirecast, Ecamm Live and StreamYard"
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   chatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   stripeIntegration:
-    description: ''
+    description: ""
     valueType: TEXT
     defaultValue:
       - GATEWAY
     type: PAYMENT
   eventAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   sessionAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -64,33 +67,33 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   exportEmailAddresses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportChat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multistreaming:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customRegistrationFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-usageLimits:
+usageLimits: 
   liveAttendeesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: attendee
@@ -98,7 +101,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   liveHoursPerMonthLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: hour/month
@@ -106,7 +109,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   hostSeatsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: seat
@@ -114,7 +117,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   sessionsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: hour/session
@@ -122,7 +125,7 @@ usageLimits:
     linkedFeatures:
       - liveStreaming
   multistreamLocationsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: location
@@ -130,20 +133,17 @@ usageLimits:
     linkedFeatures:
       - multistreaming
 plans:
-  - name: LITE
-    description: For creators and small businesses looking to grow their audience
-    monthlyPrice: 49
-    annualPrice: 34
+  LITE:
+    description: "For creators and small businesses looking to grow their audience"
+    monthlyPrice: 49.0
+    annualPrice: 34.0
     unit: /month
     features: null
     usageLimits: null
-    price: 49
-  - name: PRO
-    description: >-
-      For professional creators and businesses to consistently host live video
-      events
-    monthlyPrice: 89
-    annualPrice: 62
+  PRO:
+    description: "For professional creators and businesses to consistently host live video events"
+    monthlyPrice: 89.0
+    annualPrice: 62.0
     unit: /month
     features:
       multistreaming:
@@ -157,11 +157,10 @@ plans:
         value: 20
       hostSeatsLimit:
         value: 2
-    price: 89
-  - name: BUSINESS
-    description: For startups and companies looking to engage their customers
-    monthlyPrice: 195
-    annualPrice: 139
+  BUSINESS:
+    description: "For startups and companies looking to engage their customers"
+    monthlyPrice: 195.0
+    annualPrice: 139.0
     unit: /month
     features:
       multistreaming:
@@ -169,7 +168,7 @@ plans:
       customRegistrationFields:
         value: true
       transactionFee:
-        value: "2%"
+        value: 2.0
     usageLimits:
       liveAttendeesLimit:
         value: 1000
@@ -181,6 +180,4 @@ plans:
         value: 3
       sessionsLimit:
         value: 6
-    price: 195
 addOns: null
-createdAt: '2024-07-14'

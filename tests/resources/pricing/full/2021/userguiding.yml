@@ -1,116 +1,118 @@
 saasName: UserGuiding
-version: '2.0'
+day: 29
+month: 10
+year: 2021
 currency: USD
 hasAnnualPayment: true
 features:
   guides:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   hotspots:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   onboardingChecklist:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   resourceCenters:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   npsSurveys:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   engagementAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   userIdentification:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   userTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   adoptionTracker:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   audienceSegmentation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customAttributes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   userSpecificAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customEvents:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   weeklyReports:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   errorLogging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   customizableThemes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   dynamicMaterialPersonalization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   removeUserGuidingBranding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customCSS:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   materialScheduling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   appearanceCustomization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   googleAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -118,13 +120,13 @@ features:
     pricingURLs:
       - https://marketingplatform.google.com/about/analytics/
   webhooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   segment:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -132,7 +134,7 @@ features:
     pricingURLs:
       - https://segment.com/pricing/
   mixpanel:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -140,7 +142,7 @@ features:
     pricingURLs:
       - https://mixpanel.com/pricing/
   zapier:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -148,7 +150,7 @@ features:
     pricingURLs:
       - https://zapier.com/pricing/
   hubspot:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -156,7 +158,7 @@ features:
     pricingURLs:
       - https://www.hubspot.com/pricing/marketing/starter
   intercom:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -164,7 +166,7 @@ features:
     pricingURLs:
       - https://www.intercom.com/pricing
   slack:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -172,7 +174,7 @@ features:
     pricingURLs:
       - https://slack.com/pricing
   woopra:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -180,144 +182,139 @@ features:
     pricingURLs:
       - https://www.woopra.com/pricing/
   knowledBaseIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   roleManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   permissionManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   teams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   domains:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   employeeOnboardingModule:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   troubleShooterAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   helpCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   userGuidingUniversity:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   emailSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   liveChatSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   dedicatedCustomerSuccessManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   implementationSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   activeGuidesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 20
     unit: guide
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - guides
   activeHotspotsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 20
     unit: hotspot
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - hotspots
   activeOnboardingChecklistsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: checklist
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - onboardingChecklist
   activeResourceCentersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
-    unit: resource center
+    unit: "resource center"
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - resourceCenters
   activeUsersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2500
     unit: user/month
     type: RENEWABLE
     linkedFeatures: null
   teamMembersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: member
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - teams
   domainsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: domain
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - domains
 plans:
-  - name: BASIC
-    description: >-
-      Onboard new users and engage customers throughout their lifecycles. Ideal
-      for startups and SMBs.
-    monthlyPrice: 99
-    annualPrice: 82
+  BASIC:
+    description: "Onboard new users and engage customers throughout their lifecycles. Ideal for startups and SMBs."
+    monthlyPrice: 99.0
+    annualPrice: 82.0
     unit: /month
     features: null
     usageLimits: null
-    price: 99
-  - name: PROFESSIONAL
-    description: >-
-      Maximize activation, customer revenue, and retention. Ideal for rapidly
-      growing companies.
-    monthlyPrice: 399
-    annualPrice: 333
+  PROFESSIONAL:
+    description: "Maximize activation, customer revenue, and retention. Ideal for rapidly growing companies."
+    monthlyPrice: 399.0
+    annualPrice: 333.0
     unit: /month
     features:
       adoptionTracker:
@@ -359,13 +356,10 @@ plans:
         value: 5
       domainsLimit:
         value: 5
-    price: 399
-  - name: CORPORATE
-    description: >-
-      Transform your product experience. Ideal for enterprises with multiple
-      products.
-    monthlyPrice: 699
-    annualPrice: 583
+  CORPORATE:
+    description: "Transform your product experience. Ideal for enterprises with multiple products."
+    monthlyPrice: 699.0
+    annualPrice: 583.0
     unit: /month
     features:
       adoptionTracker:
@@ -407,6 +401,4 @@ plans:
         value: 1000000000
       domainsLimit:
         value: 1000000000
-    price: 699
 addOns: null
-createdAt: '2021-10-28'

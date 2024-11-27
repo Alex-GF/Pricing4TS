@@ -1,5 +1,6 @@
 saasName: Wrike
 version: '2.0'
+createdAt: '2024-07-09'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -558,7 +559,7 @@ usageLimits:
     linkedFeatures:
       - automations
 plans:
-  - name: FREE
+  FREE:
     description: Intelligent task management
     monthlyPrice: 0
     annualPrice: 0
@@ -568,14 +569,12 @@ plans:
         value: true
     usageLimits: null
     price: 0
-  - name: TEAM
+  TEAM:
     description: Effective team management
     monthlyPrice: 9.8
     annualPrice: 9.8
     unit: user/month
     features:
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       personalWorkSchedules:
@@ -616,7 +615,7 @@ plans:
       maxNumberOfUsers:
         value: 25
     price: 9.8
-  - name: BUSINESS
+  BUSINESS:
     description: Customizable platform for any use case
     monthlyPrice: 24.8
     annualPrice: 24.8
@@ -624,8 +623,6 @@ plans:
     features:
       brandedWorkspace:
         value: true
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       folderHierachy:
@@ -718,15 +715,13 @@ plans:
       useAutomations:
         value: 200
     price: 24.8
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: Enterprise-grade security and scalability
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     features:
       brandedWorkspace:
         value: true
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       folderHierachy:
@@ -839,15 +834,13 @@ plans:
       useAutomations:
         value: 1000
     price: Contact Sales
-  - name: PINNACLE
+  PINNACLE:
     description: Advanced tools and analytics for complex work
     monthlyPrice: Contact sales
     annualPrice: Contact sales
     features:
       brandedWorkspace:
         value: true
-      storageAccount:
-        value: false
       storageSpace:
         value: true
       folderHierachy:
@@ -977,7 +970,7 @@ plans:
         value: 1500
     price: Contact sales
 addOns:
-  - name: additional500GBStorage
+  additional500GBStorage:
     availableFor:
       - TEAM
       - BUSINESS
@@ -989,7 +982,7 @@ addOns:
     usageLimitsExtensions:
       useStorage:
         value: 500
-  - name: additional1TBStorage
+  additional1TBStorage:
     availableFor:
       - TEAM
       - BUSINESS
@@ -1001,7 +994,7 @@ addOns:
     usageLimitsExtensions:
       useStorage:
         value: 1000
-  - name: wrikeIntegrate
+  wrikeIntegrate:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -1010,7 +1003,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeSync
+  wrikeSync:
     availableFor:
       - BUSINESS
       - ENTERPRISE
@@ -1019,7 +1012,7 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-  - name: wrikeLock
+  wrikeLock:
     availableFor:
       - ENTERPRISE
       - PINNACLE
@@ -1027,4 +1020,3 @@ addOns:
     features: null
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-09'

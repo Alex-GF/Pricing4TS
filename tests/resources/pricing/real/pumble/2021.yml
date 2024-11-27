@@ -1,5 +1,6 @@
 saasName: Pumble
 version: '2.0'
+createdAt: '2021-09-19'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -155,7 +156,7 @@ usageLimits:
     linkedFeatures:
       - fileStoragePerUser
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -163,14 +164,12 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PRO
+  PRO:
     description: ''
     monthlyPrice: 1.99
     annualPrice: 1.66
     unit: user/month
     features:
-      fileStoragePerAccount:
-        value: false
       fileStoragePerUser:
         value: true
       customizableSidebars:
@@ -185,14 +184,12 @@ plans:
         value: true
     usageLimits: null
     price: 1.99
-  - name: SERVER
+  SERVER:
     description: ''
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
     features:
-      fileStoragePerAccount:
-        value: false
       fileStoragePerUser:
         value: true
       customizableSidebars:
@@ -209,5 +206,3 @@ plans:
       useFileStoragePerUser:
         value: 1000000000
     price: Contact Sales
-addOns: null
-createdAt: '2021-09-19'

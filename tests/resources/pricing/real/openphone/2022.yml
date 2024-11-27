@@ -1,5 +1,6 @@
 saasName: OpenPhone
 version: '2.0'
+createdAt: '2022-11-28'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -158,7 +159,7 @@ features:
   smsViaZapier:
     description: ''
     valueType: BOOLEAN
-    defaultValue: true
+    defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
@@ -278,7 +279,7 @@ usageLimits:
     linkedFeatures:
       - smsViaZapier
 plans:
-  - name: STANDARD
+  STANDARD:
     description: ''
     monthlyPrice: 13
     annualPrice: 10
@@ -286,7 +287,7 @@ plans:
     features: null
     usageLimits: null
     price: 13
-  - name: PREMIUM
+  PREMIUM:
     description: ''
     monthlyPrice: 25
     annualPrice: 20
@@ -320,7 +321,7 @@ plans:
       sharedPhoneNumbersLimit:
         value: .inf
     price: 25
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -363,7 +364,7 @@ plans:
         value: .inf
     price: Contact Sales
 addOns:
-  - name: aditionalPhoneNumbers
+  aditionalPhoneNumbers:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -375,7 +376,7 @@ addOns:
     usageLimitsExtensions:
       phoneNumbersLimit:
         value: 1
-  - name: internationalCallingAndMessaging
+  internationalCallingAndMessaging:
     availableFor:
       - STANDARD
       - PREMIUM
@@ -389,11 +390,27 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: smsViaZapierAddon
+  smsViaZapierAddon:
     availableFor:
       - STANDARD
       - PREMIUM
       - ENTERPRISE
+    price: 0.01
+    unit: message
+    features:
+      smsViaZapier:
+        value: true
+    usageLimits: null
+    usageLimitsExtensions:
+      smsViaZapierAddonLimit:
+        value: 1
+  extraSmsViaZapier:
+    availableFor:
+      - STANDARD
+      - PREMIUM
+      - ENTERPRISE
+    dependsOn:
+      - smsViaZapierAddon
     price: 0.01
     unit: message
     features: null
@@ -401,4 +418,3 @@ addOns:
     usageLimitsExtensions:
       smsViaZapierAddonLimit:
         value: 1
-createdAt: '2022-11-28'

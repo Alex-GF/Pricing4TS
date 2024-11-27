@@ -1,161 +1,162 @@
 saasName: ClickUp
-version: '2.0'
+day: 1
+month: 11
+year: 2019
 currency: USD
 hasAnnualPayment: true
 features:
   storage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   tasks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   views:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   integrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   reporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   guests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   permissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   goals:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   portfolio:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customFields:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   twoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   googleSingleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   goalFolders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customExporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   privateViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   protectedViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   defaultViews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   workload:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   extraGuests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   contractReview:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   hipaaCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   api:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   customOnboarding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   dedicatedSuccessManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   advancedPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
-usageLimits:
+usageLimits: 
   increasedApiLimit:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: NON_RENEWABLE
 plans:
-  - name: FREE
-    description: Everything you need to be productive
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: "Everything you need to be productive"
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: UNLIMITED
-    description: Unlimited storage and advanced features
-    monthlyPrice: 9
-    annualPrice: 5
+  UNLIMITED:
+    description: "Unlimited storage and advanced features"
+    monthlyPrice: 9.0
+    annualPrice: 5.0
     unit: member/month
     features:
       views:
@@ -175,11 +176,10 @@ plans:
       customFields:
         value: true
     usageLimits: null
-    price: 9
-  - name: BUSINESS
-    description: Business class features and security
-    monthlyPrice: 19
-    annualPrice: 9
+  BUSINESS:
+    description: "Business class features and security"
+    monthlyPrice: 19.0
+    annualPrice: 9.0
     unit: member/month
     features:
       views:
@@ -217,9 +217,8 @@ plans:
       extraGuests:
         value: true
     usageLimits: null
-    price: 19
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: member/month
@@ -273,6 +272,4 @@ plans:
     usageLimits:
       increasedApiLimit:
         value: true
-    price: Contact Sales
 addOns: null
-createdAt: '2019-10-31'

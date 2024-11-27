@@ -1,71 +1,72 @@
 saasName: Box
-version: '2.0'
+day: 20
+month: 11
+year: 2023
 currency: EUR
 hasAnnualPayment: true
 features:
   secureStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   industryAppsIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   versionHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   unlimitedExternalCollaborators:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   boxApi:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
-  boxSign:
-    description: ''
+  boxSign: 
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   boxSignViaWebApp:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   boxSignVia3rdPartyAndCustomApps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   granularSharedPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   accessControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   microsoft365Integration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products
+      - https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products
   googleWorkspaceIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -73,7 +74,7 @@ features:
     pricingURLs:
       - https://workspace.google.com/pricing
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -82,197 +83,197 @@ features:
       - https://slack.com/pricing
   desktopAccess:
     valueType: BOOLEAN
-    description: ''
+    description: ""
     defaultValue: true
     type: DOMAIN
   mobileAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sslEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   atRestEncryption:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   twoFactorAuthentication:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   standardBusinessSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   userManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   dataLossProtection:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   advancedSecurityReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   advancedUserReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   activeDirectoryIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
   customBranding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   mobileSecurityControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   boxRelay:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
   advancedAdmin:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   advancedControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   fullContentVisibility:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   fullContentManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   userActivityTracking:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TRACKING
   adminRoleDelegation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   metadata:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customTermsOfService:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   pciDssCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   boxGovernance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   boxZones:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   boxKeySafe:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   boxShield:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   hipaaCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   hitechCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   fedrampCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   deviceTrust:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   passwordPolicyEnforcement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   documentWatermark:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   boxSignBatchSend:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   boxSignReadySignLinks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-usageLimits:
+usageLimits: 
   storageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: GB
@@ -280,23 +281,23 @@ usageLimits:
     linkedFeatures:
       - secureStorage
   uploadSizeLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - secureStorage
   industryAppsIntegrationLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: integration
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - industryAppsIntegration
   versionHistoryThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25
     unit: day
@@ -304,37 +305,35 @@ usageLimits:
     linkedFeatures:
       - versionHistory
   minUsers:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
-    unit: users
     type: NON_RENEWABLE
     linkedFeatures: null
   maxUsers:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
-    unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   apiCallsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25000
     unit: calls/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - boxApi
   boxSignLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: document/user/month
     type: RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - boxSignViaWebApp
   includedDocumentsFor3rdPartyAndCustomApps:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: document
@@ -342,17 +341,16 @@ usageLimits:
     linkedFeatures:
       - boxSignVia3rdPartyAndCustomApps
 plans:
-  - name: BUSINESS_STARTER
-    description: ''
-    monthlyPrice: 8
+  BUSINESS_STARTER:
+    description: ""
+    monthlyPrice: 8.0
     annualPrice: 5.5
     unit: user/month
     features: null
     usageLimits: null
-    price: 8
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 18
+  BUSINESS:
+    description: ""
+    monthlyPrice: 18.0
     annualPrice: 13.5
     unit: user/month
     features:
@@ -391,10 +389,9 @@ plans:
         value: .inf
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 100
-    price: 18
-  - name: BUSINESS_PLUS
-    description: ''
-    monthlyPrice: 30
+  BUSINESS_PLUS:
+    description: ""
+    monthlyPrice: 30.0
     annualPrice: 22.5
     unit: user/month
     features:
@@ -461,10 +458,9 @@ plans:
         value: .inf
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 150
-    price: 30
-  - name: ENTERPRISE
-    description: ''
-    monthlyPrice: 42
+  ENTERPRISE:
+    description: ""
+    monthlyPrice: 42.0
     annualPrice: 31.5
     unit: user/month
     features:
@@ -545,9 +541,8 @@ plans:
         value: .inf
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 250
-    price: 42
-  - name: ENTERPRISE_PLUS
-    description: ''
+  ENTERPRISE_PLUS:
+    description: ""
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -633,6 +628,4 @@ plans:
         value: .inf
       includedDocumentsFor3rdPartyAndCustomApps:
         value: 1000
-    price: Contact Sales
 addOns: null
-createdAt: '2023-11-19'

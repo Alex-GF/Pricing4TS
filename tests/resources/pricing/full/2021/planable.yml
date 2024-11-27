@@ -1,110 +1,110 @@
 saasName: Planable
-version: '2.0'
+day: 19
+month: 11
+year: 2021
 currency: USD
 hasAnnualPayment: true
 features:
   posts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
-    type: DOMAIN
+    type: DOMAIN  
   pages:
-    description: >-
-      Number of social media pages allowed in each workspace. It can be multiple
-      pages from the same platform.
+    description: "Number of social media pages allowed in each workspace. It can be multiple pages from the same platform."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   workspaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   selfService:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   realTimeSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   personalizedOnboarding:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   roleBasedAccessControl:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   unlimitedStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   auditLogging:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   advancedSecurity:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   postPreviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   multipleViewOptions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   atAGlance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   collaborationInContext:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customerService:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   oneClickApprovals:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   centralizedPublishing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   mediaLibrary:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
 usageLimits:
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   postsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: post
@@ -112,7 +112,7 @@ usageLimits:
     linkedFeatures:
       - posts
   pagesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: page
@@ -120,7 +120,7 @@ usageLimits:
     linkedFeatures:
       - pages
   workspacesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: worspace
@@ -128,7 +128,7 @@ usageLimits:
     linkedFeatures:
       - workspaces
   storageCapacity:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000
     unit: GB
@@ -136,8 +136,8 @@ usageLimits:
     linkedFeatures:
       - unlimitedStorage
 plans:
-  - name: FREE
-    description: For social media teams wanting to try out Planable
+  FREE:
+    description: "For social media teams wanting to try out Planable"
     monthlyPrice: 0
     annualPrice: 0
     unit: user/month
@@ -151,17 +151,15 @@ plans:
         value: 1000000000000
       pagesLimit:
         value: 1000000000000
-    price: 0
-  - name: STARTER
-    description: For freelancers & startups with up to 3 team members
+  STARTER:
+    description: "For freelancers & startups with up to 3 team members"
     monthlyPrice: 39
     annualPrice: 33
     unit: user/month
     features: null
     usageLimits: null
-    price: 39
-  - name: PREMIUM
-    description: For small agencies & brands
+  PREMIUM:
+    description: "For small agencies & brands"
     monthlyPrice: 99
     annualPrice: 83
     unit: user/month
@@ -173,9 +171,8 @@ plans:
         value: 5
       pagesLimit:
         value: 1000000000000
-    price: 99
-  - name: ENTERPRISE
-    description: For large organizations
+  ENTERPRISE:
+    description: "For large organizations"
     monthlyPrice: Custom
     annualPrice: Custom
     unit: user/month
@@ -201,6 +198,4 @@ plans:
         value: 1000000000000
       pagesLimit:
         value: 1000000000000
-    price: Custom
 addOns: null
-createdAt: '2021-11-18'

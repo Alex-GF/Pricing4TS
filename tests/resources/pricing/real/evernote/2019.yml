@@ -1,5 +1,6 @@
 saasName: Evernote
 version: '2.0'
+createdAt: '2019-11-29'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -348,14 +349,14 @@ usageLimits:
     type: NON_RENEWABLE
     linkedFeatures: null
 plans:
-  - name: FREE
+  FREE:
     description: Take great notes
     monthlyPrice: 0
     unit: /month
     features: null
     usageLimits: null
     price: 0
-  - name: PREMIUM
+  PREMIUM:
     description: Organize everything
     monthlyPrice: 7.99
     unit: /month
@@ -396,7 +397,7 @@ plans:
       devicesOfDevicesWithOneAccount:
         value: 1000000
     price: 7.99
-  - name: BUSINESS
+  BUSINESS:
     description: Bring your team together
     monthlyPrice: 14.99
     unit: user/month
@@ -467,5 +468,3 @@ plans:
       devicesOfDevicesWithOneAccount:
         value: 1000000
     price: 14.99
-addOns: null
-createdAt: '2019-11-29'

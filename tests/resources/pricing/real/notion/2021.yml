@@ -1,5 +1,6 @@
 saasName: Notion
 version: '2.0'
+createdAt: '2021-11-01'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -227,7 +228,7 @@ usageLimits:
     linkedFeatures:
       - versionHistory
 plans:
-  - name: PERSONAL
+  PERSONAL:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -235,7 +236,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PERSONAL_PRO
+  PERSONAL_PRO:
     description: ''
     monthlyPrice: 5
     annualPrice: 4
@@ -251,7 +252,7 @@ plans:
       fileUploadsLimit:
         value: .inf
     price: 5
-  - name: TEAM
+  TEAM:
     description: ''
     monthlyPrice: 10
     annualPrice: 8
@@ -277,7 +278,7 @@ plans:
       fileUploadsLimit:
         value: .inf
     price: 10
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
@@ -321,5 +322,3 @@ plans:
       versionHistoryThreshold:
         value: .inf
     price: Contact Sales
-addOns: null
-createdAt: '2021-11-01'

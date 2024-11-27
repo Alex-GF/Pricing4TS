@@ -1,5 +1,6 @@
 saasName: Evernote
 version: '2.0'
+createdAt: '2023-11-23'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -443,7 +444,7 @@ usageLimits:
     type: RENEWABLE
     linkedFeatures: null
 plans:
-  - name: FREE
+  FREE:
     description: Capture ideas and find them quickly
     monthlyPrice: 0
     annualPrice: 0
@@ -451,7 +452,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: PERSONAL
+  PERSONAL:
     description: Keep home and family on track
     monthlyPrice: 12.99
     annualPrice: 10.83
@@ -521,7 +522,7 @@ plans:
       globalMonthlyUploadLimit:
         value: 10240
     price: 12.99
-  - name: PROFESIONAL
+  PROFESIONAL:
     description: Tackle any project, at work or at home
     monthlyPrice: 16.99
     annualPrice: 14.16
@@ -613,5 +614,3 @@ plans:
       globalMonthlyUploadLimit:
         value: 20480
     price: 16.99
-addOns: null
-createdAt: '2023-11-23'

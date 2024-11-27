@@ -1,5 +1,6 @@
 saasName: MailChimp
 version: '2.0'
+createdAt: '2020-11-29'
 currency: USD
 hasAnnualPayment: false
 features:
@@ -407,14 +408,14 @@ usageLimits:
     linkedFeatures:
       - emailMarketing
 plans:
-  - name: FREE
+  FREE:
     description: All the basics for businesses that are just getting started.
     monthlyPrice: 0
     unit: /month
     features: null
     usageLimits: null
     price: 0
-  - name: ESSENTIALS
+  ESSENTIALS:
     description: Must-have features for email senders who want added support.
     monthlyPrice: 9.99
     unit: /month
@@ -443,7 +444,7 @@ plans:
       monthlyEmailSends:
         value: 500000
     price: 9.99
-  - name: STANDARD
+  STANDARD:
     description: Better insights for growing businesses that want more customers.
     monthlyPrice: 14.99
     unit: /month
@@ -506,7 +507,7 @@ plans:
       monthlyEmailSends:
         value: 1200000
     price: 14.99
-  - name: PREMIUM
+  PREMIUM:
     description: Advanced features for pros who need more customization.
     monthlyPrice: 299
     unit: /month
@@ -577,5 +578,3 @@ plans:
       monthlyEmailSends:
         value: 3000000
     price: 299
-addOns: null
-createdAt: '2020-11-29'

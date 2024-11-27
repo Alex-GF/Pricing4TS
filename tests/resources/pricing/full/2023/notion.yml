@@ -1,91 +1,93 @@
 saasName: Notion
-version: '2.0'
+day: 29
+month: 11
+year: 2023
 currency: USD
 hasAnnualPayment: true
 features:
   pages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   blocks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileUploads:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   pageHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   basicPageAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   advancedPageAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   collaborativeWorkspace:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   guests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   notionSiteDomain:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   permissionGroups:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   openTeamSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   closeTeamSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   privateTeamSpaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   advancedTeamSpacePermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   syncDatabases:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   dynamicLinkPreviews:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -93,7 +95,7 @@ features:
     pricingURLs:
       - https://slack.com/pricing
   zapierIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
@@ -101,140 +103,140 @@ features:
     pricingURLs:
       - https://zapier.com/pricing
   publicApi:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: API
   basicAutomations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   customDatasetAutomations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   exportEntireWorkspaceAsHTML:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportEntireWorkspaceAsMarkdown:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportEntireWorkspaceAsCSV:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   exportEntireWorkspaceAsPDF:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   samlSso:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   userProvisioning:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   advancedWorkspaceSecurityControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   advancedTeamspaceSecurityControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   workspaceAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   granularAdminRoles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   auditLog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   adminContentSearch:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   domainManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   workspaceConsolidation:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   managedUsersDashboard:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   managedUsersControls:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   securityIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   complianceIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   hipaaCompliance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   guestInviteRequests:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   prioritySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   customerSuccessManager:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
-usageLimits:
+usageLimits: 
   guestsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: guest
@@ -242,7 +244,7 @@ usageLimits:
     linkedFeatures:
       - guests
   fileUploadsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: MB
@@ -250,7 +252,7 @@ usageLimits:
     linkedFeatures:
       - fileUploads
   pageHistoryThreshold:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 7
     unit: days
@@ -258,7 +260,7 @@ usageLimits:
     linkedFeatures:
       - pageHistory
   syncDatabasesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: database
@@ -266,7 +268,7 @@ usageLimits:
     linkedFeatures:
       - syncDatabases
   rowLimitPerSyncedDatabase:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 100
     unit: row
@@ -274,18 +276,17 @@ usageLimits:
     linkedFeatures:
       - syncDatabases
 plans:
-  - name: FREE
-    description: ''
-    monthlyPrice: 0
-    annualPrice: 0
+  FREE:
+    description: ""
+    monthlyPrice: 0.0
+    annualPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: PLUS
-    description: ''
-    monthlyPrice: 8
-    annualPrice: 10
+  PLUS:
+    description: ""
+    monthlyPrice: 8.0
+    annualPrice: 10.0
     unit: user/month
     features:
       notionSiteDomain:
@@ -305,11 +306,10 @@ plans:
         value: .inf
       rowLimitPerSyncedDatabase:
         value: 20000
-    price: 8
-  - name: BUSINESS
-    description: ''
-    monthlyPrice: 18
-    annualPrice: 15
+  BUSINESS:
+    description: ""
+    monthlyPrice: 18.0
+    annualPrice: 15.0
     unit: user/month
     features:
       advancedPageAnalytics:
@@ -337,9 +337,8 @@ plans:
         value: .inf
       rowLimitPerSyncedDatabase:
         value: 20000
-    price: 18
-  - name: ENTERPRISE
-    description: ''
+  ENTERPRISE:
+    description: ""
     monthlyPrice: Contact Sales
     annualPrice: Contact Sales
     unit: user/month
@@ -403,6 +402,4 @@ plans:
         value: .inf
       rowLimitPerSyncedDatabase:
         value: 20000
-    price: Contact Sales
 addOns: null
-createdAt: '2023-11-28'

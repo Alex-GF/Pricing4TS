@@ -1,82 +1,84 @@
 saasName: Quip
-version: '2.0'
+day: 2
+month: 7
+year: 2024
 currency: USD
 hasAnnualPayment: true
 features:
   documents:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   spreadsheets:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   groupChat:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   1to1messages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   desktopAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   tabletAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   mobileAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   customAndAdvancedLiveApps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   enterpriseAPI:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   customization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   integratedChatWithinSalesforce:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   spreadsheetsWithLiveSalesforceData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   twoWaySyncWithLiveSalesforceData:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -84,25 +86,24 @@ features:
     pricingURLs:
       - https://www.salesforce.com/eu/sales/pricing/
   embedDocumentsInAllSalesforceObjects:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
 usageLimits: null
 plans:
-  - name: STARTER
-    description: Powerful collaboration for your team or small business.
-    monthlyPrice: 12
-    annualPrice: 10
+  STARTER:
+    description: "Powerful collaboration for your team or small business."
+    monthlyPrice: 12.0
+    annualPrice: 10.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 12
-  - name: PLUS
-    description: Secure productivity platform for large and complex teams.
+  PLUS:
+    description: "Secure productivity platform for large and complex teams."
     monthlyPrice: null
-    annualPrice: 25
+    annualPrice: 25.0
     unit: user/month
     features:
       customAndAdvancedLiveApps:
@@ -114,13 +115,10 @@ plans:
       customization:
         value: true
     usageLimits: null
-    price: 25
-  - name: ADVANCED
-    description: >-
-      Real-time alerts and collaboration inside Salesforce for sales and service
-      teams.
+  ADVANCED:
+    description: "Real-time alerts and collaboration inside Salesforce for sales and service teams."
     monthlyPrice: null
-    annualPrice: 100
+    annualPrice: 100.0
     unit: user/month
     features:
       customAndAdvancedLiveApps:
@@ -140,6 +138,4 @@ plans:
       embedDocumentsInAllSalesforceObjects:
         value: true
     usageLimits: null
-    price: 100
 addOns: null
-createdAt: '2024-07-01'

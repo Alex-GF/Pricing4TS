@@ -1,5 +1,6 @@
 saasName: Postman
 version: '2.0'
+createdAt: '2024-06-28'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -641,7 +642,7 @@ usageLimits:
     linkedFeatures:
       - postmanFlows
 plans:
-  - name: FREE
+  FREE:
     description: ''
     monthlyPrice: 0
     annualPrice: 0
@@ -649,7 +650,7 @@ plans:
     features: null
     usageLimits: null
     price: 0
-  - name: BASIC
+  BASIC:
     description: ''
     monthlyPrice: 19
     annualPrice: 14
@@ -673,7 +674,7 @@ plans:
       collectionGuestViewerLimit:
         value: 10
     price: 19
-  - name: PROFESSIONAL
+  PROFESSIONAL:
     description: ''
     monthlyPrice: 39
     annualPrice: 29
@@ -729,7 +730,7 @@ plans:
       collectionGuestViewerLimit:
         value: 25
     price: 39
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: ''
     monthlyPrice: 49
     annualPrice: 49
@@ -747,10 +748,6 @@ plans:
         value: true
       privateApiNetwork:
         value: true
-      testDataStorage:
-        value: false
-      localPerformanceTesting:
-        value: false
       auditLogs:
         value: true
       deploymentControl:
@@ -832,7 +829,7 @@ plans:
         value: .inf
     price: 49
 addOns:
-  - name: extraMonitoringCalls
+  extraMonitoringCalls:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -843,7 +840,7 @@ addOns:
     usageLimitsExtensions:
       monitoringCallsLimit:
         value: 1000
-  - name: extraMockServerCalls
+  extraMockServerCalls:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -854,7 +851,7 @@ addOns:
     usageLimitsExtensions:
       mockServerCallsLimit:
         value: 1000
-  - name: customDomains
+  customDomains:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -866,7 +863,7 @@ addOns:
     usageLimitsExtensions:
       customDomainsLimit:
         value: 1
-  - name: postmanFlowsBasic
+  postmanFlowsBasic:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -886,7 +883,7 @@ addOns:
         value: 1
     usageLimitsExtensions: null
     price: 15
-  - name: postmanFlowsProfessional
+  postmanFlowsProfessional:
     availableFor:
       - BASIC
       - PROFESSIONAL
@@ -908,7 +905,7 @@ addOns:
         value: 5
     usageLimitsExtensions: null
     price: 25
-  - name: postbotBasicTier
+  postbotBasicTier:
     availableFor:
       - FREE
       - BASIC
@@ -930,7 +927,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: postbotEnterpriseTier
+  postbotEnterpriseTier:
     availableFor:
       - ENTERPRISE
     price: 19
@@ -954,7 +951,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: unlimitedCollectionRunsAddOn
+  unlimitedCollectionRunsAddOn:
     availableFor:
       - FREE
       - BASIC
@@ -967,7 +964,7 @@ addOns:
       collectionRunsLimit:
         value: .inf
     usageLimitsExtensions: null
-  - name: partnerManagerRoleProfessionalTierAddOn
+  partnerManagerRoleProfessionalTierAddOn:
     availableFor:
       - PROFESSIONAL
     price: 29
@@ -977,7 +974,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: partnerManagerRoleEnterpriseTierAddOn
+  partnerManagerRoleEnterpriseTierAddOn:
     availableFor:
       - ENTERPRISE
     price: 49
@@ -987,7 +984,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: advancedSecurityAdministration
+  advancedSecurityAdministration:
     availableFor:
       - ENTERPRISE
     price: 29
@@ -997,7 +994,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: apiBuilderAddOn
+  apiBuilderAddOn:
     availableFor:
       - ENTERPRISE
     price: 49
@@ -1007,4 +1004,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-06-28'

@@ -1,5 +1,6 @@
 saasName: Planable
 version: '2.0'
+createdAt: '2020-11-25'
 currency: USD
 hasAnnualPayment: true
 features:
@@ -134,7 +135,7 @@ usageLimits:
     linkedFeatures:
       - unlimitedStorage
 plans:
-  - name: FREE
+  FREE:
     description: For social media teams wanting to try out Planable
     monthlyPrice: 0
     annualPrice: 0
@@ -150,7 +151,7 @@ plans:
       pagesLimit:
         value: 1000000000000
     price: 0
-  - name: STARTER
+  STARTER:
     description: For freelancers & startups with up to 3 team members
     monthlyPrice: 39
     annualPrice: 33
@@ -158,7 +159,7 @@ plans:
     features: null
     usageLimits: null
     price: 39
-  - name: PREMIUM
+  PREMIUM:
     description: For small agencies & brands
     monthlyPrice: 99
     annualPrice: 83
@@ -172,14 +173,12 @@ plans:
       pagesLimit:
         value: 1000000000000
     price: 99
-  - name: ENTERPRISE
+  ENTERPRISE:
     description: For large organizations
     monthlyPrice: Custom
     annualPrice: Custom
     unit: user/month
     features:
-      selfService:
-        value: false
       realTimeSupport:
         value: true
       personalizedOnboarding:
@@ -200,5 +199,3 @@ plans:
       pagesLimit:
         value: 1000000000000
     price: Custom
-addOns: null
-createdAt: '2020-11-25'

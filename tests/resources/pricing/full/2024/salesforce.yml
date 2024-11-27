@@ -1,339 +1,295 @@
 saasName: Salesforce - SalesCloud
-version: '2.0'
+day: 16
+month: 7
+year: 2024
 currency: USD
 hasAnnualPayment: true
 features:
   einsteinActivityCapture:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: AUTOMATION
     automationType: BOT
   einsteinRelationshipInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   buyerAssistant:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   conversationInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   emailInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   leadScoring:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   opportunityScoring:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   dealInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   einsteinForecasting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   einsteinCopilot:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   leadManagement:
-    description: Track, filter, and qualify new prospective customers.
+    description: "Track, filter, and qualify new prospective customers."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   leadAssigmentAndRouting:
-    description: >-
-      Route hot leads to the right reps and view the impact of your marketing
-      activities on your sales pipeline.
+    description: "Route hot leads to the right reps and view the impact of your marketing activities on your sales pipeline."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   duplicateBlocking:
-    description: >-
-      Improve CRM data quality by preventing duplicates, so data is more usable,
-      reliable, and relevant.
+    description: "Improve CRM data quality by preventing duplicates, so data is more usable, reliable, and relevant."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   webToLeadCapture:
-    description: >-
-      Generate leads with the prospecting data from your company’s website
-      visitors.
+    description: "Generate leads with the prospecting data from your company’s website visitors."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   massEmail:
-    description: >-
-      Create targeted email lists for events. Provide updates and more for your
-      prospects and customers. Automatically track which leads or contacts
-      received emails.
+    description: "Create targeted email lists for events. Provide updates and more for your prospects and customers. Automatically track which leads or contacts received emails."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   emailProductivity:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   campaignManagement:
-    description: >-
-      Manage and track marketing campaigns across all channels. Make more
-      informed decisions and see their impact on your sales pipeline.
+    description: "Manage and track marketing campaigns across all channels. Make more informed decisions and see their impact on your sales pipeline."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   emailTemplates:
-    description: >-
-      Create form emails to communicate consistently with customers and
-      prospects.
+    description: "Create form emails to communicate consistently with customers and prospects."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   toDoList:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   campaignInfluence:
-    description: >-
-      Improve campaign ROI metrics. Allocate revenue share across campaign
-      touches on an opportunity.
+    description: "Improve campaign ROI metrics. Allocate revenue share across campaign touches on an opportunity."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   accountAndContactManagement:
-    description: >-
-      Get a complete view of your customers, including activity history, key
-      contacts, customer communications, and internal account discussions.
+    description: "Get a complete view of your customers, including activity history, key contacts, customer communications, and internal account discussions."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   opportunityManagement:
-    description: >-
-      Track key details about every deal, such as stage, quotes, products, and
-      more.
+    description: "Track key details about every deal, such as stage, quotes, products, and more."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customizableSalesProcess:
-    description: Easily personalise your team’s sales milestones with a sales path.
+    description: "Easily personalise your team’s sales milestones with a sales path."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   taskManagement:
-    description: Get the complete view of all customer engagement in one place.
+    description: "Get the complete view of all customer engagement in one place."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   activityFeed:
-    description: Get the complete view of all customer engagement in one place.
+    description: "Get the complete view of all customer engagement in one place."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   personAccounts:
-    description: >-
-      Get a complete view of customers when they are individual people,
-      including activity history, and service and sales engagement.
+    description: "Get a complete view of customers when they are individual people, including activity history, and service and sales engagement."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   salesConsoleApps:
-    description: >-
-      Boost productivity in fast-paced sales environments with everything a rep
-      needs to close business faster, all on one screen.
+    description: "Boost productivity in fast-paced sales environments with everything a rep needs to close business faster, all on one screen."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   salesTeams:
-    description: Specify collaborators assigned to each deal.
+    description: "Specify collaborators assigned to each deal."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   salesforceMeetings:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   salesforceMobileApp:
-    description: >-
-      Run your business from your phone — collaborate with your team, close
-      deals, service customers, and deliver personalized marketing from
-      anywhere.
+    description: "Run your business from your phone — collaborate with your team, close deals, service customers, and deliver personalized marketing from anywhere."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   salesCloudEverywhere:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   fullOfflineMobileFunctionality:
-    description: >-
-      Continue using the Salesforce mobile app, including creating new records,
-      even without connectivity. Your data will sync once you’re back online.
+    description: "Continue using the Salesforce mobile app, including creating new records, even without connectivity. Your data will sync once you’re back online."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizableReports:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   customizableDashboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedReportingFeatures:
-    description: >-
-      Advanced reporting features include cross filters, joined reports,
-      bucketing, and history tracking.
+    description: "Advanced reporting features include cross filters, joined reports, bucketing, and history tracking."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   forecasting:
-    description: Predict future sales and track your business’s performance.
+    description: "Predict future sales and track your business’s performance."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   embeddedForecastCharts:
-    description: >-
-      Embed forecast charts in your dashboards to see how your business is
-      performing.
+    description: "Embed forecast charts in your dashboards to see how your business is performing."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTENSION
   forecastingMobileApp:
-    description: View real-time forecasting on any mobile device.
+    description: "View real-time forecasting on any mobile device."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   opportunitySplits:
-    description: >-
-      Use opportunity splits and split types to help track the total effort of a
-      sales team and more easily divide commissions based on participation.
+    description: "Use opportunity splits and split types to help track the total effort of a sales team and more easily divide commissions based on participation."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   salesTerritories:
-    description: >-
-      Model your sales territories into a logical and flexible structure that
-      maps the right sales reps to the right customers.
+    description: "Model your sales territories into a logical and flexible structure that maps the right sales reps to the right customers."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   pipelineInspection:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   waterfallChart:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   contracts:
-    description: Help your sales teams manage contract approvals and renewals.
+    description: "Help your sales teams manage contract approvals and renewals."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   orders:
-    description: Track and manage sales orders in one central location.
+    description: "Track and manage sales orders in one central location."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   productBooks:
-    description: Save your product catalog and assign prices for every scenario.
+    description: "Save your product catalog and assign prices for every scenario."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   priceBooks:
-    description: Save your product catalog and assign prices for every scenario.
+    description: "Save your product catalog and assign prices for every scenario."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   quotes:
-    description: >-
-      Easily create basic quotes by pulling in products and pricing to show
-      customers. 
+    description: "Easily create basic quotes by pulling in products and pricing to show customers. "
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   files:
-    description: Share and collaborate on key files relevant to each deal.
+    description: "Share and collaborate on key files relevant to each deal."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   topics:
-    description: >-
-      Automatically get the most up-to-date content and recommendations on what
-      to follow and join.
+    description: "Automatically get the most up-to-date content and recommendations on what to follow and join."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   recommendations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   chatter:
-    description: Collaborate throughout your company and with outside parties.
+    description: "Collaborate throughout your company and with outside parties."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   caseManagement:
-    description: >-
-      Automatically route inquiries to the right group or agent for faster, more
-      accurate case resolution.
+    description: "Automatically route inquiries to the right group or agent for faster, more accurate case resolution."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   readOnlyKnowledge:
-    description: >-
-      Access knowledge articles and FAQ pages to provide excellent customer
-      service, faster.
+    description: "Access knowledge articles and FAQ pages to provide excellent customer service, faster."
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   readAndWriteKnowledge:
-    description: >-
-      Access knowledge articles and FAQ pages to provide excellent customer
-      service, faster.
+    description: "Access knowledge articles and FAQ pages to provide excellent customer service, faster."
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   slackSalesElevate:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -341,7 +297,7 @@ features:
     pricingUrls:
       - https://slack.com/pricing
   slackIntegration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -349,228 +305,205 @@ features:
     pricingUrls:
       - https://slack.com/pricing
   flowBuilder:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   flowOrchestration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   approvalProcesses:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   lightningAppBuilder:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   appExchange:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: MARKETPLACE
   dataStoragePerUser:
-    description: >-
-      Each edition includes a stated minimum storage to be shared by all users.
-      Additional storage is available per-org.
+    description: "Each edition includes a stated minimum storage to be shared by all users. Additional storage is available per-org."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   fileStoragePerUser:
-    description: >-
-      Each edition includes a stated minimum storage to be shared by all users.
-      Additional storage is available per-org.
+    description: "Each edition includes a stated minimum storage to be shared by all users. Additional storage is available per-org."
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   unlimitedCustomApplications:
-    description: >-
-      Build apps and customize Salesforce to meet your — and your customers’ —
-      needs.
+    description: "Build apps and customize Salesforce to meet your — and your customers’ — needs."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizableProfiles:
-    description: >-
-      Manage read/write permissions for different user profiles, and control
-      which fields different users see on every record.
+    description: "Manage read/write permissions for different user profiles, and control which fields different users see on every record."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   customizablePageLayouts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   rolesAndPermissions:
-    description: >-
-      Establish roles and permissions that set object/data access for different
-      users.
+    description: "Establish roles and permissions that set object/data access for different users."
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   recordTypes:
-    description: Tailor business processes, picklist values, and page layouts.
+    description: "Tailor business processes, picklist values, and page layouts."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   developerSandbox:
-    description: >-
-      Develop and test in an isolated environment without compromising your live
-      Salesforce deployment.
+    description: "Develop and test in an isolated environment without compromising your live Salesforce deployment."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   developerProSandbox:
-    description: >-
-      Develop and test without compromising your live Salesforce deployment.
-      Developer Pro can host larger datasets than a developer sandbox.
+    description: "Develop and test without compromising your live Salesforce deployment. Developer Pro can host larger datasets than a developer sandbox."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   partialSandbox:
-    description: >-
-      Replicate your production org, including all data. Handle performance
-      testing, load testing, and staging. 
+    description: "Replicate your production org, including all data. Handle performance testing, load testing, and staging. "
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   fullSandbox:
-    description: >-
-      Test and code in separate environments without compromising your live
-      Salesforce deployment.
+    description: "Test and code in separate environments without compromising your live Salesforce deployment."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   lightningPlatform:
-    description: The fastest way to build, extend, and manage apps — with clicks or code.
+    description: "The fastest way to build, extend, and manage apps — with clicks or code."
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   emailIntegrationWithOutlook:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingsUrls:
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products
+      - https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products
   emailIntegrationWithGmail:
-    description: >-
-      Stay in sync with your favorite productivity apps, including Gmail,
-      Calendar, Sheets, and Slides.
+    description: "Stay in sync with your favorite productivity apps, including Gmail, Calendar, Sheets, and Slides."
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingsUrls: null
   webServicesAPI:
-    description: >-
-      Connect external systems and data to Salesforce using web services APIs,
-      including REST, SOAP, and more.
+    description: "Connect external systems and data to Salesforce using web services APIs, including REST, SOAP, and more."
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   dataSynchronization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   dataHarmonization:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
   revenueMilestones:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   guidanceCenter:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   enablementAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   bestPracticeTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   inAppCoaching:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   inAppGuidance:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   inAppWalkthroughs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   einsteinOpportunityScoring:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   einsteinDealHealthInsights:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   collaborativeForecasting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   predictiveForecasting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   revenueInsightsDashboards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   einsteinAccountManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   crmANalyticsPlusLicense:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   industryDashboardTemplates:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   tableauexplorerLicense:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -578,95 +511,95 @@ features:
     pricingURLs:
       - https://www.tableau.com/pricing
   productCatalog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   productPriceBook:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   usagePricing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   quoting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   guidedSelling:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   advancedApprovals:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   advancedOrderManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   documentGeneration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   omniStudio:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   personalizedPartnerExperiences:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   dealManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   unifiedMarketing:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   partnerAI:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   partnerAnalytics:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   customObjects:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   partnerRelationshipDataStorage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   partnerRelationshipApi:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: API
 usageLimits:
   numberOfCampaignsPerOportunity:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: campaign/opportunity
@@ -674,7 +607,7 @@ usageLimits:
     linkedFeatures:
       - campaignInfluence
   numberOfCustomAppsPerOrg:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: customApp/Org
@@ -682,7 +615,7 @@ usageLimits:
     linkedFeatures:
       - salesConsoleApps
   numberOfProcessesAndFlows:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: processesFlows/org
@@ -690,7 +623,7 @@ usageLimits:
     linkedFeatures:
       - flowBuilder
   numberOfCustomizableProfiles:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: profile/org
@@ -699,7 +632,7 @@ usageLimits:
       - customizableProfiles
       - customizablePageLayouts
   numberOfRoles:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: rol/org
@@ -707,7 +640,7 @@ usageLimits:
     linkedFeatures:
       - rolesAndPermissions
   numberOfRecordTypes:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: type/object
@@ -715,7 +648,7 @@ usageLimits:
     linkedFeatures:
       - recordTypes
   numberOfPartialSandbox:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: partialSanbox/org
@@ -723,15 +656,15 @@ usageLimits:
     linkedFeatures:
       - partialSandbox
   numberOfFullSanbox:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: fullSanbox/org
     type: NON_RENEWABLE
     linkedFeatures:
-      - fullSandbox
+      - fullSandbox    
   customObjectsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: customObject
@@ -739,7 +672,7 @@ usageLimits:
     linkedFeatures:
       - customObjects
   partnerRelationshipDataStorageLimitMember:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 5
     unit: MB/member
@@ -747,7 +680,7 @@ usageLimits:
     linkedFeatures:
       - partnerRelationshipDataStorage
   partnerRelationshipDataStorageLimitLogin:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: MB/login
@@ -755,7 +688,7 @@ usageLimits:
     linkedFeatures:
       - partnerRelationshipDataStorage
   partnerRelationshipApiCallsLimitMember:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 200
     unit: call/member/day
@@ -763,7 +696,7 @@ usageLimits:
     linkedFeatures:
       - partnerRelationshipDataStorage
   partnerRelationshipApiCallsLimitLogin:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: call/member/day
@@ -771,18 +704,17 @@ usageLimits:
     linkedFeatures:
       - partnerRelationshipDataStorage
 plans:
-  - name: STARTER_SUITE
-    description: ''
-    annualPrice: 25
+  STARTER_SUITE:
+    description: ""
+    annualPrice: 25.0
     unit: user/month
     features:
       readAndWriteKnowledge:
         value: true
     usageLimits: null
-    price: 25
-  - name: PRO_SUITE
-    description: ''
-    annualPrice: 100
+  PRO_SUITE:
+    description: ""
+    annualPrice: 100.0
     unit: user/month
     features:
       campaignInfluence:
@@ -824,10 +756,9 @@ plans:
       developerSandbox:
         value: true
     usageLimits: null
-    price: 100
-  - name: ENTERPRISE
-    description: ''
-    annualPrice: 165
+  ENTERPRISE:
+    description: ""
+    annualPrice: 165.0
     unit: user/month
     features:
       conversationInsights:
@@ -907,12 +838,12 @@ plans:
         value: .inf
       numberOfProcessesAndFlows:
         value: .inf
-    price: 165
+      
 addOns:
-  - name: einsteinForProSuite
+  einsteinForProSuite:
     availableFor:
       - PRO_SUITE
-    price: 75
+    price: 75.0
     unit: user/month
     features:
       buyerAssistant:
@@ -921,10 +852,10 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: einsteinForEnterprise
+  einsteinForEnterprise:
     availableFor:
       - ENTERPRISE
-    price: 75
+    price: 75.0
     unit: user/month
     features:
       einsteinRelationshipInsights:
@@ -941,18 +872,18 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: slackSalesElevate
+  slackSalesElevate:
     availableFor:
       - PRO_SUITE
       - ENTERPRISE
-    price: 60
+    price: 60.0
     unit: user/month
     features:
       slackSalesElevate:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: slackIntegration
+  slackIntegration:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
@@ -964,7 +895,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: flowOrchestration
+  flowOrchestration:
     availableFor:
       - PRO_SUITE
       - ENTERPRISE
@@ -975,12 +906,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: salesProgram
+  salesProgram:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 100
+    price: 100.0
     unit: user/month
     features:
       revenueMilestones:
@@ -999,12 +930,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: revenueIntelligence
+  revenueIntelligence:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 220
+    price: 220.0
     unit: user/month
     features:
       einsteinOpportunityScoring:
@@ -1025,12 +956,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: revenueIntelligenceWithTableau
+  revenueIntelligenceWithTableau:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 250
+    price: 250.0
     unit: user/month
     features:
       einsteinOpportunityScoring:
@@ -1053,12 +984,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: cpq
+  cpq:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 75
+    price: 75.0
     unit: user/month
     features:
       productCatalog:
@@ -1069,12 +1000,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: cpqPlus
+  cpqPlus:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 150
+    price: 150.0
     unit: user/month
     features:
       productCatalog:
@@ -1097,12 +1028,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: partnerRelationshipManagement
+  partnerRelationshipManagement:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 25
+    price: 25.0
     unit: user/month
     features:
       personalizedPartnerExperiences:
@@ -1123,12 +1054,12 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: partnerRelationshipManagementWithExternalApps
+  partnerRelationshipManagementWithExternalApps:
     availableFor:
       - STARTER_SUITE
       - PRO_SUITE
       - ENTERPRISE
-    price: 35
+    price: 35.0
     unit: user/month
     features:
       personalizedPartnerExperiences:
@@ -1159,7 +1090,7 @@ addOns:
       partnerRelationshipApiCallsLimitLogin:
         value: 400
     usageLimitsExtensions: null
-  - name: developerProSandbox
+  developerProSandbox:
     availableFor:
       - PRO_SUITE
       - ENTERPRISE
@@ -1170,7 +1101,7 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-  - name: fullSandbox
+  fullSandbox:
     availableFor:
       - ENTERPRISE
     price: Contact sales
@@ -1180,4 +1111,3 @@ addOns:
         value: true
     usageLimits: null
     usageLimitsExtensions: null
-createdAt: '2024-07-15'

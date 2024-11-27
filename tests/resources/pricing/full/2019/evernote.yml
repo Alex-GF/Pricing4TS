@@ -1,223 +1,225 @@
 saasName: Evernote
-version: '2.0'
+day: 30
+month: 11
+year: 2019
 currency: USD
 hasAnnualPayment: false
 features:
   notes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   richFormatting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   webClippingsFromAnyBrowserOrDevice:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   webScreenshotsFromAnyBrowserOrDevice:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   recordAudioNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   toDoLists:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   takeNotesWithStylusOnMobileDevices:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: EXTERNAL_DEVICE
   highlightOnImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   annotateOnImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   commentOnImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   attachPdfs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   attachReceipts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   attachFiles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   attachDocuments:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   clipPagesImagesFromTheWeb:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   clipTextFromTheWeb:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   forwardEmailsIntoEvernote:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
   scanAndDigitalizeBusinessCardsToCreateContacts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   annotatePdfs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   searchNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createNotebooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   createTags:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sortInformationByDate:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sortInformationByTitle:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   sortInformationByTag:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   organizeInformationByDate:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   organizeInformationByTitle:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   organizeInformationByTag:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   searchTextInsideImages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   searchTextInsidePdfs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   searchTextInsideOfficeDocs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   versionHistoryOfNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   shareNotesWithPeople:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   setPermissionsForEdittingNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   setPermissionsForEdittingNotebooks:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: MANAGEMENT
   turnNotesIntoPresentations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: TASK_AUTOMATION
   shareNotesWithinYourCompany:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   shareNotebooksWithinYourCompany:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   recommendRelatedNotes:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   typpingSuggestions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
     automationType: BOT
   recommendRelatedNotesFromYourCompany:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: AUTOMATION
-    automationType: BOT
+    automationType: BOT  
   linkGoogleDriveFiles:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -225,23 +227,22 @@ features:
     pricingUrls:
       - https://one.google.com/about/plans
   connectWithEmailProviders:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
   connectWithCommunicationTools:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingUrls:
       - https://slack.com/pricing
-      - >-
-        https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software
+      - https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software
   connectWithCrms:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
@@ -249,83 +250,83 @@ features:
     pricingUrls:
       - https://www.salesforce.com/products/sales-cloud/pricing/
   collaborationSpacesForTeams:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   centralLocationForWork:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   permissionsBasedAccessToContent:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   virtualBulletinAboutNewsAccrossTheTeam:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   editNotesInRealTeamWithOthers:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   centralizedAccountAdministration:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   centralizedUserManagement:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   singleSignOn:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INTEGRATION
     integrationType: IDENTITY_PROVIDER
   activityHistory:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   businessDataOwnership:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   offlineAccess:
-    description: ''
+    description: ""
     valueType: TEXT
-    defaultValue: Desktop
+    defaultValue: "Desktop"
     type: DOMAIN
   customerSupport:
-    description: ''
+    description: ""
     valueType: TEXT
-    defaultValue: Community Support
+    defaultValue: "Community Support"
     type: SUPPORT
-usageLimits:
+usageLimits: 
   globalMonthlyUploadLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 60
     unit: MB
     type: RENEWABLE
     linkedFeatures: null
   monthlyUploadLimitByUser:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: MB
     type: RENEWABLE
     linkedFeatures: null
   maximumNoteSize:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 25
     unit: MB/note
@@ -333,7 +334,7 @@ usageLimits:
     linkedFeatures:
       - notes
   collaborationSpacesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 0
     unit: space
@@ -341,22 +342,21 @@ usageLimits:
     linkedFeatures:
       - collaborationSpacesForTeams
   devicesOfDevicesWithOneAccount:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: device
     type: NON_RENEWABLE
     linkedFeatures: null
 plans:
-  - name: FREE
-    description: Take great notes
-    monthlyPrice: 0
+  FREE:
+    description: "Take great notes"
+    monthlyPrice: 0.0
     unit: /month
     features: null
     usageLimits: null
-    price: 0
-  - name: PREMIUM
-    description: Organize everything
+  PREMIUM:
+    description: "Organize everything"
     monthlyPrice: 7.99
     unit: /month
     features:
@@ -385,19 +385,18 @@ plans:
       connectWithCommunicationTools:
         value: true
       offlineAccess:
-        value: Desktop & Mobile
+        value: "Desktop & Mobile"
       customerSupport:
-        value: Email & Live Chat
+        value: "Email & Live Chat"
     usageLimits:
-      globalMonthlyUploadLimit:
+      globalMonthlyUploadLimit: 
         value: 10240
-      maximumNoteSize:
+      maximumNoteSize: 
         value: 200
-      devicesOfDevicesWithOneAccount:
+      devicesOfDevicesWithOneAccount: 
         value: 1000000
-    price: 7.99
-  - name: BUSINESS
-    description: Bring your team together
+  BUSINESS:
+    description: "Bring your team together"
     monthlyPrice: 14.99
     unit: user/month
     features:
@@ -452,20 +451,18 @@ plans:
       businessDataOwnership:
         value: true
       offlineAccess:
-        value: Desktop & Mobile
+        value: "Desktop & Mobile"
       customerSupport:
-        value: Email & Live Chat
-    usageLimits:
-      globalMonthlyUploadLimit:
+        value: "Email & Live Chat"
+    usageLimits: 
+      globalMonthlyUploadLimit: 
         value: 20480
-      monthlyUploadLimitByUser:
+      monthlyUploadLimitByUser: 
         value: 2096
-      maximumNoteSize:
+      maximumNoteSize: 
         value: 200
       collaborationSpacesLimit:
         value: 10000000
-      devicesOfDevicesWithOneAccount:
+      devicesOfDevicesWithOneAccount: 
         value: 1000000
-    price: 14.99
 addOns: null
-createdAt: '2019-11-29'

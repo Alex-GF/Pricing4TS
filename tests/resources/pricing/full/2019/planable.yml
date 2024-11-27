@@ -1,43 +1,45 @@
 saasName: Planable
-version: '2.0'
+day: 24
+month: 5
+year: 2019
 currency: USD
 hasAnnualPayment: false
 features:
   posts:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
-    type: DOMAIN
+    type: DOMAIN  
   pages:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   workspaces:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   advancedFeatures:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
   realTimeCustomerSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
 usageLimits:
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 3
     unit: user
     type: NON_RENEWABLE
     linkedFeatures: null
   postsLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: post
@@ -45,7 +47,7 @@ usageLimits:
     linkedFeatures:
       - posts
   pagesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1000000000000
     unit: page
@@ -53,7 +55,7 @@ usageLimits:
     linkedFeatures:
       - pages
   workspacesLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 1
     unit: worspace
@@ -61,16 +63,15 @@ usageLimits:
     linkedFeatures:
       - workspaces
 plans:
-  - name: STARTER
-    description: ''
+  STARTER:
+    description: ""
     monthlyPrice: 24
     annualPrice: 24
     unit: user/month
     features: null
     usageLimits: null
-    price: 24
-  - name: PREMIUM
-    description: For small agencies & brands
+  PREMIUM:
+    description: "For small agencies & brands"
     monthlyPrice: 99
     annualPrice: 99
     unit: user/month
@@ -82,9 +83,8 @@ plans:
         value: 7
       workspacesLimit:
         value: 5
-    price: 99
-  - name: ENTERPRISE
-    description: For large organizations
+  ENTERPRISE:
+    description: "For large organizations"
     monthlyPrice: Contact Us
     annualPrice: Contact Us
     unit: user/month
@@ -100,6 +100,4 @@ plans:
         value: 1000000000000
       workspacesLimit:
         value: 1000000000000
-    price: Contact Us
 addOns: null
-createdAt: '2019-05-23'

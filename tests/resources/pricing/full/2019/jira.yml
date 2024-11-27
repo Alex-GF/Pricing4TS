@@ -1,106 +1,107 @@
-saasName: Jira
-version: '2.0'
+saasName: Jira 
+day: 30
+month: 10
+year: 2019
 currency: USD
 hasAnnualPayment: false
 features:
   advancedPermissions:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   scrumAndKanbanBoards:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   backlog:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   agileReporting:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INFORMATION
   customizableWorkflows:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   roadmaps:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   appsAndIntegrations:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: INTEGRATION
     integrationType: MARKETPLACE
   anonymousAccess:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: MANAGEMENT
   auditLogs:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
   uptimeSLA:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: GUARANTEE
   storage:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: DOMAIN
   communitySupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: true
     type: SUPPORT
   localBusinessHoursSupport:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
   24x7Support:
-    description: ''
+    description: ""
     valueType: BOOLEAN
     defaultValue: false
     type: SUPPORT
 usageLimits:
   usersLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 10
     unit: user/site
     type: NON_RENEWABLE
     linkedFeatures: null
   storageLimit:
-    description: ''
+    description: ""
     valueType: NUMERIC
     defaultValue: 2
     unit: GB
     type: NON_RENEWABLE
-    linkedFeatures:
+    linkedFeatures: 
       - storage
 plans:
-  - name: FREE
-    description: ''
-    monthlyPrice: 0
+  FREE:
+    description: ""
+    monthlyPrice: 0.0
     unit: user/month
     features: null
     usageLimits: null
-    price: 0
-  - name: STANDARD
-    description: ''
-    monthlyPrice: 7
+  STANDARD:
+    description: ""
+    monthlyPrice: 7.0
     unit: user/month
     features:
       advancedPermissions:
@@ -116,10 +117,9 @@ plans:
         value: 20000
       storageLimit:
         value: 250
-    price: 7
-  - name: PREMIUM
-    description: ''
-    monthlyPrice: 14
+  PREMIUM:
+    description: ""
+    monthlyPrice: 14.0
     unit: user/month
     features:
       advancedPermissions:
@@ -139,6 +139,4 @@ plans:
         value: 20000
       storageLimit:
         value: .inf
-    price: 14
 addOns: null
-createdAt: '2019-10-29'
