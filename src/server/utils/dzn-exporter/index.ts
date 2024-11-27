@@ -1,5 +1,6 @@
 import path from 'node:path';
-import { Pricing, pricing2DZN, retrievePricingFromPath } from '../../main';
+import { Pricing, retrievePricingFromPath } from '../../../main';
+import { pricing2DZN } from '../../../server/utils/dzn-exporter/pricing-dzn-exporter';
 import fs from 'node:fs';
 
 export interface Chunk {

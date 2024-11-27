@@ -1,4 +1,5 @@
-import { pricing2DZN, retrievePricingFromPath } from '../../src/main';
+import { retrievePricingFromPath } from '../../src/main';
+import { pricing2DZN } from '../../src/server/utils/dzn-exporter/pricing-dzn-exporter';
 import type { Pricing } from '../../src/main';
 import {
   calculateAddOnAvailableForMatrix,
@@ -7,9 +8,9 @@ import {
   calculateAddOnsUsageLimitsExtensionsMatrix,
   calculateAddOnsUsageLimitsMatrix,
   getAddOnNames,
-} from '../../src/models/pricing2yaml/addon';
-import { calculatePlanFeaturesMatrix, getPlanNames } from '../../src/models/pricing2yaml/plan';
-import { formatMatrixToString } from '../../src/utils/dzn-exporter/string-utils';
+} from '../../src/main/models/pricing2yaml/addon';
+import { calculatePlanFeaturesMatrix, getPlanNames } from '../../src/main/models/pricing2yaml/plan';
+import { formatMatrixToString } from '../../src/server/utils/dzn-exporter/string-utils';
 
 const path = 'tests/resources/pricing/full/';
 

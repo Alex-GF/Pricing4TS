@@ -1,4 +1,4 @@
-import { Pricing } from '../main';
+import { Pricing } from '../../main';
 import PricingCSP from '../models/minizinc/minizinc';
 import { pricing2DZN } from '../utils/dzn-exporter/pricing-dzn-exporter';
 import { PricingOperation } from '../models/minizinc/minizinc';
@@ -20,6 +20,12 @@ export default class PricingService {
 
   constructor(pricing: Pricing){
     this.pricing = pricing;
+  }
+
+  async runPricingOperation(pricingOperation: PricingOperation) {
+    const dznPricing = pricing2DZN(this.pricing);
+    const model = new PricingCSP();
+    return model.runPricingOperation(pricingOperation, dznPricing);
   }
 
   async getAnalytics() {

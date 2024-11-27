@@ -1,9 +1,9 @@
 import assert from 'assert';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
-import { Pricing } from '../../src/models/pricing2yaml/pricing';
-import { LATEST_PRICING2YAML_VERSION } from '../../src/utils/version-manager';
-import { retrievePricingFromPath, retrievePricingFromYaml } from '../../src/utils/yaml-utils';
+import { Pricing } from '../../src/main/models/pricing2yaml/pricing';
+import { LATEST_PRICING2YAML_VERSION } from '../../src/main/utils/version-manager';
+import { retrievePricingFromPath, retrievePricingFromYaml } from '../../src/main/utils/yaml-utils';
 
 const DEMO_SAAS_PATH = 'tests/resources/pricing/full/petclinic.yml';
 const DEMO_SAAS_NAME = 'PetClinic';
