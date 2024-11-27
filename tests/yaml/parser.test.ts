@@ -1,7 +1,7 @@
-import { retrievePricingFromPath } from "../../src/utils/yaml-utils";
-import { Pricing } from "../../src/models/pricing2yaml/pricing";
+import { retrievePricingFromPath } from "../../src/main/utils/yaml-utils";
+import { Pricing } from "../../src/main/models/pricing2yaml/pricing";
 import assert from "assert";
-import { LATEST_PRICING2YAML_VERSION } from "../../src/utils/version-manager";
+import { LATEST_PRICING2YAML_VERSION } from "../../src/main/utils/version-manager";
 import {v4 as uuidv4 } from "uuid";
 import { parseCSVContent, readCSVFile } from "../utils/csv-utils";
 import fs from "fs";

@@ -1,4 +1,4 @@
-import { Feature, UsageLimit } from '../../main';
+import { Feature, UsageLimit } from '../../../main';
 
 const unlimitedValue = 100000000;
 

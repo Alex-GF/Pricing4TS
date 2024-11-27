@@ -1,4 +1,4 @@
-import { Pricing } from '../../main';
+import { Pricing } from '../../../main';
 import { DZNKeywords, Chunk } from '.';
 import { EOL } from 'os';
 import {
@@ -10,21 +10,21 @@ import {
   calculateAddOnsUsageLimitsMatrix,
   getAddOnNames,
   getAddOnPrices,
-} from '../../models/pricing2yaml/addon';
+} from '../../../main/models/pricing2yaml/addon';
 import {
   calculatePlanFeaturesMatrix,
   calculatePlanUsageLimitsMatrix,
   getPlanPrices,
   getPlanNames,
   Plan,
-} from '../../models/pricing2yaml/plan';
-import { getFeatureNames, getNumberOfFeatures } from '../../models/pricing2yaml/feature';
+} from '../../../main/models/pricing2yaml/plan';
+import { getFeatureNames, getNumberOfFeatures } from '../../../main/models/pricing2yaml/feature';
 import {
   calculateLinkedFeaturesMatrix,
   getNumberOfUsageLimits,
   getUsageLimitNames,
   UsageLimit,
-} from '../../models/pricing2yaml/usage-limit';
+} from '../../../main/models/pricing2yaml/usage-limit';
 import { formatMatrixToString, generateChunk, generateChunkBlock } from './string-utils';
 
 export function pricing2DZN(pricing: Pricing): string {
