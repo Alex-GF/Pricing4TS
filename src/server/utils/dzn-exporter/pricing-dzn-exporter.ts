@@ -146,7 +146,7 @@ function generateAddOnsChunks(pricing: Pricing): string {
   );
   const addOnsAvailableForMatrix = calculateAddOnAvailableForMatrix(planNames, pricing.addOns);
   const addOnsDependsOnMatrix = calculateAddOnsDependsOnOExcludesMatrix(pricing.addOns);
-  const addOnsExcludesOnMatrix = calculateAddOnsDependsOnOExcludesMatrix(pricing.addOns);
+  const addOnsExcludesOnMatrix = calculateAddOnsDependsOnOExcludesMatrix(pricing.addOns, "excludes");
 
   const addOnChunks: Chunk[] = [
     {

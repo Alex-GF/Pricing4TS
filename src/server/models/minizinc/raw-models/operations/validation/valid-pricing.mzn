@@ -49,6 +49,18 @@ constraint
       ) \/
       exists(k in USAGE_LIMITS)(
         addons_usage_limits[i,k] != addons_usage_limits[j,k]
+      ) \/
+      exists(k in USAGE_LIMITS)(
+        addons_usage_limits_extensions[i,k] != addons_usage_limits_extensions[j,k]
+      ) \/
+      exists(k in PLANS)(
+        addons_available_for[i,k] != addons_available_for[j,k]
+      ) \/
+      exists(k in ADDONS)(
+        addons_depends_on[i,k] != addons_depends_on[j,k]
+      ) \/
+      exists(k in ADDONS)(
+        addons_excludes[i,k] != addons_excludes[j,k]
       )
     ), "Invalid datafile. No two addons should be exactly the same.")
   endif;
