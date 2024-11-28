@@ -3,7 +3,7 @@ import { pricing2DZN } from '../../src/server/utils/dzn-exporter/pricing-dzn-exp
 import type { Pricing } from '../../src/main';
 import {
   calculateAddOnAvailableForMatrix,
-  calculateAddOnsDependsOnMatrix,
+  calculateAddOnsDependsOnOExcludesMatrix,
   calculateAddOnsFeaturesMatrix,
   calculateAddOnsUsageLimitsExtensionsMatrix,
   calculateAddOnsUsageLimitsMatrix,
@@ -70,8 +70,7 @@ describe('Given pricing should produce a Minizinc data file', () => {
       getPlanNames(pricing.plans),
       pricing.addOns
     );
-    const actualAddOnsDependsOn = calculateAddOnsDependsOnMatrix(
-      getAddOnNames(pricing.addOns),
+    const actualAddOnsDependsOn = calculateAddOnsDependsOnOExcludesMatrix(
       pricing.addOns
     );
 
