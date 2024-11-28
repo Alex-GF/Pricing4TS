@@ -15,7 +15,35 @@ constraint
 
 constraint
   if num_addons > 0 /\ num_plans > 0
-    then forall(i in ADDONS)(
+    then assert(forall(i in ADDONS)(
       sum(j in PLANS)(addons_available_for[i,j]) > 0
-    )
+    ), "Invalid datafile. All add-ons must be available for at least one plan.")
+  endif;
+
+% C4: No two plans should be exactly the same
+
+constraint
+  if num_plans > 1
+    then assert(forall(i, j in PLANS where i < j)(
+      exists(k in FEATURES)(
+        plans_features[i,k] != plans_features[j,k]
+      ) \/
+      exists(k in USAGE_LIMITS)(
+        plans_usage_limits[i,k] != plans_usage_limits[j,k]
+      )
+    ), "Invalid datafile. No two plans should be exactly the same.")
+  endif;
+
+% C5: No two addons should be exactly the same
+
+constraint
+  if num_addons > 1
+    then assert(forall(i, j in ADDONS where i < j)(
+      exists(k in FEATURES)(
+        addons_features[i,k] != addons_features[j,k]
+      ) \/
+      exists(k in USAGE_LIMITS)(
+        addons_usage_limits[i,k] != addons_usage_limits[j,k]
+      )
+    ), "Invalid datafile. No two addons should be exactly the same.")
   endif;
