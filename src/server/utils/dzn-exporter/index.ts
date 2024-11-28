@@ -29,6 +29,7 @@ export enum DZNKeywords {
   AddOnsUsageLimitsExtensions = 'addons_usage_limits_extensions',
   AddOnsAvailableFor = 'addons_available_for',
   AddOnsDependsOn = 'addons_depends_on',
+  AddOnsExcludes = 'addons_excludes',
 }
 
 export function saveDZNfile(source: string, savePath: string): void {

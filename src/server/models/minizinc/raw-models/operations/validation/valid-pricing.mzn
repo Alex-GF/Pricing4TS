@@ -1,5 +1,10 @@
 include "../../PricingModel.mzn";
 
+% C1: A pricing cannot be empty
+
+constraint
+  assert(num_plans > 0 \/ num_addons > 0, "Invalid datafile. A pricing cannot be empty, there have to be at least one plan or one add-on.");
+
 % C2: All features linked to a usage limit included within a plan are afected by its restriction.
 
 constraint

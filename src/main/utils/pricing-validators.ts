@@ -597,9 +597,10 @@ export function validateAvailableFor(
   return availableFor;
 }
 
-export function validateDependsOn(
+export function validateDependsOnOrExcludes(
   dependsOn: string[] | undefined | null,
-  pricing: Pricing
+  pricing: Pricing,
+  field: "dependsOn" | "excludes"
 ): string[] {
   const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
 
@@ -609,7 +610,7 @@ export function validateDependsOn(
 
   if (!Array.isArray(addonNames)) {
     throw new Error(
-      `The dependsOn field must be an array of the addons required to contract the addon. Received: ${dependsOn}`
+      `The ${field} field must be an array of the addons required to contract the addon. Received: ${dependsOn}`
     );
   }
 

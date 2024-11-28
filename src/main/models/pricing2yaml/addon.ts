@@ -8,6 +8,7 @@ export interface AddOn {
   price: number | string;
   availableFor: string[];
   dependsOn?: string[];
+  excludes?: string[];
   unit: string;
   features?: { [key: string]: Feature };
   usageLimits?: { [key: string]: UsageLimit };
@@ -146,7 +147,7 @@ export function calculateAddOnAvailableForMatrix(
   return matrix;
 }
 
-export function calculateAddOnsDependsOnMatrix(addOnNames: string[], addOns?: AddOn[]) {
+export function calculateAddOnsDependsOnOExcludesMatrix(addOns?: AddOn[], field: "dependsOn" | "excludes" = "dependsOn"): number[][] {
   const matrix: number[][] = [];
 
   if (!addOns) {
@@ -154,14 +155,14 @@ export function calculateAddOnsDependsOnMatrix(addOnNames: string[], addOns?: Ad
   }
 
   for (const addOn of addOns) {
-    const dependsOn = addOn.dependsOn;
+    const selectedField = field === "dependsOn" ? addOn.dependsOn : addOn.excludes;
     const row = [];
-    if (!dependsOn) {
+    if (!selectedField) {
       row.push(new Array(addOns.length).fill(0));
       continue;
     }
     for (const innerAddOn of addOns) {
-      const value = dependsOn.includes(innerAddOn.name) ? 1 : 0;
+      const value = selectedField.includes(innerAddOn.name) ? 1 : 0;
       row.push(value);
     }
     matrix.push(row);

@@ -33,6 +33,7 @@ array[ADDONS, USAGE_LIMITS] of float: addons_usage_limits; % The position (i,j) 
 array[ADDONS, USAGE_LIMITS] of float: addons_usage_limits_extensions; % The position (i,j) indicates the extension of the limit imposed by the usage limit j in the subscription when contracting the add-on i.
 array[ADDONS, PLANS] of int: addons_available_for; % The position (i,j) indicates whether the add-on i is available for the plan j
 array[ADDONS, ADDONS] of int: addons_depends_on; % The position (i,j) indicates whether the add-on i depends on the addon j, which means they have to be in the same subscription
+array[ADDONS, ADDONS] of int: addons_excludes; % The position (i,j) indicates whether the add-on i excludes the addon j, which means they cannot be in the same subscription
 
 % ---------------------
 % ----- VARIABLES -----

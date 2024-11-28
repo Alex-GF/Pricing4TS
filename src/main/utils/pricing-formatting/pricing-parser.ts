@@ -12,7 +12,7 @@ import {
   validateCreatedAt,
   validateCurrency,
   validateDefaultValue,
-  validateDependsOn,
+  validateDependsOnOrExcludes,
   validateDescription,
   validateExpression,
   validateFeature,
@@ -193,7 +193,8 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
     addon.name = validateName(addon.name, 'Addon');
     addon.description = validateDescription(addon.description);
     addon.availableFor = validateAvailableFor(addon.availableFor, pricing);
-    addon.dependsOn = validateDependsOn(addon.dependsOn, pricing);
+    addon.dependsOn = validateDependsOnOrExcludes(addon.dependsOn, pricing, "dependsOn");
+    addon.excludes = validateDependsOnOrExcludes(addon.excludes, pricing, "excludes");
     addon.price = validatePrice(addon.price);
     addon.unit = validateUnit(addon.unit);
 
