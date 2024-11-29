@@ -4,7 +4,7 @@ import type { Plan } from '../../models/pricing2yaml/plan';
 import { ExtractedPricing, generateEmptyPricing, Pricing } from '../../models/pricing2yaml/pricing';
 import type { ContainerUsageLimits, UsageLimit } from '../../models/pricing2yaml/usage-limit';
 import {
-  postValidateDependsOn,
+  postValidateDependsOnOrExclude,
   validateAddonFeatures,
   validateAddonUsageLimits,
   validateAddonUsageLimitsExtensions,
@@ -12,7 +12,7 @@ import {
   validateCreatedAt,
   validateCurrency,
   validateDefaultValue,
-  validateDependsOn,
+  validateDependsOnOrExcludes,
   validateDescription,
   validateExpression,
   validateFeature,
@@ -78,7 +78,8 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
   } else {
     const formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
     pricing.addOns = formattedAddOns.map(a => parseAddOn(a, pricing));
-    pricing.addOns.forEach(a => postValidateDependsOn(a.dependsOn, pricing));
+    pricing.addOns.forEach(a => postValidateDependsOnOrExclude(a.dependsOn, pricing));
+    pricing.addOns.forEach(a => postValidateDependsOnOrExclude(a.excludes, pricing));
   }
 
   if (!pricing.plans && !pricing.addOns) {
@@ -193,7 +194,8 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
     addon.name = validateName(addon.name, 'Addon');
     addon.description = validateDescription(addon.description);
     addon.availableFor = validateAvailableFor(addon.availableFor, pricing);
-    addon.dependsOn = validateDependsOn(addon.dependsOn, pricing);
+    addon.dependsOn = validateDependsOnOrExcludes(addon.dependsOn, pricing, "dependsOn");
+    addon.excludes = validateDependsOnOrExcludes(addon.excludes, pricing, "excludes");
     addon.price = validatePrice(addon.price);
     addon.unit = validateUnit(addon.unit);
 

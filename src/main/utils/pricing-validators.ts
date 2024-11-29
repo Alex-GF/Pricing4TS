@@ -597,31 +597,32 @@ export function validateAvailableFor(
   return availableFor;
 }
 
-export function validateDependsOn(
-  dependsOn: string[] | undefined | null,
-  pricing: Pricing
+export function validateDependsOnOrExcludes(
+  fieldValue: string[] | undefined | null,
+  pricing: Pricing,
+  fieldType: "dependsOn" | "excludes"
 ): string[] {
   const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
 
-  if (dependsOn === null || dependsOn === undefined) {
-    dependsOn = [];
+  if (fieldValue === null || fieldValue === undefined) {
+    fieldValue = [];
   }
 
   if (!Array.isArray(addonNames)) {
     throw new Error(
-      `The dependsOn field must be an array of the addons required to contract the addon. Received: ${dependsOn}`
+      `The ${fieldType} field must be an array of the addons required to contract the addon. Received: ${fieldValue}`
     );
   }
 
-  return dependsOn;
+  return fieldValue;
 }
 
-export function postValidateDependsOn(dependsOn: string[] | undefined, pricing: Pricing): void {
+export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined, pricing: Pricing): void {
   const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
 
-  if (!dependsOn) return;
+  if (!fieldValue) return;
 
-  for (const addonName of dependsOn) {
+  for (const addonName of fieldValue) {
     if (!addonNames.includes(addonName)) {
       throw new Error(`The addon ${addonName} is not defined in the pricing.`);
     }

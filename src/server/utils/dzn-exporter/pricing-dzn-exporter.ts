@@ -4,7 +4,7 @@ import { EOL } from 'os';
 import {
   AddOn,
   calculateAddOnAvailableForMatrix,
-  calculateAddOnsDependsOnMatrix,
+  calculateAddOnsDependsOnOExcludesMatrix,
   calculateAddOnsFeaturesMatrix,
   calculateAddOnsUsageLimitsExtensionsMatrix,
   calculateAddOnsUsageLimitsMatrix,
@@ -145,7 +145,8 @@ function generateAddOnsChunks(pricing: Pricing): string {
     pricing.addOns
   );
   const addOnsAvailableForMatrix = calculateAddOnAvailableForMatrix(planNames, pricing.addOns);
-  const addOnsDependsOnMatrix = calculateAddOnsDependsOnMatrix(addOnNames, pricing.addOns);
+  const addOnsDependsOnMatrix = calculateAddOnsDependsOnOExcludesMatrix(pricing.addOns);
+  const addOnsExcludesOnMatrix = calculateAddOnsDependsOnOExcludesMatrix(pricing.addOns, "excludes");
 
   const addOnChunks: Chunk[] = [
     {
@@ -177,6 +178,12 @@ function generateAddOnsChunks(pricing: Pricing): string {
       row: DZNKeywords.AddOns,
       col: DZNKeywords.AddOns,
       value: formatMatrixToString(addOnNames, addOnsDependsOnMatrix),
+    },
+    {
+      left: DZNKeywords.AddOnsExcludes,
+      row: DZNKeywords.AddOns,
+      col: DZNKeywords.AddOns,
+      value: formatMatrixToString(addOnNames, addOnsExcludesOnMatrix),
     },
   ];
 

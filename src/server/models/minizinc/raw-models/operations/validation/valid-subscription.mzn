@@ -1,6 +1,10 @@
 include "./valid-pricing.mzn";
 
-% C4: All the features included within the subscription must correspond to a combination of one plan and 0..n add-ons or zero plans and 1..n add-ons.
+% C4: A subscription cannot be empty
+
+constraint sum(f in FEATURES)(subscription_features[f]) > 0;
+
+% C5: All the features included within the subscription must correspond to a combination of one plan and 0..n add-ons or zero plans and 1..n add-ons.
 
 constraint forall(f in FEATURES)(
       if num_addons > 0 
@@ -37,7 +41,7 @@ constraint
     )
   endif;
 
-% C5: All selected add_ons must be available for the selected plan
+% C6: All selected add_ons must be available for the selected plan
 
 constraint
   if num_addons > 0 /\ num_plans > 0 
@@ -48,11 +52,19 @@ constraint
     )
   endif;
 
-% C6: The subscription must included all dependent addons
+% C7: The subscription must included all dependent addons
 
 constraint
   if num_addons > 0
     then forall(i in ADDONS, j in ADDONS)(
       if addons_depends_on[i, j] == 1 then selected_addons[i] == 1 -> selected_addons[j] == 1 endif
+    )
+  endif;
+
+% C8: The subscription must not include any excluded addons
+constraint
+  if num_addons > 0
+    then forall(i in ADDONS, j in ADDONS)(
+      if addons_excludes[i, j] == 1 then selected_addons[i] == 1 -> selected_addons[j] == 0 endif
     )
   endif;
