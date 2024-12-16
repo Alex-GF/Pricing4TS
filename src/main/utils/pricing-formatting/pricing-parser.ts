@@ -21,7 +21,6 @@ import {
   validateFeatureIntegrationType,
   validateFeatures,
   validateFeatureType,
-  validateHasAnnualPayment,
   validateLinkedFeatures,
   validateName,
   validatePlan,
@@ -99,7 +98,6 @@ function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Prici
   pricing.url = validateUrl(extractedPricing.url);
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
   pricing.currency = validateCurrency(extractedPricing.currency);
-  pricing.hasAnnualPayment = validateHasAnnualPayment(extractedPricing.hasAnnualPayment);
   pricing.billing = validateBilling(extractedPricing.billing);
 }
 

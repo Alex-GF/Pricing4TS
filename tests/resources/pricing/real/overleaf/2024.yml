@@ -2,7 +2,7 @@ saasName: Overleaf - Individual
 version: '2.0'
 createdAt: '2024-07-10'
 currency: USD
-hasAnnualPayment: true
+
 features:
   fastCompileServers:
     description: >-

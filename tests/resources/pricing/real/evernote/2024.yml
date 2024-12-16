@@ -2,7 +2,7 @@ saasName: Evernote
 version: '2.0'
 createdAt: '2024-07-06'
 currency: USD
-hasAnnualPayment: true
+
 features:
   notes:
     description: ''

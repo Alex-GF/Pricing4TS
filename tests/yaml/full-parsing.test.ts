@@ -41,10 +41,6 @@ describe('Demo SaaS Parsing Tests', () => {
       "The pricing must have a non-empty Date 'createdAt' attribute"
     );
     assert(pricing.currency, "The pricing must have a non-empty string 'currency' attribute");
-    assert(
-      typeof pricing.hasAnnualPayment === 'boolean',
-      "The pricing must have a boolean 'hasAnnualPayment' attribute"
-    );
     // Asserts that at least one feature, usage limit, plan, and add-on exists in the pricing object
     assert(
       pricing.features.length > 0,
@@ -114,10 +110,6 @@ describe('Demo SaaS Parsing Tests', () => {
       "The pricing must have a non-empty Date 'createdAt' attribute"
     );
     assert(pricing.currency, "The pricing must have a non-empty string 'currency' attribute");
-    assert(
-      typeof pricing.hasAnnualPayment === 'boolean',
-      "The pricing must have a boolean 'hasAnnualPayment' attribute"
-    );
     // Asserts that at least one feature, usage limit, plan, and add-on exists in the pricing object
     assert(
       pricing.features.length > 0,

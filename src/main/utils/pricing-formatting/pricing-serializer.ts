@@ -44,7 +44,6 @@ function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingT
     ? pricing.createdAt.toISOString().split('T')[0]
     : (pricing.createdAt as string).split('T')[0];
   pricingToBeWritten.currency = pricing.currency;
-  pricingToBeWritten.hasAnnualPayment = pricing.hasAnnualPayment;
   pricingToBeWritten.tags = Array.isArray(pricing.tags) && pricing.tags.length > 0 ? pricing.tags : undefined;
   pricingToBeWritten.billing = pricing.billing && pricing.billing.monthly === 1 && Object.keys(pricing.billing).length === 1 ? undefined : pricing.billing;
 }

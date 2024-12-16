@@ -94,20 +94,6 @@ export function validateCurrency(currency: string | null): string {
   return currency;
 }
 
-export function validateHasAnnualPayment(hasAnnualPayment: boolean | null): boolean {
-  if (hasAnnualPayment === null || hasAnnualPayment === undefined) {
-    throw new Error(
-      `The hasAnnualPayment field of the pricing must not be null or undefined. Please ensure that the hasAnnualPayment field is present and it is a boolean`
-    );
-  }
-
-  if (typeof hasAnnualPayment !== 'boolean') {
-    throw new Error(`The hasAnnualPayment field of the pricing must be a boolean`);
-  }
-
-  return hasAnnualPayment;
-}
-
 export function validateDescription(description: string | null | undefined): string | undefined {
   if (description === null) {
     description = undefined;

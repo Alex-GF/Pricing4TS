@@ -9,7 +9,6 @@ export interface Pricing {
     url?: string;
     createdAt: Date;
     currency: string;
-    hasAnnualPayment: boolean;
     tags?: string[];
     billing?: {[key: string]: number};
     features: Feature[];
@@ -38,7 +37,6 @@ export function generateEmptyPricing(): Pricing {
         url: "",
         createdAt: new Date(),
         currency: "",
-        hasAnnualPayment: false,
         billing: {
             "monthly": 1,
         },
@@ -57,7 +55,6 @@ export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
         url: "",
         createdAt: "",
         currency: "",
-        hasAnnualPayment: false,
         billing: {},
         tags: [],
         features: {},

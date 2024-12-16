@@ -2,7 +2,6 @@ saasName: Deskera
 version: '2.0'
 createdAt: '2022-12-04'
 currency: USD
-hasAnnualPayment: false
 features:
   dedicatedSuccessManager:
     description: ''
