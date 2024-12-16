@@ -21,3 +21,11 @@ Given pricing with multi billing configuration should parse,tests/resources/pric
 Given pricing without specific url should parse,tests/resources/pricing/positive/url/no-url.yml,Test
 Given pricing with http url should parse,tests/resources/pricing/positive/url/http-url.yml,Test
 Given pricing with https url should parse,tests/resources/pricing/positive/url/https-url.yml,Test
+---------- plans.private ----------,-,-
+Given plan without private flag should parse,tests/resources/pricing/positive/plan/private/no-private.yml,Test
+Given plan with true private flag should parse,tests/resources/pricing/positive/plan/private/is-private.yml,Test
+Given plan with false private flag should parse,tests/resources/pricing/positive/plan/private/is-not-private.yml,Test
+---------- plans.private ----------,-,-
+Given add-on without private flag should parse,tests/resources/pricing/positive/addOn/private/no-private.yml,Test
+Given add-on with true private flag should parse,tests/resources/pricing/positive/addOn/private/is-private.yml,Test
+Given add-on with false private flag should parse,tests/resources/pricing/positive/addOn/private/is-not-private.yml,Test

@@ -61,3 +61,11 @@ Given pricing with no version should throw an error,tests/resources/pricing/nega
 Given pricing with null version should throw an error,tests/resources/pricing/negative/version/pricing-null-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
 Given pricing with invalid version format should throw an error,tests/resources/pricing/negative/version/pricing-invalid-format-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
 Given pricing with invalid version type should throw an error,tests/resources/pricing/negative/version/pricing-invalid-type-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
+---------- plans.private ----------,-,-
+Given plan with boolean string private should throw an error,tests/resources/pricing/negative/plan/private/boolean-string-private.yml,Error parsing plan BASIC. Error: The private field must be a boolean. Received: true
+Given plan with number private should throw an error,tests/resources/pricing/negative/plan/private/number-private.yml,Error parsing plan BASIC. Error: The private field must be a boolean. Received: 123
+Given plan with string private should throw an error,tests/resources/pricing/negative/plan/private/string-private.yml,Error parsing plan BASIC. Error: The private field must be a boolean. Received: test
+---------- addons.private ----------,-,-
+Given add-on with boolean string private should throw an error,tests/resources/pricing/negative/addOn/private/boolean-string-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: true
+Given add-on with number private should throw an error,tests/resources/pricing/negative/addOn/private/number-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: 123
+Given add-on with string private should throw an error,tests/resources/pricing/negative/addOn/private/string-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: test

@@ -707,3 +707,15 @@ export function validateUrl(url: string | undefined){
 
   return url;
 }
+
+export function validatePrivate(isPrivate: boolean | undefined){
+  if (isPrivate === undefined || isPrivate === null) {
+    isPrivate = false;
+  }
+
+  if (typeof isPrivate !== 'boolean') {
+    throw new Error(`The private field must be a boolean. Received: ${isPrivate}`);
+  }
+
+  return isPrivate;
+}

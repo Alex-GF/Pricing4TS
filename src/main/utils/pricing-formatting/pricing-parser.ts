@@ -28,6 +28,7 @@ import {
   validatePlans,
   validatePlanUsageLimits,
   validatePrice,
+  validatePrivate,
   validateRenderMode,
   validateTags,
   validateUnit,
@@ -160,6 +161,7 @@ function parsePlan(plan: Plan, pricing: Pricing): Plan {
     plan.description = validateDescription(plan.description);
     plan.price = validatePrice(plan.price);
     plan.unit = validateUnit(plan.unit);
+    plan.private = validatePrivate(plan.private);
 
     const planFeatures: ContainerFeatures = formatArrayIntoObject(
       pricing.features
@@ -200,6 +202,7 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
     addon.excludes = validateDependsOnOrExcludes(addon.excludes, pricing, "excludes");
     addon.price = validatePrice(addon.price);
     addon.unit = validateUnit(addon.unit);
+    addon.private = validatePrivate(addon.private);
 
     // Parse Features if provided
     if (addon.features !== null && addon.features !== undefined) {
