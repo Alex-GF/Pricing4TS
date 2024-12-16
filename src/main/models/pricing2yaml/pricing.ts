@@ -6,6 +6,7 @@ import { AddOn, ContainerAddOns } from './addon';
 export interface Pricing {
     saasName: string;
     version: string;
+    url?: string;
     createdAt: Date;
     currency: string;
     hasAnnualPayment: boolean;
@@ -34,6 +35,7 @@ export function generateEmptyPricing(): Pricing {
     return {
         saasName: "",
         version: "0.0",
+        url: "",
         createdAt: new Date(),
         currency: "",
         hasAnnualPayment: false,
@@ -52,6 +54,7 @@ export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
     return {
         saasName: "",
         version: "0.0",
+        url: "",
         createdAt: "",
         currency: "",
         hasAnnualPayment: false,

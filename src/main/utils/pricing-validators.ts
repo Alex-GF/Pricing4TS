@@ -703,3 +703,21 @@ export function validateBilling(billing: {[key: string]: number} | undefined){
 
   return billing;
 }
+
+export function validateUrl(url: string | undefined){
+  if (url === undefined || url === null) {
+    url = undefined;
+    return
+  }
+
+  if (typeof url !== 'string') {
+    throw new Error(`The url field must be a string. Received: ${url}`);
+  }
+
+  const urlPattern = /^(https?):\/\/[^\s\/$.?#].[^\s]*$/i;
+  if (!urlPattern.test(url)) {
+    throw new Error(`The url field must be a valid URL with the http or https protocol. Received: ${url}`);
+  }
+
+  return url;
+}

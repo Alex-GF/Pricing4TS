@@ -39,6 +39,7 @@ export function serializePricing(pricing: Pricing): PricingToBeWritten {
 function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
   pricingToBeWritten.saasName = pricing.saasName;
   pricingToBeWritten.version = pricing.version;
+  pricingToBeWritten.url = pricing.url;
   pricingToBeWritten.createdAt = pricing.createdAt instanceof Date
     ? pricing.createdAt.toISOString().split('T')[0]
     : (pricing.createdAt as string).split('T')[0];

@@ -32,6 +32,7 @@ import {
   validateRenderMode,
   validateTags,
   validateUnit,
+  validateUrl,
   validateUsageLimit,
   validateUsageLimits,
   validateUsageLimitType,
@@ -95,6 +96,7 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
 function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
   pricing.version = validateVersion(extractedPricing.version); // Assumes that the version has been processed to be the last one
   pricing.saasName = validateName(extractedPricing.saasName, 'SaaS');
+  pricing.url = validateUrl(extractedPricing.url);
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
   pricing.currency = validateCurrency(extractedPricing.currency);
   pricing.hasAnnualPayment = validateHasAnnualPayment(extractedPricing.hasAnnualPayment);
