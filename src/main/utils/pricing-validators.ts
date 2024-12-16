@@ -678,3 +678,28 @@ export function validateUsageLimit(usageLimit: UsageLimit) {
     throw new Error(`The usage limit must be an object of type UsageLimit`)
   }
 }
+
+export function validateBilling(billing: {[key: string]: number} | undefined){
+  
+  if(billing === undefined || billing === null){
+    billing = {
+      "monthly": 1
+    }
+  }
+  
+  if (!(typeof billing === 'object')) {
+    throw new Error(`The billing field must be an object of type {[key: string]: number}`);
+  }
+
+  for (const [key, value] of Object.entries(billing)) {
+    if (typeof value !== 'number') {
+      throw new Error(`The billing entry for ${key} must be a number. Received: ${value}`);
+    }
+
+    if (value <= 0 || value > 1) {
+      throw new Error(`The billing entry for ${key} must be a value in the range (0,1]. Received: ${value}`);
+    }
+  }
+
+  return billing;
+}

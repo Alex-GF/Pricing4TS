@@ -41,6 +41,16 @@ Given pricing with empty saasName should throw an error,tests/resources/pricing/
 Given pricing with invalid saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-invalid-name.yml,The SaaS name must be a string
 ---------- tags ----------,-,-
 Given pricing with tag not in tags array should throw an error,tests/resources/pricing/negative/tags/pricing-tag-not-in-tags.yml,Error parsing feature feature2. Error: Error validating tag: Feature tag 'Tag 3' must be one of the values defined in 'tags'
+---------- billing ----------,-,-
+Given a billing entry with boolean value should throw an error,tests/resources/pricing/negative/billing/boolean-as-billing-value.yml,The billing entry for monthly must be a number. Received: false
+Given a single billing entry with boolean value should throw an error,tests/resources/pricing/negative/billing/boolean-in-a-single-entry.yml,The billing entry for annual must be a number. Received: false
+Given a billing entry with big negative coeficient as value should throw an error,tests/resources/pricing/negative/billing/negative-coef-big.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: -1000"
+Given a billing entry with low negative coeficient as value should throw an error,tests/resources/pricing/negative/billing/negative-coef-low.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: -0.1"
+Given a billing entry with null value should throw an error,tests/resources/pricing/negative/billing/null-as-billing-value.yml,The billing entry for monthly must be a number. Received: null
+Given a single billing entry with null value should throw an error,tests/resources/pricing/negative/billing/null-in-a-single-entry.yml,The billing entry for annual must be a number. Received: null
+Given a billing entry with big upper outbound value should throw an error,tests/resources/pricing/negative/billing/outbound-upper-coef-big.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: 1000"
+Given a billing entry with close upper outbound value should throw an error,tests/resources/pricing/negative/billing/outbound-upper-coef-close.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: 1.1"
+Given a billing entry with zero as value should throw an error,tests/resources/pricing/negative/billing/zero-coef.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: 0"
 ---------- version ----------,-,-
 Given pricing with no version should throw an error,tests/resources/pricing/negative/version/pricing-no-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
 Given pricing with null version should throw an error,tests/resources/pricing/negative/version/pricing-null-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
