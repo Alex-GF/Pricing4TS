@@ -2,7 +2,6 @@ saasName: boolean in plans
 version: '2.0'
 createdAt: '2024-08-31'
 currency: EUR
-hasAnnualPayment: false
 features:
   foo:
     type: DOMAIN

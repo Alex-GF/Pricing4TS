@@ -1,7 +1,6 @@
 saasName: Basic PLAN has a complex expression
 version: '2.0'
 currency: EUR
-hasAnnualPayment: false
 createdAt: '2024-08-31'
 features:
   foo:

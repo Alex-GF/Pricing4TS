@@ -2,7 +2,7 @@ saasName: Crowdcast
 version: '2.0'
 createdAt: '2023-11-29'
 currency: USD
-hasAnnualPayment: true
+
 features:
   liveStreaming:
     description: ''

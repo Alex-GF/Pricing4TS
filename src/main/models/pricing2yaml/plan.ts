@@ -7,6 +7,7 @@ export interface Plan {
   description?: string;
   price: number | string;
   unit: string;
+  private: boolean;
   features: { [key: string]: Feature };
   usageLimits?: { [key: string]: UsageLimit };
 }

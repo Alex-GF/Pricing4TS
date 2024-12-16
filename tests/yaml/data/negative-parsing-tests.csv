@@ -3,6 +3,11 @@ testName,pricingPath,expected
 Given key value in usageLimits should throw an error when parsing addOn,tests/resources/pricing/negative/addOn/usageLimits/usageLimits-not-a-map.yml,"Error parsing addon Baz. Error: Error while parsing the usage limit fooLimit of the add-on Baz. Error: When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field"
 ---------- addOn.usageLimitsExtensions ----------,-,-
 Given key value in usageLimitsExtensions should throw an error when parsing addOn,tests/resources/pricing/negative/addOn/usageLimitsExtensions/usageLimitsExtensions-not-a-map.yml,"Error parsing addon Baz. Error: Error while parsing the usage limit fooLimit of the add-on Baz. Error: When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field"
+---------- url ----------,-,-
+Given pricing with number url should throw an error,tests/resources/pricing/negative/url/number-url.yml,The url field must be a string. Received: 123
+Given pricing with boolean url should throw an error,tests/resources/pricing/negative/url/boolean-url.yml,The url field must be a string. Received: false
+Given pricing with invalid protocol in url should throw an error,tests/resources/pricing/negative/url/invalid-protocol-url.yml,The url field must be a valid URL with the http or https protocol. Received: test://test.com
+Given pricing with not url-like string as url should throw an error,tests/resources/pricing/negative/url/invalid-string-url.yml,The url field must be a valid URL with the http or https protocol. Received: test
 ---------- createdAt ----------,-,-
 Given pricing with no createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-no-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
 Given pricing with null createdAt should throw an error,tests/resources/pricing/negative/createdAt/pricing-null-createdAt.yml,The createdAt field must not be null or undefined. Please ensure that the createdAt field is present and correctly formatted (as Date or string)
@@ -41,8 +46,26 @@ Given pricing with empty saasName should throw an error,tests/resources/pricing/
 Given pricing with invalid saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-invalid-name.yml,The SaaS name must be a string
 ---------- tags ----------,-,-
 Given pricing with tag not in tags array should throw an error,tests/resources/pricing/negative/tags/pricing-tag-not-in-tags.yml,Error parsing feature feature2. Error: Error validating tag: Feature tag 'Tag 3' must be one of the values defined in 'tags'
+---------- billing ----------,-,-
+Given a billing entry with boolean value should throw an error,tests/resources/pricing/negative/billing/boolean-as-billing-value.yml,The billing entry for monthly must be a number. Received: false
+Given a single billing entry with boolean value should throw an error,tests/resources/pricing/negative/billing/boolean-in-a-single-entry.yml,The billing entry for annual must be a number. Received: false
+Given a billing entry with big negative coeficient as value should throw an error,tests/resources/pricing/negative/billing/negative-coef-big.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: -1000"
+Given a billing entry with low negative coeficient as value should throw an error,tests/resources/pricing/negative/billing/negative-coef-low.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: -0.1"
+Given a billing entry with null value should throw an error,tests/resources/pricing/negative/billing/null-as-billing-value.yml,The billing entry for monthly must be a number. Received: null
+Given a single billing entry with null value should throw an error,tests/resources/pricing/negative/billing/null-in-a-single-entry.yml,The billing entry for annual must be a number. Received: null
+Given a billing entry with big upper outbound value should throw an error,tests/resources/pricing/negative/billing/outbound-upper-coef-big.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: 1000"
+Given a billing entry with close upper outbound value should throw an error,tests/resources/pricing/negative/billing/outbound-upper-coef-close.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: 1.1"
+Given a billing entry with zero as value should throw an error,tests/resources/pricing/negative/billing/zero-coef.yml,"The billing entry for monthly must be a value in the range (0,1]. Received: 0"
 ---------- version ----------,-,-
 Given pricing with no version should throw an error,tests/resources/pricing/negative/version/pricing-no-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
 Given pricing with null version should throw an error,tests/resources/pricing/negative/version/pricing-null-version.yml,The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted
 Given pricing with invalid version format should throw an error,tests/resources/pricing/negative/version/pricing-invalid-format-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
 Given pricing with invalid version type should throw an error,tests/resources/pricing/negative/version/pricing-invalid-type-version.yml,The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y
+---------- plans.private ----------,-,-
+Given plan with boolean string private should throw an error,tests/resources/pricing/negative/plan/private/boolean-string-private.yml,Error parsing plan BASIC. Error: The private field must be a boolean. Received: true
+Given plan with number private should throw an error,tests/resources/pricing/negative/plan/private/number-private.yml,Error parsing plan BASIC. Error: The private field must be a boolean. Received: 123
+Given plan with string private should throw an error,tests/resources/pricing/negative/plan/private/string-private.yml,Error parsing plan BASIC. Error: The private field must be a boolean. Received: test
+---------- addons.private ----------,-,-
+Given add-on with boolean string private should throw an error,tests/resources/pricing/negative/addOn/private/boolean-string-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: true
+Given add-on with number private should throw an error,tests/resources/pricing/negative/addOn/private/number-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: 123
+Given add-on with string private should throw an error,tests/resources/pricing/negative/addOn/private/string-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: test

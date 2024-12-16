@@ -2,7 +2,7 @@ saasName: Deskera
 version: '2.0'
 createdAt: '2021-10-13'
 currency: USD
-hasAnnualPayment: true
+
 features:
   allInOneDashboard:
     description: ''

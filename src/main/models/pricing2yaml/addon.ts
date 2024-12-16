@@ -6,10 +6,11 @@ export interface AddOn {
   name: string;
   description?: string;
   price: number | string;
+  unit: string;
+  private: boolean;
   availableFor: string[];
   dependsOn?: string[];
   excludes?: string[];
-  unit: string;
   features?: { [key: string]: Feature };
   usageLimits?: { [key: string]: UsageLimit };
   usageLimitsExtensions?: { [key: string]: UsageLimit };

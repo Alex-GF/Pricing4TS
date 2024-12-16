@@ -2,7 +2,7 @@ saasName: Salesforce - SalesCloud
 version: '2.0'
 createdAt: '2022-11-26'
 currency: USD
-hasAnnualPayment: true
+
 features:
   leadManagement:
     description: Track, filter, and qualify new prospective customers.

@@ -94,20 +94,6 @@ export function validateCurrency(currency: string | null): string {
   return currency;
 }
 
-export function validateHasAnnualPayment(hasAnnualPayment: boolean | null): boolean {
-  if (hasAnnualPayment === null || hasAnnualPayment === undefined) {
-    throw new Error(
-      `The hasAnnualPayment field of the pricing must not be null or undefined. Please ensure that the hasAnnualPayment field is present and it is a boolean`
-    );
-  }
-
-  if (typeof hasAnnualPayment !== 'boolean') {
-    throw new Error(`The hasAnnualPayment field of the pricing must be a boolean`);
-  }
-
-  return hasAnnualPayment;
-}
-
 export function validateDescription(description: string | null | undefined): string | undefined {
   if (description === null) {
     description = undefined;
@@ -677,4 +663,59 @@ export function validateUsageLimit(usageLimit: UsageLimit) {
   }else{
     throw new Error(`The usage limit must be an object of type UsageLimit`)
   }
+}
+
+export function validateBilling(billing: {[key: string]: number} | undefined){
+  
+  if(billing === undefined || billing === null){
+    billing = {
+      "monthly": 1
+    }
+  }
+  
+  if (!(typeof billing === 'object')) {
+    throw new Error(`The billing field must be an object of type {[key: string]: number}`);
+  }
+
+  for (const [key, value] of Object.entries(billing)) {
+    if (typeof value !== 'number') {
+      throw new Error(`The billing entry for ${key} must be a number. Received: ${value}`);
+    }
+
+    if (value <= 0 || value > 1) {
+      throw new Error(`The billing entry for ${key} must be a value in the range (0,1]. Received: ${value}`);
+    }
+  }
+
+  return billing;
+}
+
+export function validateUrl(url: string | undefined){
+  if (url === undefined || url === null) {
+    url = undefined;
+    return
+  }
+
+  if (typeof url !== 'string') {
+    throw new Error(`The url field must be a string. Received: ${url}`);
+  }
+
+  const urlPattern = /^(https?):\/\/[^\s\/$.?#].[^\s]*$/i;
+  if (!urlPattern.test(url)) {
+    throw new Error(`The url field must be a valid URL with the http or https protocol. Received: ${url}`);
+  }
+
+  return url;
+}
+
+export function validatePrivate(isPrivate: boolean | undefined){
+  if (isPrivate === undefined || isPrivate === null) {
+    isPrivate = false;
+  }
+
+  if (typeof isPrivate !== 'boolean') {
+    throw new Error(`The private field must be a boolean. Received: ${isPrivate}`);
+  }
+
+  return isPrivate;
 }

@@ -2,7 +2,6 @@ saasName: Test
 version: '2.0'
 createdAt: 2024-01-15
 currency: EUR
-hasAnnualPayment: false
 tags:
   - 'Tag 1'
   - 'Tag 2'
@@ -23,13 +22,13 @@ usageLimits: null
 plans:
   BASIC:
     description: Basic plan
-    monthlyPrice: 0.0
+    price: 0.0
     unit: user/month
     features: null
     usageLimits: null
   PRO:
     description: Advanced plan
-    monthlyPrice: 5.0
+    price: 5.0
     unit: user/month
     features:
       feature2:

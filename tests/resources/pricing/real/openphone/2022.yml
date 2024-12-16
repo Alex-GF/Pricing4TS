@@ -2,7 +2,7 @@ saasName: OpenPhone
 version: '2.0'
 createdAt: '2022-11-28'
 currency: USD
-hasAnnualPayment: true
+
 features:
   usAndCanadaCalling:
     description: ''

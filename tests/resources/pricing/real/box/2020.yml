@@ -2,7 +2,6 @@ saasName: Box
 version: '2.0'
 createdAt: '2020-11-28'
 currency: USD
-hasAnnualPayment: false
 features:
   secureStorage:
     description: ''

@@ -2,7 +2,7 @@ saasName: clockify
 version: '2.0'
 createdAt: '2023-12-02'
 currency: USD
-hasAnnualPayment: true
+
 features:
   unlimitedTracking:
     description: Track as much time as you want, without any limits.

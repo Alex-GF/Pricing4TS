@@ -2,7 +2,6 @@ saasName: Buffer - Publish
 version: '2.0'
 createdAt: '2020-11-29'
 currency: USD
-hasAnnualPayment: true
 features:
   socialChannels:
     description: >-
