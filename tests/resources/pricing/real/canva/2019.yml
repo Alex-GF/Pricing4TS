@@ -2,7 +2,6 @@ saasName: Canva
 version: '2.0'
 createdAt: '2019-09-05'
 currency: USD
-hasAnnualPayment: false
 features:
   templates:
     description: ''

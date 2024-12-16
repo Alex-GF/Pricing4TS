@@ -2,7 +2,7 @@ saasName: Postman
 version: '2.0'
 createdAt: '2024-06-28'
 currency: USD
-hasAnnualPayment: true
+
 features:
   apiClientHTTP:
     description: https://www.postman.com/api-platform/api-client/

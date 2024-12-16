@@ -10,8 +10,13 @@ export default function v10Tov11Updater(extractedPricing: any): any {
     extractedPricing.version = nextVersion!;
 
     _updatePrices(extractedPricing);
+    _removeHasAnnualPayment(extractedPricing);
 
     return extractedPricing;
+}
+
+function _removeHasAnnualPayment(extractedPricing: any): void{
+    extractedPricing.hasAnnualPayment = undefined;
 }
 
 function _updatePrices(extractedPricing: any): void {

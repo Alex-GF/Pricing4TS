@@ -21,7 +21,6 @@ import {
   validateFeatureIntegrationType,
   validateFeatures,
   validateFeatureType,
-  validateHasAnnualPayment,
   validateLinkedFeatures,
   validateName,
   validatePlan,
@@ -29,14 +28,17 @@ import {
   validatePlans,
   validatePlanUsageLimits,
   validatePrice,
+  validatePrivate,
   validateRenderMode,
   validateTags,
   validateUnit,
+  validateUrl,
   validateUsageLimit,
   validateUsageLimits,
   validateUsageLimitType,
   validateValue,
   validateValueType,
+  validateVariables,
   validateVersion,
 } from '../pricing-validators';
 
@@ -95,10 +97,11 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
 function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
   pricing.version = validateVersion(extractedPricing.version); // Assumes that the version has been processed to be the last one
   pricing.saasName = validateName(extractedPricing.saasName, 'SaaS');
+  pricing.url = validateUrl(extractedPricing.url);
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
   pricing.currency = validateCurrency(extractedPricing.currency);
-  pricing.hasAnnualPayment = validateHasAnnualPayment(extractedPricing.hasAnnualPayment);
   pricing.billing = validateBilling(extractedPricing.billing);
+  pricing.variables = validateVariables(extractedPricing.variables);
 }
 
 function parseFeature(feature: Feature, tags?: string[]): Feature {
@@ -158,8 +161,9 @@ function parsePlan(plan: Plan, pricing: Pricing): Plan {
     validatePlan(plan);
     plan.name = validateName(plan.name, 'Plan');
     plan.description = validateDescription(plan.description);
-    plan.price = validatePrice(plan.price);
+    plan.price = validatePrice(plan.price, pricing.variables);
     plan.unit = validateUnit(plan.unit);
+    plan.private = validatePrivate(plan.private);
 
     const planFeatures: ContainerFeatures = formatArrayIntoObject(
       pricing.features
@@ -198,8 +202,9 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
     addon.availableFor = validateAvailableFor(addon.availableFor, pricing);
     addon.dependsOn = validateDependsOnOrExcludes(addon.dependsOn, pricing, "dependsOn");
     addon.excludes = validateDependsOnOrExcludes(addon.excludes, pricing, "excludes");
-    addon.price = validatePrice(addon.price);
+    addon.price = validatePrice(addon.price, pricing.variables);
     addon.unit = validateUnit(addon.unit);
+    addon.private = validatePrivate(addon.private);
 
     // Parse Features if provided
     if (addon.features !== null && addon.features !== undefined) {

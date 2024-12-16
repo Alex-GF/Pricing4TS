@@ -94,20 +94,6 @@ export function validateCurrency(currency: string | null): string {
   return currency;
 }
 
-export function validateHasAnnualPayment(hasAnnualPayment: boolean | null): boolean {
-  if (hasAnnualPayment === null || hasAnnualPayment === undefined) {
-    throw new Error(
-      `The hasAnnualPayment field of the pricing must not be null or undefined. Please ensure that the hasAnnualPayment field is present and it is a boolean`
-    );
-  }
-
-  if (typeof hasAnnualPayment !== 'boolean') {
-    throw new Error(`The hasAnnualPayment field of the pricing must be a boolean`);
-  }
-
-  return hasAnnualPayment;
-}
-
 export function validateDescription(description: string | null | undefined): string | undefined {
   if (description === null) {
     description = undefined;
@@ -466,7 +452,7 @@ export function validatePlanUsageLimits(
   return plan.usageLimits;
 }
 
-export function validatePrice(price: number | string | undefined | null): number | string {
+export function validatePrice(price: number | string | undefined | null, variables: {[key: string]: boolean | string | number}): number | string {
   if (price === null || price === undefined) {
     throw new Error(
       `The price field must not be null or undefined. Please ensure that the price field is present and it's a number`
@@ -485,7 +471,21 @@ export function validatePrice(price: number | string | undefined | null): number
 
   if (typeof price === 'string') {
     if (price.includes('#')) {
-      // TODO: EVALUATE PRICING FORMULA
+      for (const [variable, value] of Object.entries(variables)) {
+        price = price.replace(`#${variable}`, `${typeof value === "string" ? `'${value}'` : value}`);
+      }
+
+      try {
+        // eslint-disable-next-line no-eval
+        const evaluatedPrice = eval(price);
+        if (typeof evaluatedPrice !== 'number' || isNaN(evaluatedPrice)) {
+          throw new Error(`The evaluated price must result in a valid number. Current result after evaluation: ${evaluatedPrice}`);
+        }
+        price = evaluatedPrice;
+      } catch (err) {
+        throw new Error(`Error evaluating the price formula: ${(err as Error).message}`);
+      }
+      
     } else if (price.match(/^[0-9]+(\.[0-9]+)?$/)) {
       price = parseFloat(price);
     }
@@ -702,4 +702,53 @@ export function validateBilling(billing: {[key: string]: number} | undefined){
   }
 
   return billing;
+}
+
+export function validateVariables(variables: {[key: string]: number | string | boolean} | undefined){
+  
+  if(variables === undefined || variables === null){
+    variables = {}
+  }
+  
+  if (typeof variables !== 'object') {
+    throw new Error(`The billing field must be an object of type {[key: string]: number | string | boolean}`);
+  }
+
+  for (const [key, value] of Object.entries(variables)) {
+    if (typeof value !== 'number' && typeof value !== 'string' && typeof value !== 'boolean') {
+      throw new Error(`The billing entry for ${key} must be either a number, a string or a boolean. Received: ${value}`);
+    }
+  }
+
+  return variables;
+}
+
+export function validateUrl(url: string | undefined){
+  if (url === undefined || url === null) {
+    url = undefined;
+    return
+  }
+
+  if (typeof url !== 'string') {
+    throw new Error(`The url field must be a string. Received: ${url}`);
+  }
+
+  const urlPattern = /^(https?):\/\/[^\s\/$.?#].[^\s]*$/i;
+  if (!urlPattern.test(url)) {
+    throw new Error(`The url field must be a valid URL with the http or https protocol. Received: ${url}`);
+  }
+
+  return url;
+}
+
+export function validatePrivate(isPrivate: boolean | undefined){
+  if (isPrivate === undefined || isPrivate === null) {
+    isPrivate = false;
+  }
+
+  if (typeof isPrivate !== 'boolean') {
+    throw new Error(`The private field must be a boolean. Received: ${isPrivate}`);
+  }
+
+  return isPrivate;
 }

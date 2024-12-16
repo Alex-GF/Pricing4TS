@@ -2,7 +2,7 @@ saasName: Slack
 version: '2.0'
 createdAt: '2023-10-23'
 currency: USD
-hasAnnualPayment: true
+
 features:
   messagesAccess:
     description: >-

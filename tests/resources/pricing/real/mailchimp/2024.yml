@@ -2,7 +2,7 @@ saasName: MailChimp - Marketing
 version: '2.0'
 createdAt: '2024-07-12'
 currency: USD
-hasAnnualPayment: false
+
 features:
   ownerRole:
     description: ''

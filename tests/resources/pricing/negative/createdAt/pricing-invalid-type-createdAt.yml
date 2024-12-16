@@ -2,7 +2,6 @@ saasName: Plan No Price
 version: "2.0"
 createdAt: 100
 currency: EUR
-hasAnnualPayment: false
 features:
   feature1:
     description: Feature 1 description

@@ -2,7 +2,7 @@ saasName: Zapier
 version: '2.0'
 createdAt: '2023-11-28'
 currency: USD
-hasAnnualPayment: true
+
 features:
   tasks:
     description: ''

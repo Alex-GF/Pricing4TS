@@ -2,7 +2,7 @@ saasName: Office 365 - For Business
 version: '2.0'
 createdAt: '2019-11-29'
 currency: USD
-hasAnnualPayment: true
+
 features:
   cloudStorage:
     description: Store and access files securely in the cloud

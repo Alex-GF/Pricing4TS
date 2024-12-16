@@ -6,11 +6,12 @@ import { AddOn, ContainerAddOns } from './addon';
 export interface Pricing {
     saasName: string;
     version: string;
+    url?: string;
     createdAt: Date;
     currency: string;
-    hasAnnualPayment: boolean;
     tags?: string[];
     billing?: {[key: string]: number};
+    variables: {[key: string]: number | string | boolean};
     features: Feature[];
     usageLimits?: UsageLimit[];
     plans?: Plan[];
@@ -34,12 +35,13 @@ export function generateEmptyPricing(): Pricing {
     return {
         saasName: "",
         version: "0.0",
+        url: "",
         createdAt: new Date(),
         currency: "",
-        hasAnnualPayment: false,
         billing: {
             "monthly": 1,
         },
+        variables: {},
         tags: [],
         features: [],
         usageLimits: [],
@@ -52,10 +54,13 @@ export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
     return {
         saasName: "",
         version: "0.0",
+        url: "",
         createdAt: "",
         currency: "",
-        hasAnnualPayment: false,
-        billing: {},
+        billing: {
+            "monthly": 1,
+        },
+        variables: {},
         tags: [],
         features: {},
         usageLimits: {},

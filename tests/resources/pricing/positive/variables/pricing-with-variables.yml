@@ -1,8 +1,10 @@
-saasName: Basic PLAN has a complex expression
+saasName: Test
 version: '2.0'
 currency: EUR
-hasAnnualPayment: false
 createdAt: '2024-08-31'
+variables:
+  vip: true
+  x: 5
 features:
   foo:
     type: DOMAIN
@@ -11,18 +13,13 @@ features:
 plans:
   BASIC:
     description: Basic plan
-    monthlyPrice: '#vip ? 0.0 : #x'
+    price: '#vip ? #x : 0.0'
     unit: user/month
     features: null
     usageLimits: null
   PRO:
     description: Pro plan
-    monthlyPrice: 15.99
-    annualPrice: 11.99
     price: 15.99
     unit: user/month
     features: null
     usageLimits: null
-variables:
-  vip: true
-  x: 5
