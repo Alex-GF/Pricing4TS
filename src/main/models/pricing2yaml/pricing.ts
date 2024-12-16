@@ -11,6 +11,7 @@ export interface Pricing {
     currency: string;
     tags?: string[];
     billing?: {[key: string]: number};
+    variables: {[key: string]: number | string | boolean};
     features: Feature[];
     usageLimits?: UsageLimit[];
     plans?: Plan[];
@@ -40,6 +41,7 @@ export function generateEmptyPricing(): Pricing {
         billing: {
             "monthly": 1,
         },
+        variables: {},
         tags: [],
         features: [],
         usageLimits: [],
@@ -55,7 +57,10 @@ export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
         url: "",
         createdAt: "",
         currency: "",
-        billing: {},
+        billing: {
+            "monthly": 1,
+        },
+        variables: {},
         tags: [],
         features: {},
         usageLimits: {},

@@ -38,6 +38,7 @@ import {
   validateUsageLimitType,
   validateValue,
   validateValueType,
+  validateVariables,
   validateVersion,
 } from '../pricing-validators';
 
@@ -100,6 +101,7 @@ function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Prici
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
   pricing.currency = validateCurrency(extractedPricing.currency);
   pricing.billing = validateBilling(extractedPricing.billing);
+  pricing.variables = validateVariables(extractedPricing.variables);
 }
 
 function parseFeature(feature: Feature, tags?: string[]): Feature {
@@ -159,7 +161,7 @@ function parsePlan(plan: Plan, pricing: Pricing): Plan {
     validatePlan(plan);
     plan.name = validateName(plan.name, 'Plan');
     plan.description = validateDescription(plan.description);
-    plan.price = validatePrice(plan.price);
+    plan.price = validatePrice(plan.price, pricing.variables);
     plan.unit = validateUnit(plan.unit);
     plan.private = validatePrivate(plan.private);
 
@@ -200,7 +202,7 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
     addon.availableFor = validateAvailableFor(addon.availableFor, pricing);
     addon.dependsOn = validateDependsOnOrExcludes(addon.dependsOn, pricing, "dependsOn");
     addon.excludes = validateDependsOnOrExcludes(addon.excludes, pricing, "excludes");
-    addon.price = validatePrice(addon.price);
+    addon.price = validatePrice(addon.price, pricing.variables);
     addon.unit = validateUnit(addon.unit);
     addon.private = validatePrivate(addon.private);
 
