@@ -1,8 +1,12 @@
-saasName: Plan No Price
-version: "2.0"
-createdAt: 100
+saasName: Test
+version: '2.0'
+createdAt: 2024-01-15
 currency: EUR
 hasAnnualPayment: false
+billing:
+  monthly: 1
+  annual: 0.83
+  semester: 0.9
 features:
   feature1:
     description: Feature 1 description

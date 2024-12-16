@@ -24,6 +24,9 @@ function _updatePrices(extractedPricing: any): void {
             if (plan.price === null || plan.price === undefined) {
                 throw new Error("Monthly or annual price is required for each plan");
             }
+
+            plan.monthlyPrice = undefined;
+            plan.annualPrice = undefined;
         }
         extractedPricing.plans = pricingPlans;
     }
@@ -40,6 +43,9 @@ function _updatePrices(extractedPricing: any): void {
             if (addon.price === null || addon.price === undefined) {
                 throw new Error("Monthly or annual price is required for each addon");
             }
+
+            addon.monthlyPrice = undefined;
+            addon.annualPrice = undefined;
         }
         extractedPricing.addOns = pricingAddons;
     }

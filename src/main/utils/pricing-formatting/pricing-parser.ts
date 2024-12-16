@@ -9,6 +9,7 @@ import {
   validateAddonUsageLimits,
   validateAddonUsageLimitsExtensions,
   validateAvailableFor,
+  validateBilling,
   validateCreatedAt,
   validateCurrency,
   validateDefaultValue,
@@ -97,6 +98,7 @@ function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Prici
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
   pricing.currency = validateCurrency(extractedPricing.currency);
   pricing.hasAnnualPayment = validateHasAnnualPayment(extractedPricing.hasAnnualPayment);
+  pricing.billing = validateBilling(extractedPricing.billing);
 }
 
 function parseFeature(feature: Feature, tags?: string[]): Feature {

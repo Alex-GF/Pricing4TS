@@ -10,6 +10,7 @@ export interface Pricing {
     currency: string;
     hasAnnualPayment: boolean;
     tags?: string[];
+    billing?: {[key: string]: number};
     features: Feature[];
     usageLimits?: UsageLimit[];
     plans?: Plan[];
@@ -36,10 +37,13 @@ export function generateEmptyPricing(): Pricing {
         createdAt: new Date(),
         currency: "",
         hasAnnualPayment: false,
+        billing: {
+            "monthly": 1,
+        },
+        tags: [],
         features: [],
         usageLimits: [],
         plans: [],
-        tags: [],
         addOns: []
     }
 }
@@ -51,10 +55,11 @@ export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
         createdAt: "",
         currency: "",
         hasAnnualPayment: false,
+        billing: {},
+        tags: [],
         features: {},
         usageLimits: {},
         plans: {},
-        tags: [],
         addOns: {}
     }
 }
