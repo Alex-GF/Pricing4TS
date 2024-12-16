@@ -18,8 +18,15 @@ function _updatePrices(extractedPricing: any): void {
     
     if (extractedPricing.plans !== null && extractedPricing.plans !== undefined){
         const pricingPlans = formatObjectToArray(extractedPricing.plans) as any;
+        extractedPricing.billing = {};
         for (const plan of pricingPlans) {
-            plan.price = plan.monthlyPrice ?? plan.annualPrice;
+            if (plan.monthlyPrice === null || plan.monthlyPrice === undefined) {
+                plan.price = plan.annualPrice;
+                extractedPricing.billing = {"annual": 1, ...extractedPricing.billing};
+            }else{
+                plan.price = plan.monthlyPrice;
+                extractedPricing.billing = {"monthly": 1, ...extractedPricing.billing};
+            }
     
             if (plan.price === null || plan.price === undefined) {
                 throw new Error("Monthly or annual price is required for each plan");
@@ -38,7 +45,13 @@ function _updatePrices(extractedPricing: any): void {
     
             if (addon.price !== null && addon.price !== undefined) continue;
     
-            addon.price = addon.monthlyPrice ?? addon.annualPrice;
+            if (addon.monthlyPrice === null || addon.monthlyPrice === undefined) {
+                addon.price = addon.annualPrice;
+                extractedPricing.billing = {"annual": 1, ...extractedPricing.billing};
+            }else{
+                addon.price = addon.monthlyPrice;
+                extractedPricing.billing = {"monthly": 1, ...extractedPricing.billing};
+            }
     
             if (addon.price === null || addon.price === undefined) {
                 throw new Error("Monthly or annual price is required for each addon");
