@@ -629,7 +629,12 @@ export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined,
   }
 }
 
-export function validateTags(tags: string[]): string[] {
+export function validateTags(tags: string[] | undefined): string[] {
+  
+  if (tags === null || tags === undefined){
+    return [];
+  }
+  
   if (!Array.isArray(tags) || tags.some((tag) => typeof tag !== 'string')) {
     throw new Error(`The tags field must be an array of strings.`);
   }

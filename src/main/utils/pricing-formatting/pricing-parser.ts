@@ -47,11 +47,6 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
 
   parseBasicAttributes(extractedPricing, pricing);
 
-  // Validate and format tags if provided
-  if (extractedPricing.tags !== null && extractedPricing.tags !== undefined) {
-    pricing.tags = validateTags(extractedPricing.tags);
-  }
-
   // Format and parse features
   validateFeatures(extractedPricing.features);
   const formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
@@ -102,6 +97,7 @@ function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Prici
   pricing.currency = validateCurrency(extractedPricing.currency);
   pricing.billing = validateBilling(extractedPricing.billing);
   pricing.variables = validateVariables(extractedPricing.variables);
+  pricing.tags = validateTags(extractedPricing.tags);
 }
 
 function parseFeature(feature: Feature, tags?: string[]): Feature {
