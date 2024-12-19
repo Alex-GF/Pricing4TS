@@ -6,3 +6,8 @@ export { saveDZNfile } from './utils/dzn-exporter';
 export { PricingOperation } from './models/minizinc/minizinc';
 
 export { PricingService };
+
+export {
+    retrievePricingFromPath,
+    writePricingToYaml,
+  } from './utils/yaml-utils';

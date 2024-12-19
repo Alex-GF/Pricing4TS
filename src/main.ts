@@ -1,7 +1,5 @@
 export {
-  retrievePricingFromPath,
   retrievePricingFromYaml,
-  writePricingToYaml,
 } from './main/utils/yaml-utils';
 
 export type { Pricing } from './main/models/pricing2yaml/pricing';

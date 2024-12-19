@@ -1,9 +1,8 @@
 // deno-lint-ignore-file no-explicit-any
 import semver from "semver";
-import { validateVersion } from "./pricing-validators";
+import { validateVersion } from "../../main/utils/pricing-validators";
 import { updaters } from "./version-updaters/updaters";
-import { writePricingWithErrorToYaml } from "./yaml-utils";
-import { writePricingToYaml } from "./yaml-utils";
+import { writePricingWithErrorToYaml, writePricingToYaml } from "../../server/utils/yaml-utils";
 
 export const PRICING2YAML_VERSIONS: Array<string> = ["1.0", "1.1", "2.0"];
 
