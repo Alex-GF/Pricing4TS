@@ -1,6 +1,9 @@
 import { Plan, Pricing } from "../../main";
+import { PaymentType } from "../../main/models/pricing2yaml/feature";
 import { PricingPlanEvaluationError } from "../exceptions/PricingPlanEvaluationError";
 import { retrievePricingFromPath } from "../server";
+
+export type PlanContext = Record<"features" | "usageLimits", Record<string, boolean | string | number | PaymentType[]>>
 
 /**
  * An abstract class from which to create a component that adapts the pricing
@@ -60,6 +63,35 @@ export abstract class PricingContext {
      * @returns String with the current user's plan name
      */
     abstract getUserPlan(): string;
+
+    /**
+     * This method returns the plan context of the current user, represented by a
+     * *Record<string, boolean | string | number | PaymentType[]>*. It's used to evaluate the pricing plan.
+     * 
+     * @return current user's plan context
+     */
+    getPlanContext(): PlanContext {
+        const userPlan = this.getPricing().plans![this.getUserPlan()];
+
+        const planFeaturesContext: Record<string, boolean | string | number | PaymentType[]> = {};
+
+        for (const featureName in userPlan.features) {
+            const feature = userPlan.features[featureName];
+            planFeaturesContext[featureName] = feature.value ?? feature.defaultValue;
+        }
+
+        const planUsageLimitsContext: Record<string, boolean | string | number> = {};
+
+        for (const usageLimitName in userPlan.usageLimits) {
+            const usageLimit = userPlan.usageLimits[usageLimitName];
+            planUsageLimitsContext[usageLimitName] = usageLimit.value ?? usageLimit.defaultValue;
+        }
+
+        return {
+            features: planFeaturesContext,
+            usageLimits: planUsageLimitsContext,
+        };
+    }
 
     /**
      * This method returns the PricingManager object that is being used to
