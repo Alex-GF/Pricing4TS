@@ -1,32 +1,25 @@
 import { Request, Response, NextFunction } from 'express';
 import {encode, decode} from 'jwt-simple';
 import { PricingContext } from '../configuration/PricingContext';
-
-class PricingContextImpl extends PricingContext{
-    getConfigFilePath(): string {
-        return "pricing.yaml";
-    }
-    getJwtSecret(): string {
-        return "secret";
-    }
-    getUserContext(): Record<string, boolean | string | number> {
-        return {
-            "user": "test",
-            "email": "test"
-        }
-    }
-    getUserPlan(): string {
-        return "test";
-    }
-}
+import { PricingContextManager } from '../server';
+import { Pricing } from '../../main';
 
 export function checkFeature(req: Request, res: Response, next: NextFunction){
     const pricingToken = req.header('Pricing-Token');
-    const pricingContext: PricingContext = new PricingContextImpl();
+    const pricingContext: PricingContext = PricingContextManager.getContext();
 
     if (pricingToken === undefined || pricingToken === null){
         return res.status(401).send("Pricing token not found");
     }else{
         const decodedToken = decode(pricingToken, pricingContext.getJwtSecret());
     }
+    next();
+}
+
+export function updatePricingJwt(req: Request, res: Response, next: NextFunction){
+    next();
+    const pricingContext: PricingContext = PricingContextManager.getContext();
+    const pricing: Pricing = pricingContext.getPricing();
+    const pricingToken = encode(pricing, pricingContext.getJwtSecret());
+    res.setHeader('Pricing-Token', pricingToken);
 }

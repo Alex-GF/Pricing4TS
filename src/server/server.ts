@@ -1,5 +1,7 @@
 import PricingService from './services/pricing.service';
 
+export { PricingContextManager } from './configuration/PricingContextManager';
+
 export { pricing2DZN } from './utils/dzn-exporter/pricing-dzn-exporter';
 export { saveDZNfile } from './utils/dzn-exporter';
 
