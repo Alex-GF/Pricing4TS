@@ -43,17 +43,17 @@ export default class PricingService {
 
       // Extract the list of features and usage limits by type
       
-      const informationFeatures = this.pricing.features.filter(f => f.type === "INFORMATION");
-      const integrationFeatures = this.pricing.features.filter(f => f.type === "INTEGRATION");
-      const domainFeatures = this.pricing.features.filter(f => f.type === "DOMAIN");
-      const automationFeatures = this.pricing.features.filter(f => f.type === "AUTOMATION");
-      const managementFeatures = this.pricing.features.filter(f => f.type === "MANAGEMENT");
-      const guaranteeFeatures = this.pricing.features.filter(f => f.type === "GUARANTEE");
-      const supportFeatures = this.pricing.features.filter(f => f.type === "SUPPORT");
-      const paymentFeatures = this.pricing.features.filter(f => f.type === "PAYMENT");
+      const informationFeatures = Object.values(this.pricing.features).filter(f => f.type === "INFORMATION");
+      const integrationFeatures = Object.values(this.pricing.features).filter(f => f.type === "INTEGRATION");
+      const domainFeatures = Object.values(this.pricing.features).filter(f => f.type === "DOMAIN");
+      const automationFeatures = Object.values(this.pricing.features).filter(f => f.type === "AUTOMATION");
+      const managementFeatures = Object.values(this.pricing.features).filter(f => f.type === "MANAGEMENT");
+      const guaranteeFeatures = Object.values(this.pricing.features).filter(f => f.type === "GUARANTEE");
+      const supportFeatures = Object.values(this.pricing.features).filter(f => f.type === "SUPPORT");
+      const paymentFeatures = Object.values(this.pricing.features).filter(f => f.type === "PAYMENT");
 
       // Extraction of the analytics
-      const numberOfFeatures: number = this.pricing.features.length;
+      const numberOfFeatures: number = Object.values(this.pricing.features).length;
       const numberOfInformationFeatures: number = informationFeatures.length;
       const numberOfIntegrationFeatures: number = integrationFeatures.length;
       const numberOfIntegrationApiFeatures: number = integrationFeatures.filter(f => f.integrationType === "API").length;
@@ -72,17 +72,17 @@ export default class PricingService {
       const numberOfGuaranteeFeatures: number = guaranteeFeatures.length;
       const numberOfSupportFeatures: number = supportFeatures.length;
       const numberOfPaymentFeatures: number = paymentFeatures.length;
-      const numberOfUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.length : 0;
-      const numberOfRenewableUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "RENEWABLE").length : 0;
-      const numberOfNonRenewableUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "NON_RENEWABLE").length : 0;
-      const numberOfResponseDrivenUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "RESPONSE_DRIVEN").length : 0;
-      const numberOfTimeDrivenUsageLimits: number = this.pricing.usageLimits ? this.pricing.usageLimits.filter(ul => ul.type === "TIME_DRIVEN").length : 0;
-      const numberOfPlans: number = this.pricing.plans ? this.pricing.plans.length : 0;
-      const numberOfFreePlans: number = this.pricing.plans ? this.pricing.plans.filter(p => p.price === 0).length : 0;
-      const numberOfPaidPlans: number = this.pricing.plans ? this.pricing.plans.filter(p => typeof(p.price) === "number" ? p.price > 0 : true).length : 0;
-      const numberOfAddOns: number = this.pricing.addOns ? this.pricing.addOns.length : 0;
-      const numberOfReplacementAddons: number = this.pricing.addOns ? this.pricing.addOns.filter(a => a.features || a.usageLimits).length : 0;
-      const numberOfExtensionAddons: number = this.pricing.addOns ? this.pricing.addOns.filter(a => a.features || a.usageLimits ? false : a.usageLimitsExtensions).length : 0;
+      const numberOfUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).length : 0;
+      const numberOfRenewableUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "RENEWABLE").length : 0;
+      const numberOfNonRenewableUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "NON_RENEWABLE").length : 0;
+      const numberOfResponseDrivenUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "RESPONSE_DRIVEN").length : 0;
+      const numberOfTimeDrivenUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "TIME_DRIVEN").length : 0;
+      const numberOfPlans: number = this.pricing.plans ? Object.values(this.pricing.plans).length : 0;
+      const numberOfFreePlans: number = this.pricing.plans ? Object.values(this.pricing.plans).filter(p => p.price === 0).length : 0;
+      const numberOfPaidPlans: number = this.pricing.plans ? Object.values(this.pricing.plans).filter(p => typeof(p.price) === "number" ? p.price > 0 : true).length : 0;
+      const numberOfAddOns: number = this.pricing.addOns ? Object.values(this.pricing.addOns).length : 0;
+      const numberOfReplacementAddons: number = this.pricing.addOns ? Object.values(this.pricing.addOns).filter(a => a.features || a.usageLimits).length : 0;
+      const numberOfExtensionAddons: number = this.pricing.addOns ? Object.values(this.pricing.addOns).filter(a => a.features || a.usageLimits ? false : a.usageLimitsExtensions).length : 0;
       const configurationSpaceSize: number = configurationSpaceResult.statistics.nSolutions;
       const minSubscriptionPrice: number = configurationSpaceSize !== 0 ? minSubscriptionPriceResult.solution!.output.json!["subscription_cost"] : null;
       const maxSubscriptionPrice: number = configurationSpaceSize !== 0 ? maxSubscriptionPriceResult.solution!.output.json!["subscription_cost"] : null;

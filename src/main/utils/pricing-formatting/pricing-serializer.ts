@@ -2,7 +2,7 @@ import type { AddOn } from '../../models/pricing2yaml/addon';
 import type { Feature } from '../../models/pricing2yaml/feature';
 import type { Plan } from '../../models/pricing2yaml/plan';
 import {
-  generateEmptyPricingToBeWritten,
+  generatePricingToBeWritten,
   Pricing,
   PricingToBeWritten,
 } from '../../models/pricing2yaml/pricing';
@@ -25,7 +25,7 @@ export interface ContainerAddOns {
 }
 
 export function serializePricing(pricing: Pricing): PricingToBeWritten {
-  const pricingToBeWritten = generateEmptyPricingToBeWritten();
+  const pricingToBeWritten = generatePricingToBeWritten();
 
   serializeBasicAttributes(pricing, pricingToBeWritten);
   serializeFeatures(pricing, pricingToBeWritten);
@@ -49,21 +49,26 @@ function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingT
 }
 
 function serializeFeatures(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
-  pricingToBeWritten.features = _formatArrayIntoObjectForWriting(
-    pricing.features
-  ) as ContainerFeatures;
+  pricingToBeWritten.features = pricing.features ? Object.entries(pricing.features).reduce((acc: { [key: string]: any }, [key, feature]) => {
+        const { name, ...rest } = feature;
+        acc[key] = rest;
+        return acc;
+      }, {})
+    : undefined;
 }
 
 function serializeUsageLimits(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
   pricingToBeWritten.usageLimits = pricing.usageLimits
-    ? (_formatArrayIntoObjectForWriting(pricing.usageLimits) as ContainerUsageLimits)
+    ? Object.entries(pricing.usageLimits).reduce((acc: { [key: string]: any }, [key, usageLimit]) => {
+      const { name, ...rest } = usageLimit;
+      acc[key] = rest;
+      return acc;
+    }, {})
     : undefined;
 }
 
 function serializePlans(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
-  pricingToBeWritten.plans = pricing.plans
-    ? (_formatArrayIntoObjectForWriting(pricing.plans) as ContainerPlans)
-    : undefined;
+  pricingToBeWritten.plans = pricing.plans;
 
   pricingToBeWritten.plans &&
     Object.keys(pricingToBeWritten.plans).forEach(planName => {
@@ -74,9 +79,7 @@ function serializePlans(pricing: Pricing, pricingToBeWritten: PricingToBeWritten
 }
 
 function serializeAddOns(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
-  pricingToBeWritten.addOns = pricing.addOns
-    ? (_formatArrayIntoObjectForWriting(pricing.addOns) as ContainerAddOns)
-    : undefined;
+  pricingToBeWritten.addOns = pricing.addOns;
 
   pricingToBeWritten.addOns &&
     Object.keys(pricingToBeWritten.addOns).forEach(addOnName => {

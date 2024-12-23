@@ -1,5 +1,5 @@
 import type { AddOn } from '../models/pricing2yaml/addon';
-import type { AutomationType, ContainerFeatures, Feature, IntegrationType, PaymentType } from '../models/pricing2yaml/feature';
+import type { AutomationType, Feature, IntegrationType, PaymentType } from '../models/pricing2yaml/feature';
 import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
@@ -360,7 +360,7 @@ export function validateLinkedFeatures(
 
   // Check if linked features is an array
   if (Array.isArray(linkedFeatures)) {
-    const pricingFeatures = pricing.features.map((f) => f.name);
+    const pricingFeatures = Object.values(pricing.features).map((f) => f.name);
 
     for (const featureName of linkedFeatures) {
       if (!pricingFeatures.includes(featureName)) {
@@ -392,8 +392,8 @@ export function validateRenderMode(renderMode: string | undefined | null): Rende
 
 export function validatePlanFeatures(
   plan: Plan,
-  planFeatures: ContainerFeatures
-): ContainerFeatures {
+  planFeatures: Record<string, Feature>
+): Record<string, Feature> {
   const featuresModifiedByPlan = plan.features;
   plan.features = planFeatures;
 
@@ -496,8 +496,8 @@ export function validatePrice(price: number | string | undefined | null, variabl
 
 export function validateAddonFeatures(
   addon: AddOn,
-  addOnFeatures: ContainerFeatures
-): ContainerFeatures {
+  addOnFeatures: Record<string, Feature>
+): Record<string, Feature> {
   for (const addOnFeature of Object.values(addon.features!)) {
     try {
       if (!Object.values(addOnFeatures).some((f) => f.name === addOnFeature.name)) {
@@ -514,7 +514,7 @@ export function validateAddonFeatures(
     }
   }
 
-  return addon.features as ContainerFeatures;
+  return addon.features as Record<string, Feature>;
 }
 
 export function validateAddonUsageLimits(
@@ -576,7 +576,7 @@ export function validateAvailableFor(
   availableFor: string[] | undefined | null,
   pricing: Pricing
 ): string[] {
-  const planNames = pricing.plans ? pricing.plans.map((p) => p.name) : [];
+  const planNames = pricing.plans ? Object.values(pricing.plans).map((p) => p.name) : [];
 
   if (availableFor === null || availableFor === undefined) {
     availableFor = planNames as string[];
@@ -602,7 +602,7 @@ export function validateDependsOnOrExcludes(
   pricing: Pricing,
   fieldType: "dependsOn" | "excludes"
 ): string[] {
-  const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
+  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map((a) => a.name) : [];
 
   if (fieldValue === null || fieldValue === undefined) {
     fieldValue = [];
@@ -618,7 +618,7 @@ export function validateDependsOnOrExcludes(
 }
 
 export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined, pricing: Pricing): void {
-  const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
+  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map((a) => a.name) : [];
 
   if (!fieldValue) return;
 

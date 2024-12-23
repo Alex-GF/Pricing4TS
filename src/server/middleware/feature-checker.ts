@@ -16,10 +16,21 @@ export function checkFeature(req: Request, res: Response, next: NextFunction){
     next();
 }
 
-export function updatePricingJwt(req: Request, res: Response, next: NextFunction){
-    next();
+export function createPricingToken(req: Request, res: Response, next: NextFunction) {
     const pricingContext: PricingContext = PricingContextManager.getContext();
-    const pricing: Pricing = pricingContext.getPricing();
-    const pricingToken = encode(pricing, pricingContext.getJwtSecret());
-    res.setHeader('Pricing-Token', pricingToken);
+    const payload = {
+        timestamp: new Date().getTime()
+    };
+    const token = encode(payload, pricingContext.getJwtSecret());
+
+    // Store the original send function
+    const originalSend = res.send;
+
+    // Override the send function to add the header before sending the response
+    res.send = function (body?: any) {
+        res.setHeader('Pricing-Token', token);
+        return originalSend.call(this, body);
+    };
+
+    next();
 }

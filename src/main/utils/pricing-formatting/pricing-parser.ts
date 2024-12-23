@@ -1,5 +1,5 @@
 import type { AddOn } from '../../models/pricing2yaml/addon';
-import type { ContainerFeatures, Feature } from '../../models/pricing2yaml/feature';
+import type { Feature } from '../../models/pricing2yaml/feature';
 import type { Plan } from '../../models/pricing2yaml/plan';
 import { ExtractedPricing, generateEmptyPricing, Pricing } from '../../models/pricing2yaml/pricing';
 import type { ContainerUsageLimits, UsageLimit } from '../../models/pricing2yaml/usage-limit';
@@ -49,35 +49,44 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
 
   // Format and parse features
   validateFeatures(extractedPricing.features);
-  const formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
-  pricing.features = formattedFeatures.map(f => parseFeature(f, pricing.tags));
+  let formattedFeatures = formatObjectToArray(extractedPricing.features) as Feature[];
+  formattedFeatures = formattedFeatures.map(f => parseFeature(f, pricing.tags));
+  pricing.features = formatArrayIntoObject(formattedFeatures) as Record<string, Feature>;
 
   // Format and parse usage limits, considering they can be null/undefined
   if (extractedPricing.usageLimits == null || extractedPricing.usageLimits == undefined) {
-    pricing.usageLimits = [];
+    pricing.usageLimits = {};
   } else {
     validateUsageLimits(extractedPricing.usageLimits);
-    const formattedUsageLimits = formatObjectToArray(extractedPricing.usageLimits) as UsageLimit[];
-    pricing.usageLimits = formattedUsageLimits.map(u => parseUsageLimit(u, pricing));
+    let formattedUsageLimits = formatObjectToArray(extractedPricing.usageLimits) as UsageLimit[];
+    formattedUsageLimits = formattedUsageLimits.map(u => parseUsageLimit(u, pricing));
+    pricing.usageLimits = formatArrayIntoObject(formattedUsageLimits) as Record<string, UsageLimit>;
   }
 
   // Format and parse plans, considering they can be null/undefined
   if (extractedPricing.plans == null || extractedPricing.plans == undefined) {
-    pricing.plans = [];
+    pricing.plans = {};
   } else {
     validatePlans(extractedPricing.plans);
-    const formattedPlans = formatObjectToArray(extractedPricing.plans) as Plan[];
-    pricing.plans = formattedPlans.map(p => parsePlan(p, pricing));
+    const plansToFormat = formatObjectToArray(extractedPricing.plans) as Plan[];
+    const formattedPlans: Plan[] = [];
+    for (const plan of plansToFormat) {
+    
+      const formattedPlan = parsePlan(plan, pricing);
+      formattedPlans.push(formattedPlan);
+    }
+    pricing.plans = formatArrayIntoObject(formattedPlans) as Record<string, Plan>;
   }
 
   // Format and parse add-ons, considering they can be null/undefined
   if (extractedPricing.addOns == null || extractedPricing.addOns == undefined) {
-    pricing.addOns = [];
+    pricing.addOns = {};
   } else {
-    const formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
-    pricing.addOns = formattedAddOns.map(a => parseAddOn(a, pricing));
-    pricing.addOns.forEach(a => postValidateDependsOnOrExclude(a.dependsOn, pricing));
-    pricing.addOns.forEach(a => postValidateDependsOnOrExclude(a.excludes, pricing));
+    let formattedAddOns = formatObjectToArray(extractedPricing.addOns) as AddOn[];
+    formattedAddOns = formattedAddOns.map(a => parseAddOn(a, pricing));
+    pricing.addOns = formatArrayIntoObject(formattedAddOns) as Record<string, AddOn>;
+    Object.values(pricing.addOns).forEach(a => postValidateDependsOnOrExclude(a.dependsOn, pricing));
+    Object.values(pricing.addOns).forEach(a => postValidateDependsOnOrExclude(a.excludes, pricing));
   }
 
   if (!pricing.plans && !pricing.addOns) {
@@ -161,24 +170,20 @@ function parsePlan(plan: Plan, pricing: Pricing): Plan {
     plan.unit = validateUnit(plan.unit);
     plan.private = validatePrivate(plan.private);
 
-    const planFeatures: ContainerFeatures = formatArrayIntoObject(
-      pricing.features
-    ) as ContainerFeatures;
+    const planFeatures: Record<string, Feature> = JSON.parse(JSON.stringify(pricing.features)); // This is performed in order to avoid modifying the original object
 
     if (plan.features !== null && plan.features !== undefined) {
-      plan.features = formatObject(plan.features ?? {}) as ContainerFeatures;
+      plan.features = formatObject(plan.features ?? {}) as Record<string, Feature>;
     } else {
       plan.features = {};
     }
 
     plan.features = validatePlanFeatures(plan, planFeatures);
 
-    const planUsageLimits: ContainerUsageLimits = formatArrayIntoObject(
-      pricing.usageLimits!
-    ) as ContainerUsageLimits;
+    const planUsageLimits: Record<string, UsageLimit> = JSON.parse(JSON.stringify(pricing.usageLimits!));
 
     if (plan.usageLimits !== null && plan.usageLimits !== undefined) {
-      plan.usageLimits = formatObject(plan.usageLimits) as ContainerUsageLimits;
+      plan.usageLimits = formatObject(plan.usageLimits) as Record<string, UsageLimit>;
     } else {
       plan.usageLimits = {};
     }
@@ -204,11 +209,9 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
 
     // Parse Features if provided
     if (addon.features !== null && addon.features !== undefined) {
-      const addonFeatures: ContainerFeatures = formatArrayIntoObject(
-        pricing.features
-      ) as ContainerFeatures;
+      const addonFeatures: Record<string, Feature> = JSON.parse(JSON.stringify(pricing.features));
 
-      addon.features = formatObject(addon.features) as ContainerFeatures;
+      addon.features = formatObject(addon.features) as Record<string, Feature>;
       addon.features = validateAddonFeatures(addon, addonFeatures);
     } else {
       addon.features = {};
@@ -216,11 +219,9 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
 
     // Parse UsageLimits if provided
     if (addon.usageLimits !== null && addon.usageLimits !== undefined) {
-      const addonUsageLimits: ContainerUsageLimits = formatArrayIntoObject(
-        pricing.usageLimits!
-      ) as ContainerUsageLimits;
+      const addonUsageLimits: Record<string, UsageLimit> = JSON.parse(JSON.stringify(pricing.usageLimits!));
 
-      addon.usageLimits = formatObject(addon.usageLimits) as ContainerUsageLimits;
+      addon.usageLimits = formatObject(addon.usageLimits) as Record<string, UsageLimit>;
       addon.usageLimits = validateAddonUsageLimits(addon, addonUsageLimits);
     } else {
       addon.usageLimits = {};
@@ -228,9 +229,7 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
 
     // Parse usageLimitsExtensions if provided
     if (addon.usageLimitsExtensions !== null && addon.usageLimitsExtensions !== undefined) {
-      const addonUsageLimitsExtensions: ContainerUsageLimits = formatArrayIntoObject(
-        pricing.usageLimits!
-      ) as ContainerUsageLimits;
+      const addonUsageLimitsExtensions: Record<string, UsageLimit> = JSON.parse(JSON.stringify(pricing.usageLimits!));
 
       addon.usageLimitsExtensions = formatObject(
         addon.usageLimitsExtensions
@@ -269,21 +268,21 @@ export function formatObjectToArray<T>(object: object): T[] {
   }));
 }
 
-export function formatObject(object: object): ContainerFeatures | ContainerUsageLimits {
+export function formatObject(object: object): Record<string, Feature> | Record<string, UsageLimit> {
   return Object.entries(object).reduce(
-    (acc: ContainerFeatures | ContainerUsageLimits, [key, value]) => {
+    (acc: Record<string, Feature> | Record<string, UsageLimit>, [key, value]) => {
       acc[key] = { name: key, ...value };
       return acc;
     },
-    {} as ContainerFeatures | ContainerUsageLimits
+    {} as Record<string, Feature> | Record<string, UsageLimit>
   );
 }
 
 export function formatArrayIntoObject(
-  array: Feature[] | UsageLimit[]
-): ContainerFeatures | ContainerUsageLimits {
-  return array.reduce((acc: ContainerFeatures | ContainerUsageLimits, { name, ...rest }) => {
+  array: Feature[] | UsageLimit[] | Plan[] | AddOn[]
+): Record<string, Feature | UsageLimit | Plan | AddOn> {
+  return array.reduce((acc: Record<string, Feature | UsageLimit | Plan | AddOn>, { name, ...rest }) => {
     acc[name] = { name, ...rest };
     return acc;
-  }, {} as ContainerFeatures | ContainerUsageLimits);
+  }, {} as Record<string, Feature | UsageLimit | Plan | AddOn>);
 }

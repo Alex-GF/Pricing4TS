@@ -1,5 +1,5 @@
 import { Plan, Pricing } from "../../main";
-import { PricingPlanEvaluationError } from "../exceptions/PricingPlanEvaluationException";
+import { PricingPlanEvaluationError } from "../exceptions/PricingPlanEvaluationError";
 import { retrievePricingFromPath } from "../server";
 
 /**

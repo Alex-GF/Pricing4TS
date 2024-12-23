@@ -1,4 +1,4 @@
-import { retrievePricingFromPath } from "../../src/main/utils/yaml-utils";
+import { retrievePricingFromPath } from "../../src/server/utils/yaml-utils";
 import { Pricing } from "../../src/main/models/pricing2yaml/pricing";
 import assert from "assert";
 import { readCSVFile, parseCSVContent } from "../utils/csv-utils";

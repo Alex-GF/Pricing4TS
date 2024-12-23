@@ -2,11 +2,11 @@ import { Feature, UsageLimit } from '../../../main';
 
 const unlimitedValue = 100000000;
 
-export function calculateOverriddenRow(items: Feature[] | UsageLimit[]): number[] {
+export function calculateOverriddenRow(items: Record<string, Feature | UsageLimit>): number[] {
   const values = [];
   const defaultValue = 0;
 
-  for (const item of items) {
+  for (const item of Object.values(items)) {
     let value;
 
     if (item.valueType === 'NUMERIC' && item.value) {
