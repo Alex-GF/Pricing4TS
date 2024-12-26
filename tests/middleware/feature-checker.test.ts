@@ -5,7 +5,10 @@ import { PricingContextManager } from '../../src/server/server';
 import { generateUserToken } from '../../src/server/utils/pricing-evaluator';
 
 export class PricingContextImpl extends PricingContext {
-  getConfigFilePath(): string {
+  
+    private static jwtExpirationTime = 86400000;
+  
+    getConfigFilePath(): string {
     return 'tests/resources/pricing/full/petclinic.yml';
   }
 
@@ -13,18 +16,24 @@ export class PricingContextImpl extends PricingContext {
     return 'secret';
   }
 
+  getJwtExpiration(): number {
+    return PricingContextImpl.jwtExpirationTime;
+  }
+
   getUserContext(): Record<string, boolean | string | number> {
     return {
       username: 'test-user',
       pets: 2,
       visits: 2,
-      userId: 123,
-      isAdmin: true,
     };
   }
 
   getUserPlan(): string {
     return 'GOLD';
+  }
+
+  static setJwtExpirationTime(time: number): void {
+    this.jwtExpirationTime = time;
   }
 }
 
@@ -79,5 +88,25 @@ describe('checkFeature middleware with PricingContextImpl', () => {
     expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
     expect(nextFunction).toHaveBeenCalled();
     expect(statusMock).not.toHaveBeenCalled();
+  });
+
+  it('should throw an error when decoding a token with passed expiration time', () => {
+    
+    PricingContextImpl.setJwtExpirationTime(1);
+    
+    const testToken = generateUserToken();
+
+    PricingContextImpl.setJwtExpirationTime(86400000);
+
+    (mockRequest.header as jest.Mock).mockReturnValue(testToken);
+
+    setTimeout(() => {
+        checkFeature(mockRequest as Request, mockResponse as Response, nextFunction);
+
+        expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
+        expect(sendMock).toHaveBeenCalledWith('Pricing token expired');
+        expect(statusMock).toHaveBeenCalledWith(401);
+        expect(nextFunction).not.toHaveBeenCalled();
+    }, 2);
   });
 });

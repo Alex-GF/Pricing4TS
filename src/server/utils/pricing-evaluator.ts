@@ -1,9 +1,8 @@
 import { PricingContext, SubscriptionContext } from '../configuration/PricingContext';
 import { PricingContextManager } from '../server';
 import { PricingPlanEvaluationError } from '../exceptions/PricingPlanEvaluationError';
-import { encode } from 'jwt-simple';
 import { Feature, UsageLimit } from '../../main';
-import { getFeaturesFromJwtToken, getSubjectFromJwtToken, updateTokenFeatures } from './pricing-jwt-utils';
+import { PricingJwtUtils } from './pricing-jwt-utils';
 import { PaymentType } from '../../main/models/pricing2yaml/feature';
 
 export interface FeatureStatus {
@@ -39,9 +38,7 @@ export function generateUserToken() {
   }
 
   if (!pricingContext.userAffectedByPricing()) {
-    return encode(claims, pricingContext.getJwtSecret(), 'RS256', {
-      header: { alg: 'RS256', typ: 'JWT' },
-    });
+    return PricingJwtUtils.encodeToken(claims);
   }
 
   const subscriptionContext: SubscriptionContext = pricingContext.getPlanContext();
@@ -53,11 +50,8 @@ export function generateUserToken() {
 
   claims.features = featureStatuses;
   claims.planContext = subscriptionContext;
-  claims.exp = Math.floor(Date.now()) + pricingContext.getJwtExpiration();
 
-  const token: string = encode(claims, pricingContext.getJwtSecret(), 'HS512', {
-    header: { alg: 'HS512', typ: 'JWT' },
-  });
+  const token: string = PricingJwtUtils.encodeToken(claims);
 
   return token;
 }
@@ -77,7 +71,7 @@ export function generateUserToken() {
  */
 export function addExpressionToToken(token: string, featureId: string, expression: string) {
 
-  const tokenFeatures: Record<string, FeatureStatus> = getFeaturesFromJwtToken(token);
+  const tokenFeatures: Record<string, FeatureStatus> = PricingJwtUtils.getFeaturesFromJwtToken(token);
 
   try {
       tokenFeatures[featureId].eval = expression;
@@ -85,7 +79,7 @@ export function addExpressionToToken(token: string, featureId: string, expressio
       console.error("[ERROR] Feature not found while trying to add expression to token!");
   }
 
-  return updateTokenFeatures(token, tokenFeatures);
+  return PricingJwtUtils.updateTokenFeatures(token, tokenFeatures);
 }
 
 function computeFeatureStatuses(
@@ -107,7 +101,7 @@ function computeFeatureStatuses(
       continue;
     } else {
 
-      const planContext: ContextToEval = extractContextToEvalFromSubscriptionContext(subscriptionContext);
+      const planContext: ContextToEval = extractContextToEvalFromSubscriptionContext(subscriptionContext); // This is defined in order to perform the "eval"
 
       const evalResult: Boolean = eval(featureExpression);
 

@@ -1,27 +1,27 @@
 import { Request, Response, NextFunction } from 'express';
-import {encode, decode} from 'jwt-simple';
 import { PricingContext } from '../configuration/PricingContext';
 import { PricingContextManager } from '../server';
-import { Pricing } from '../../main';
+import { PricingJwtUtils } from '../utils/pricing-jwt-utils';
 
 export function checkFeature(req: Request, res: Response, next: NextFunction){
     const pricingToken = req.header('Pricing-Token');
-    const pricingContext: PricingContext = PricingContextManager.getContext();
 
-    if (pricingToken === undefined || pricingToken === null){
-        return res.status(401).send("Pricing token not found");
-    }else{
-        const decodedToken = decode(pricingToken, pricingContext.getJwtSecret());
+    try{
+        const decodedToken = PricingJwtUtils.decodeToken(pricingToken);
+    }catch(e){
+        return res.status(401).send((e as Error).message);
     }
+
     next();
 }
 
 export function createPricingToken(req: Request, res: Response, next: NextFunction) {
     const pricingContext: PricingContext = PricingContextManager.getContext();
     const payload = {
-        timestamp: new Date().getTime()
+        sub: pricingContext.getUserContext().username ?? pricingContext.getUserContext().user,
+        userContext: pricingContext.getUserContext(),
     };
-    const token = encode(payload, pricingContext.getJwtSecret());
+    const token = PricingJwtUtils.encodeToken(payload);
 
     // Store the original send function
     const originalSend = res.send;

@@ -1,3 +1,4 @@
+import { PricingJwtUtils } from '../utils/pricing-jwt-utils';
 import { PricingContext } from './PricingContext';
 
 export class PricingContextManager {
@@ -5,6 +6,7 @@ export class PricingContextManager {
 
   static registerContext(context: PricingContext): void {
     this.context = context;
+    PricingJwtUtils.setContext(context);
   }
 
   static getContext(): PricingContext {
