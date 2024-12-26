@@ -1,9 +1,9 @@
-import { Plan, Pricing } from "../../main";
-import { PaymentType } from "../../main/models/pricing2yaml/feature";
+import { Plan, Pricing, UsageLimit } from "../../main";
+import { Feature, PaymentType } from "../../main/models/pricing2yaml/feature";
 import { PricingPlanEvaluationError } from "../exceptions/PricingPlanEvaluationError";
 import { retrievePricingFromPath } from "../server";
 
-export type PlanContext = Record<"features" | "usageLimits", Record<string, boolean | string | number | PaymentType[]>>
+export type SubscriptionContext = Record<"features" | "usageLimits", Record<string, Feature | UsageLimit>>;
 
 /**
  * An abstract class from which to create a component that adapts the pricing
@@ -70,26 +70,12 @@ export abstract class PricingContext {
      * 
      * @return current user's plan context
      */
-    getPlanContext(): PlanContext {
+    getPlanContext(): SubscriptionContext {
         const userPlan = this.getPricing().plans![this.getUserPlan()];
 
-        const planFeaturesContext: Record<string, boolean | string | number | PaymentType[]> = {};
-
-        for (const featureName in userPlan.features) {
-            const feature = userPlan.features[featureName];
-            planFeaturesContext[featureName] = feature.value ?? feature.defaultValue;
-        }
-
-        const planUsageLimitsContext: Record<string, boolean | string | number> = {};
-
-        for (const usageLimitName in userPlan.usageLimits) {
-            const usageLimit = userPlan.usageLimits[usageLimitName];
-            planUsageLimitsContext[usageLimitName] = usageLimit.value ?? usageLimit.defaultValue;
-        }
-
         return {
-            features: planFeaturesContext,
-            usageLimits: planUsageLimitsContext,
+            features: userPlan.features,
+            usageLimits: userPlan.usageLimits ?? {},
         };
     }
 
