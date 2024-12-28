@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { checkFeature } from '../../src/server/middleware/feature-checker';
 import { PricingContext } from '../../src/server/configuration/PricingContext';
 import { PricingContextManager } from '../../src/server/server';
-import { generateUserToken } from '../../src/server/utils/pricing-evaluator';
+import { generateUserPricingToken } from '../../src/server/utils/pricing-evaluator';
 import { PricingJwtUtils } from '../../src/server/utils/pricing-jwt-utils';
 
 export class PricingContextImpl extends PricingContext {
@@ -86,7 +86,7 @@ describe('checkFeature middleware with PricingContextImpl', () => {
     
       PricingContextImpl.setJwtExpirationTime(1);
       
-      const testToken = generateUserToken();
+      const testToken = generateUserPricingToken();
   
       PricingContextImpl.setJwtExpirationTime(86400000);
   
@@ -105,7 +105,7 @@ describe('checkFeature middleware with PricingContextImpl', () => {
 
     it('should return 403 if user have no access allowed to the requested feature', () => {
       
-      const testToken = generateUserToken();
+      const testToken = generateUserPricingToken();
   
       (mockRequest.header as jest.Mock).mockReturnValue(testToken);
   
@@ -122,7 +122,7 @@ describe('checkFeature middleware with PricingContextImpl', () => {
 
   describe('Positive tests of checkFeature middleware with PricingContextImpl', () => {
     it('request should be processed if a valid Pricing-Token with required permissions for the requested feature is provided', () => {
-      const testToken = generateUserToken();
+      const testToken = generateUserPricingToken();
       
       (mockRequest.header as jest.Mock).mockReturnValue(testToken);
   

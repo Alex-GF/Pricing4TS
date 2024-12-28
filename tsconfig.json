@@ -5,7 +5,9 @@
     "outDir": "./dist",          // Directorio de salida para los archivos compilados
     "rootDir": "./src",          // Directorio raíz de los archivos TypeScript
     "strict": true,              // Activar las comprobaciones estrictas
-    "esModuleInterop": true      // Interoperabilidad con módulos ES
+    "esModuleInterop": true,      // Interoperabilidad con módulos ES
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"],    // Incluir solo los archivos TypeScript en src
   "exclude": ["node_modules"]

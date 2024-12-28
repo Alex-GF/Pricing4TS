@@ -16,3 +16,7 @@ export { checkFeature } from './middleware/feature-checker';
 export { generateUserPricingToken } from './utils/pricing-evaluator';
 
 export { PricingJwtUtils } from './utils/pricing-jwt-utils';
+
+export { PricingAware } from './decorators/PricingAware';
+
+export { PricingContext } from './configuration/PricingContext';

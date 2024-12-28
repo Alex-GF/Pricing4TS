@@ -62,7 +62,7 @@ export function generateUserPricingToken() {
  * of the application.
  *
  * @param token      The generated JWT returned by the
- *                   {@link PricingEvaluatorUtil#generateUserToken()} method.
+ *                   {@link generateUserPricingToken()} method.
  * @param featureId  The ID of a feature defined within the token body.
  * @param expression The expression for the feature that will replace its
  *                   current evaluation.
@@ -145,7 +145,7 @@ function computeFeatureStatuses(
   return featureStatuses;
 }
 
-function extractContextToEvalFromSubscriptionContext(subscriptionContext: SubscriptionContext): ContextToEval{
+export function extractContextToEvalFromSubscriptionContext(subscriptionContext: SubscriptionContext): ContextToEval{
   const subscriptionContextFeatures: Record<string, Feature> = subscriptionContext.features as Record<string, Feature>;
   const subscriptionContextUsageLimits: Record<string, UsageLimit> = subscriptionContext.usageLimits as Record<string, UsageLimit>;
 
