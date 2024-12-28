@@ -1,9 +1,10 @@
 import assert from 'assert';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
-import { Pricing } from '../../src/main/models/pricing2yaml/pricing';
-import { LATEST_PRICING2YAML_VERSION } from '../../src/main/utils/version-manager';
-import { retrievePricingFromPath, retrievePricingFromYaml } from '../../src/main/utils/yaml-utils';
+import { Pricing } from '../../src/types';
+import { LATEST_PRICING2YAML_VERSION } from '../../src/server/utils/version-manager';
+import { retrievePricingFromYaml } from '../../src/main/utils/yaml-utils';
+import { retrievePricingFromPath } from '../../src/server/utils/yaml-utils';
 
 const DEMO_SAAS_PATH = 'tests/resources/pricing/full/petclinic.yml';
 const DEMO_SAAS_NAME = 'PetClinic';
@@ -43,38 +44,38 @@ describe('Demo SaaS Parsing Tests', () => {
     assert(pricing.currency, "The pricing must have a non-empty string 'currency' attribute");
     // Asserts that at least one feature, usage limit, plan, and add-on exists in the pricing object
     assert(
-      pricing.features.length > 0,
+      Object.values(pricing.features).length > 0,
       'The pricing must contain at least one feature in order to test the functionality'
     );
     assert(
-      pricing.usageLimits!.length > 0,
+      Object.values(pricing.usageLimits!).length > 0,
       'The pricing must contain at least one usage limit in order to test the functionality'
     );
     assert(
-      pricing.plans ? pricing.plans.length > 0 : true,
+      pricing.plans ? Object.values(pricing.plans!).length > 0 : true,
       'The pricing must contain at least one plan in order to test the functionality'
     );
     assert(
-      pricing.addOns!.length > 0,
+      Object.values(pricing.addOns!).length > 0,
       'The pricing must contain at least one add-on in order to test the functionality'
     );
     // Assert that at least one addon depends on at least one other add-on
     assert(
-      pricing.addOns!.some(a => a.dependsOn!.length > 0),
+      Object.values(pricing.addOns!).some(a => a.dependsOn!.length > 0),
       'At least one addon of the pricing must depend on another in order to test the functionality'
     );
     // Assert that all plans contains all features
     assert(
       pricing.plans
-        ? pricing.plans.every(p => Object.keys(p.features).length === pricing.features.length)
+        ? Object.values(pricing.plans!).every(p => Object.keys(p.features).length === Object.values(pricing.features).length)
         : true,
       'Not all plans contains all features'
     );
     // Assert that all plans contains all usage limits
     assert(
       pricing.plans
-        ? pricing.plans.every(
-            p => Object.keys(p.usageLimits!).length === pricing.usageLimits!.length
+        ? Object.values(pricing.plans!).every(
+            p => Object.keys(p.usageLimits!).length === Object.values(pricing.usageLimits!).length
           )
         : true,
       'Not all plans contains all usage limits'
@@ -85,7 +86,7 @@ describe('Demo SaaS Parsing Tests', () => {
       "The pricing must have a 'tags' attribute as an array of strings"
     );
 
-    pricing.features.forEach(feature => {
+    Object.values(pricing.features).forEach(feature => {
       if (feature.tag) {
         assert(
           pricing.tags!.includes(feature.tag),
@@ -112,38 +113,38 @@ describe('Demo SaaS Parsing Tests', () => {
     assert(pricing.currency, "The pricing must have a non-empty string 'currency' attribute");
     // Asserts that at least one feature, usage limit, plan, and add-on exists in the pricing object
     assert(
-      pricing.features.length > 0,
+      Object.values(pricing.features).length > 0,
       'The pricing must contain at least one feature in order to test the functionality'
     );
     assert(
-      pricing.usageLimits!.length > 0,
+      Object.values(pricing.usageLimits!).length > 0,
       'The pricing must contain at least one usage limit in order to test the functionality'
     );
     assert(
-      pricing.plans ? pricing.plans.length > 0 : true,
+      pricing.plans ? Object.values(pricing.plans!).length > 0 : true,
       'The pricing must contain at least one plan in order to test the functionality'
     );
     assert(
-      pricing.addOns!.length > 0,
+      Object.values(pricing.addOns!).length > 0,
       'The pricing must contain at least one add-on in order to test the functionality'
     );
     // Assert that at least one addon depends on at least one other add-on
     assert(
-      pricing.addOns!.some(a => a.dependsOn!.length > 0),
+      Object.values(pricing.addOns!).some(a => a.dependsOn!.length > 0),
       'At least one addon of the pricing must depend on another in order to test the functionality'
     );
     // Assert that all plans contains all features
     assert(
       pricing.plans
-        ? pricing.plans.every(p => Object.keys(p.features).length === pricing.features.length)
+        ? Object.values(pricing.plans!).every(p => Object.keys(p.features).length === Object.values(pricing.features).length)
         : true,
       'Not all plans contains all features'
     );
     // Assert that all plans contains all usage limits
     assert(
       pricing.plans
-        ? pricing.plans.every(
-            p => Object.keys(p.usageLimits!).length === pricing.usageLimits!.length
+        ? Object.values(pricing.plans!).every(
+            p => Object.keys(p.usageLimits!).length === Object.values(pricing.usageLimits!).length
           )
         : true,
       'Not all plans contains all usage limits'
@@ -154,7 +155,7 @@ describe('Demo SaaS Parsing Tests', () => {
       "The pricing must have a 'tags' attribute as an array of strings"
     );
 
-    pricing.features.forEach(feature => {
+    Object.values(pricing.features).forEach(feature => {
       if (feature.tag) {
         assert(
           pricing.tags!.includes(feature.tag),

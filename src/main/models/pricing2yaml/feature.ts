@@ -18,14 +18,10 @@ export interface Feature {
   render: RenderMode;
 }
 
-export interface ContainerFeatures{
-  [key: string]: Feature;
+export function getNumberOfFeatures(features: Record<string, Feature>) {
+  return Object.keys(features).length;
 }
 
-export function getNumberOfFeatures(features: Feature[]) {
-  return features.length;
-}
-
-export function getFeatureNames(features: Feature[]) {
-  return features.map(feature => feature.name);
+export function getFeatureNames(features: Record<string, Feature>) {
+  return Object.values(features).map(feature => feature.name);
 }

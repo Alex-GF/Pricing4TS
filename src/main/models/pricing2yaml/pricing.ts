@@ -1,7 +1,7 @@
-import { ContainerFeatures, Feature } from './feature';
-import { ContainerUsageLimits, UsageLimit } from './usage-limit';
-import { ContainerPlans, Plan } from './plan';
-import { AddOn, ContainerAddOns } from './addon';
+import { Feature } from './feature';
+import { UsageLimit } from './usage-limit';
+import { Plan } from './plan';
+import { AddOn } from './addon';
 
 export interface Pricing {
     saasName: string;
@@ -12,10 +12,10 @@ export interface Pricing {
     tags?: string[];
     billing?: {[key: string]: number};
     variables: {[key: string]: number | string | boolean};
-    features: Feature[];
-    usageLimits?: UsageLimit[];
-    plans?: Plan[];
-    addOns?: AddOn[];
+    features: Record<string, Feature>;
+    usageLimits?: Record<string, UsageLimit>;
+    plans?: Record<string, Plan>;
+    addOns?: Record<string, AddOn>;
 }
 
 export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'> {
@@ -23,12 +23,9 @@ export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'>
     createdAt: string | Date;
 }
 
-export interface PricingToBeWritten extends Omit<Pricing, 'createdAt' | 'features' | 'usageLimits' | 'plans' | 'addOns'> {
+export interface PricingToBeWritten extends Omit<Pricing, 'createdAt' | 'features'> {
     createdAt: string;
-    features: ContainerFeatures,
-    usageLimits?: ContainerUsageLimits;
-    plans?: ContainerPlans;
-    addOns?: ContainerAddOns;
+    features: Record<string, Feature> | undefined;
 }
 
 export function generateEmptyPricing(): Pricing {
@@ -43,14 +40,14 @@ export function generateEmptyPricing(): Pricing {
         },
         variables: {},
         tags: [],
-        features: [],
-        usageLimits: [],
-        plans: [],
-        addOns: []
+        features: {},
+        usageLimits: {},
+        plans: {},
+        addOns: {}
     }
 }
 
-export function generateEmptyPricingToBeWritten(): PricingToBeWritten {
+export function generatePricingToBeWritten(): PricingToBeWritten {
     return {
         saasName: "",
         version: "0.0",

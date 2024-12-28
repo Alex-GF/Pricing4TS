@@ -1,4 +1,4 @@
-import { Pricing } from '../../../main';
+import { Pricing } from '../../../types';
 import { DZNKeywords, Chunk } from '.';
 import { EOL } from 'os';
 import {
@@ -66,7 +66,7 @@ export function pricing2DZN(pricing: Pricing): string {
   const namesBlock = generateChunkBlock(namesChunks);
 
   const pricesChunk = generatePricesChunk(pricing.plans, pricing.addOns);
-  const planChunks = generatePlanChunks(pricing.usageLimits || [], pricing.plans);
+  const planChunks = generatePlanChunks(pricing.usageLimits || {}, pricing.plans);
 
   const linkedFeatures = generateLinkedFeaturesMatrix(pricing);
   const addOnsChunks = generateAddOnsChunks(pricing);
@@ -75,9 +75,9 @@ export function pricing2DZN(pricing: Pricing): string {
   );
 }
 
-function generatePricesChunk(plans?: Plan[], addOns?: AddOn[]) {
+function generatePricesChunk(plans?: Record<string, Plan>, addOns?: Record<string, AddOn>): string {
   const plansPrices = getPlanPrices(plans);
-  if (plans && plans.length !== 0 && plansPrices.every(p => p === null)) {
+  if (plans && Object.keys(plans).length !== 0 && plansPrices.every(p => p === null)) {
     throw new Error(`Either prices are not defined for all plans, or they are not numbers. Current parsed prices: ${plansPrices}`);
   }
   const addOnPrices = getAddOnPrices(addOns);
@@ -96,12 +96,12 @@ function generatePricesChunk(plans?: Plan[], addOns?: AddOn[]) {
   return generateChunkBlock(pricesChunks);
 }
 
-function generatePlanChunks(usageLimits: UsageLimit[], plans?: Plan[]): string {
+function generatePlanChunks(usageLimits: Record<string, UsageLimit>, plans?: Record<string, Plan>): string {
   if (!plans){
     return '';
   }
   
-  const planNames = plans.map(plan => plan.name);
+  const planNames = Object.values(plans).map(plan => plan.name);
   const planFeaturesMatrix = calculatePlanFeaturesMatrix(plans);
   const planUsageLimitsMatrix = calculatePlanUsageLimitsMatrix(usageLimits, plans);
 
