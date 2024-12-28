@@ -1,13 +1,11 @@
-import { retrievePricingFromPath } from '../../src/main';
-import { pricing2DZN } from '../../src/server/utils/dzn-exporter/pricing-dzn-exporter';
-import type { Pricing } from '../../src/main';
+import { retrievePricingFromPath } from '../../src/server/server';
+import type { Pricing } from '../../src/types';
 import {
   calculateAddOnAvailableForMatrix,
   calculateAddOnsDependsOnOExcludesMatrix,
   calculateAddOnsFeaturesMatrix,
   calculateAddOnsUsageLimitsExtensionsMatrix,
   calculateAddOnsUsageLimitsMatrix,
-  getAddOnNames,
 } from '../../src/main/models/pricing2yaml/addon';
 import { calculatePlanFeaturesMatrix, getPlanNames } from '../../src/main/models/pricing2yaml/plan';
 import { formatMatrixToString } from '../../src/server/utils/dzn-exporter/string-utils';
@@ -22,7 +20,7 @@ describe('Given pricing should produce a Minizinc data file', () => {
       [0, 0, 0, 0, 0, 0, 0, 0, 1],
     ];
     const pricing: Pricing = retrievePricingFromPath(path + 'petclinic.yml');
-    const actualResult = calculateAddOnsFeaturesMatrix(pricing.features, pricing.addOns || []);
+    const actualResult = calculateAddOnsFeaturesMatrix(pricing.features, pricing.addOns || {});
 
     expect(actualResult).toStrictEqual(addOnsFeatures);
   });
@@ -56,15 +54,15 @@ describe('Given pricing should produce a Minizinc data file', () => {
     const pricing: Pricing = retrievePricingFromPath(path + 'zoom.yml');
     const actualAddOnsFeatures = calculateAddOnsFeaturesMatrix(
       pricing.features,
-      pricing.addOns || []
+      pricing.addOns || {}
     );
     const actualAddOnsUsageLimits = calculateAddOnsUsageLimitsMatrix(
-      pricing.usageLimits || [],
-      pricing.addOns || []
+      pricing.usageLimits || {},
+      pricing.addOns || {}
     );
     const actualAddOnsUsageLimitsExtensions = calculateAddOnsUsageLimitsExtensionsMatrix(
-      pricing.usageLimits || [],
-      pricing.addOns || []
+      pricing.usageLimits || {},
+      pricing.addOns || {}
     );
     const actualAddOnsAvailableFor = calculateAddOnAvailableForMatrix(
       getPlanNames(pricing.plans),

@@ -1,7 +1,7 @@
-import { retrievePricingFromPath } from "../../src/main/utils/yaml-utils";
-import { Pricing } from "../../src/main/models/pricing2yaml/pricing";
+import { retrievePricingFromPath } from "../../src/server/utils/yaml-utils";
+import { Pricing } from "../../src/types";
 import assert from "assert";
-import { LATEST_PRICING2YAML_VERSION } from "../../src/main/utils/version-manager";
+import { LATEST_PRICING2YAML_VERSION } from "../../src/server/utils/version-manager";
 import {v4 as uuidv4 } from "uuid";
 import { parseCSVContent, readCSVFile } from "../utils/csv-utils";
 import fs from "fs";
@@ -11,17 +11,6 @@ const NEGATIVE_TESTS_CSV_PATH = "tests/yaml/data/negative-parsing-tests.csv";
 const suiteUUID = uuidv4();
 const TEMP_FILE_PATH = `tests/resources/temp-${suiteUUID}/test_`;
 const TEMP_DIR = `tests/resources/temp-${suiteUUID}/`;
-
-interface Test{
-    testName: string,
-    pricingPath: string,
-    expected: string
-}
-
-interface TestSection{
-    sectionName: string,
-    tests: Test[]
-}
 
 const positiveTestsParameters = parseCSVContent(readCSVFile(POSITIVE_TESTS_CSV_PATH));
 const negativeTestsParameters = parseCSVContent(readCSVFile(NEGATIVE_TESTS_CSV_PATH));

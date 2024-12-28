@@ -16,21 +16,21 @@ export interface ContainerUsageLimits {
   [key: string]: UsageLimit;
 }
 
-export function getNumberOfUsageLimits(usageLimits?: UsageLimit[]): number {
-  return usageLimits ? usageLimits.length : 0;
+export function getNumberOfUsageLimits(usageLimits?: Record<string, UsageLimit>): number {
+  return usageLimits ? Object.keys(usageLimits).length : 0;
 }
 
-export function getUsageLimitNames(usageLimits?: UsageLimit[]): string[] {
-  return usageLimits ? usageLimits.map(usageLimit => usageLimit.name) : [];
+export function getUsageLimitNames(usageLimits?: Record<string, UsageLimit>): string[] {
+  return usageLimits ? Object.values(usageLimits).map(usageLimit => usageLimit.name) : [];
 }
 
 export function calculateLinkedFeaturesMatrix(
-  usageLimits: UsageLimit[],
+  usageLimits: Record<string, UsageLimit>,
   featureNames: string[]
 ): number[][] {
   const matrix = [];
 
-  for (let i = 0; i < usageLimits.length; i++) {
+  for (let i = 0; i < Object.keys(usageLimits).length; i++) {
     const row: number[] = [];
     const linkedFeatures = usageLimits[i].linkedFeatures;
 

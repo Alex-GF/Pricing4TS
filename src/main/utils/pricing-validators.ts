@@ -1,5 +1,5 @@
 import type { AddOn } from '../models/pricing2yaml/addon';
-import type { AutomationType, ContainerFeatures, Feature, IntegrationType, PaymentType } from '../models/pricing2yaml/feature';
+import type { AutomationType, Feature, IntegrationType, PaymentType } from '../../types';
 import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
@@ -360,7 +360,7 @@ export function validateLinkedFeatures(
 
   // Check if linked features is an array
   if (Array.isArray(linkedFeatures)) {
-    const pricingFeatures = pricing.features.map((f) => f.name);
+    const pricingFeatures = Object.values(pricing.features).map((f) => f.name);
 
     for (const featureName of linkedFeatures) {
       if (!pricingFeatures.includes(featureName)) {
@@ -392,8 +392,8 @@ export function validateRenderMode(renderMode: string | undefined | null): Rende
 
 export function validatePlanFeatures(
   plan: Plan,
-  planFeatures: ContainerFeatures
-): ContainerFeatures {
+  planFeatures: Record<string, Feature>
+): Record<string, Feature> {
   const featuresModifiedByPlan = plan.features;
   plan.features = planFeatures;
 
@@ -452,7 +452,7 @@ export function validatePlanUsageLimits(
   return plan.usageLimits;
 }
 
-export function validatePrice(price: number | string | undefined | null): number | string {
+export function validatePrice(price: number | string | undefined | null, variables: {[key: string]: boolean | string | number}): number | string {
   if (price === null || price === undefined) {
     throw new Error(
       `The price field must not be null or undefined. Please ensure that the price field is present and it's a number`
@@ -471,7 +471,21 @@ export function validatePrice(price: number | string | undefined | null): number
 
   if (typeof price === 'string') {
     if (price.includes('#')) {
-      // TODO: EVALUATE PRICING FORMULA
+      for (const [variable, value] of Object.entries(variables)) {
+        price = price.replace(`#${variable}`, `${typeof value === "string" ? `'${value}'` : value}`);
+      }
+
+      try {
+        // eslint-disable-next-line no-eval
+        const evaluatedPrice = eval(price);
+        if (typeof evaluatedPrice !== 'number' || isNaN(evaluatedPrice)) {
+          throw new Error(`The evaluated price must result in a valid number. Current result after evaluation: ${evaluatedPrice}`);
+        }
+        price = evaluatedPrice;
+      } catch (err) {
+        throw new Error(`Error evaluating the price formula: ${(err as Error).message}`);
+      }
+      
     } else if (price.match(/^[0-9]+(\.[0-9]+)?$/)) {
       price = parseFloat(price);
     }
@@ -482,8 +496,8 @@ export function validatePrice(price: number | string | undefined | null): number
 
 export function validateAddonFeatures(
   addon: AddOn,
-  addOnFeatures: ContainerFeatures
-): ContainerFeatures {
+  addOnFeatures: Record<string, Feature>
+): Record<string, Feature> {
   for (const addOnFeature of Object.values(addon.features!)) {
     try {
       if (!Object.values(addOnFeatures).some((f) => f.name === addOnFeature.name)) {
@@ -500,7 +514,7 @@ export function validateAddonFeatures(
     }
   }
 
-  return addon.features as ContainerFeatures;
+  return addon.features as Record<string, Feature>;
 }
 
 export function validateAddonUsageLimits(
@@ -562,7 +576,7 @@ export function validateAvailableFor(
   availableFor: string[] | undefined | null,
   pricing: Pricing
 ): string[] {
-  const planNames = pricing.plans ? pricing.plans.map((p) => p.name) : [];
+  const planNames = pricing.plans ? Object.values(pricing.plans).map((p) => p.name) : [];
 
   if (availableFor === null || availableFor === undefined) {
     availableFor = planNames as string[];
@@ -588,7 +602,7 @@ export function validateDependsOnOrExcludes(
   pricing: Pricing,
   fieldType: "dependsOn" | "excludes"
 ): string[] {
-  const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
+  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map((a) => a.name) : [];
 
   if (fieldValue === null || fieldValue === undefined) {
     fieldValue = [];
@@ -604,7 +618,7 @@ export function validateDependsOnOrExcludes(
 }
 
 export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined, pricing: Pricing): void {
-  const addonNames = pricing.addOns ? pricing.addOns.map((a) => a.name) : [];
+  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map((a) => a.name) : [];
 
   if (!fieldValue) return;
 
@@ -615,7 +629,12 @@ export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined,
   }
 }
 
-export function validateTags(tags: string[]): string[] {
+export function validateTags(tags: string[] | undefined): string[] {
+  
+  if (tags === null || tags === undefined){
+    return [];
+  }
+  
   if (!Array.isArray(tags) || tags.some((tag) => typeof tag !== 'string')) {
     throw new Error(`The tags field must be an array of strings.`);
   }
@@ -688,6 +707,25 @@ export function validateBilling(billing: {[key: string]: number} | undefined){
   }
 
   return billing;
+}
+
+export function validateVariables(variables: {[key: string]: number | string | boolean} | undefined){
+  
+  if(variables === undefined || variables === null){
+    variables = {}
+  }
+  
+  if (typeof variables !== 'object') {
+    throw new Error(`The billing field must be an object of type {[key: string]: number | string | boolean}`);
+  }
+
+  for (const [key, value] of Object.entries(variables)) {
+    if (typeof value !== 'number' && typeof value !== 'string' && typeof value !== 'boolean') {
+      throw new Error(`The billing entry for ${key} must be either a number, a string or a boolean. Received: ${value}`);
+    }
+  }
+
+  return variables;
 }
 
 export function validateUrl(url: string | undefined){

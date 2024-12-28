@@ -28,6 +28,7 @@ features:
     defaultValue: LOW
     type: SUPPORT
     tag: 'Veterinary Care'
+    expression: true
   haveCalendar:
     description: haveCalendar description
     valueType: BOOLEAN
@@ -57,11 +58,13 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
+    expression: planContext['features']['smartClinicReports']
   petAdoptionCentre:
     description: petAdoptionCentre description
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
+    expression: planContext['features']['petAdoptionCentre']
 usageLimits:
   maxPets:
     description: ''

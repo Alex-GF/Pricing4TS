@@ -16,25 +16,21 @@ export interface AddOn {
   usageLimitsExtensions?: { [key: string]: UsageLimit };
 }
 
-export interface ContainerAddOns {
-  [key: string]: AddOn;
-}
-
-export function getAddOnNames(addOns?: AddOn[]): string[] {
+export function getAddOnNames(addOns?: Record<string, AddOn>): string[] {
   if (!addOns) {
     return [];
   }
 
-  return addOns.map(addOn => addOn.name);
+  return Object.values(addOns).map(addOn => addOn.name);
 }
 
-export function getAddOnPrices(addOns?: AddOn[]): number[] {
+export function getAddOnPrices(addOns?: Record<string, AddOn>): number[] {
   const prices: number[] = [];
   if (!addOns) {
     return prices;
   }
 
-  for (const addOn of addOns) {
+  for (const addOn of Object.values(addOns)) {
     const price = addOn.price;
     if (typeof price === 'number') {
       prices.push(price);
@@ -46,16 +42,16 @@ export function getAddOnPrices(addOns?: AddOn[]): number[] {
   return prices;
 }
 
-export function calculateAddOnsFeaturesMatrix(features: Feature[], addOns: AddOn[]): number[][] {
+export function calculateAddOnsFeaturesMatrix(features: Record<string, Feature>, addOns: Record<string, AddOn>): number[][] {
   const matrix = [];
-  for (const addOn of addOns) {
+  for (const addOn of Object.values(addOns)) {
     const addOnFeatures = addOn.features;
     if (!addOnFeatures) {
-      matrix.push(new Array(features.length).fill(0));
+      matrix.push(new Array(Object.values(features).length).fill(0));
       continue;
     }
     const row = [];
-    for (const feature of features) {
+    for (const feature of Object.values(features)) {
       let value = 0;
       const overriddenValue = addOnFeatures[feature.name];
       if (overriddenValue) {
@@ -70,23 +66,23 @@ export function calculateAddOnsFeaturesMatrix(features: Feature[], addOns: AddOn
 }
 
 export function calculateAddOnsUsageLimitsMatrix(
-  usageLimits: UsageLimit[],
-  addOns: AddOn[]
+  usageLimits: Record<string, UsageLimit>,
+  addOns: Record<string, AddOn>
 ): number[][] {
   const matrix: number[][] = [];
 
-  if (usageLimits.length === 0) {
+  if (Object.keys(usageLimits).length === 0) {
     return matrix;
   }
-  for (const addOn of addOns) {
+  for (const addOn of Object.values(addOns)) {
     const addOnUsageLimits = addOn.usageLimits || {};
     const numberOfOverriddenAddOns = Object.keys(addOnUsageLimits).length;
     if (numberOfOverriddenAddOns === 0) {
-      matrix.push(new Array(usageLimits.length).fill(0));
+      matrix.push(new Array(Object.keys(usageLimits).length).fill(0));
       continue;
     }
     const row = [];
-    for (const usageLimit of usageLimits) {
+    for (const usageLimit of Object.values(usageLimits)) {
       const value = addOnUsageLimits[usageLimit.name]
         ? valueToNumber(addOnUsageLimits[usageLimit.name].value)
         : 0;
@@ -99,23 +95,23 @@ export function calculateAddOnsUsageLimitsMatrix(
 }
 
 export function calculateAddOnsUsageLimitsExtensionsMatrix(
-  usageLimits: UsageLimit[],
-  addOns: AddOn[]
+  usageLimits: Record<string, UsageLimit>,
+  addOns: Record<string, AddOn>
 ): number[][] {
   const matrix: number[][] = [];
 
-  if (usageLimits.length === 0) {
+  if (Object.keys(usageLimits).length === 0) {
     return matrix;
   }
-  for (const addOn of addOns) {
+  for (const addOn of Object.values(addOns)) {
     const addOnUsageLimits = addOn.usageLimitsExtensions || {};
     const numberOfOverriddenAddOns = Object.keys(addOnUsageLimits).length;
     if (numberOfOverriddenAddOns === 0) {
-      matrix.push(new Array(usageLimits.length).fill(0));
+      matrix.push(new Array(Object.keys(usageLimits).length).fill(0));
       continue;
     }
     const row = [];
-    for (const usageLimit of usageLimits) {
+    for (const usageLimit of Object.values(usageLimits)) {
       const value = addOnUsageLimits[usageLimit.name]
         ? valueToNumber(addOnUsageLimits[usageLimit.name].value)
         : 0;
@@ -129,7 +125,7 @@ export function calculateAddOnsUsageLimitsExtensionsMatrix(
 
 export function calculateAddOnAvailableForMatrix(
   planNames: string[],
-  addOns?: AddOn[]
+  addOns?: Record<string, AddOn>
 ): number[][] {
   const matrix: number[][] = [];
 
@@ -137,7 +133,7 @@ export function calculateAddOnAvailableForMatrix(
     return matrix;
   }
 
-  for (const addOn of addOns) {
+  for (const addOn of Object.values(addOns)) {
     const row = [];
     for (const planName of planNames) {
       const value = addOn.availableFor.includes(planName) ? 1 : 0;
@@ -148,21 +144,21 @@ export function calculateAddOnAvailableForMatrix(
   return matrix;
 }
 
-export function calculateAddOnsDependsOnOExcludesMatrix(addOns?: AddOn[], field: "dependsOn" | "excludes" = "dependsOn"): number[][] {
+export function calculateAddOnsDependsOnOExcludesMatrix(addOns?: Record<string, AddOn>, field: "dependsOn" | "excludes" = "dependsOn"): number[][] {
   const matrix: number[][] = [];
 
   if (!addOns) {
     return matrix;
   }
 
-  for (const addOn of addOns) {
+  for (const addOn of Object.values(addOns)) {
     const selectedField = field === "dependsOn" ? addOn.dependsOn : addOn.excludes;
     const row = [];
     if (!selectedField) {
-      row.push(new Array(addOns.length).fill(0));
+      row.push(new Array(Object.values(addOns).length).fill(0));
       continue;
     }
-    for (const innerAddOn of addOns) {
+    for (const innerAddOn of Object.values(addOns)) {
       const value = selectedField.includes(innerAddOn.name) ? 1 : 0;
       row.push(value);
     }
