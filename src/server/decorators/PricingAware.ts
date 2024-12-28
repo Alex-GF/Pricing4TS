@@ -3,15 +3,26 @@ import { PricingContext, SubscriptionContext } from "../configuration/PricingCon
 import { PricingContextManager } from "../server";
 import { ContextToEval, extractContextToEvalFromSubscriptionContext } from "../utils/pricing-evaluator";
 
+export type ClassMethodDecoratorContextType = {
+    kind: 'method';
+    name: string | symbol;
+    access: { get(object: unknown): unknown };
+    static: boolean;
+    private: boolean;
+    addInitializer(initializer: () => void): void;
+  };
+
 export function PricingAware(featureName: string) {
     return function (
       target: any,
-      propertyKey: string | symbol,
-      descriptor: PropertyDescriptor
+      context: ClassMethodDecoratorContextType
     ) {
-      const originalMethod = descriptor.value;
-  
-      descriptor.value = function (...args: any[]) {
+
+        if (context.kind !== 'method') {
+            throw new Error('PricingAware decorator can only be applied to methods!');
+        }
+
+      return function (this: any, ...args: any[]): any {
   
         const pricingContext: PricingContext = PricingContextManager.getContext();
   
@@ -22,10 +33,8 @@ export function PricingAware(featureName: string) {
         }
 
         // Si pasa las validaciones, llama a la función original
-        return originalMethod.apply(this, args);
+        return target.apply(this, args);
       };
-  
-      return descriptor;
     };
   }
 

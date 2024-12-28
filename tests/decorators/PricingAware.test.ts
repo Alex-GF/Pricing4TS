@@ -1,11 +1,10 @@
-import { PricingContext, PricingContextManager } from "../../src/server/server";
-import { PricingAware } from "../../src/server/decorators/PricingAware";
+import { PricingContext, PricingContextManager } from '../../src/server/server';
+import { PricingAware } from '../../src/server/decorators/PricingAware';
 
 export class PricingContextImpl extends PricingContext {
-  
-    private static jwtExpirationTime = 86400000;
-  
-    getConfigFilePath(): string {
+  private static jwtExpirationTime = 86400000;
+
+  getConfigFilePath(): string {
     return 'tests/resources/pricing/full/petclinic.yml';
   }
 
@@ -34,34 +33,38 @@ export class PricingContextImpl extends PricingContext {
   }
 }
 
-class SampleService{
-    @PricingAware('pets')
-    methodThatRequiresPetsFeature(){
-        return 'This a method that requires the pets feature to be enabled';
-    }
-
-    @PricingAware('consultations')
-    methodThatRequiresConsultationsFeature(){
-        return 'This a method that requires the consultations feature to be enabled';
-    }
+class SampleService {
+  @PricingAware('pets')
+  methodThatRequiresPetsFeature() {
+    return 'This a method that requires the pets feature to be enabled';
+  }
+  
+  @PricingAware('consultations')
+  methodThatRequiresConsultationsFeature() {
+    return 'This a method that requires the consultations feature to be enabled';
+  }
 }
 
 describe('PricingAware decorator tests with PricingContextImpl', () => {
-    let sampleService: SampleService;
+  let sampleService: SampleService;
 
-    beforeAll(() => {
-        const pricingContext: PricingContext = new PricingContextImpl();
+  beforeAll(() => {
+    const pricingContext: PricingContext = new PricingContextImpl();
 
-        PricingContextManager.registerContext(pricingContext);
+    PricingContextManager.registerContext(pricingContext);
 
-        sampleService = new SampleService();
-    });
+    sampleService = new SampleService();
+  });
 
-    it('should throw an error when calling a method that requires the pets feature', () => {
-        expect(sampleService.methodThatRequiresPetsFeature()).toBe('This a method that requires the pets feature to be enabled');
-    });
+  it('should throw an error when calling a method that requires the pets feature', () => {
+    expect(sampleService.methodThatRequiresPetsFeature()).toBe(
+      'This a method that requires the pets feature to be enabled'
+    );
+  });
 
-    it('should throw an error when calling a method that requires the consultations feature', () => {
-        expect(() => sampleService.methodThatRequiresConsultationsFeature()).toThrow('Feature consultations is not enabled for the current user!');
-    });
+  it('should throw an error when calling a method that requires the consultations feature', () => {
+    expect(() => sampleService.methodThatRequiresConsultationsFeature()).toThrow(
+      'Feature consultations is not enabled for the current user!'
+    );
+  });
 });
