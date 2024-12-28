@@ -13,7 +13,7 @@ export interface FeatureStatus {
 
 export type ContextToEval = Record<"features" | "usageLimits", Record<string, string | boolean | number | PaymentType[]>>
 
-export function generateUserToken() {
+export function generateUserPricingToken() {
   const pricingContext: PricingContext = PricingContextManager.getContext();
   const claims: any = {};
 

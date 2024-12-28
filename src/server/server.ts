@@ -9,11 +9,10 @@ export { PricingOperation } from './models/minizinc/minizinc';
 
 export { PricingService };
 
-export {
-    retrievePricingFromPath,
-    writePricingToYaml,
-  } from './utils/yaml-utils';
+export { retrievePricingFromPath, writePricingToYaml } from './utils/yaml-utils';
 
 export { checkFeature } from './middleware/feature-checker';
+
+export { generateUserPricingToken } from './utils/pricing-evaluator';
 
 export { PricingJwtUtils } from './utils/pricing-jwt-utils';
