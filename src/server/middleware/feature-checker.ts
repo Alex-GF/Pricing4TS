@@ -3,16 +3,26 @@ import { PricingContext } from '../configuration/PricingContext';
 import { PricingContextManager } from '../server';
 import { PricingJwtUtils } from '../utils/pricing-jwt-utils';
 
-export function checkFeature(req: Request, res: Response, next: NextFunction){
-    const pricingToken = req.header('Pricing-Token');
+export function checkFeature(feature: string){
+    return (req: Request, res: Response, next: NextFunction) => {
+        const pricingToken = req.header('Pricing-Token');
+    
+        try{
+            const decodedToken = PricingJwtUtils.decodeToken(pricingToken);
 
-    try{
-        const decodedToken = PricingJwtUtils.decodeToken(pricingToken);
-    }catch(e){
-        return res.status(401).send((e as Error).message);
+            if(!decodedToken){
+                return res.status(401).send('Invalid token');
+            }
+
+            if(!decodedToken.features[feature].eval){
+                return res.status(403).send('Access to this feature is restricted. Please upgrade your plan to gain access.');
+            }
+        }catch(e){
+            return res.status(401).send((e as Error).message);
+        }
+    
+        next();
     }
-
-    next();
 }
 
 export function createPricingToken(req: Request, res: Response, next: NextFunction) {

@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { Pricing } from '../../../main';
+import { Pricing } from '../../../types';
 import { retrievePricingFromPath } from '../../server';
 import { pricing2DZN } from '../../../server/utils/dzn-exporter/pricing-dzn-exporter';
 import fs from 'node:fs';

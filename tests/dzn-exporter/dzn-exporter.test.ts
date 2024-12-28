@@ -1,5 +1,5 @@
 import { retrievePricingFromPath } from '../../src/server/server';
-import type { Pricing } from '../../src/main';
+import type { Pricing } from '../../src/types';
 import {
   calculateAddOnAvailableForMatrix,
   calculateAddOnsDependsOnOExcludesMatrix,

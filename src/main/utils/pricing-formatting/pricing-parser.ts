@@ -1,6 +1,4 @@
-import type { AddOn } from '../../models/pricing2yaml/addon';
-import type { Feature } from '../../models/pricing2yaml/feature';
-import type { Plan } from '../../models/pricing2yaml/plan';
+import type { Feature, AddOn, Plan } from '../../../types';
 import { ExtractedPricing, generateEmptyPricing, Pricing } from '../../models/pricing2yaml/pricing';
 import type { ContainerUsageLimits, UsageLimit } from '../../models/pricing2yaml/usage-limit';
 import {

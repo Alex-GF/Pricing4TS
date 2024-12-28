@@ -3,6 +3,7 @@ import { checkFeature } from '../../src/server/middleware/feature-checker';
 import { PricingContext } from '../../src/server/configuration/PricingContext';
 import { PricingContextManager } from '../../src/server/server';
 import { generateUserToken } from '../../src/server/utils/pricing-evaluator';
+import { PricingJwtUtils } from '../../src/server/utils/pricing-jwt-utils';
 
 export class PricingContextImpl extends PricingContext {
   
@@ -59,6 +60,7 @@ describe('checkFeature middleware with PricingContextImpl', () => {
     nextFunction = jest.fn();
 
     jest.clearAllMocks();
+    jest.useFakeTimers();
   });
 
   beforeAll(() => {
@@ -67,46 +69,69 @@ describe('checkFeature middleware with PricingContextImpl', () => {
     PricingContextManager.registerContext(pricingContext);
   });
 
-  it('should return 401 if Pricing-Token header is not provided', () => {
-    (mockRequest.header as jest.Mock).mockReturnValue(null);
+  describe('Negative tests of checkFeature middleware with PricingContextImpl', () => {
+    it('should return 401 if Pricing-Token header is not provided', () => {
+      (mockRequest.header as jest.Mock).mockReturnValue(null);
+  
+      const middleware = checkFeature('pets');
+      middleware(mockRequest as Request, mockResponse as Response, nextFunction);
+  
+      expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
+      expect(statusMock).toHaveBeenCalledWith(401);
+      expect(sendMock).toHaveBeenCalledWith('Pricing token not found');
+      expect(nextFunction).not.toHaveBeenCalled();
+    });
 
-    checkFeature(mockRequest as Request, mockResponse as Response, nextFunction);
+    it('should return 401 if a token with passed expiration time is provided', () => {
+    
+      PricingContextImpl.setJwtExpirationTime(1);
+      
+      const testToken = generateUserToken();
+  
+      PricingContextImpl.setJwtExpirationTime(86400000);
+  
+      (mockRequest.header as jest.Mock).mockReturnValue(testToken);
+  
+      jest.advanceTimersByTime(2);
 
-    expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
-    expect(statusMock).toHaveBeenCalledWith(401);
-    expect(sendMock).toHaveBeenCalledWith('Pricing token not found');
-    expect(nextFunction).not.toHaveBeenCalled();
+      const middleware = checkFeature('pets');
+      middleware(mockRequest as Request, mockResponse as Response, nextFunction);
+
+      expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
+      expect(sendMock).toHaveBeenCalledWith('Pricing token expired');
+      expect(statusMock).toHaveBeenCalledWith(401);
+      expect(nextFunction).not.toHaveBeenCalled();
+    });
+
+    it('should return 403 if user have no access allowed to the requested feature', () => {
+      
+      const testToken = generateUserToken();
+  
+      (mockRequest.header as jest.Mock).mockReturnValue(testToken);
+  
+      const middleware = checkFeature('consultations');
+      middleware(mockRequest as Request, mockResponse as Response, nextFunction);
+
+      expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
+      expect(sendMock).toHaveBeenCalledWith('Access to this feature is restricted. Please upgrade your plan to gain access.');
+      expect(statusMock).toHaveBeenCalledWith(403);
+      expect(nextFunction).not.toHaveBeenCalled();
+      
+    });
   });
 
-  it('should decode the token if Pricing-Token is provided', () => {
-    const testToken = generateUserToken();
-    
-    (mockRequest.header as jest.Mock).mockReturnValue(testToken);
-
-    checkFeature(mockRequest as Request, mockResponse as Response, nextFunction);
-
-    expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
-    expect(nextFunction).toHaveBeenCalled();
-    expect(statusMock).not.toHaveBeenCalled();
-  });
-
-  it('should throw an error when decoding a token with passed expiration time', () => {
-    
-    PricingContextImpl.setJwtExpirationTime(1);
-    
-    const testToken = generateUserToken();
-
-    PricingContextImpl.setJwtExpirationTime(86400000);
-
-    (mockRequest.header as jest.Mock).mockReturnValue(testToken);
-
-    setTimeout(() => {
-        checkFeature(mockRequest as Request, mockResponse as Response, nextFunction);
-
-        expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
-        expect(sendMock).toHaveBeenCalledWith('Pricing token expired');
-        expect(statusMock).toHaveBeenCalledWith(401);
-        expect(nextFunction).not.toHaveBeenCalled();
-    }, 2);
-  });
+  describe('Positive tests of checkFeature middleware with PricingContextImpl', () => {
+    it('request should be processed if a valid Pricing-Token with required permissions for the requested feature is provided', () => {
+      const testToken = generateUserToken();
+      
+      (mockRequest.header as jest.Mock).mockReturnValue(testToken);
+  
+      const middleware = checkFeature('pets');
+      middleware(mockRequest as Request, mockResponse as Response, nextFunction);
+  
+      expect(mockRequest.header).toHaveBeenCalledWith('Pricing-Token');
+      expect(nextFunction).toHaveBeenCalled();
+      expect(statusMock).not.toHaveBeenCalled();
+    });
+  })
 });

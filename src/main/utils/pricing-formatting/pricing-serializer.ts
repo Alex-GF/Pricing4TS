@@ -1,6 +1,4 @@
-import type { AddOn } from '../../models/pricing2yaml/addon';
-import type { Feature } from '../../models/pricing2yaml/feature';
-import type { Plan } from '../../models/pricing2yaml/plan';
+import type { AddOn, Feature, Plan } from '../../../types';
 import {
   generatePricingToBeWritten,
   Pricing,

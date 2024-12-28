@@ -1,5 +1,4 @@
-import { Plan, Pricing, UsageLimit } from "../../main";
-import { Feature, PaymentType } from "../../main/models/pricing2yaml/feature";
+import { Feature, Pricing, UsageLimit } from "../../types";
 import { PricingPlanEvaluationError } from "../exceptions/PricingPlanEvaluationError";
 import { retrievePricingFromPath } from "../server";
 

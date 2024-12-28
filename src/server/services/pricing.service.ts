@@ -1,4 +1,4 @@
-import { Pricing } from '../../main';
+import { Pricing } from '../../types';
 import PricingCSP from '../models/minizinc/minizinc';
 import { pricing2DZN } from '../utils/dzn-exporter/pricing-dzn-exporter';
 import { PricingOperation } from '../models/minizinc/minizinc';

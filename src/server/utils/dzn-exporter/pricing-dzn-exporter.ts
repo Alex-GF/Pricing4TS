@@ -1,4 +1,4 @@
-import { Pricing } from '../../../main';
+import { Pricing } from '../../../types';
 import { DZNKeywords, Chunk } from '.';
 import { EOL } from 'os';
 import {

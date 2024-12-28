@@ -1,5 +1,5 @@
 import type { AddOn } from '../models/pricing2yaml/addon';
-import type { AutomationType, Feature, IntegrationType, PaymentType } from '../models/pricing2yaml/feature';
+import type { AutomationType, Feature, IntegrationType, PaymentType } from '../../types';
 import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';

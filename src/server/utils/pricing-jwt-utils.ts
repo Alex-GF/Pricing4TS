@@ -39,7 +39,9 @@ export class PricingJwtUtils {
      */
     static encodeToken(claims: Record<string, any>): string {
 
-        if (!claims.sub){
+        if (!claims){
+            throw new PricingTokenError("[ERROR] Claims not found when encoding token");
+        }else if (!claims.sub){
             throw new PricingTokenError("[ERROR] Subject not found in claims when encoding token");
         }else if (!claims.userContext){
             throw new PricingTokenError("[ERROR] User context not found in claims when encoding token");
@@ -90,6 +92,20 @@ export class PricingJwtUtils {
     static updateTokenFeatures(oldToken: string, newFeatureStatuses: Record<string, FeatureStatus>): string{
         const decodedToken: Record<string, any> = this.decodeToken(oldToken);
         decodedToken.features = newFeatureStatuses;
+        
+        return this.encodeToken(decodedToken);
+    }
+
+    /**
+     * Updates a specific feature in a Pricing JSON Web Token (JWT).
+     * 
+     * @param oldToken - The JWT to update.
+     * @param newFeatureStatuses - A *Record<string, {@link FeatureStatus}>* showcasing the new features evaluation to update in the token.
+     * @returns The updated JWT.
+     */
+    static updateEvalOfTokenFeature(oldToken: string, featureToChangeEval: string, newEval: string): string{
+        const decodedToken: Record<string, any> = this.decodeToken(oldToken);
+        decodedToken.features[featureToChangeEval].eval = newEval;
         
         return this.encodeToken(decodedToken);
     }

@@ -13,3 +13,7 @@ export {
     retrievePricingFromPath,
     writePricingToYaml,
   } from './utils/yaml-utils';
+
+export { checkFeature } from './middleware/feature-checker';
+
+export { PricingJwtUtils } from './utils/pricing-jwt-utils';

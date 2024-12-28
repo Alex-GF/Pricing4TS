@@ -1,7 +1,7 @@
 import { PricingContext, SubscriptionContext } from '../configuration/PricingContext';
 import { PricingContextManager } from '../server';
 import { PricingPlanEvaluationError } from '../exceptions/PricingPlanEvaluationError';
-import { Feature, UsageLimit } from '../../main';
+import { Feature, UsageLimit } from '../../types';
 import { PricingJwtUtils } from './pricing-jwt-utils';
 import { PaymentType } from '../../main/models/pricing2yaml/feature';
 
