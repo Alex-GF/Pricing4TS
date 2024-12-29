@@ -12,6 +12,7 @@ Given pricing with invalid createdAt format should throw an error,tests/resource
 ---------- currency ----------,-,-
 Given pricing with no currency should throw an error,tests/resources/pricing/negative/currency/currency-is-null.yml,The currency field of the pricing must not be null or undefined. Please ensure that the currency field is present and correctly formatted
 Given pricing with boolean createdAt should throw an error,tests/resources/pricing/negative/currency/currency-is-boolean.yml,The currency field of the pricing must be a string
+Given pricing with invalid currency code should throw an error,tests/resources/pricing/negative/currency/invalid-currency-code.yml,The currency code ASD is not a valid ISO 4217 currency code
 ---------- feature ----------,-,-
 Given key value in feature should throw an error,tests/resources/pricing/negative/feature/feature-is-key-value.yml,Error parsing feature foo. Error: The feature must be an object of type Feature
 Given null value in feature should throw an error,tests/resources/pricing/negative/feature/feature-null-as-key.yml,"Error parsing usage limit limit. Error: The feature null, declared as a linked feature for an usage limit, is not defined in the global features"
