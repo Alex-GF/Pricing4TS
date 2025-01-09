@@ -4,6 +4,7 @@ import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
 import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
 import type { ContainerUsageLimits, UsageLimit } from '../models/pricing2yaml/usage-limit';
+import * as cc from 'currency-codes';
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 
@@ -89,6 +90,12 @@ export function validateCurrency(currency: string | null): string {
 
   if (trimmedCurrency.length === 0) {
     throw new Error(`The currency field of the pricing must not be empty`);
+  }
+
+  const currencyCode = cc.code(trimmedCurrency);
+
+  if (!currencyCode) {
+    throw new Error(`The currency code ${trimmedCurrency} is not a valid ISO 4217 currency code`);
   }
 
   return currency;

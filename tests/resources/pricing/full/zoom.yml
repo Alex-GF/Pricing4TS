@@ -1,7 +1,7 @@
 saasName: Zoom
 version: "2.0"
 createdAt: 2024-11-04
-currency: $
+currency: USD
 hasAnnualPayment: false
 features:
   meetings:
