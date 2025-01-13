@@ -21,7 +21,7 @@ constraint
 constraint
   if num_plans > 0 /\ num_usage_limits > 0 
     then assert(forall(i in PLANS, k in USAGE_LIMITS)(
-      if plans_usage_limits[i,k] > 0 % Si el límite de uso k tiene un valor mayor a 0 en el plan i
+      if plans_usage_limits[i,k] > 0 /\ sum(j in FEATURES)(linked_features[k,j] == 1) > 0% Si el límite de uso k tiene un valor mayor a 0 en el plan i y está vinculado a alguna feature
         then sum(j in FEATURES)(linked_features[k,j] == 1 /\ plans_features[i,j] == 1) > 0 % Entonces, al menos una de sus características vinculadas debe estar disponible en dicho plan
       endif
     ), "Invalid datafile. If a usage limit has a value > 0 in a plan, at least one of its linked features must be available for such plan.")
