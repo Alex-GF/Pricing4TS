@@ -30,8 +30,8 @@ import { formatMatrixToString, generateChunk, generateChunkBlock } from './strin
 export function pricing2DZN(pricing: Pricing): string {
   const numFeatures = getNumberOfFeatures(pricing.features);
   const numUsageLimits = getNumberOfUsageLimits(pricing.usageLimits);
-  const numPlans = pricing.plans ? pricing.plans.length : 0;
-  const numAddOns = pricing.addOns ? pricing.addOns.length : 0;
+  const numPlans = pricing.plans ? Object.keys(pricing.plans).length : 0;
+  const numAddOns = pricing.addOns ? Object.keys(pricing.addOns).length : 0;
 
   const variableChunks: Chunk[] = [
     {

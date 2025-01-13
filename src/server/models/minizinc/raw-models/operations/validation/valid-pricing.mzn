@@ -16,7 +16,18 @@ constraint
     ), "Invalid datafile. At least one usage limit linked to a feature in a plan must have a value > 0")
   endif;
 
-% C3: All add-ons must be available for, at least, one plan
+% C3: If an usage limit has a value > 0 in a plan, at least one of its linked features must be available for such plan.
+
+constraint
+  if num_plans > 0 /\ num_usage_limits > 0 
+    then assert(forall(i in PLANS, k in USAGE_LIMITS)(
+      if plans_usage_limits[i,k] > 0 % Si el límite de uso k tiene un valor mayor a 0 en el plan i
+        then sum(j in FEATURES)(linked_features[k,j] == 1 /\ plans_features[i,j] == 1) > 0 % Entonces, al menos una de sus características vinculadas debe estar disponible en dicho plan
+      endif
+    ), "Invalid datafile. If a usage limit has a value > 0 in a plan, at least one of its linked features must be available for such plan.")
+  endif;
+
+% C4: All add-ons must be available for, at least, one plan
 
 constraint
   if num_addons > 0 /\ num_plans > 0
@@ -25,7 +36,7 @@ constraint
     ), "Invalid datafile. All add-ons must be available for at least one plan.")
   endif;
 
-% C4: No two plans should be exactly the same
+% C5: No two plans should be exactly the same
 
 constraint
   if num_plans > 1
@@ -39,7 +50,7 @@ constraint
     ), "Invalid datafile. No two plans should be exactly the same.")
   endif;
 
-% C5: No two addons should be exactly the same
+% C6: No two addons should be exactly the same
 
 constraint
   if num_addons > 1
