@@ -25,7 +25,11 @@ function _updatePrices(extractedPricing: any): void {
         const pricingPlans = formatObjectToArray(extractedPricing.plans) as any;
         extractedPricing.billing = {};
         for (const plan of pricingPlans) {
-            if (plan.monthlyPrice === null || plan.monthlyPrice === undefined) {
+            if (plan.monthlyPrice && plan.annualPrice){
+                plan.price = plan.monthlyPrice;
+                const annualBillingCoef = _computeAnnualBillingCoef(plan.monthlyPrice, plan.annualPrice);
+                extractedPricing.billing = {"monthly": 1, "annual": annualBillingCoef, ...extractedPricing.billing}; 
+            }else if (plan.monthlyPrice === null || plan.monthlyPrice === undefined) {
                 plan.price = plan.annualPrice;
                 extractedPricing.billing = {"annual": 1, ...extractedPricing.billing};
             }else{
@@ -67,4 +71,22 @@ function _updatePrices(extractedPricing: any): void {
         }
         extractedPricing.addOns = pricingAddons;
     }
+}
+
+function _computeAnnualBillingCoef(monthlyPrice: any, annualPrice: any): number {
+    
+    if (typeof monthlyPrice !== "number" || typeof annualPrice !== "number") {
+        throw new Error("Monthly and annual prices of plans must be numbers");
+    }
+
+    let annualBillingCoef = 0;
+
+    if (annualPrice > monthlyPrice){
+        console.log("[WARNING UPDATER_v11_v20] Annual price is greater than monthly price. Annual billing coefficient will be calculated considering annualPrice correspond to the annual payment, it is: annualBillingCoef = annualPrice / (monthlyPrice * 12)");
+        annualBillingCoef = annualPrice / (monthlyPrice * 12);
+    }else{
+        annualBillingCoef = annualPrice / monthlyPrice;
+    }
+    
+    return annualBillingCoef;
 }
