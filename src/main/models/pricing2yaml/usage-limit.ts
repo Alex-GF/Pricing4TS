@@ -32,7 +32,8 @@ export function calculateLinkedFeaturesMatrix(
 
   for (let i = 0; i < Object.keys(usageLimits).length; i++) {
     const row: number[] = [];
-    const linkedFeatures = usageLimits[i].linkedFeatures;
+    const usageLimit = usageLimits[Object.keys(usageLimits)[i]];
+    const linkedFeatures = usageLimit.linkedFeatures;
 
     if (!linkedFeatures) {
       matrix.push(new Array(featureNames.length).fill(0));

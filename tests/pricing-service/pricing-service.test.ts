@@ -103,8 +103,8 @@ describe('Single pricing test', () => {
     );
   });
 
-  const pricingPath = 'tests/resources/pricing/real/salesforce/2019.yml';
-  const expected = 'Salesforce - SalesCloud';
+  const pricingPath = 'tests/resources/pricing/real/buffer/2024.yml';
+  const expected = 'Buffer';
   let pricingService: PricingService | null = null;
   let pricing: Pricing;
 
