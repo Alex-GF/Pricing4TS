@@ -34,16 +34,30 @@ export function validateName(name: string | null, item: string): string {
   return trimmedName;
 }
 
-export function validateVersion(version: string): string {
+export function validateSyntaxVersion(version: string): string {
   if (version === null || version === undefined) {
     throw new Error(
-      `The version field of the pricing must not be null or undefined. Please ensure that the version field is present and correctly formatted`
+      `The syntaxVersion field of the pricing must not be null or undefined. Please ensure that the syntaxVersion field is present and correctly formatted`
     );
   }
 
   if (typeof version !== 'string' || !VERSION_REGEXP.test(version)) {
     throw new Error(
-      `The version field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y`
+      `The syntaxVersion field of the pricing does not follow the required structure: X.Y (being X and Y numbers). Please ensure it is a string in the format X.Y`
+    );
+  }
+
+  return version;
+}
+
+export function validateVersion(version: string | undefined, createdAt: Date): string {
+  if (version === null || version === undefined) {
+    version = `${createdAt.getFullYear()}-${createdAt.getMonth() + 1}-${createdAt.getDate()}`;
+  }
+
+  if (typeof version !== 'string') {
+    throw new Error(
+      `The version field of the pricing must be a string. Please ensure that the version field is present and correctly formatted`
     );
   }
 

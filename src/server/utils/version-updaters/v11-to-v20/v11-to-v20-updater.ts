@@ -3,7 +3,7 @@
 import { formatObjectToArray } from "../../../../main/utils/pricing-formatting/pricing-parser";
 import { calculateNextVersion } from "../../version-manager";
 
-export default function v10Tov11Updater(extractedPricing: any): any {
+export default function v11Tov20Updater(extractedPricing: any): any {
 
     const nextVersion = calculateNextVersion(extractedPricing.version);
 

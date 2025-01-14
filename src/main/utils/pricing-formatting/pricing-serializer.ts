@@ -36,11 +36,12 @@ export function serializePricing(pricing: Pricing): PricingToBeWritten {
 
 function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
   pricingToBeWritten.saasName = pricing.saasName;
+  pricingToBeWritten.syntaxVersion = pricing.syntaxVersion;
   pricingToBeWritten.version = pricing.version;
   pricingToBeWritten.url = pricing.url;
   pricingToBeWritten.createdAt = pricing.createdAt instanceof Date
     ? pricing.createdAt.toISOString().split('T')[0]
-    : (pricing.createdAt as string).split('T')[0];
+    : pricing.createdAt;
   pricingToBeWritten.currency = pricing.currency;
   pricingToBeWritten.tags = Array.isArray(pricing.tags) && pricing.tags.length > 0 ? pricing.tags : undefined;
   pricingToBeWritten.billing = pricing.billing && pricing.billing.monthly === 1 && Object.keys(pricing.billing).length === 1 ? undefined : pricing.billing;

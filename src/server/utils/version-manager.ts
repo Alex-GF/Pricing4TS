@@ -1,10 +1,10 @@
 // deno-lint-ignore-file no-explicit-any
 import semver from "semver";
-import { validateVersion } from "../../main/utils/pricing-validators";
+import { validateSyntaxVersion } from "../../main/utils/pricing-validators";
 import { updaters } from "./version-updaters/updaters";
 import { writePricingWithErrorToYaml, writePricingToYaml } from "../../server/utils/yaml-utils";
 
-export const PRICING2YAML_VERSIONS: Array<string> = ["1.0", "1.1", "2.0"];
+export const PRICING2YAML_VERSIONS: Array<string> = ["1.0", "1.1", "2.0", "2.1"];
 
 export const LATEST_PRICING2YAML_VERSION: string =
   PRICING2YAML_VERSIONS[PRICING2YAML_VERSIONS.length - 1];
@@ -25,11 +25,11 @@ export function update(extractedPricing: any, useCheckpoints: boolean, pricingPa
   }
   
   const pricingVersion = _parseToSemver(
-    validateVersion(extractedPricing.version)
+    validateSyntaxVersion(extractedPricing.syntaxVersion ?? extractedPricing.version)
   );
   const latestVersion = _parseToSemver(LATEST_PRICING2YAML_VERSION);
   if (!semver.eq(pricingVersion, latestVersion)) {
-    if (PRICING2YAML_VERSIONS.includes(extractedPricing.version)) {
+    if (PRICING2YAML_VERSIONS.includes(extractedPricing.syntaxVersion ?? extractedPricing.version)) {
       if (useCheckpoints) _performUpdate(extractedPricing, pricingPath);
       else _performUpdate(extractedPricing);
     } else {
@@ -47,10 +47,10 @@ export function update(extractedPricing: any, useCheckpoints: boolean, pricingPa
 }
 
 function _performUpdate(extractedPricing: any, pricingPath?: string): void {
-  const currentVersion = extractedPricing.version;
+  const currentVersion = extractedPricing.syntaxVersion ?? extractedPricing.version;
   const nextVersion = calculateNextVersion(currentVersion);
 
-  const updater = updaters[extractedPricing.version];
+  const updater = updaters[extractedPricing.syntaxVersion ?? extractedPricing.version];
 
   if (updater === null) {
     if (pricingPath !== undefined) writePricingToYaml(extractedPricing, pricingPath);
