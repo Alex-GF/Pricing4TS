@@ -34,7 +34,7 @@ describe('Demo SaaS Parsing Tests', () => {
     assert.equal(pricing.saasName, DEMO_SAAS_NAME);
     // Asserts all global attributes exist
     assert(
-      pricing.version === LATEST_PRICING2YAML_VERSION,
+      pricing.syntaxVersion === LATEST_PRICING2YAML_VERSION,
       'The pricing version must match the latest version'
     );
     assert(
@@ -103,7 +103,7 @@ describe('Demo SaaS Parsing Tests', () => {
     assert.equal(pricing.saasName, DEMO_SAAS_NAME);
     // Asserts all global attributes exist
     assert(
-      pricing.version === LATEST_PRICING2YAML_VERSION,
+      pricing.syntaxVersion === LATEST_PRICING2YAML_VERSION,
       'The pricing version must match the latest version'
     );
     assert(

@@ -1,8 +1,9 @@
 saasName: Box
-version: '2.0'
+syntaxVersion: '2.1'
+version: 2024-7-16
 createdAt: '2024-07-16'
 currency: EUR
-hasAnnualPayment: true
+variables: {}
 features:
   secureStorage:
     description: ''
@@ -63,7 +64,8 @@ features:
     type: INTEGRATION
     integrationType: WEB_SAAS
     pricingURLs:
-      - https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products
+      - >-
+        https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products
   googleWorkspaceIntegration:
     description: ''
     valueType: BOOLEAN
@@ -344,17 +346,17 @@ usageLimits:
 plans:
   BUSINESS_STARTER:
     description: ''
-    monthlyPrice: 8.0
+    monthlyPrice: 8
     annualPrice: 5.5
-    price: 8.0
+    price: 8
     unit: user/month
     features: null
     usageLimits: null
   BUSINESS:
     description: ''
-    monthlyPrice: 18.0
+    monthlyPrice: 18
     annualPrice: 13.5
-    price: 18.0
+    price: 18
     unit: user/month
     features:
       industryAppsIntegration:
@@ -394,9 +396,9 @@ plans:
         value: 100
   BUSINESS_PLUS:
     description: ''
-    monthlyPrice: 30.0
+    monthlyPrice: 30
     annualPrice: 22.5
-    price: 30.0
+    price: 30
     unit: user/month
     features:
       industryAppsIntegration:
@@ -464,9 +466,9 @@ plans:
         value: 150
   ENTERPRISE:
     description: ''
-    monthlyPrice: 42.0
+    monthlyPrice: 42
     annualPrice: 31.5
-    price: 42.0
+    price: 42
     unit: user/month
     features:
       industryAppsIntegration:

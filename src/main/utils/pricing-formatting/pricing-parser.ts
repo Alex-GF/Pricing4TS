@@ -37,6 +37,7 @@ import {
   validateValue,
   validateValueType,
   validateVariables,
+  validateSyntaxVersion,
   validateVersion,
 } from '../pricing-validators';
 
@@ -97,10 +98,11 @@ export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
 // --------- PRICING ELEMENTS FORMATTERS ---------
 
 function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Pricing): void {
-  pricing.version = validateVersion(extractedPricing.version); // Assumes that the version has been processed to be the last one
+  pricing.syntaxVersion = validateSyntaxVersion(extractedPricing.syntaxVersion); // Assumes that the version has been processed to be the last one
   pricing.saasName = validateName(extractedPricing.saasName, 'SaaS');
   pricing.url = validateUrl(extractedPricing.url);
   pricing.createdAt = validateCreatedAt(extractedPricing.createdAt);
+  pricing.version = validateVersion(extractedPricing.version, pricing.createdAt); // Assumes that the version has been processed to be the last one
   pricing.currency = validateCurrency(extractedPricing.currency);
   pricing.billing = validateBilling(extractedPricing.billing);
   pricing.variables = validateVariables(extractedPricing.variables);
