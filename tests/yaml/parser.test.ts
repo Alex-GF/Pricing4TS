@@ -40,7 +40,7 @@ describe("Positive Pricing2Yaml Parser Tests", () => {
                     const pricing: Pricing = retrievePricingFromPath(tempPricingPath);
     
                     assert.equal(pricing.saasName, expected);
-                    assert.equal(pricing.version, LATEST_PRICING2YAML_VERSION);
+                    assert.equal(pricing.syntaxVersion, LATEST_PRICING2YAML_VERSION);
                     assert(pricing.createdAt instanceof Date);
                 });
             }}

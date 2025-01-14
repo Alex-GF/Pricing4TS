@@ -1,8 +1,9 @@
 saasName: Zoom
-version: "2.0"
-createdAt: 2024-11-04
+syntaxVersion: '2.1'
+version: 2024-11-4
+createdAt: '2024-11-04'
 currency: USD
-hasAnnualPayment: false
+variables: {}
 features:
   meetings:
     valueType: BOOLEAN
@@ -77,7 +78,7 @@ usageLimits:
 plans:
   BASIC:
     description: Basic plan
-    price: 0.0
+    price: 0
     unit: user/month
     features: null
     usageLimits: null
@@ -129,7 +130,7 @@ addOns:
       - BASIC
       - PRO
       - BUSINESS
-    price: 50.00
+    price: 50
     unit: /month
     usageLimits:
       maxAssistantsPerMeeting:
@@ -139,7 +140,7 @@ addOns:
       - BASIC
       - PRO
       - BUSINESS
-    price: 5.00
+    price: 5
     unit: /month
     features:
       translatedCaptions:
@@ -148,7 +149,7 @@ addOns:
     availableFor:
       - PRO
       - BUSINESS
-    price: 100.00
+    price: 100
     unit: /month
     features:
       phoneDialing:

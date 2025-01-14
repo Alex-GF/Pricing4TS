@@ -5,6 +5,7 @@ import { AddOn } from './addon';
 
 export interface Pricing {
     saasName: string;
+    syntaxVersion: string;
     version: string;
     url?: string;
     createdAt: Date;
@@ -18,8 +19,8 @@ export interface Pricing {
     addOns?: Record<string, AddOn>;
 }
 
-export interface ExtractedPricing extends Omit<Pricing, 'version' | 'createdAt'> {
-    version: string;
+export interface ExtractedPricing extends Omit<Pricing, 'syntaxVersion' | 'createdAt'> {
+    syntaxVersion: string;
     createdAt: string | Date;
 }
 
@@ -31,7 +32,8 @@ export interface PricingToBeWritten extends Omit<Pricing, 'createdAt' | 'feature
 export function generateEmptyPricing(): Pricing {
     return {
         saasName: "",
-        version: "0.0",
+        syntaxVersion: "0.0",
+        version: "",
         url: "",
         createdAt: new Date(),
         currency: "",
@@ -50,7 +52,8 @@ export function generateEmptyPricing(): Pricing {
 export function generatePricingToBeWritten(): PricingToBeWritten {
     return {
         saasName: "",
-        version: "0.0",
+        syntaxVersion: "0.0",
+        version: "",
         url: "",
         createdAt: "",
         currency: "",
