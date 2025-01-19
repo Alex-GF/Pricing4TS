@@ -66,3 +66,6 @@ Given plan with string private should throw an error,tests/resources/pricing/neg
 Given add-on with boolean string private should throw an error,tests/resources/pricing/negative/addOn/private/boolean-string-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: true
 Given add-on with number private should throw an error,tests/resources/pricing/negative/addOn/private/number-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: 123
 Given add-on with string private should throw an error,tests/resources/pricing/negative/addOn/private/string-private.yml,Error parsing addon addon1. Error: The private field must be a boolean. Received: test
+---------- addons ----------,-,-
+Given empty add-on should throw an error,tests/resources/pricing/negative/addOn/empty-addon.yml,"Error parsing addon emptyAddon. Error: An add-on cannot be empty. It must have at least one feature, usage limit or usage limit extension"
+Given add-on with bad written usageLimitsExtensions should throw an error,tests/resources/pricing/negative/addOn/bad-written-extensions.yml,"Error parsing addon emptyAddon. Error: An add-on cannot be empty. It must have at least one feature, usage limit or usage limit extension"
