@@ -241,6 +241,11 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
     } else {
       addon.usageLimitsExtensions = {};
     }
+
+    if (Object.keys(addon.features).length === 0 && Object.keys(addon.usageLimits).length === 0 && Object.keys(addon.usageLimitsExtensions).length === 0) {
+      throw new Error('An add-on cannot be empty. It must have at least one feature, usage limit or usage limit extension');
+    }
+
   } catch (err) {
     throw new Error(`Error parsing addon ${addon.name}. Error: ${(err as Error).message}`);
   }
