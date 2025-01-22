@@ -13,7 +13,7 @@ export { retrievePricingFromPath, writePricingToYaml } from './utils/yaml-utils'
 
 export { checkFeature } from './middleware/feature-checker';
 
-export { generateUserPricingToken } from './utils/pricing-evaluator';
+export { generateUserPricingToken, evaluateFeature } from './utils/pricing-evaluator';
 
 export { PricingJwtUtils } from './utils/pricing-jwt-utils';
 

@@ -11,20 +11,21 @@ export interface FeatureStatus {
   limit: string | number | boolean | null;
 }
 
-export type ContextToEval = Record<"features" | "usageLimits", Record<string, string | boolean | number | PaymentType[]>>
+export type ContextToEval = Record<
+  'features' | 'usageLimits',
+  Record<string, string | boolean | number | PaymentType[]>
+>;
 
 export function generateUserPricingToken() {
   const pricingContext: PricingContext = PricingContextManager.getContext();
   const claims: any = {};
 
   let subject = 'Default';
-  
+
   const userContext: Record<string, any> = pricingContext.getUserContext();
 
   if (userContext.username || userContext.user) {
-    subject = String(
-      userContext.username ?? userContext.user
-    );
+    subject = String(userContext.username ?? userContext.user);
   }
 
   claims.sub = subject;
@@ -70,13 +71,13 @@ export function generateUserPricingToken() {
  *          in the "eval" attribute of the specified feature.
  */
 export function addExpressionToToken(token: string, featureId: string, expression: string) {
-
-  const tokenFeatures: Record<string, FeatureStatus> = PricingJwtUtils.getFeaturesFromJwtToken(token);
+  const tokenFeatures: Record<string, FeatureStatus> =
+    PricingJwtUtils.getFeaturesFromJwtToken(token);
 
   try {
-      tokenFeatures[featureId].eval = expression;
+    tokenFeatures[featureId].eval = expression;
   } catch (e) {
-      console.error("[ERROR] Feature not found while trying to add expression to token!");
+    console.error('[ERROR] Feature not found while trying to add expression to token!');
   }
 
   return PricingJwtUtils.updateTokenFeatures(token, tokenFeatures);
@@ -88,68 +89,30 @@ function computeFeatureStatuses(
 ): Record<string, FeatureStatus> {
   const featureStatuses: Record<string, FeatureStatus> = {};
 
+  const planContext: ContextToEval =
+    extractContextToEvalFromSubscriptionContext(subscriptionContext); // This is defined in order to perform the "eval"
+
   for (const feature of Object.values(subscriptionContext.features) as Feature[]) {
-    const featureExpression: string | undefined = feature.serverExpression ?? feature.expression;
-
-    if (!featureExpression) {
-      console.warn(`[WARNING] Feature ${feature.name} has no expression defined!`);
-      featureStatuses[feature.name] = {
-        eval: false,
-        used: null,
-        limit: null,
-      };
-      continue;
-    } else {
-
-      const planContext: ContextToEval = extractContextToEvalFromSubscriptionContext(subscriptionContext); // This is defined in order to perform the "eval"
-
-      const evalResult: Boolean = eval(featureExpression);
-
-      if (typeof evalResult !== 'boolean') {
-        console.warn(
-          `[WARNING] Feature ${feature.name} has an expression that does not return a boolean!`
-        );
-        featureStatuses[feature.name] = {
-          eval: false,
-          used: null,
-          limit: null,
-        };
-        continue;
-      } else {
-        if (evalResult !== null && evalResult !== undefined) {
-          const numericLimitsOfSelectedFeature: UsageLimit[] = (
-            Object.values(subscriptionContext.usageLimits) as UsageLimit[]
-          ).filter(u => u.linkedFeatures?.includes(feature.name) && u.valueType === 'NUMERIC');
-
-          const shouldLimitAppearInToken: boolean = numericLimitsOfSelectedFeature.length === 1;
-
-          featureStatuses[feature.name] = {
-            eval: evalResult,
-            used: shouldLimitAppearInToken ? userContext[feature.name] ?? null : null,
-            limit: shouldLimitAppearInToken
-              ? numericLimitsOfSelectedFeature[0].value ??
-                numericLimitsOfSelectedFeature[0].defaultValue
-              : null,
-          };
-        } else {
-          featureStatuses[feature.name] = {
-            eval: false,
-            used: null,
-            limit: null,
-          };
-        }
-      }
-    }
+    featureStatuses[feature.name] = evaluateFeature(
+      feature,
+      subscriptionContext,
+      userContext,
+      planContext
+    );
   }
 
   return featureStatuses;
 }
 
-export function extractContextToEvalFromSubscriptionContext(subscriptionContext: SubscriptionContext): ContextToEval{
-  const subscriptionContextFeatures: Record<string, Feature> = subscriptionContext.features as Record<string, Feature>;
-  const subscriptionContextUsageLimits: Record<string, UsageLimit> = subscriptionContext.usageLimits as Record<string, UsageLimit>;
+export function extractContextToEvalFromSubscriptionContext(
+  subscriptionContext: SubscriptionContext
+): ContextToEval {
+  const subscriptionContextFeatures: Record<string, Feature> =
+    subscriptionContext.features as Record<string, Feature>;
+  const subscriptionContextUsageLimits: Record<string, UsageLimit> =
+    subscriptionContext.usageLimits as Record<string, UsageLimit>;
 
-  const contextToEval: ContextToEval = {features: {}, usageLimits: {}};
+  const contextToEval: ContextToEval = { features: {}, usageLimits: {} };
 
   for (const feature of Object.values(subscriptionContextFeatures) as Feature[]) {
     contextToEval.features[feature.name] = feature.value ?? feature.defaultValue;
@@ -160,4 +123,75 @@ export function extractContextToEvalFromSubscriptionContext(subscriptionContext:
   }
 
   return contextToEval;
+}
+
+export function evaluateFeature(
+  feature: Feature | string,
+  subscriptionContext: SubscriptionContext | undefined = undefined,
+  userContext: Record<string, any> | undefined = undefined,
+  planContext: ContextToEval | undefined = undefined
+): FeatureStatus {
+  const pricingContext = PricingContextManager.getContext();
+
+  if (typeof feature === 'string') {
+    feature = pricingContext.getPricing().features[feature] as Feature;
+  }
+
+  const featureExpression: string | undefined = feature.serverExpression ?? feature.expression;
+
+  if (!featureExpression) {
+    console.warn(`[WARNING] Feature ${feature.name} has no expression defined!`);
+    return {
+      eval: false,
+      used: null,
+      limit: null,
+    };
+  } else {
+    if (!subscriptionContext) {
+      subscriptionContext = pricingContext.getPlanContext();
+    }
+
+    if (!userContext) {
+      userContext = pricingContext.getUserContext();
+    }
+
+    if (!planContext) {
+      planContext = extractContextToEvalFromSubscriptionContext(subscriptionContext);
+    }
+    const evalResult: Boolean = eval(featureExpression);
+
+    if (typeof evalResult !== 'boolean') {
+      console.warn(
+        `[WARNING] Feature ${feature.name} has an expression that does not return a boolean!`
+      );
+      return {
+        eval: false,
+        used: null,
+        limit: null,
+      };
+    } else {
+      if (evalResult !== null && evalResult !== undefined) {
+        const numericLimitsOfSelectedFeature: UsageLimit[] = (
+          Object.values(subscriptionContext.usageLimits) as UsageLimit[]
+        ).filter(u => u.linkedFeatures?.includes(feature.name) && u.valueType === 'NUMERIC');
+
+        const shouldLimitAppearInToken: boolean = numericLimitsOfSelectedFeature.length === 1;
+
+        return {
+          eval: evalResult,
+          used: shouldLimitAppearInToken ? userContext[feature.name] ?? null : null,
+          limit: shouldLimitAppearInToken
+            ? numericLimitsOfSelectedFeature[0].value ??
+              numericLimitsOfSelectedFeature[0].defaultValue
+            : null,
+        };
+      } else {
+        return {
+          eval: false,
+          used: null,
+          limit: null,
+        };
+      }
+    }
+  }
 }
