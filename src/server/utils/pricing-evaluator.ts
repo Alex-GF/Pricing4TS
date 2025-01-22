@@ -11,6 +11,13 @@ export interface FeatureStatus {
   limit: string | number | boolean | null;
 }
 
+export interface ExtendedFeatureStatus extends FeatureStatus{
+  error: {
+    code: string;
+    message: string;
+  } | null;
+}
+
 export type ContextToEval = Record<
   'features' | 'usageLimits',
   Record<string, string | boolean | number | PaymentType[]>
@@ -93,12 +100,14 @@ function computeFeatureStatuses(
     extractContextToEvalFromSubscriptionContext(subscriptionContext); // This is defined in order to perform the "eval"
 
   for (const feature of Object.values(subscriptionContext.features) as Feature[]) {
-    featureStatuses[feature.name] = evaluateFeature(
+    const { error, ...featureStatusWithoutError }: ExtendedFeatureStatus = evaluateFeature(
       feature,
       subscriptionContext,
       userContext,
       planContext
     );
+    
+    featureStatuses[feature.name] = featureStatusWithoutError;
   }
 
   return featureStatuses;
@@ -130,12 +139,26 @@ export function evaluateFeature(
   subscriptionContext: SubscriptionContext | undefined = undefined,
   userContext: Record<string, any> | undefined = undefined,
   planContext: ContextToEval | undefined = undefined
-): FeatureStatus {
+): ExtendedFeatureStatus {
   const pricingContext = PricingContextManager.getContext();
 
   if (typeof feature === 'string') {
     feature = pricingContext.getPricing().features[feature] as Feature;
+    
+    if (!feature) {
+      console.warn(`[WARNING] Feature ${feature} not found!`);
+      return {
+        eval: false,
+        used: null,
+        limit: null,
+        error: {
+          code: 'FLAG_NOT_FOUND',
+          message: `Feature ${feature} is not present in the pricing`,
+        }
+      };
+    }
   }
+
 
   const featureExpression: string | undefined = feature.serverExpression ?? feature.expression;
 
@@ -145,6 +168,10 @@ export function evaluateFeature(
       eval: false,
       used: null,
       limit: null,
+      error: {
+        code: 'PARSE_ERROR',
+        message: `Feature ${feature.name} has no expression defined!`,
+      }
     };
   } else {
     if (!subscriptionContext) {
@@ -168,6 +195,10 @@ export function evaluateFeature(
         eval: false,
         used: null,
         limit: null,
+        error: {
+          code: 'TYPE_MISMATCH',
+          message: `Feature ${feature.name} has an expression that does not return a boolean!`,
+        }
       };
     } else {
       if (evalResult !== null && evalResult !== undefined) {
@@ -184,12 +215,17 @@ export function evaluateFeature(
             ? numericLimitsOfSelectedFeature[0].value ??
               numericLimitsOfSelectedFeature[0].defaultValue
             : null,
+          error: null,
         };
       } else {
         return {
           eval: false,
           used: null,
           limit: null,
+          error: {
+            code: 'GENERAL',
+            message: `Error while evaluating expression for feature ${feature.name}. The returned expression is null or undefined`,
+          }
         };
       }
     }

@@ -1,4 +1,5 @@
 import { evaluateFeature, PricingContext, PricingContextManager } from "../../src/server/server";
+import { ExtendedFeatureStatus } from "../../src/server/utils/pricing-evaluator";
 
 export class PricingContextImpl extends PricingContext {
   
@@ -65,5 +66,10 @@ describe('check single feature evaluation', () => {
     it('should evaluate petclinic\'s \'consultations\' feature as false', () => {
         const evaluationResult = evaluateFeature('consultations');
         expect(evaluationResult.eval).toBe(false);
+    });
+
+    it('given a feature that does not exist, should throw an error', () => {
+      const evaluationResult: ExtendedFeatureStatus = evaluateFeature('non-existing-feature');
+      expect(evaluationResult.error?.code).toBe("FLAG_NOT_FOUND");
     });
 });
