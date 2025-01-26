@@ -1,3 +1,4 @@
+import { NodePricingDrivenFeaturesProvider } from './provider/OpenFeatureProvider';
 import PricingService from './services/pricing.service';
 
 export { PricingContextManager } from './configuration/PricingContextManager';
@@ -20,3 +21,5 @@ export { PricingJwtUtils } from './utils/pricing-jwt-utils';
 export { PricingAware } from './decorators/PricingAware';
 
 export { PricingContext } from './configuration/PricingContext';
+
+export { NodePricingDrivenFeaturesProvider } from './provider/OpenFeatureProvider';
