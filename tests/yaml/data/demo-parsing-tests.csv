@@ -1,3 +1,4 @@
 testName,pricingPath,expected
 ---------- Demo Pricings ----------,-,-
 PetClinic,tests/resources/pricing/full/petclinic.yml,PetClinic
+Box2021,tests/resources/pricing/full/2021/box.yml,Box
