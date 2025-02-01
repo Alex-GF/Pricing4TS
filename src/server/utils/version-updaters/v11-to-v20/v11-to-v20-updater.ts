@@ -28,7 +28,11 @@ function _updatePrices(extractedPricing: any): void {
             if (plan.monthlyPrice && plan.annualPrice){
                 plan.price = plan.monthlyPrice;
                 const annualBillingCoef = _computeAnnualBillingCoef(plan.monthlyPrice, plan.annualPrice);
-                extractedPricing.billing = {"monthly": 1, "annual": annualBillingCoef, ...extractedPricing.billing}; 
+                if (Number.isNaN(annualBillingCoef)){
+                    extractedPricing.billing = {"monthly": 1, ...extractedPricing.billing}; 
+                }else{
+                    extractedPricing.billing = {"monthly": 1, "annual": annualBillingCoef, ...extractedPricing.billing}; 
+                }
             }else if (plan.monthlyPrice === null || plan.monthlyPrice === undefined) {
                 plan.price = plan.annualPrice;
                 extractedPricing.billing = {"annual": 1, ...extractedPricing.billing};
@@ -76,7 +80,11 @@ function _updatePrices(extractedPricing: any): void {
 function _computeAnnualBillingCoef(monthlyPrice: any, annualPrice: any): number {
     
     if (typeof monthlyPrice !== "number" || typeof annualPrice !== "number") {
-        throw new Error("Monthly and annual prices of plans must be numbers");
+        if(typeof monthlyPrice === "string" && typeof annualPrice === "string"){
+            return NaN;
+        }else{
+            throw new Error("Monthly and annual prices of plans must be numbers");
+        }
     }
 
     let annualBillingCoef = 0;
