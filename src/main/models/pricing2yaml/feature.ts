@@ -14,6 +14,8 @@ export interface Feature {
   serverExpression?: string;
   type: FeatureType;
   integrationType?: IntegrationType;
+  pricingUrls?: string[];
+  docUrl?: string;
   automationType?: AutomationType;
   render: RenderMode;
 }
