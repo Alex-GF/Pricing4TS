@@ -37,7 +37,7 @@ Given string in plans should throw an error,tests/resources/pricing/negative/pla
 ---------- saasName ----------,-,-
 Given pricing with no saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-no-name.yml,The SaaS must have a name
 Given pricing with null saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-null-name.yml,The SaaS must have a name
-Given pricing with very long saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-long-name.yml,The SaaS name must have at most 50 characters
+Given pricing with very long saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-long-name.yml,The SaaS name must have at most 255 characters
 Given pricing with very short saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-short-name.yml,The SaaS name must have at least 3 characters
 Given pricing with empty saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-empty-name.yml,The SaaS name must not be empty
 Given pricing with invalid saasName should throw an error,tests/resources/pricing/negative/saasName/pricing-invalid-name.yml,The SaaS name must be a string
