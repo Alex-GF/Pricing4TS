@@ -32,8 +32,8 @@ export function validateName(name: string | null, item: string): string {
     throw new Error(`The ${item} name must have at least 3 characters`);
   }
 
-  if (trimmedName.length > 50) {
-    throw new Error(`The ${item} name must have at most 50 characters`);
+  if (trimmedName.length > 255) {
+    throw new Error(`The ${item} name must have at most 255 characters`);
   }
 
   return trimmedName;
