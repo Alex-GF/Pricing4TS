@@ -2,7 +2,12 @@ import type { AddOn } from '../models/pricing2yaml/addon';
 import type { AutomationType, Feature, IntegrationType, PaymentType } from '../../types';
 import type { Plan } from '../models/pricing2yaml/plan';
 import type { Pricing } from '../models/pricing2yaml/pricing';
-import type { FeatureType, RenderMode, UsageLimitType, ValueType } from '../models/pricing2yaml/types';
+import type {
+  FeatureType,
+  RenderMode,
+  UsageLimitType,
+  ValueType,
+} from '../models/pricing2yaml/types';
 import type { ContainerUsageLimits, UsageLimit } from '../models/pricing2yaml/usage-limit';
 import * as cc from 'currency-codes';
 
@@ -311,25 +316,31 @@ export function validateFeatureType(type: string | null | undefined): FeatureTyp
   return type as FeatureType;
 }
 
-export function validateFeatureIntegrationType(integrationType: IntegrationType | null | undefined){
+export function validateFeatureIntegrationType(
+  integrationType: IntegrationType | null | undefined
+) {
   if (integrationType === null || integrationType === undefined) {
     integrationType = undefined;
   }
 
   if (integrationType && typeof integrationType !== 'string') {
-    throw new Error(`The integrationType field of a feature must be an IntegrationType ('API' | 'EXTENSION' | 'IDENTITY_PROVIDER' | 'WEB_SAAS' | 'MARKETPLACE' | 'EXTERNAL_DEVICE'). Received: ${integrationType}`);
+    throw new Error(
+      `The integrationType field of a feature must be an IntegrationType ('API' | 'EXTENSION' | 'IDENTITY_PROVIDER' | 'WEB_SAAS' | 'MARKETPLACE' | 'EXTERNAL_DEVICE'). Received: ${integrationType}`
+    );
   }
 
   return integrationType;
 }
 
-export function validateFeatureAutomationType(automationType: AutomationType | null | undefined){
+export function validateFeatureAutomationType(automationType: AutomationType | null | undefined) {
   if (automationType === null || automationType === undefined) {
     automationType = undefined;
   }
 
   if (automationType && typeof automationType !== 'string') {
-    throw new Error(`The automationType field of a feature must be an AutomationType ('BOT' | 'FILTERING' | 'TRACKING' | 'TASK_AUTOMATION'). Received: ${automationType}`);
+    throw new Error(
+      `The automationType field of a feature must be an AutomationType ('BOT' | 'FILTERING' | 'TRACKING' | 'TASK_AUTOMATION'). Received: ${automationType}`
+    );
   }
 
   return automationType;
@@ -337,7 +348,7 @@ export function validateFeatureAutomationType(automationType: AutomationType | n
 
 export function validateUnit(unit: string | null | undefined): string {
   if (unit === null || unit === undefined) {
-    unit = "";
+    unit = '';
   }
 
   if (typeof unit !== 'string') {
@@ -381,7 +392,7 @@ export function validateLinkedFeatures(
 
   // Check if linked features is an array
   if (Array.isArray(linkedFeatures)) {
-    const pricingFeatures = Object.values(pricing.features).map((f) => f.name);
+    const pricingFeatures = Object.values(pricing.features).map(f => f.name);
 
     for (const featureName of linkedFeatures) {
       if (!pricingFeatures.includes(featureName)) {
@@ -420,12 +431,12 @@ export function validatePlanFeatures(
 
   for (const planFeature of Object.values(featuresModifiedByPlan)) {
     try {
-      if (!Object.values(planFeatures).some((f) => f.name === planFeature.name)) {
+      if (!Object.values(planFeatures).some(f => f.name === planFeature.name)) {
         throw new Error(`Feature ${planFeature.name} is not defined in the global features.`);
       }
 
       const featureWithDefaultValue = Object.values(plan.features).find(
-        (f) => f.name === planFeature.name
+        f => f.name === planFeature.name
       ) as Feature;
 
       featureWithDefaultValue.value = planFeature.value;
@@ -450,14 +461,14 @@ export function validatePlanUsageLimits(
 
   for (const planUsageLimit of Object.values(usageLimitsModifiedByPlan)) {
     try {
-      if (!Object.values(planUsageLimits).some((l) => l.name === planUsageLimit.name)) {
+      if (!Object.values(planUsageLimits).some(l => l.name === planUsageLimit.name)) {
         throw new Error(
           `Usage limit ${planUsageLimit.name} is not defined in the global usage limits.`
         );
       }
 
       const globalUsageLimit = Object.values(planUsageLimits).find(
-        (l) => l.name === planUsageLimit.name
+        l => l.name === planUsageLimit.name
       ) as UsageLimit;
 
       globalUsageLimit.value = planUsageLimit.value;
@@ -473,7 +484,10 @@ export function validatePlanUsageLimits(
   return plan.usageLimits;
 }
 
-export function validatePrice(price: number | string | undefined | null, variables: {[key: string]: boolean | string | number}): number | string {
+export function validatePrice(
+  price: number | string | undefined | null,
+  variables: { [key: string]: boolean | string | number }
+): number | string {
   if (price === null || price === undefined) {
     throw new Error(
       `The price field must not be null or undefined. Please ensure that the price field is present and it's a number`
@@ -493,20 +507,24 @@ export function validatePrice(price: number | string | undefined | null, variabl
   if (typeof price === 'string') {
     if (price.includes('#')) {
       for (const [variable, value] of Object.entries(variables)) {
-        price = price.replace(`#${variable}`, `${typeof value === "string" ? `'${value}'` : value}`);
+        price = price.replace(
+          `#${variable}`,
+          `${typeof value === 'string' ? `'${value}'` : value}`
+        );
       }
 
       try {
         // eslint-disable-next-line no-eval
         const evaluatedPrice = eval(price);
         if (typeof evaluatedPrice !== 'number' || isNaN(evaluatedPrice)) {
-          throw new Error(`The evaluated price must result in a valid number. Current result after evaluation: ${evaluatedPrice}`);
+          throw new Error(
+            `The evaluated price must result in a valid number. Current result after evaluation: ${evaluatedPrice}`
+          );
         }
         price = evaluatedPrice;
       } catch (err) {
         throw new Error(`Error evaluating the price formula: ${(err as Error).message}`);
       }
-      
     } else if (price.match(/^[0-9]+(\.[0-9]+)?$/)) {
       price = parseFloat(price);
     }
@@ -521,7 +539,7 @@ export function validateAddonFeatures(
 ): Record<string, Feature> {
   for (const addOnFeature of Object.values(addon.features!)) {
     try {
-      if (!Object.values(addOnFeatures).some((f) => f.name === addOnFeature.name)) {
+      if (!Object.values(addOnFeatures).some(f => f.name === addOnFeature.name)) {
         throw new Error(`Feature ${addOnFeature.name} is not defined in the global features.`);
       }
 
@@ -544,13 +562,15 @@ export function validateAddonUsageLimits(
 ): ContainerUsageLimits {
   for (const addonUsageLimit of Object.values(addon.usageLimits!)) {
     try {
-      if (!Object.values(addonUsageLimits).some((l) => l.name === addonUsageLimit.name)) {
+      if (!Object.values(addonUsageLimits).some(l => l.name === addonUsageLimit.name)) {
         throw new Error(
           `Usage limit ${addonUsageLimit.name} is not defined in the global usage limits.`
         );
       }
-      if (!("value" in addonUsageLimit)){
-        throw new Error("When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field")
+      if (!('value' in addonUsageLimit)) {
+        throw new Error(
+          "When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field"
+        );
       }
       addon.usageLimits![addonUsageLimit.name].value = addonUsageLimit.value;
     } catch (err) {
@@ -571,13 +591,15 @@ export function validateAddonUsageLimitsExtensions(
 ): ContainerUsageLimits {
   for (const addonUsageLimitExtension of Object.values(addon.usageLimitsExtensions!)) {
     try {
-      if (!Object.values(addonUsageLimits).some((l) => l.name === addonUsageLimitExtension.name)) {
+      if (!Object.values(addonUsageLimits).some(l => l.name === addonUsageLimitExtension.name)) {
         throw new Error(
           `Usage limit ${addonUsageLimitExtension.name} is not defined in the global usage limits.`
         );
       }
-      if (!("value" in addonUsageLimitExtension)){
-        throw new Error("When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field")
+      if (!('value' in addonUsageLimitExtension)) {
+        throw new Error(
+          "When declaring a new value for an usage limit or a usage limit extension within an add-on, it must be provided through the 'value' field"
+        );
       }
       addon.usageLimitsExtensions![addonUsageLimitExtension.name].value =
         addonUsageLimitExtension.value;
@@ -597,7 +619,7 @@ export function validateAvailableFor(
   availableFor: string[] | undefined | null,
   pricing: Pricing
 ): string[] {
-  const planNames = pricing.plans ? Object.values(pricing.plans).map((p) => p.name) : [];
+  const planNames = pricing.plans ? Object.values(pricing.plans).map(p => p.name) : [];
 
   if (availableFor === null || availableFor === undefined) {
     availableFor = planNames as string[];
@@ -621,9 +643,9 @@ export function validateAvailableFor(
 export function validateDependsOnOrExcludes(
   fieldValue: string[] | undefined | null,
   pricing: Pricing,
-  fieldType: "dependsOn" | "excludes"
+  fieldType: 'dependsOn' | 'excludes'
 ): string[] {
-  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map((a) => a.name) : [];
+  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map(a => a.name) : [];
 
   if (fieldValue === null || fieldValue === undefined) {
     fieldValue = [];
@@ -638,8 +660,11 @@ export function validateDependsOnOrExcludes(
   return fieldValue;
 }
 
-export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined, pricing: Pricing): void {
-  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map((a) => a.name) : [];
+export function postValidateDependsOnOrExclude(
+  fieldValue: string[] | undefined,
+  pricing: Pricing
+): void {
+  const addonNames = pricing.addOns ? Object.values(pricing.addOns).map(a => a.name) : [];
 
   if (!fieldValue) return;
 
@@ -651,12 +676,11 @@ export function postValidateDependsOnOrExclude(fieldValue: string[] | undefined,
 }
 
 export function validateTags(tags: string[] | undefined): string[] {
-  
-  if (tags === null || tags === undefined){
+  if (tags === null || tags === undefined) {
     return [];
   }
-  
-  if (!Array.isArray(tags) || tags.some((tag) => typeof tag !== 'string')) {
+
+  if (!Array.isArray(tags) || tags.some(tag => typeof tag !== 'string')) {
     throw new Error(`The tags field must be an array of strings.`);
   }
 
@@ -664,30 +688,35 @@ export function validateTags(tags: string[] | undefined): string[] {
 }
 
 export function validatePlan(plan: Plan) {
-  if (typeof plan === 'object' && "features" in plan) {
-    return
-  }else{
-    throw new Error(`The plan must be an object of type Plan`)
+  if (typeof plan === 'object' && 'features' in plan) {
+    return;
+  } else {
+    throw new Error(`The plan must be an object of type Plan`);
   }
 }
 
-export function validatePlans(plans: object){
+export function validatePlans(plans: object) {
   if (!(typeof plans === 'object')) {
     throw new Error(`The plans field must be a map of Plan objects`);
   }
 }
 
-export function validateFeatures(features: object){
+export function validateFeatures(features: object) {
   if (!(typeof features === 'object') || features === null || features === undefined) {
     throw new Error(`The features field must be a map of Feature objects`);
   }
 }
 
 export function validateFeature(feature: Feature) {
-  if (typeof feature === 'object' && "type" in feature && "valueType" in feature && "defaultValue" in feature) {
-    return
-  }else{
-    throw new Error(`The feature must be an object of type Feature`)
+  if (
+    typeof feature === 'object' &&
+    'type' in feature &&
+    'valueType' in feature &&
+    'defaultValue' in feature
+  ) {
+    return;
+  } else {
+    throw new Error(`The feature must be an object of type Feature`);
   }
 }
 
@@ -698,21 +727,25 @@ export function validateUsageLimits(usageLimits: object) {
 }
 
 export function validateUsageLimit(usageLimit: UsageLimit) {
-  if (typeof usageLimit === 'object' && "type" in usageLimit && "valueType" in usageLimit && "defaultValue" in usageLimit) {
-    return
-  }else{
-    throw new Error(`The usage limit must be an object of type UsageLimit`)
+  if (
+    typeof usageLimit === 'object' &&
+    'type' in usageLimit &&
+    'valueType' in usageLimit &&
+    'defaultValue' in usageLimit
+  ) {
+    return;
+  } else {
+    throw new Error(`The usage limit must be an object of type UsageLimit`);
   }
 }
 
-export function validateBilling(billing: {[key: string]: number} | undefined){
-  
-  if(billing === undefined || billing === null){
+export function validateBilling(billing: { [key: string]: number } | undefined) {
+  if (billing === undefined || billing === null) {
     billing = {
-      "monthly": 1
-    }
+      monthly: 1,
+    };
   }
-  
+
   if (!(typeof billing === 'object')) {
     throw new Error(`The billing field must be an object of type {[key: string]: number}`);
   }
@@ -723,36 +756,43 @@ export function validateBilling(billing: {[key: string]: number} | undefined){
     }
 
     if (value <= 0 || value > 1) {
-      throw new Error(`The billing entry for ${key} must be a value in the range (0,1]. Received: ${value}`);
+      throw new Error(
+        `The billing entry for ${key} must be a value in the range (0,1]. Received: ${value}`
+      );
     }
   }
 
   return billing;
 }
 
-export function validateVariables(variables: {[key: string]: number | string | boolean} | undefined){
-  
-  if(variables === undefined || variables === null){
-    variables = {}
+export function validateVariables(
+  variables: { [key: string]: number | string | boolean } | undefined
+) {
+  if (variables === undefined || variables === null) {
+    variables = {};
   }
-  
+
   if (typeof variables !== 'object') {
-    throw new Error(`The billing field must be an object of type {[key: string]: number | string | boolean}`);
+    throw new Error(
+      `The billing field must be an object of type {[key: string]: number | string | boolean}`
+    );
   }
 
   for (const [key, value] of Object.entries(variables)) {
     if (typeof value !== 'number' && typeof value !== 'string' && typeof value !== 'boolean') {
-      throw new Error(`The billing entry for ${key} must be either a number, a string or a boolean. Received: ${value}`);
+      throw new Error(
+        `The billing entry for ${key} must be either a number, a string or a boolean. Received: ${value}`
+      );
     }
   }
 
   return variables;
 }
 
-export function validateUrl(url: string | undefined){
+export function validateUrl(url: string | undefined) {
   if (url === undefined || url === null) {
     url = undefined;
-    return
+    return;
   }
 
   if (typeof url !== 'string') {
@@ -761,13 +801,15 @@ export function validateUrl(url: string | undefined){
 
   const urlPattern = /^(https?):\/\/[^\s\/$.?#].[^\s]*$/i;
   if (!urlPattern.test(url)) {
-    throw new Error(`The url field must be a valid URL with the http or https protocol. Received: ${url}`);
+    throw new Error(
+      `The url field must be a valid URL with the http or https protocol. Received: ${url}`
+    );
   }
 
   return url;
 }
 
-export function validatePrivate(isPrivate: boolean | undefined){
+export function validatePrivate(isPrivate: boolean | undefined) {
   if (isPrivate === undefined || isPrivate === null) {
     isPrivate = false;
   }
@@ -777,4 +819,46 @@ export function validatePrivate(isPrivate: boolean | undefined){
   }
 
   return isPrivate;
+}
+
+export function validatePricingUrls(
+  featureType: FeatureType,
+  featureIntegrationType: IntegrationType | undefined,
+  pricingUrls: string[] | undefined
+) {
+  if (pricingUrls === undefined || pricingUrls === null) {
+    pricingUrls = undefined;
+  } else {
+    if (!Array.isArray(pricingUrls) || pricingUrls.some(url => typeof url !== 'string')) {
+      throw new Error(`The pricingUrls field must be an array of strings.`);
+    }
+
+    if (featureType !== 'INTEGRATION' || featureIntegrationType !== 'WEB_SAAS') {
+      console.log(
+        "[WARNING] The pricingUrls field is only valid for features of 'type' INTEGRATION and 'integrationType' WEB_SAAS. The field will be ignored."
+      );
+      pricingUrls = undefined;
+    }
+  }
+
+  return pricingUrls;
+}
+
+export function validateDocUrl(featureType: FeatureType, docUrl: string | undefined) {
+  if (docUrl === undefined || docUrl === null) {
+    docUrl = undefined;
+  } else {
+    if (typeof docUrl !== 'string') {
+      throw new Error(`The docUrl field must be a string.`);
+    }
+
+    if (featureType !== 'GUARANTEE') {
+      console.log(
+        "[WARNING] The docUrl field is only valid for features of 'type' GUARANTEE. The field will be ignored."
+      );
+      docUrl = undefined;
+    }
+  }
+
+  return docUrl;
 }

@@ -39,6 +39,8 @@ import {
   validateVariables,
   validateSyntaxVersion,
   validateVersion,
+  validatePricingUrls,
+  validateDocUrl,
 } from '../pricing-validators';
 
 export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
@@ -123,6 +125,8 @@ function parseFeature(feature: Feature, tags?: string[]): Feature {
     feature.serverExpression = validateExpression(feature.serverExpression, 'serverExpression');
     feature.type = validateFeatureType(feature.type);
     feature.integrationType = validateFeatureIntegrationType(feature.integrationType);
+    feature.pricingUrls = validatePricingUrls(feature.type, feature.integrationType, feature.pricingUrls);
+    feature.docUrl = validateDocUrl(feature.type, feature.docUrl);
     feature.automationType = validateFeatureAutomationType(feature.automationType);
     feature.render = validateRenderMode(feature.render);
     feature.tag = validateTag(feature.tag, tags);
