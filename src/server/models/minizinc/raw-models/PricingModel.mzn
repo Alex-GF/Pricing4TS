@@ -75,8 +75,8 @@ constraint
 constraint 
   if num_plans > 0 /\ num_usage_limits > 0 
     then assert(forall(i in PLANS, j in USAGE_LIMITS)(
-      plans_usage_limits[i,j] >= 0
-    ), "Invalid datafile. All usage limits values must be positive")
+      plans_usage_limits[i,j] >= -1
+    ), "Invalid datafile. All usage limits values must be greater or equal to -1, with -1 indicating a false BOOLEAN usage limit.")
   endif;
 
 constraint
