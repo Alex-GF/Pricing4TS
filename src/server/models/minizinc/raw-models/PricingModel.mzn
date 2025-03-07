@@ -22,6 +22,7 @@ set of int: ADDONS = index_set(addons);
 
 array[PLANS] of float: plans_prices; % The position i indicates the price of a plan.
 array[ADDONS] of float: addons_prices; % The position i indicates the price of an add-on.
+array[USAGE_LIMITS] of int: boolean_usage_limits; % The position i indicates wether the usage limit i is a boolean usage limit or not.
 
 array[PLANS, FEATURES] of int: plans_features; % The position (i,j) indicates wether the plan i includes the feature j
 array[PLANS, USAGE_LIMITS] of float: plans_usage_limits; % The position (i,j) indicates the value of the usage limit j in the plan i.

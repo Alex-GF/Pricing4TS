@@ -22,6 +22,7 @@ export enum DZNKeywords {
   AddOns = 'addons',
   PlansPrices = 'plans_prices',
   AddOnsPrices = 'addons_prices',
+  BooleanUsageLimits = 'boolean_usage_limits',
   PlansFeatures = 'plans_features',
   PlansUsageLimits = 'plans_usage_limits',
   LinkedFeatures = 'linked_features',

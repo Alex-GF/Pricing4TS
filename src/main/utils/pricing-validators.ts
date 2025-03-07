@@ -12,6 +12,7 @@ import type { ContainerUsageLimits, UsageLimit } from '../models/pricing2yaml/us
 import * as cc from 'currency-codes';
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
+const unlimitedValue = 100000000;
 
 export function validateName(name: string | null, item: string): string {
   if (name === null || name === undefined) {
@@ -169,6 +170,9 @@ export function validateDefaultValue(
           `The defaultValue field of a ${item} must be a number when its valueType is NUMERIC. Received: ${elem.defaultValue}`
         );
       }
+      if (elem.defaultValue > unlimitedValue){
+        elem.defaultValue = unlimitedValue;
+      }
       break;
     case 'BOOLEAN':
       if (typeof elem.defaultValue !== 'boolean') {
@@ -241,6 +245,9 @@ export function validateValue(
         throw new Error(
           `The value field of a ${item} must be a number when its valueType is NUMERIC. Received: ${elem.value}`
         );
+      }
+      if (elem.value! > unlimitedValue){
+        elem.value = unlimitedValue;
       }
       break;
     case 'BOOLEAN':
