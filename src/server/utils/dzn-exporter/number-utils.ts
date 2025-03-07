@@ -16,9 +16,9 @@ export function calculateOverriddenRow(items: Record<string, Feature | UsageLimi
   for (const item of Object.values(items)) {
     let value;
 
-    if (item.valueType === 'NUMERIC' && item.value) {
+    if (item.valueType === 'NUMERIC' && item.value !== undefined && item.value !== null) {
       value = (item.value as number) > unlimitedValue ? unlimitedValue : item.value as number;
-    } else if (item.valueType === 'NUMERIC' && item.defaultValue) {
+    } else if (item.valueType === 'NUMERIC' && item.defaultValue !== undefined && item.defaultValue !== null) {
       value = (item.defaultValue as number) > unlimitedValue ? unlimitedValue : item.defaultValue as number;
     } else if (item.valueType === 'BOOLEAN' && item.value !== undefined && item.value !== null) {
       value = item.value ? 1 : 0;
