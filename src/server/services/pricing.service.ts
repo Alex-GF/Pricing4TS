@@ -105,10 +105,6 @@ export default class PricingService {
       const minSubscriptionPrice: number = configurationSpaceSize !== 0 ? minSubscriptionPriceResult.solution!.output.json!["subscription_cost"] : null;
       const maxSubscriptionPrice: number = configurationSpaceSize !== 0 ? maxSubscriptionPriceResult.solution!.output.json!["subscription_cost"] : null;
       
-      console.log(configurationSpaceSize)
-      console.log(minSubscriptionPrice)
-      console.log(maxSubscriptionPrice)
-      
       return {
         numberOfFeatures: numberOfFeatures,
         numberOfInformationFeatures: numberOfInformationFeatures,

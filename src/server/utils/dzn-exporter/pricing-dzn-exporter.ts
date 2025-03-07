@@ -67,7 +67,6 @@ export function pricing2DZN(pricing: Pricing): string {
 
   const pricesChunk = generatePricesChunk(pricing.plans, pricing.addOns);
   const booleanUsageLimitsChunk = generateBooleanUsageLimitsChunk(pricing.usageLimits);
-  console.log(booleanUsageLimitsChunk);
   const planChunks = generatePlanChunks(pricing.usageLimits || {}, pricing.plans);
 
   const linkedFeatures = generateLinkedFeaturesMatrix(pricing);
