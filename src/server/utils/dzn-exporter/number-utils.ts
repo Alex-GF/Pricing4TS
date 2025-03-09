@@ -2,6 +2,13 @@ import { Feature, UsageLimit } from '../../../types';
 
 const unlimitedValue = 100000000;
 
+export function isUsagelimit(item: Feature | UsageLimit){
+  
+  const usageLimitTypes = ['non_renewable', 'renewable', 'time_driven', 'response_driven']
+  
+  return usageLimitTypes.includes(item.type.toLowerCase());
+}
+
 export function calculateOverriddenRow(items: Record<string, Feature | UsageLimit>): number[] {
   const values = [];
   const defaultValue = 0;
@@ -9,17 +16,19 @@ export function calculateOverriddenRow(items: Record<string, Feature | UsageLimi
   for (const item of Object.values(items)) {
     let value;
 
-    if (item.valueType === 'NUMERIC' && item.value) {
+    if (item.valueType === 'NUMERIC' && item.value !== undefined && item.value !== null) {
       value = (item.value as number) > unlimitedValue ? unlimitedValue : item.value as number;
-    } else if (item.valueType === 'NUMERIC' && item.defaultValue) {
+    } else if (item.valueType === 'NUMERIC' && item.defaultValue !== undefined && item.defaultValue !== null) {
       value = (item.defaultValue as number) > unlimitedValue ? unlimitedValue : item.defaultValue as number;
-    } else if (item.valueType === 'BOOLEAN' && item.value) {
+    } else if (item.valueType === 'BOOLEAN' && item.value !== undefined && item.value !== null) {
       value = item.value ? 1 : 0;
-    } else if (item.valueType === 'BOOLEAN' && item.defaultValue) {
+    } else if (item.valueType === 'BOOLEAN' && item.defaultValue !== undefined && item.defaultValue !== null) {
       value = item.defaultValue ? 1 : 0;
-    } else if (item.valueType === 'TEXT') {
-      value = 1;
-    } else {
+    } else if (item.valueType === 'TEXT' && item.value) {
+      value = item.value.toString().length > 0 ? 1 : 0;
+    } else if (item.valueType === 'TEXT' && item.defaultValue) {
+      value = item.defaultValue.toString().length > 0 ? 1 : 0;;
+    }else {
       value = defaultValue;
     }
     values.push(value);

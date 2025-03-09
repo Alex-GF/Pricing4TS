@@ -14,6 +14,14 @@ export interface PricingAnalytics {
   maxSubscriptionPrice: number;
 }
 
+export interface AnalyticsOptions {
+  printDzn: boolean;
+}
+
+const defaultAnalyticsOptions: AnalyticsOptions = {
+  printDzn: false
+}
+
 export default class PricingService {
 
   private readonly pricing: Pricing;
@@ -28,11 +36,21 @@ export default class PricingService {
     return model.runPricingOperation(pricingOperation, dznPricing);
   }
 
-  async getAnalytics() {
+  async getAnalytics(analyticsOptions?: AnalyticsOptions) {
+
+    if (!analyticsOptions){
+      analyticsOptions = defaultAnalyticsOptions;
+    }else{
+      analyticsOptions = {...defaultAnalyticsOptions, ...analyticsOptions};
+    }
 
     try{
 
       const dznPricing = pricing2DZN(this.pricing);
+
+      if (analyticsOptions.printDzn){
+        console.log(dznPricing);
+      }
 
       // Run the Minizinc models for needed anayltics
       const [configurationSpaceResult, minSubscriptionPriceResult, maxSubscriptionPriceResult] = await Promise.all([

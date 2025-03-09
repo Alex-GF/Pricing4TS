@@ -66,11 +66,12 @@ export function pricing2DZN(pricing: Pricing): string {
   const namesBlock = generateChunkBlock(namesChunks);
 
   const pricesChunk = generatePricesChunk(pricing.plans, pricing.addOns);
+  const booleanUsageLimitsChunk = generateBooleanUsageLimitsChunk(pricing.usageLimits);
   const planChunks = generatePlanChunks(pricing.usageLimits || {}, pricing.plans);
 
   const linkedFeatures = generateLinkedFeaturesMatrix(pricing);
   const addOnsChunks = generateAddOnsChunks(pricing);
-  return [variablesBlock, namesBlock, pricesChunk, linkedFeatures, planChunks, addOnsChunks].join(
+  return [variablesBlock, namesBlock, pricesChunk, booleanUsageLimitsChunk, linkedFeatures, planChunks, addOnsChunks].join(
     EOL
   );
 }
@@ -94,6 +95,24 @@ function generatePricesChunk(plans?: Record<string, Plan>, addOns?: Record<strin
   ];
 
   return generateChunkBlock(pricesChunks);
+}
+
+function generateBooleanUsageLimitsChunk(usageLimits?: Record<string, UsageLimit> | undefined): string {
+  
+  if (!usageLimits){
+    return '';
+  }
+  
+  const booleanUsageLimits = Object.values(usageLimits).map(ul => ul.valueType === 'BOOLEAN' ? 1 : 0);
+
+  const booleanUsageLimitsChunks: Chunk[] = [
+    {
+      left: DZNKeywords.BooleanUsageLimits,
+      value: JSON.stringify(booleanUsageLimits),
+    },
+  ];
+
+  return generateChunkBlock(booleanUsageLimitsChunks);
 }
 
 function generatePlanChunks(usageLimits: Record<string, UsageLimit>, plans?: Record<string, Plan>): string {
