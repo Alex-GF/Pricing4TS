@@ -13,7 +13,7 @@ constraint
       if sum(k in USAGE_LIMITS)(linked_features[k,j] == 1 /\ plans_features[i,j] == 1) > 0 % If there is at least one usage limit linked to feature j, which is included in plan i
         then sum(k in USAGE_LIMITS)(linked_features[k,j] == 1 /\ (plans_usage_limits[i,k] > 0 \/ boolean_usage_limits[k] == 1)) > 0 % Then, at least one of those usage limits must have a value greater than 0.
       endif
-    ), "Invalid datafile. At least one usage limit linked to a feature in a plan must have a value > 0")
+    ), "InvalidUsageLimitValueError: At least one usage limit linked to a feature in a plan must have a value > 0")
   endif;
 
 % C3: If an usage limit has a value > 0 in a plan, at least one of its linked features must be available for such plan.
