@@ -4,6 +4,7 @@ import { pricing2DZN } from '../utils/dzn-exporter/pricing-dzn-exporter';
 import { PricingOperation } from '../models/minizinc/minizinc';
 import { ErrorMessage } from 'minizinc';
 import { CspSolution } from '../types';
+import { explain } from '../utils/minizinc-explanator';
 
 export interface PricingAnalytics {
   numberOfFeatures: number;
@@ -89,7 +90,7 @@ export default class PricingService {
         this._getMinSubscriptionPrice(dznPricing),
         this._getMaxSubscriptionPrice(dznPricing)
       ]).catch(e => {
-        throw new Error((e as ErrorMessage).message);
+        throw new Error(explain((e as ErrorMessage).message, this.pricing));
       });
 
       // Extract the list of features and usage limits by type

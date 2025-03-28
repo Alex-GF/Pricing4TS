@@ -22,10 +22,6 @@ export function calculateOverriddenValue(item: Feature | UsageLimit): number {
   const defaultValue = 0;
   let value;
 
-  if (item.name === "localPerformanceTestingUserLimit"){
-    console.log(item);
-  }
-
   if (item.valueType === 'NUMERIC' && item.value !== undefined && item.value !== null) {
     value = (item.value as number) > unlimitedValue ? unlimitedValue : (item.value as number);
   } else if (item.valueType === 'NUMERIC' && item.defaultValue !== undefined && item.defaultValue !== null) {
