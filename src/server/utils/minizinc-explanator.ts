@@ -21,7 +21,7 @@ function explainUsageLimitWithoutValueError(pricing: Pricing, errorMessage: stri
   const pricingUsageLimits = pricing.usageLimits!;
   const usageLimitsWithoutValue = [];
   const featuresLinkedToManyUsageLimits = _findFeaturesLinkedToManyUsageLimits(pricing);
-  console.log('featuresLinkedToManyUsageLimits', featuresLinkedToManyUsageLimits);
+  
   for (const usageLimit of Object.values(pricingUsageLimits)) {
     const plansWithUsageLimitInactive = _plansWithInactiveUsageLimit(
       usageLimit.name,
@@ -218,8 +218,6 @@ function _findFeaturesLinkedToManyUsageLimits(pricing: Pricing) {
       }
     }
   }
-
-  console.log(linkedFeaturesCounter);
 
   return Object.entries(linkedFeaturesCounter)
     .filter(([_, count]) => count > 1)
