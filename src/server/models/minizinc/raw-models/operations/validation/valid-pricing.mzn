@@ -82,3 +82,10 @@ constraint
   assert(forall(i in FEATURES)(
     sum(j in PLANS)(plans_features[j,i]) + sum(j in ADDONS)(addons_features[j,i]) > 0
   ), "DeadFeatureError: There should not be dead features within the pricing, i.e., every feature should be included within either a plan or an add-on.");
+
+% C8: There should not be "dead usage limits" within the pricing, i.e., every usage limit should be included within a plan or an add-on
+
+constraint
+  assert(forall(i in USAGE_LIMITS)(
+    sum(j in PLANS)(plans_usage_limits[j,i]) + sum(j in ADDONS)(addons_usage_limits[j,i]) + sum(j in ADDONS)(addons_usage_limits_extensions[j,i]) > 0
+  ), "DeadUsageLimitError: There should not be dead usage limits within the pricing, i.e., every usage limit should be included within either a plan or an add-on.");
