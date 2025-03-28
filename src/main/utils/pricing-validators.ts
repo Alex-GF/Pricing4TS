@@ -233,13 +233,16 @@ export function validateExpression(
 
 export function validateValue(
   elem: Feature | UsageLimit,
-  item: string
+  item: string,
+  valueType: ValueType | undefined = undefined
 ): number | boolean | string | PaymentType[] | undefined {
   if (elem.value === null || elem.value === undefined) {
     elem.value = undefined;
   }
 
-  switch (elem.valueType) {
+  const valueTypeToValidate = valueType || elem.valueType;
+
+  switch (valueTypeToValidate) {
     case 'NUMERIC':
       if (typeof elem.value !== 'number' && elem.value !== undefined) {
         throw new Error(
@@ -447,6 +450,7 @@ export function validatePlanFeatures(
       ) as Feature;
 
       featureWithDefaultValue.value = planFeature.value;
+      featureWithDefaultValue.value = validateValue(featureWithDefaultValue, 'feature');
     } catch (err) {
       throw new Error(
         `Error while parsing the feature ${planFeature.name} of the plan ${plan.name}. Error: ${
@@ -479,6 +483,7 @@ export function validatePlanUsageLimits(
       ) as UsageLimit;
 
       globalUsageLimit.value = planUsageLimit.value;
+      globalUsageLimit.value = validateValue(globalUsageLimit, 'usage limit') as string | number | boolean | undefined;
     } catch (err) {
       throw new Error(
         `Error while parsing the usage limit ${planUsageLimit.name} of the plan ${
@@ -551,6 +556,11 @@ export function validateAddonFeatures(
       }
 
       addon.features![addOnFeature.name].value = addOnFeature.value;
+      addon.features![addOnFeature.name].value = validateValue(
+        addon.features![addOnFeature.name],
+        'feature',
+        addOnFeatures[addOnFeature.name].valueType
+      );
     } catch (err) {
       throw new Error(
         `Error while parsing the feature ${addOnFeature.name} of the plan ${addon.name}. Error: ${
@@ -580,6 +590,11 @@ export function validateAddonUsageLimits(
         );
       }
       addon.usageLimits![addonUsageLimit.name].value = addonUsageLimit.value;
+      addon.usageLimits![addonUsageLimit.name].value = validateValue(
+        addon.usageLimits![addonUsageLimit.name],
+        'usage limit',
+        addonUsageLimits[addonUsageLimit.name].valueType
+      ) as string | number | boolean | undefined;
     } catch (err) {
       throw new Error(
         `Error while parsing the usage limit ${addonUsageLimit.name} of the add-on ${
@@ -610,6 +625,11 @@ export function validateAddonUsageLimitsExtensions(
       }
       addon.usageLimitsExtensions![addonUsageLimitExtension.name].value =
         addonUsageLimitExtension.value;
+      addon.usageLimitsExtensions![addonUsageLimitExtension.name].value = validateValue(
+        addon.usageLimitsExtensions![addonUsageLimitExtension.name],
+        'usage limit',
+        addonUsageLimits[addonUsageLimitExtension.name].valueType
+      ) as string | number | boolean | undefined;
     } catch (err) {
       throw new Error(
         `Error while parsing the usage limit ${addonUsageLimitExtension.name} of the add-on ${
