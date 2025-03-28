@@ -1,6 +1,7 @@
 import { Model, SolveResult } from 'minizinc';
 import fs from 'fs';
 import path from 'path';
+import { CspSolution } from '../../types';
 
 export enum PricingOperation {
   PRICING_MODEL = 'PricingModel.mzn',
@@ -41,7 +42,7 @@ export default class PricingCSP {
   public async runPricingOperation(
     pricingOperation: PricingOperation,
     data: string
-  ): Promise<SolveResult> {
+  ): Promise<SolveResult & { allSolutions: CspSolution[] | undefined }> {
     
     this._resetModel();
 
@@ -49,6 +50,15 @@ export default class PricingCSP {
       this.pricingData = data;
       this.model.addDznString(data);
     }
+
+    const mustExtractAllSolutions = pricingOperation === PricingOperation.CONFIGURATION_SPACE ||
+    pricingOperation === PricingOperation.CONFIGURATION_SPACE_FILTER;
+
+    let allSolutions: CspSolution[] | undefined = undefined;
+
+    if (mustExtractAllSolutions){
+        allSolutions = [];
+      }
 
     const result = this.model.solve({
       options: {
@@ -61,7 +71,24 @@ export default class PricingCSP {
       },
     });
 
-    return result;
+    result.on('solution', solution => {
+      if(mustExtractAllSolutions){
+        (allSolutions as CspSolution[]).push(solution.output.json as CspSolution);
+      }
+    });
+
+    return new Promise((resolve, reject) => {
+      
+      result.on('error', error => {
+        reject(error);
+      });
+      
+      Promise.resolve(result).then((result: SolveResult) => {
+        resolve({...result, allSolutions: allSolutions });    
+      }).catch((error) => {
+        reject(error);
+      });
+    });
   }
 
   _resetModel() {

@@ -75,3 +75,10 @@ constraint
       )
     ), "Invalid datafile. No two addons should be exactly the same.")
   endif;
+
+% C7: There should not be "dead features" within the pricing, i.e., every feature should be included within a plan or an add-on
+
+constraint
+  assert(forall(i in FEATURES)(
+    sum(j in PLANS)(plans_features[j,i]) + sum(j in ADDONS)(addons_features[j,i]) > 0
+  ), "Invalid datafile. There should not be dead features within the pricing, i.e., every feature should be included within a plan or an add-on.");
