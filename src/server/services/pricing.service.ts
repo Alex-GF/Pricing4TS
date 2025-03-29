@@ -61,7 +61,7 @@ export default class PricingService {
         });
       }
 
-      console.log(configurationSpace);
+      return configurationSpace;
 
     }catch(e){
       throw new Error((e as ErrorMessage).message);
