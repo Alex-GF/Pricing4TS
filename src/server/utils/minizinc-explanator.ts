@@ -1,8 +1,15 @@
+import { ErrorMessage } from 'minizinc';
 import { ValueType } from '../../main/models/pricing2yaml/types';
 import { AddOn, Plan, Pricing } from '../../types';
 import { calculateOverriddenValue } from './dzn-exporter/number-utils';
 
-export function explain(minizincError: string, pricing: Pricing): string {
+export function explain(minizincError: any, pricing: Pricing): string {
+  
+  const message = (minizincError as ErrorMessage).message;
+  
+  if (!message) {
+    return JSON.stringify(minizincError);
+  }
   const [errorId, errorMessage] = minizincError.split(':');
 
   switch (errorId) {
