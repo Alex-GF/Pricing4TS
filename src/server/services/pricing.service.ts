@@ -3,6 +3,8 @@ import PricingCSP from '../models/minizinc/minizinc';
 import { pricing2DZN } from '../utils/dzn-exporter/pricing-dzn-exporter';
 import { PricingOperation } from '../models/minizinc/minizinc';
 import { ErrorMessage } from 'minizinc';
+import { CspSolution } from '../types';
+import { explain } from '../utils/minizinc-explanator';
 
 export interface PricingAnalytics {
   numberOfFeatures: number;
@@ -36,6 +38,36 @@ export default class PricingService {
     return model.runPricingOperation(pricingOperation, dznPricing);
   }
 
+  async getConfigurationSpace(){
+    const dznPricing = pricing2DZN(this.pricing);
+
+    try{
+      const configurationSpace = [];
+      const result = await this._getConfigurationSpace(dznPricing);
+      const allSolutions: CspSolution[] = result.allSolutions!;
+
+      for (const solution of allSolutions){
+        const selectedPlan = Object.keys(this.pricing.plans!)[solution.selected_plan - 1];
+        const selectedAddons = solution.selected_addons.map((addonIndex, index) => addonIndex === 1 ? Object.keys(this.pricing.addOns!)[index] : null).filter(addon => addon !== null);
+        const subscriptionFeatures = solution.subscription_features.map((featureIndex, index) => featureIndex === 1 ? Object.keys(this.pricing.features)[index] : null).filter(feature => feature !== null);
+        const subscriptionUsageLimits = solution.subscription_usage_limits.map((usageLimitIndex, index) => usageLimitIndex === 1 ? Object.keys(this.pricing.usageLimits!)[index] : null).filter(usageLimit => usageLimit !== null);
+
+        configurationSpace.push({
+          selectedPlan: selectedPlan,
+          selectedAddons: selectedAddons,
+          subscriptionFeatures: subscriptionFeatures,
+          subscriptionUsageLimits: subscriptionUsageLimits,
+          subscriptionCost: solution.subscription_cost
+        });
+      }
+
+      console.log(configurationSpace);
+
+    }catch(e){
+      throw new Error((e as ErrorMessage).message);
+    }
+  }
+
   async getAnalytics(analyticsOptions?: AnalyticsOptions) {
 
     if (!analyticsOptions){
@@ -54,10 +86,12 @@ export default class PricingService {
 
       // Run the Minizinc models for needed anayltics
       const [configurationSpaceResult, minSubscriptionPriceResult, maxSubscriptionPriceResult] = await Promise.all([
-        this._getConfigurationSpaceSize(dznPricing),
+        this._getConfigurationSpace(dznPricing),
         this._getMinSubscriptionPrice(dznPricing),
         this._getMaxSubscriptionPrice(dznPricing)
-      ]);
+      ]).catch(e => {
+        throw new Error(explain((e as ErrorMessage).message, this.pricing));
+      });
 
       // Extract the list of features and usage limits by type
       
@@ -145,7 +179,7 @@ export default class PricingService {
     }
   }
   
-  async _getConfigurationSpaceSize(dznPricing: string) {
+  async _getConfigurationSpace(dznPricing: string) {
     const model = new PricingCSP();
     return model.runPricingOperation(PricingOperation.CONFIGURATION_SPACE, dznPricing);
   }

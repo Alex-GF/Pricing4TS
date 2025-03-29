@@ -13,7 +13,7 @@ constraint
       if sum(k in USAGE_LIMITS)(linked_features[k,j] == 1 /\ plans_features[i,j] == 1) > 0 % If there is at least one usage limit linked to feature j, which is included in plan i
         then sum(k in USAGE_LIMITS)(linked_features[k,j] == 1 /\ (plans_usage_limits[i,k] > 0 \/ boolean_usage_limits[k] == 1)) > 0 % Then, at least one of those usage limits must have a value greater than 0.
       endif
-    ), "Invalid datafile. At least one usage limit linked to a feature in a plan must have a value > 0")
+    ), "InvalidUsageLimitValueError: At least one usage limit linked to a feature in a plan must have a value > 0")
   endif;
 
 % C3: If an usage limit has a value > 0 in a plan, at least one of its linked features must be available for such plan.
@@ -75,3 +75,17 @@ constraint
       )
     ), "Invalid datafile. No two addons should be exactly the same.")
   endif;
+
+% C7: There should not be "dead features" within the pricing, i.e., every feature should be included within a plan or an add-on
+
+constraint
+  assert(forall(i in FEATURES)(
+    sum(j in PLANS)(plans_features[j,i]) + sum(j in ADDONS)(addons_features[j,i]) > 0
+  ), "DeadFeatureError: There should not be dead features within the pricing, i.e., every feature should be included within either a plan or an add-on.");
+
+% C8: There should not be "dead usage limits" within the pricing, i.e., every usage limit should be included within a plan or an add-on
+
+constraint
+  assert(forall(i in USAGE_LIMITS)(
+    sum(j in PLANS)(plans_usage_limits[j,i]) + sum(j in ADDONS)(addons_usage_limits[j,i]) + sum(j in ADDONS)(addons_usage_limits_extensions[j,i]) > 0
+  ), "DeadUsageLimitError: There should not be dead usage limits within the pricing, i.e., every usage limit should be included within either a plan or an add-on.");
