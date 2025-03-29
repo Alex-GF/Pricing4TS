@@ -90,7 +90,7 @@ export default class PricingService {
         this._getMinSubscriptionPrice(dznPricing),
         this._getMaxSubscriptionPrice(dznPricing)
       ]).catch(e => {
-        throw new Error(explain((e as ErrorMessage).message, this.pricing));
+        throw new Error(explain(e, this.pricing));
       });
 
       // Extract the list of features and usage limits by type
