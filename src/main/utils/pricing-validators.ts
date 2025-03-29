@@ -78,12 +78,14 @@ export function validateCreatedAt(createdAt: string | Date | null): Date {
     );
   }
 
-  if (typeof createdAt === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(createdAt)) {
-    createdAt = new Date(createdAt);
-  } else {
-    throw new Error(
-    `The createdAt field must be a string in the format yyyy-mm-dd or a valid Date object`
-    );
+  if (typeof createdAt === 'string'){
+    if (/^\d{4}-\d{2}-\d{2}$/.test(createdAt)) {
+      createdAt = new Date(createdAt);
+    } else {
+      throw new Error(
+      `The createdAt field must be a string in the format yyyy-mm-dd or a valid Date object`
+      );
+    }
   }
   
   if (!(createdAt instanceof Date) || isNaN(createdAt.getTime())) {
