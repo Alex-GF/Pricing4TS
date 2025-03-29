@@ -88,4 +88,9 @@ constraint
 
 % Calculus of the subscription cost
 
-constraint subscription_cost = if num_plans > 0 then plans_prices[selected_plan] else 0 endif + if num_addons > 0 then sum(a in ADDONS)(selected_addons[a] * addons_prices[a]) else 0 endif;
+constraint subscription_cost = 
+    round(
+      (if num_plans > 0 then plans_prices[selected_plan] else 0 endif + 
+       if num_addons > 0 then sum(a in ADDONS)(selected_addons[a] * addons_prices[a]) else 0 endif
+      ) * 100
+    ) / 100;

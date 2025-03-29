@@ -1,4 +1,4 @@
-import { valueToNumber } from '../../../server/utils/dzn-exporter/number-utils';
+import { calculateOverriddenValue, valueToNumber } from '../../../server/utils/dzn-exporter/number-utils';
 import { Feature } from './feature';
 import { UsageLimit } from './usage-limit';
 
@@ -46,6 +46,7 @@ export function calculateAddOnsFeaturesMatrix(features: Record<string, Feature>,
   const matrix = [];
   for (const addOn of Object.values(addOns)) {
     const addOnFeatures = addOn.features;
+    
     if (!addOnFeatures) {
       matrix.push(new Array(Object.values(features).length).fill(0));
       continue;
@@ -53,7 +54,7 @@ export function calculateAddOnsFeaturesMatrix(features: Record<string, Feature>,
     const row = [];
     for (const feature of Object.values(features)) {
       let value = 0;
-      const overriddenValue = addOnFeatures[feature.name];
+      const overriddenValue = addOnFeatures[feature.name] ? calculateOverriddenValue({...addOnFeatures[feature.name], valueType: feature.valueType}) : undefined;
       if (overriddenValue) {
         value = 1;
       }
@@ -83,9 +84,7 @@ export function calculateAddOnsUsageLimitsMatrix(
     }
     const row = [];
     for (const usageLimit of Object.values(usageLimits)) {
-      const value = addOnUsageLimits[usageLimit.name]
-        ? valueToNumber(addOnUsageLimits[usageLimit.name].value)
-        : 0;
+      const value = addOnUsageLimits[usageLimit.name] ? calculateOverriddenValue({...addOnUsageLimits[usageLimit.name], valueType: usageLimit.valueType}) : 0;
       row.push(value);
     }
 

@@ -10,6 +10,7 @@ import type {
 } from '../models/pricing2yaml/types';
 import type { ContainerUsageLimits, UsageLimit } from '../models/pricing2yaml/usage-limit';
 import * as cc from 'currency-codes';
+import { isAutomationType, isIntegrationType } from '../models/pricing2yaml/feature';
 
 const VERSION_REGEXP = /^\d+\.\d+$/;
 const unlimitedValue = 100000000;
@@ -77,10 +78,16 @@ export function validateCreatedAt(createdAt: string | Date | null): Date {
     );
   }
 
-  if (typeof createdAt === 'string') {
-    createdAt = new Date(createdAt);
+  if (typeof createdAt === 'string'){
+    if (/^\d{4}-\d{2}-\d{2}$/.test(createdAt)) {
+      createdAt = new Date(createdAt);
+    } else {
+      throw new Error(
+      `The createdAt field must be a string in the format yyyy-mm-dd or a valid Date object`
+      );
+    }
   }
-
+  
   if (!(createdAt instanceof Date) || isNaN(createdAt.getTime())) {
     throw new Error(
       `The createdAt field must be a valid Date object or a string in a recognized date format`
@@ -233,13 +240,16 @@ export function validateExpression(
 
 export function validateValue(
   elem: Feature | UsageLimit,
-  item: string
+  item: string,
+  valueType: ValueType | undefined = undefined
 ): number | boolean | string | PaymentType[] | undefined {
   if (elem.value === null || elem.value === undefined) {
     elem.value = undefined;
   }
 
-  switch (elem.valueType) {
+  const valueTypeToValidate = valueType || elem.valueType;
+
+  switch (valueTypeToValidate) {
     case 'NUMERIC':
       if (typeof elem.value !== 'number' && elem.value !== undefined) {
         throw new Error(
@@ -324,7 +334,8 @@ export function validateFeatureType(type: string | null | undefined): FeatureTyp
 }
 
 export function validateFeatureIntegrationType(
-  integrationType: IntegrationType | null | undefined
+  integrationType: IntegrationType | null | undefined,
+  featureType: FeatureType
 ) {
   if (integrationType === null || integrationType === undefined) {
     integrationType = undefined;
@@ -334,12 +345,20 @@ export function validateFeatureIntegrationType(
     throw new Error(
       `The integrationType field of a feature must be an IntegrationType ('API' | 'EXTENSION' | 'IDENTITY_PROVIDER' | 'WEB_SAAS' | 'MARKETPLACE' | 'EXTERNAL_DEVICE'). Received: ${integrationType}`
     );
+  }else if (featureType === 'INTEGRATION' && !integrationType) {
+    throw new Error(
+      `The integrationType field of a feature of type INTEGRATION must not be null or undefined. Please ensure that the integrationType field is present and it's value correspond to either API, EXTENSION, IDENTITY_PROVIDER, WEB_SAAS, MARKETPLACE or EXTERNAL_DEVICE`
+    );
+  }else if (integrationType && typeof integrationType === "string" && !isIntegrationType(integrationType)){
+    throw new Error(
+      `The integrationType field of a feature must be one of API, EXTENSION, IDENTITY_PROVIDER, WEB_SAAS, MARKETPLACE or EXTERNAL_DEVICE. Received: ${integrationType}`
+    );
   }
 
   return integrationType;
 }
 
-export function validateFeatureAutomationType(automationType: AutomationType | null | undefined) {
+export function validateFeatureAutomationType(automationType: AutomationType | null | undefined, featureType: FeatureType) {
   if (automationType === null || automationType === undefined) {
     automationType = undefined;
   }
@@ -347,6 +366,14 @@ export function validateFeatureAutomationType(automationType: AutomationType | n
   if (automationType && typeof automationType !== 'string') {
     throw new Error(
       `The automationType field of a feature must be an AutomationType ('BOT' | 'FILTERING' | 'TRACKING' | 'TASK_AUTOMATION'). Received: ${automationType}`
+    );
+  } else if (featureType === 'AUTOMATION' && !automationType) {
+    throw new Error(
+      `The automationType field of a feature of type AUTOMATION must not be null or undefined. Please ensure that the automationType field is present and its value corresponds to either BOT, FILTERING, TRACKING, or TASK_AUTOMATION`
+    );
+  } else if (automationType && typeof automationType === "string" && !isAutomationType(automationType)) {
+    throw new Error(
+      `The automationType field of a feature must be one of BOT, FILTERING, TRACKING, or TASK_AUTOMATION. Received: ${automationType}`
     );
   }
 
@@ -447,6 +474,7 @@ export function validatePlanFeatures(
       ) as Feature;
 
       featureWithDefaultValue.value = planFeature.value;
+      featureWithDefaultValue.value = validateValue(featureWithDefaultValue, 'feature');
     } catch (err) {
       throw new Error(
         `Error while parsing the feature ${planFeature.name} of the plan ${plan.name}. Error: ${
@@ -479,6 +507,7 @@ export function validatePlanUsageLimits(
       ) as UsageLimit;
 
       globalUsageLimit.value = planUsageLimit.value;
+      globalUsageLimit.value = validateValue(globalUsageLimit, 'usage limit') as string | number | boolean | undefined;
     } catch (err) {
       throw new Error(
         `Error while parsing the usage limit ${planUsageLimit.name} of the plan ${
@@ -551,6 +580,11 @@ export function validateAddonFeatures(
       }
 
       addon.features![addOnFeature.name].value = addOnFeature.value;
+      addon.features![addOnFeature.name].value = validateValue(
+        addon.features![addOnFeature.name],
+        'feature',
+        addOnFeatures[addOnFeature.name].valueType
+      );
     } catch (err) {
       throw new Error(
         `Error while parsing the feature ${addOnFeature.name} of the plan ${addon.name}. Error: ${
@@ -580,6 +614,11 @@ export function validateAddonUsageLimits(
         );
       }
       addon.usageLimits![addonUsageLimit.name].value = addonUsageLimit.value;
+      addon.usageLimits![addonUsageLimit.name].value = validateValue(
+        addon.usageLimits![addonUsageLimit.name],
+        'usage limit',
+        addonUsageLimits[addonUsageLimit.name].valueType
+      ) as string | number | boolean | undefined;
     } catch (err) {
       throw new Error(
         `Error while parsing the usage limit ${addonUsageLimit.name} of the add-on ${
@@ -610,6 +649,11 @@ export function validateAddonUsageLimitsExtensions(
       }
       addon.usageLimitsExtensions![addonUsageLimitExtension.name].value =
         addonUsageLimitExtension.value;
+      addon.usageLimitsExtensions![addonUsageLimitExtension.name].value = validateValue(
+        addon.usageLimitsExtensions![addonUsageLimitExtension.name],
+        'usage limit',
+        addonUsageLimits[addonUsageLimitExtension.name].valueType
+      ) as string | number | boolean | undefined;
     } catch (err) {
       throw new Error(
         `Error while parsing the usage limit ${addonUsageLimitExtension.name} of the add-on ${
@@ -840,6 +884,13 @@ export function validatePricingUrls(
       throw new Error(`The pricingUrls field must be an array of strings.`);
     }
 
+    for (const url of pricingUrls) {
+      const urlPattern = /^(https?):\/\/[^\s\/$.?#].[^\s]*$/i;
+      if (!urlPattern.test(url)) {
+      throw new Error(`The pricingUrls field must contain only valid URLs. Invalid URL: ${url}`);
+      }
+    }
+
     if (featureType !== 'INTEGRATION' || featureIntegrationType !== 'WEB_SAAS') {
       console.log(
         "[WARNING] The pricingUrls field is only valid for features of 'type' INTEGRATION and 'integrationType' WEB_SAAS. The field will be ignored."
@@ -857,6 +908,11 @@ export function validateDocUrl(featureType: FeatureType, docUrl: string | undefi
   } else {
     if (typeof docUrl !== 'string') {
       throw new Error(`The docUrl field must be a string.`);
+    }
+
+    const urlPattern = /^(https?):\/\/[^\s\/$.?#].[^\s]*$/i;
+    if (!urlPattern.test(docUrl)) {
+      throw new Error(`The docUrl field must be a valid URL with the http or https protocol. Received: ${docUrl}`);
     }
 
     if (featureType !== 'GUARANTEE') {
