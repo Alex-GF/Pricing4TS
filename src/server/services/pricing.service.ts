@@ -140,7 +140,7 @@ export default class PricingService {
       const configurationSpaceSize: number = configurationSpaceResult.statistics.nSolutions;
       const minSubscriptionPrice: number = configurationSpaceSize !== 0 ? this._computeConfigurationPrice(minSubscriptionPriceResult.solution!.output.json!) : NaN;
       const maxSubscriptionPrice: number = configurationSpaceSize !== 0 ? this._computeConfigurationPrice(maxSubscriptionPriceResult.solution!.output.json!) : NaN;
-      
+
       return {
         numberOfFeatures: numberOfFeatures,
         numberOfInformationFeatures: numberOfInformationFeatures,
@@ -202,11 +202,11 @@ export default class PricingService {
 
     let configurationPrice = 0;
     
-    if (this.pricing.plans){
+    if (plansPrices.length > 0){
       configurationPrice += plansPrices[minizincSolution.selected_plan - 1];
     }
 
-    if (this.pricing.addOns!){
+    if (addOnPrices.length > 0){
       for (let i = 0; i < minizincSolution.selected_addons.length; i++){
         const item = minizincSolution.selected_addons[i];
 
