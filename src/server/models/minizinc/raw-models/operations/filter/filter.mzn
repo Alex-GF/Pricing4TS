@@ -29,8 +29,3 @@ constraint
       subscription_usage_limits[i] >= requested_usage_limits[i]
     )
   endif;
-
-% The price of the subscription cannot exceed maxPricing, and must surpass min_price
-
-constraint subscription_cost >= min_price;
-constraint subscription_cost <= max_price;

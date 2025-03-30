@@ -49,7 +49,7 @@ array[ADDONS] of var 0..1: selected_addons;
 array[FEATURES] of var 0..1: features_included_in_selected_addons;
 array[USAGE_LIMITS] of var 0.0..unlimited: usage_limits_included_in_selected_addons;
 
-var float: subscription_cost;
+% var float: subscription_cost;
 
 % -----------------------
 % ----- CONSTRAINTS -----
@@ -86,11 +86,27 @@ constraint
     else selected_plan = 0
   endif;
 
-% Calculus of the subscription cost
+% % Calculus of the subscription cost
 
-constraint subscription_cost = 
-    round(
-      (if num_plans > 0 then plans_prices[selected_plan] else 0 endif + 
-       if num_addons > 0 then sum(a in ADDONS)(selected_addons[a] * addons_prices[a]) else 0 endif
-      ) * 100
-    ) / 100;
+% constraint subscription_cost = 
+%     round(
+%       (if num_plans > 0 then plans_prices[selected_plan] else 0 endif + 
+%        if num_addons > 0 then sum(a in ADDONS)(selected_addons[a] * addons_prices[a]) else 0 endif
+%       ) * 100
+%     ) / 100;
+
+
+% %     % C  lculo de coste crudo en float
+% % var float: raw_cost =
+% %   if num_plans > 0 then plans_prices[selected_plan] else 0 endif +
+% %   if num_addons > 0 then sum(a in ADDONS)(selected_addons[a] * addons_prices[a]) else 0 endif;
+
+% % % Coste en c  ntimos redondeado (entero)
+% % var int: cost_cents;
+
+% % % Simular round: cost_cents  ^i^h raw_cost * 100 con tolerancia de 0.5
+% % constraint cost_cents * 1.0 <= raw_cost * 100.0 + 0.5;
+% % constraint cost_cents * 1.0 >  raw_cost * 100.0 - 0.5;
+
+% % % Coste final en euros con dos decimales
+% % constraint subscription_cost = cost_cents / 100.0;
