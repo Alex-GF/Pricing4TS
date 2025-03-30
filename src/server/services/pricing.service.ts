@@ -1,10 +1,12 @@
-import { Pricing } from '../../types';
+import { AddOn, Plan, Pricing } from '../../types';
 import PricingCSP from '../models/minizinc/minizinc';
 import { pricing2DZN } from '../utils/dzn-exporter/pricing-dzn-exporter';
 import { PricingOperation } from '../models/minizinc/minizinc';
 import { ErrorMessage } from 'minizinc';
 import { CspSolution } from '../types';
 import { explain } from '../utils/minizinc-explanator';
+import { getPlanPrices } from '../../main/models/pricing2yaml/plan';
+import { getAddOnPrices } from '../../main/models/pricing2yaml/addon';
 
 export interface PricingAnalytics {
   numberOfFeatures: number;
@@ -136,8 +138,8 @@ export default class PricingService {
       const numberOfReplacementAddons: number = this.pricing.addOns ? Object.values(this.pricing.addOns).filter(a => a.features || a.usageLimits).length : 0;
       const numberOfExtensionAddons: number = this.pricing.addOns ? Object.values(this.pricing.addOns).filter(a => a.features || a.usageLimits ? false : a.usageLimitsExtensions).length : 0;
       const configurationSpaceSize: number = configurationSpaceResult.statistics.nSolutions;
-      const minSubscriptionPrice: number = configurationSpaceSize !== 0 ? minSubscriptionPriceResult.solution!.output.json!["subscription_cost"] : null;
-      const maxSubscriptionPrice: number = configurationSpaceSize !== 0 ? maxSubscriptionPriceResult.solution!.output.json!["subscription_cost"] : null;
+      const minSubscriptionPrice: number = configurationSpaceSize !== 0 ? this._computeConfigurationPrice(minSubscriptionPriceResult.solution!.output.json!) : NaN;
+      const maxSubscriptionPrice: number = configurationSpaceSize !== 0 ? this._computeConfigurationPrice(maxSubscriptionPriceResult.solution!.output.json!) : NaN;
       
       return {
         numberOfFeatures: numberOfFeatures,
@@ -192,5 +194,28 @@ export default class PricingService {
   async _getMaxSubscriptionPrice(dznPricing: string) {
     const model = new PricingCSP();
     return model.runPricingOperation(PricingOperation.MOST_EXPENSIVE_SUBSCRIPTION, dznPricing);
+  }
+
+  _computeConfigurationPrice(minizincSolution: Record<string, any>): number {
+    const plansPrices = getPlanPrices(this.pricing.plans);
+    const addOnPrices = getAddOnPrices(this.pricing.addOns);
+
+    let configurationPrice = 0;
+    
+    if (this.pricing.plans){
+      configurationPrice += plansPrices[minizincSolution.selected_plan - 1];
+    }
+
+    if (this.pricing.addOns!){
+      for (let i = 0; i < minizincSolution.selected_addons.length; i++){
+        const item = minizincSolution.selected_addons[i];
+
+        if (item === 1){
+          configurationPrice += addOnPrices[i];
+        }
+      }
+    }
+
+    return configurationPrice;
   }
 }
