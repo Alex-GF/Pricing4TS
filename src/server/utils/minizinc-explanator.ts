@@ -5,11 +5,11 @@ import { calculateOverriddenValue } from './dzn-exporter/number-utils';
 
 export function explain(minizincError: any, pricing: Pricing): string {
   const message = (minizincError as ErrorMessage).message;
-
+  
   if (!message) {
     return JSON.stringify(minizincError);
   }
-
+  
   const [errorId, errorMessage] = message.split(':');
   switch (errorId) {
     case 'InvalidUsageLimitValueError':
@@ -19,7 +19,7 @@ export function explain(minizincError: any, pricing: Pricing): string {
     case 'DeadUsageLimitError':
       return explainDeadUsageLimitError(pricing, errorMessage);
     default:
-      return minizincError;
+      return message;
   }
 }
 
