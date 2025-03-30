@@ -4,14 +4,13 @@ import { AddOn, Plan, Pricing } from '../../types';
 import { calculateOverriddenValue } from './dzn-exporter/number-utils';
 
 export function explain(minizincError: any, pricing: Pricing): string {
-  
   const message = (minizincError as ErrorMessage).message;
-  
+
   if (!message) {
     return JSON.stringify(minizincError);
   }
-  const [errorId, errorMessage] = minizincError.split(':');
 
+  const [errorId, errorMessage] = message.split(':');
   switch (errorId) {
     case 'InvalidUsageLimitValueError':
       return explainUsageLimitWithoutValueError(pricing, errorMessage);
@@ -28,7 +27,7 @@ function explainUsageLimitWithoutValueError(pricing: Pricing, errorMessage: stri
   const pricingUsageLimits = pricing.usageLimits!;
   const usageLimitsWithoutValue = [];
   const featuresLinkedToManyUsageLimits = _findFeaturesLinkedToManyUsageLimits(pricing);
-  
+
   for (const usageLimit of Object.values(pricingUsageLimits)) {
     const plansWithUsageLimitInactive = _plansWithInactiveUsageLimit(
       usageLimit.name,
