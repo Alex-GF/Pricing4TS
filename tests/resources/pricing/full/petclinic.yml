@@ -1,5 +1,5 @@
 saasName: PetClinic
-syntaxVersion: '2.1'
+syntaxVersion: '3.0'
 version: 2024-1-15
 createdAt: '2024-01-15'
 currency: EUR
@@ -12,8 +12,8 @@ features:
     description: Pets description
     valueType: BOOLEAN
     defaultValue: true
-    expression: userContext['pets'] < planContext['usageLimits']['maxPets']
-    serverExpression: userContext['pets'] <= planContext['usageLimits']['maxPets']
+    expression: subscriptionContext['pets'] < pricingContext['usageLimits']['maxPets']
+    serverExpression: subscriptionContext['pets'] <= pricingContext['usageLimits']['maxPets']
     type: DOMAIN
     tag: Pets Management
   visits:
@@ -21,8 +21,8 @@ features:
     valueType: BOOLEAN
     defaultValue: true
     expression: >-
-      userContext['visits'] <
-      planContext['usageLimits']['maxVisitsPerMonthAndPet']
+      subscriptionContext['visits'] <
+      pricingContext['usageLimits']['maxVisitsPerMonthAndPet']
     type: DOMAIN
     tag: Veterinary Care
   supportPriority:
@@ -36,38 +36,38 @@ features:
     description: haveCalendar description
     valueType: BOOLEAN
     defaultValue: false
-    expression: planContext['features']['haveCalendar']
+    expression: pricingContext['features']['haveCalendar']
     type: DOMAIN
   havePetsDashboard:
     description: havePetsDashboard description
     valueType: BOOLEAN
     defaultValue: false
-    expression: planContext['features']['havePetsDashboard']
+    expression: pricingContext['features']['havePetsDashboard']
     type: DOMAIN
   haveVetSelection:
     description: haveVetSelection description
     valueType: BOOLEAN
     defaultValue: false
-    expression: planContext['features']['haveVetSelection']
+    expression: pricingContext['features']['haveVetSelection']
     type: DOMAIN
   consultations:
     description: consultations description
     valueType: BOOLEAN
     defaultValue: false
-    expression: planContext['features']['consultations']
+    expression: pricingContext['features']['consultations']
     type: DOMAIN
   smartClinicReports:
     description: smartClinicReports description
     valueType: BOOLEAN
     defaultValue: false
     type: INFORMATION
-    expression: planContext['features']['smartClinicReports']
+    expression: pricingContext['features']['smartClinicReports']
   petAdoptionCentre:
     description: petAdoptionCentre description
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-    expression: planContext['features']['petAdoptionCentre']
+    expression: pricingContext['features']['petAdoptionCentre']
 usageLimits:
   maxPets:
     description: ''
@@ -136,6 +136,10 @@ addOns:
     features:
       havePetsDashboard:
         value: true
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
   smartClinicReports:
     description: smartClinicReports description
     dependsOn:
@@ -145,6 +149,10 @@ addOns:
     features:
       smartClinicReports:
         value: true
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
   petAdoptionCentre:
     description: petAdoptionCentre description
     price: 15.95
@@ -152,3 +160,7 @@ addOns:
     features:
       petAdoptionCentre:
         value: true
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1

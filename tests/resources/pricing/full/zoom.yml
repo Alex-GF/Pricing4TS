@@ -1,5 +1,5 @@
 saasName: Zoom
-syntaxVersion: '2.1'
+syntaxVersion: '3.0'
 version: 2024-11-4
 createdAt: '2024-11-04'
 currency: USD
@@ -135,6 +135,10 @@ addOns:
     usageLimits:
       maxAssistantsPerMeeting:
         value: 1000
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
   translatedCaptions:
     availableFor:
       - BASIC
@@ -145,6 +149,10 @@ addOns:
     features:
       translatedCaptions:
         value: true
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
   phoneDialing:
     availableFor:
       - PRO
@@ -154,3 +162,7 @@ addOns:
     features:
       phoneDialing:
         value: true
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1

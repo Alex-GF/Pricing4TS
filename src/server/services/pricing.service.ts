@@ -129,8 +129,6 @@ export default class PricingService {
       const numberOfUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).length : 0;
       const numberOfRenewableUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "RENEWABLE").length : 0;
       const numberOfNonRenewableUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "NON_RENEWABLE").length : 0;
-      const numberOfResponseDrivenUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "RESPONSE_DRIVEN").length : 0;
-      const numberOfTimeDrivenUsageLimits: number = this.pricing.usageLimits ? Object.values(this.pricing.usageLimits).filter(ul => ul.type === "TIME_DRIVEN").length : 0;
       const numberOfPlans: number = this.pricing.plans ? Object.values(this.pricing.plans).length : 0;
       const numberOfFreePlans: number = this.pricing.plans ? Object.values(this.pricing.plans).filter(p => p.price === 0).length : 0;
       const numberOfPaidPlans: number = this.pricing.plans ? Object.values(this.pricing.plans).filter(p => typeof(p.price) === "number" ? p.price > 0 : true).length : 0;
@@ -164,8 +162,6 @@ export default class PricingService {
         numberOfUsageLimits: numberOfUsageLimits,
         numberOfRenewableUsageLimits: numberOfRenewableUsageLimits,
         numberOfNonRenewableUsageLimits: numberOfNonRenewableUsageLimits,
-        numberOfResponseDrivenUsageLimits: numberOfResponseDrivenUsageLimits,
-        numberOfTimeDrivenUsageLimits: numberOfTimeDrivenUsageLimits,
         numberOfPlans: numberOfPlans,
         numberOfFreePlans: numberOfFreePlans,
         numberOfPaidPlans: numberOfPaidPlans,

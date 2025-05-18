@@ -3,6 +3,11 @@ import { ValueType, UsageLimitType, RenderMode } from './types';
 export interface UsageLimit {
   name: string;
   description?: string;
+  trackable?: boolean;
+  period?: {
+    unit: "SEC" | "MIN" | "HOUR" | "DAY" | "MONTH" | "YEAR";
+    value: number;
+  }
   valueType: ValueType;
   defaultValue: string | number | boolean;
   value?: string | number | boolean;

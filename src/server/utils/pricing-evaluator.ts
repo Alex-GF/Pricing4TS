@@ -1,4 +1,4 @@
-import { PricingContext, SubscriptionContext } from '../configuration/PricingContext';
+import { Configuration, PricingContext } from '../configuration/PricingContext';
 import { PricingContextManager } from '../server';
 import { PricingPlanEvaluationError } from '../exceptions/PricingPlanEvaluationError';
 import { Feature, UsageLimit } from '../../types';
@@ -29,19 +29,19 @@ export function generateUserPricingToken() {
 
   let subject = 'Default';
 
-  const userContext: Record<string, any> = pricingContext.getUserContext();
+  const subscriptionContext: Record<string, any> = pricingContext.getSubscriptionContext();
 
-  if (userContext.username || userContext.user) {
-    subject = String(userContext.username ?? userContext.user);
+  if (subscriptionContext.username || subscriptionContext.user) {
+    subject = String(subscriptionContext.username ?? subscriptionContext.user);
   }
 
   claims.sub = subject;
 
   try {
-    claims.userContext = userContext;
+    claims.subscriptionContext = subscriptionContext;
   } catch (e) {
     throw new PricingPlanEvaluationError(
-      'Error while retrieving user context! Please check your PricingContext.getUserContext() method'
+      'Error while retrieving user context! Please check your PricingContext.getSubscriptionContext() method'
     );
   }
 
@@ -49,15 +49,15 @@ export function generateUserPricingToken() {
     return PricingJwtUtils.encodeToken(claims);
   }
 
-  const subscriptionContext: SubscriptionContext = pricingContext.getPlanContext();
+  const configuration: Configuration = pricingContext.getPlanContext();
 
   const featureStatuses: Record<string, FeatureStatus> = computeFeatureStatuses(
-    subscriptionContext,
-    userContext
+    configuration,
+    subscriptionContext
   );
 
   claims.features = featureStatuses;
-  claims.planContext = subscriptionContext;
+  claims.pricingContext = configuration;
 
   const token: string = PricingJwtUtils.encodeToken(claims);
 
@@ -91,20 +91,20 @@ export function addExpressionToToken(token: string, featureId: string, expressio
 }
 
 function computeFeatureStatuses(
-  subscriptionContext: SubscriptionContext,
-  userContext: Record<string, any>
+  configuration: Configuration,
+  subscriptionContext: Record<string, any>
 ): Record<string, FeatureStatus> {
   const featureStatuses: Record<string, FeatureStatus> = {};
 
-  const planContext: ContextToEval =
-    extractContextToEvalFromSubscriptionContext(subscriptionContext); // This is defined in order to perform the "eval"
+  const pricingContext: ContextToEval =
+    extractContextToEvalFromSubscriptionContext(configuration); // This is defined in order to perform the "eval"
 
-  for (const feature of Object.values(subscriptionContext.features) as Feature[]) {
+  for (const feature of Object.values(configuration.features) as Feature[]) {
     const { error, ...featureStatusWithoutError }: ExtendedFeatureStatus = evaluateFeature(
       feature,
+      configuration,
       subscriptionContext,
-      userContext,
-      planContext
+      pricingContext
     );
     
     featureStatuses[feature.name] = featureStatusWithoutError;
@@ -114,7 +114,7 @@ function computeFeatureStatuses(
 }
 
 export function extractContextToEvalFromSubscriptionContext(
-  subscriptionContext: SubscriptionContext
+  subscriptionContext: Configuration
 ): ContextToEval {
   const subscriptionContextFeatures: Record<string, Feature> =
     subscriptionContext.features as Record<string, Feature>;
@@ -136,14 +136,14 @@ export function extractContextToEvalFromSubscriptionContext(
 
 export function evaluateFeature(
   feature: Feature | string,
-  subscriptionContext: SubscriptionContext | undefined = undefined,
-  userContext: Record<string, any> | undefined = undefined,
-  planContext: ContextToEval | undefined = undefined
+  configuration: Configuration | undefined = undefined,
+  subscriptionContext: Record<string, any> | undefined = undefined,
+  pricingContext: ContextToEval | undefined = undefined
 ): ExtendedFeatureStatus {
-  const pricingContext = PricingContextManager.getContext();
+  const evaluationContext = PricingContextManager.getContext();
 
   if (typeof feature === 'string') {
-    feature = pricingContext.getPricing().features[feature] as Feature;
+    feature = evaluationContext.getPricing().features[feature] as Feature;
     
     if (!feature) {
       console.warn(`[WARNING] Feature ${feature} not found!`);
@@ -174,16 +174,16 @@ export function evaluateFeature(
       }
     };
   } else {
+    if (!configuration) {
+      configuration = evaluationContext.getPlanContext();
+    }
+
     if (!subscriptionContext) {
-      subscriptionContext = pricingContext.getPlanContext();
+      subscriptionContext = evaluationContext.getSubscriptionContext();
     }
 
-    if (!userContext) {
-      userContext = pricingContext.getUserContext();
-    }
-
-    if (!planContext) {
-      planContext = extractContextToEvalFromSubscriptionContext(subscriptionContext);
+    if (!pricingContext) {
+      pricingContext = extractContextToEvalFromSubscriptionContext(configuration);
     }
     const evalResult: Boolean = eval(featureExpression);
 
@@ -203,14 +203,14 @@ export function evaluateFeature(
     } else {
       if (evalResult !== null && evalResult !== undefined) {
         const numericLimitsOfSelectedFeature: UsageLimit[] = (
-          Object.values(subscriptionContext.usageLimits) as UsageLimit[]
+          Object.values(configuration.usageLimits) as UsageLimit[]
         ).filter(u => u.linkedFeatures?.includes(feature.name) && u.valueType === 'NUMERIC');
 
         const shouldLimitAppearInToken: boolean = numericLimitsOfSelectedFeature.length === 1;
 
         return {
           eval: evalResult,
-          used: shouldLimitAppearInToken ? userContext[feature.name] ?? null : null,
+          used: shouldLimitAppearInToken ? subscriptionContext[feature.name] ?? null : null,
           limit: shouldLimitAppearInToken
             ? numericLimitsOfSelectedFeature[0].value ??
               numericLimitsOfSelectedFeature[0].defaultValue

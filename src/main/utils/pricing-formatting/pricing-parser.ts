@@ -41,6 +41,12 @@ import {
   validateVersion,
   validatePricingUrls,
   validateDocUrl,
+  validatePeriodUnit,
+  validatePeriodValue,
+  validateTrackable,
+  validateSubscriptionConstraintMinQuantity,
+  validateSubscriptionConstraintMaxQuantity,
+  validateSubscriptionConstraintQuantityStep,
 } from '../pricing-validators';
 
 export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
@@ -154,6 +160,20 @@ function parseUsageLimit(usageLimit: UsageLimit, pricing: Pricing): UsageLimit {
       | undefined;
     usageLimit.unit = validateUnit(usageLimit.unit);
     usageLimit.type = validateUsageLimitType(usageLimit.type);
+    if (usageLimit.type === 'RENEWABLE') {
+      usageLimit.period = {
+        unit: validatePeriodUnit(usageLimit.period?.unit),
+        value: validatePeriodValue(usageLimit.period?.value),
+      }
+
+    }else if (usageLimit.type === 'NON_RENEWABLE') {
+      usageLimit.trackable = validateTrackable(usageLimit.trackable);
+    }
+
+    if (usageLimit.trackable === undefined && !usageLimit.period){
+      throw new Error(`Usage limit ${usageLimit.name} must have a trackable property or a period defined`);
+    }
+
     usageLimit.linkedFeatures = validateLinkedFeatures(usageLimit.linkedFeatures, pricing);
     usageLimit.render = validateRenderMode(usageLimit.render);
   } catch (err) {
@@ -248,6 +268,17 @@ function parseAddOn(addon: AddOn, pricing: Pricing): AddOn {
 
     if (Object.keys(addon.features).length === 0 && Object.keys(addon.usageLimits).length === 0 && Object.keys(addon.usageLimitsExtensions).length === 0) {
       throw new Error('An add-on cannot be empty. It must have at least one feature, usage limit or usage limit extension');
+    }
+
+    const minQuantity = validateSubscriptionConstraintMinQuantity(addon.subscriptionConstraints?.minQuantity)
+    const isScalableAddon = Object.keys(addon.features).length === 0 && Object.keys(addon.usageLimits).length === 0 && Object.keys(addon.usageLimitsExtensions).length > 0;
+    
+    if (isScalableAddon){
+      addon.subscriptionConstraints = {
+        minQuantity: minQuantity,
+        maxQuantity: validateSubscriptionConstraintMaxQuantity(addon.subscriptionConstraints?.maxQuantity, minQuantity),
+        quantityStep: validateSubscriptionConstraintQuantityStep(addon.subscriptionConstraints?.quantityStep, minQuantity),
+      }
     }
 
   } catch (err) {

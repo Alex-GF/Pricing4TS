@@ -2,7 +2,7 @@ import { Feature, Pricing, UsageLimit } from "../../types";
 import { PricingPlanEvaluationError } from "../exceptions/PricingPlanEvaluationError";
 import { retrievePricingFromPath } from "../server";
 
-export type SubscriptionContext = Record<"features" | "usageLimits", Record<string, Feature | UsageLimit>>;
+export type Configuration = Record<"features" | "usageLimits", Record<string, Feature | UsageLimit>>;
 
 /**
  * An abstract class from which to create a component that adapts the pricing
@@ -52,7 +52,7 @@ export abstract class PricingContext {
      * 
      * @returns Map with the user context
      */
-    abstract getUserContext(): Record<string, boolean | string | number>;
+    abstract getSubscriptionContext(): Record<string, boolean | string | number>;
 
     /**
      * This method should return the plan name of the current user.
@@ -69,7 +69,7 @@ export abstract class PricingContext {
      * 
      * @return current user's plan context
      */
-    getPlanContext(): SubscriptionContext {
+    getPlanContext(): Configuration {
         const userPlan = this.getPricing().plans![this.getUserPlan()];
 
         return {

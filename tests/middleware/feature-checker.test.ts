@@ -21,7 +21,7 @@ export class PricingContextImpl extends PricingContext {
     return PricingContextImpl.jwtExpirationTime;
   }
 
-  getUserContext(): Record<string, boolean | string | number> {
+  getSubscriptionContext(): Record<string, boolean | string | number> {
     return {
       username: 'test-user',
       pets: 2,

@@ -18,7 +18,7 @@ export class PricingContextImpl extends PricingContext {
     return PricingContextImpl.jwtExpirationTime;
   }
 
-  getUserContext(): Record<string, boolean | string | number> {
+  getSubscriptionContext(): Record<string, boolean | string | number> {
     return {
       username: 'test-user',
       pets: 2,
@@ -60,27 +60,27 @@ describe('PricingJwtUtils tests using a sample PricingContext', () => {
   });
 
   describe('Positive tests of PricingJwtUtils with PricingContextImpl', () => {
-    it(`token should contain subject from userContext's username`, () => {
+    it(`token should contain subject from subscriptionContext's username`, () => {
       const testToken: string = generateUserPricingToken();
-      const expectedSubject: string = PricingContextManager.getContext().getUserContext()
+      const expectedSubject: string = PricingContextManager.getContext().getSubscriptionContext()
         .username as string;
 
       expect(PricingJwtUtils.getSubjectFromJwtToken(testToken)).toBe(expectedSubject);
     });
 
-    it('token should contain userContext', () => {
+    it('token should contain subscriptionContext', () => {
       const testToken: string = generateUserPricingToken();
       const expectedUserContext: Record<string, boolean | string | number> =
-        PricingContextManager.getContext().getUserContext();
+        PricingContextManager.getContext().getSubscriptionContext();
 
-      expect(PricingJwtUtils.decodeToken(testToken).userContext).toStrictEqual(expectedUserContext);
+      expect(PricingJwtUtils.decodeToken(testToken).subscriptionContext).toStrictEqual(expectedUserContext);
     });
 
     it('should update token with an expression to be evaluated in frontend', () => {
       const testToken: string = generateUserPricingToken();
       const decodedToken: Record<string, any> = PricingJwtUtils.decodeToken(testToken);
 
-      const newExpressionOfPetsFeature: string = "planContext['pets'] > localStorage['pets']";
+      const newExpressionOfPetsFeature: string = "pricingContext['pets'] > localStorage['pets']";
 
       const newFeatureStatuses: Record<string, FeatureStatus> = {
         ...decodedToken.features,
@@ -104,7 +104,7 @@ describe('PricingJwtUtils tests using a sample PricingContext', () => {
     it('should update feature in token with an expression to be evaluated in frontend', () => {
       const testToken: string = generateUserPricingToken();
 
-      const newExpressionOfPetsFeature: string = "planContext['pets'] > localStorage['pets']";
+      const newExpressionOfPetsFeature: string = "pricingContext['pets'] > localStorage['pets']";
 
       const updatedToken: string = PricingJwtUtils.updateEvalOfTokenFeature(
         testToken,
