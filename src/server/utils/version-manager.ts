@@ -4,7 +4,7 @@ import { validateSyntaxVersion } from "../../main/utils/pricing-validators";
 import { updaters } from "./version-updaters/updaters";
 import { writePricingWithErrorToYaml, writePricingToYaml } from "../../server/utils/yaml-utils";
 
-export const PRICING2YAML_VERSIONS: Array<string> = ["1.0", "1.1", "2.0", "2.1"];
+export const PRICING2YAML_VERSIONS: Array<string> = ["1.0", "1.1", "2.0", "2.1", "3.0"];
 
 export const LATEST_PRICING2YAML_VERSION: string =
   PRICING2YAML_VERSIONS[PRICING2YAML_VERSIONS.length - 1];

@@ -43,7 +43,7 @@ export class PricingJwtUtils {
             throw new PricingTokenError("[ERROR] Claims not found when encoding token");
         }else if (!claims.sub){
             throw new PricingTokenError("[ERROR] Subject not found in claims when encoding token");
-        }else if (!claims.userContext){
+        }else if (!claims.subscriptionContext){
             throw new PricingTokenError("[ERROR] User context not found in claims when encoding token");
         }
 

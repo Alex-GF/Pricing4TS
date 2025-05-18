@@ -14,6 +14,7 @@ export interface AddOn {
   features?: { [key: string]: Feature };
   usageLimits?: { [key: string]: UsageLimit };
   usageLimitsExtensions?: { [key: string]: UsageLimit };
+  subscriptionConstraints: { minQuantity: number; maxQuantity: number, quantityStep: number };
 }
 
 export function getAddOnNames(addOns?: Record<string, AddOn>): string[] {

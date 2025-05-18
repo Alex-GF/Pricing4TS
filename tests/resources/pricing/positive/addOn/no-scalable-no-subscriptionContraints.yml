@@ -1,0 +1,41 @@
+saasName: Test
+syntaxVersion: '3.0'
+version: "2025"
+createdAt: 2024-01-15
+currency: EUR
+features:
+  feature1:
+    description: Feature 1 description
+    valueType: BOOLEAN
+    defaultValue: true
+    type: DOMAIN
+  feature2:
+    description: Feature 2 description
+    valueType: BOOLEAN
+    defaultValue: false
+    type: DOMAIN
+usageLimits:
+  usageLimit1:
+    description: Usage limit 1 description
+    valueType: NUMERIC
+    defaultValue: 10
+    unit: GB
+    type: NON_RENEWABLE
+plans:
+  BASIC:
+    description: Basic plan
+    price: 0.0
+    unit: user/month
+    features: null
+    usageLimits: null
+addOns:
+  addon1:
+    availableFor:
+      - BASIC
+    price: 10.0
+    unit: user/month
+    features:
+      feature1:
+          value: true
+    usageLimits: null
+    usageLimitsExtensions: null

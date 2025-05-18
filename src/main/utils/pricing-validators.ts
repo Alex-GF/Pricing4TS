@@ -395,21 +395,21 @@ export function validateUnit(unit: string | null | undefined): string {
 export function validateUsageLimitType(type: string | null | undefined): UsageLimitType {
   if (type === null || type === undefined) {
     throw new Error(
-      `The type field of a usage limit must not be null or undefined. Please ensure that the type field is present and it's value correspond to either RENEWABLE, NON_RENEWABLE, TIME_DRIVEN or RESPONSE_DRIVEN`
+      `The type field of a usage limit must not be null or undefined. Please ensure that the type field is present and it's value correspond to either RENEWABLE or NON_RENEWABLE`
     );
   }
 
   if (typeof type !== 'string') {
     throw new Error(
-      `The type field of a usage limit must be a string, and its value must be either RENEWABLE, NON_RENEWABLE, TIME_DRIVEN or RESPONSE_DRIVEN. Received: ${type} `
+      `The type field of a usage limit must be a string, and its value must be either RENEWABLE or NON_RENEWABLE. Received: ${type} `
     );
   }
 
   type = type.trim().toUpperCase();
 
-  if (!['RENEWABLE', 'NON_RENEWABLE', 'TIME_DRIVEN', 'RESPONSE_DRIVEN'].includes(type)) {
+  if (!['RENEWABLE', 'NON_RENEWABLE'].includes(type)) {
     throw new Error(
-      `The type field of a usage limit must be one of RENEWABLE, NON_RENEWABLE, TIME_DRIVEN or RESPONSE_DRIVEN. Received: ${type}`
+      `The type field of a usage limit must be one of RENEWABLE or NON_RENEWABLE. Received: ${type}`
     );
   }
 
@@ -924,4 +924,106 @@ export function validateDocUrl(featureType: FeatureType, docUrl: string | undefi
   }
 
   return docUrl;
+}
+
+export function validatePeriodUnit(periodUnit: string | undefined): "SEC" | "MIN" | "HOUR" | "DAY" | "MONTH" | "YEAR" {
+  if (periodUnit === undefined || periodUnit === null) {
+    periodUnit = 'MONTH'; 
+  }
+  
+  if (typeof periodUnit !== 'string') {
+    throw new Error(`The periodUnit field must be one of the following string values: "SEC" | "MIN" | "HOUR" | "DAY" | "MONTH" | "YEAR". Received: ${periodUnit}`);
+  }
+
+  periodUnit = periodUnit.toUpperCase();
+
+  if (!["SEC", "MIN", "HOUR", "DAY", "MONTH", "YEAR"].includes(periodUnit)) {
+    throw new Error(
+      `The periodUnit field must be one of "SEC" | "MIN" | "HOUR" | "DAY" | "MONTH" | "YEAR". Received: ${periodUnit}`
+    );
+  }
+
+  return periodUnit as "SEC" | "MIN" | "HOUR" | "DAY" | "MONTH" | "YEAR";
+}
+
+export function validatePeriodValue(periodValue: number | undefined): number {
+  if (periodValue === undefined || periodValue === null) {
+    periodValue = 1;
+  }
+
+  if (typeof periodValue !== 'number') {
+    throw new Error(`The periodValue field must be a number. Received: ${periodValue}`);
+  }
+
+  if (periodValue <= 0) {
+    throw new Error(`The periodValue field must be a positive number. Received: ${periodValue}`);
+  }
+
+  return periodValue;
+}
+
+export function validateTrackable(trackable: boolean | undefined): boolean {
+  if (trackable === undefined || trackable === null) {
+    trackable = false;
+  }
+
+  if (typeof trackable === 'string'){
+    trackable = (trackable as string).toLowerCase() === 'true';
+  }
+
+  if (typeof trackable !== 'boolean') {
+    throw new Error(`The trackable field must be a boolean. Received: ${trackable}`);
+  }
+
+  return trackable;
+}
+
+export function validateSubscriptionConstraintMinQuantity(
+  subscriptionConstraintMinQuantity: number | undefined
+): number {
+  if (subscriptionConstraintMinQuantity === undefined || subscriptionConstraintMinQuantity === null) {
+    subscriptionConstraintMinQuantity = 1;
+  }
+
+  if (typeof subscriptionConstraintMinQuantity !== 'number') {
+    throw new Error(`The subscriptionConstraintMinQuantity field must be a number. Received: ${subscriptionConstraintMinQuantity}`);
+  }
+
+  if (subscriptionConstraintMinQuantity < 0) {
+    throw new Error(`The subscriptionConstraintMinQuantity field must be a positive number. Received: ${subscriptionConstraintMinQuantity}`);
+  }
+
+  return subscriptionConstraintMinQuantity;
+}
+
+export function validateSubscriptionConstraintMaxQuantity(subscriptionConstraintMaxQuantity: number | undefined, minQuantity: number): number {
+  if (subscriptionConstraintMaxQuantity === undefined || subscriptionConstraintMaxQuantity === null) {
+    subscriptionConstraintMaxQuantity = unlimitedValue;
+  }
+
+  if (typeof subscriptionConstraintMaxQuantity !== 'number') {
+    throw new Error(`The subscriptionConstraintMaxQuantity field must be a number. Received: ${subscriptionConstraintMaxQuantity}`);
+  }
+
+  if (subscriptionConstraintMaxQuantity < minQuantity) {
+    throw new Error(`The subscriptionConstraintMaxQuantity field must be greater than or equal to the min quantity. Received: ${subscriptionConstraintMaxQuantity}`);
+  }
+
+  return subscriptionConstraintMaxQuantity;
+}
+
+export function validateSubscriptionConstraintQuantityStep(subscriptionConstraintQuantityStep: number | undefined, minQuantity: number): number {
+  if (subscriptionConstraintQuantityStep === undefined || subscriptionConstraintQuantityStep === null) {
+    subscriptionConstraintQuantityStep = 1;
+  }
+
+  if (typeof subscriptionConstraintQuantityStep !== 'number') {
+    throw new Error(`The subscriptionConstraintQuantityStep field must be a number. Received: ${subscriptionConstraintQuantityStep}`);
+  }
+
+  if (!(minQuantity % subscriptionConstraintQuantityStep === 0)) {
+    throw new Error(`The subscriptionConstraintQuantityStep field must be a divisor of, at least, the min quantity. Received: ${subscriptionConstraintQuantityStep}`);
+  }
+
+  return subscriptionConstraintQuantityStep;
 }

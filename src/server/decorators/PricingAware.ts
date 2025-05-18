@@ -1,5 +1,5 @@
 import { Feature } from "../../types";
-import { PricingContext, SubscriptionContext } from "../configuration/PricingContext";
+import { PricingContext, Configuration } from "../configuration/PricingContext";
 import { PricingContextManager } from "../server";
 import { ContextToEval, extractContextToEvalFromSubscriptionContext } from "../utils/pricing-evaluator";
 
@@ -38,11 +38,11 @@ export function PricingAware(featureName: string) {
     };
   }
 
-function evaluateContext(pricingContext: PricingContext, featureName: string): boolean {
+function evaluateContext(evaluationContext: PricingContext, featureName: string): boolean {
     
-    const subscriptionContext: SubscriptionContext = pricingContext.getPlanContext();
+    const configuration: Configuration = evaluationContext.getPlanContext();
 
-    const featureToEval: Feature = subscriptionContext.features[featureName] as Feature;
+    const featureToEval: Feature = configuration.features[featureName] as Feature;
     const evaluationExpression: string | undefined = featureToEval.serverExpression ?? featureToEval.expression;
 
     if (!evaluationExpression) {
@@ -50,8 +50,8 @@ function evaluateContext(pricingContext: PricingContext, featureName: string): b
       return false;
     }
 
-    const userContext: Record<string, any> = pricingContext.getUserContext();
-    const planContext: ContextToEval = extractContextToEvalFromSubscriptionContext(subscriptionContext);
+    const subscriptionContext: Record<string, any> = evaluationContext.getSubscriptionContext();
+    const pricingContext: ContextToEval = extractContextToEvalFromSubscriptionContext(configuration);
 
     const evalResult: Boolean = eval(evaluationExpression);
 
