@@ -33,6 +33,10 @@ export class PricingContextImpl extends PricingContext {
     return 'GOLD';
   }
 
+  getUserAddOns(): string[] {
+    return [];
+  }
+
   static setJwtExpirationTime(time: number): void {
     this.jwtExpirationTime = time;
   }

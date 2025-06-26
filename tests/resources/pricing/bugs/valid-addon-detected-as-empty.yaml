@@ -1,0 +1,297 @@
+syntaxVersion: '3.0'
+saasName: seal
+version: '2025'
+currency: USD
+createdAt: '2025-05-19'
+features:
+  louse:
+    name: louse
+    description: Aetas depulso ullam.
+    valueType: TEXT
+    defaultValue: sursum
+    type: AUTOMATION
+    automationType: BOT
+    expression: pricingContext['louse'] === pricingContext['louse']
+    render: enabled
+  e-mail:
+    name: e-mail
+    description: Aetas cito tenax vesper vulticulus usitas porro.
+    valueType: BOOLEAN
+    defaultValue: false
+    type: SUPPORT
+    expression: pricingContext['features']['e-mail'] && (subscriptionContext['developmental'] < pricingContext['usageLimits']['developmental'])
+    serverExpression: pricingContext['features']['e-mail'] && (subscriptionContext['developmental'] <= pricingContext['usageLimits']['developmental'])
+    render: disabled
+  barge:
+    name: barge
+    description: Aer casus ambitus perspiciatis.
+    valueType: BOOLEAN
+    defaultValue: false
+    type: AUTOMATION
+    automationType: TRACKING
+    expression: pricingContext['features']['barge'] && (subscriptionContext['tool'] < pricingContext['usageLimits']['tool'])
+    serverExpression: pricingContext['features']['barge'] && (subscriptionContext['tool'] <= pricingContext['usageLimits']['tool'])
+    render: auto
+  version:
+    name: version
+    description: Comminor theatrum repellendus benigne.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: GUARANTEE
+    expression: pricingContext['version']
+    render: disabled
+  pleasure:
+    name: pleasure
+    description: Earum pel terror iste voluptate reprehenderit viscus allatus cui conscendo.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: MANAGEMENT
+    expression: pricingContext['features']['pleasure'] && (subscriptionContext['giggle'] < pricingContext['usageLimits']['giggle'])
+    serverExpression: pricingContext['features']['pleasure'] && (subscriptionContext['giggle'] <= pricingContext['usageLimits']['giggle'])
+    render: enabled
+  travel:
+    name: travel
+    description: Adhaero bene arto.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: INTEGRATION
+    integrationType: MARKETPLACE
+    expression: pricingContext['features']['travel'] && (subscriptionContext['illusion'] < pricingContext['usageLimits']['illusion'])
+    serverExpression: pricingContext['features']['travel'] && (subscriptionContext['illusion'] <= pricingContext['usageLimits']['illusion'])
+    render: auto
+  cafe:
+    name: cafe
+    description: Tristis aduro cetera distinctio solvo cresco tam.
+    valueType: BOOLEAN
+    defaultValue: false
+    type: DOMAIN
+    expression: pricingContext['cafe']
+    render: auto
+  scorpion:
+    name: scorpion
+    description: Adficio animi tibi doloribus dapifer communis deorsum aut sequi texo.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: AUTOMATION
+    automationType: TASK_AUTOMATION
+    expression: pricingContext['features']['scorpion'] && (subscriptionContext['netsuke'] < pricingContext['usageLimits']['netsuke'])
+    serverExpression: pricingContext['features']['scorpion'] && (subscriptionContext['netsuke'] <= pricingContext['usageLimits']['netsuke'])
+    render: disabled
+  tribe:
+    name: tribe
+    description: Damnatio qui ars statua sapiente vicinus.
+    valueType: BOOLEAN
+    defaultValue: false
+    value: true
+    type: INTEGRATION
+    integrationType: WEB_SAAS
+    expression: pricingContext['tribe']
+    render: enabled
+usageLimits:
+  substitution:
+    name: substitution
+    description: Solus patrocinor rem depono ter cariosus acidus deporto.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: NON_RENEWABLE
+    trackable: true
+    linkedFeatures:
+      - cafe
+  conservative:
+    name: conservative
+    description: Vestrum claustrum quasi nesciunt occaecati currus facere callide.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: RENEWABLE
+    period:
+      value: 12
+      unit: MIN
+    linkedFeatures:
+      - cafe
+  thread:
+    name: thread
+    description: Demum cognatus copia dolor usus audacia solutio calcar benigne.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: RENEWABLE
+    period:
+      value: 2
+      unit: YEAR
+    linkedFeatures:
+      - scorpion
+  illusion:
+    name: illusion
+    description: Adsuesco venio aufero adeptio cupiditate credo auctor voluptates.
+    valueType: NUMERIC
+    defaultValue: 55
+    type: NON_RENEWABLE
+    trackable: false
+    linkedFeatures:
+      - travel
+  developmental:
+    name: developmental
+    description: Sumptus abutor solitudo alveus numquam curvo curvo suus dignissimos.
+    valueType: NUMERIC
+    defaultValue: 65
+    type: NON_RENEWABLE
+    trackable: false
+    linkedFeatures:
+      - e-mail
+  celsius:
+    name: celsius
+    description: Supellex terga alveus.
+    valueType: BOOLEAN
+    defaultValue: true
+    type: NON_RENEWABLE
+    trackable: true
+    linkedFeatures:
+      - travel
+  netsuke:
+    name: netsuke
+    description: Nam tutis triduana dignissimos earum.
+    valueType: NUMERIC
+    defaultValue: 0
+    value: 96
+    type: NON_RENEWABLE
+    trackable: true
+    linkedFeatures:
+      - scorpion
+  giggle:
+    name: giggle
+    description: Sunt thema adamo et ambulo sperno inflammatio odit.
+    valueType: NUMERIC
+    defaultValue: 42
+    value: 74
+    type: RENEWABLE
+    period:
+      value: 9
+      unit: MONTH
+    linkedFeatures:
+      - pleasure
+  tool:
+    name: tool
+    description: Vinculum acervus audeo desipio conculco.
+    valueType: NUMERIC
+    defaultValue: 56
+    value: 70
+    type: RENEWABLE
+    period:
+      value: 5
+      unit: DAY
+    linkedFeatures:
+      - barge
+plans:
+  TRAY:
+    description: Totidem aliquam conatus.
+    price: 14.525046764712158
+    private: false
+    features:
+      tribe: true
+    usageLimits:
+      netsuke: 96
+      giggle: 74
+      tool: 70
+  FUEL:
+    description: Cerno amoveo sol argumentum triumphus cohors condico benigne.
+    price: 69.69585368396393
+    private: false
+    features:
+      tribe: true
+    usageLimits:
+      netsuke: 96
+      giggle: 74
+      tool: 70
+addOns:
+  bonnet:
+    description: Ultio assumenda tenetur asporto victoria assumenda.
+    private: false
+    price: 64.77566599924417
+    availableFor:
+      - TRAY
+      - FUEL
+    dependsOn: []
+    excludes: []
+    features:
+      louse:
+        value: litter
+      e-mail:
+        value: false
+      travel:
+        value: true
+      scorpion:
+        value: true
+    usageLimits: {}
+    usageLimitsExtensions: {}
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
+  sailor:
+    description: Crebro rerum calculus sub tristis terebro appello sui quis chirographum.
+    private: false
+    price: 1.635389438930801
+    availableFor:
+      - TRAY
+      - FUEL
+    dependsOn:
+      - bonnet
+    excludes: []
+    features: {}
+    usageLimits:
+      tool:
+        value: 50
+    usageLimitsExtensions: {}
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
+  battle:
+    description: Summopere umbra amo.
+    private: false
+    price: 88.30456929361803
+    availableFor:
+      - TRAY
+      - FUEL
+    dependsOn: []
+    excludes: []
+    features:
+      version:
+        value: false
+      scorpion:
+        value: false
+    usageLimits: {}
+    usageLimitsExtensions: {}
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
+  jellyfish:
+    description: Qui usque degusto aspernatur urbanus adamo ventito deripio tot.
+    private: false
+    price: 37.97723428172791
+    availableFor:
+      - TRAY
+      - FUEL
+    dependsOn:
+      - bonnet
+      - battle
+    excludes: []
+    features:
+      louse:
+        value: scratch
+      e-mail:
+        value: false
+      barge:
+        value: false
+      version:
+        value: false
+      travel:
+        value: true
+      scorpion:
+        value: false
+    usageLimits: {}
+    usageLimitsExtensions: {}
+    subscriptionConstraints:
+      minQuantity: 1
+      maxQuantity: 1
+      quantityStep: 1
