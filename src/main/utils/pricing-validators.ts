@@ -190,8 +190,8 @@ export function validateDefaultValue(
       break;
     case 'TEXT':
       if (elem.type === 'PAYMENT') {
-        if (!(elem.defaultValue instanceof Array) || elem.defaultValue.length === 0) {
-          throw new Error(`Payment method value must be an array of payment methods and not empty`);
+        if (!(elem.defaultValue instanceof Array)) {
+          throw new Error(`Payment method value must be an array of payment methods`);
         }
         for (const paymentMethod of elem.defaultValue) {
           if (
@@ -269,8 +269,8 @@ export function validateValue(
       break;
     case 'TEXT':
       if (elem.type === 'PAYMENT' && elem.value !== undefined) {
-        if (!(elem.value instanceof Array) || elem.value.length === 0) {
-          throw new Error(`Payment method value must be an array of payment methods and not empty`);
+        if (!(elem.value instanceof Array)) {
+          throw new Error(`Payment method value must be an array of payment methods`);
         }
         for (const paymentMethod of elem.value) {
           if (
