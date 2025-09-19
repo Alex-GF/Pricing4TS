@@ -12,8 +12,8 @@ features:
     defaultValue:
       - CARD
     type: PAYMENT
-    expression: foo==foo
-    serverExpression: bar==bar
+    expression: "true"
+    serverExpression: "true"
 usageLimits:
   limit:
     description: Limit for payment

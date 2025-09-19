@@ -17,13 +17,24 @@ export function retrievePricingFromPath(yamlPath: string): Pricing {
     );
   }
 
-  const extractedPricing: ExtractedPricing = yaml.load(fileContent) as ExtractedPricing;
+  const pricing: Pricing = retrievePricingFromText(fileContent, yamlPath);
 
-  if (extractedPricing === null || extractedPricing === undefined) {
+  return pricing;
+}
+
+export function retrievePricingFromText(stringifiedPricing: string, yamlPath?: string): Pricing{
+  const extractedPricing: ExtractedPricing = yaml.load(stringifiedPricing) as ExtractedPricing;
+
+  if (extractedPricing === null || extractedPricing === undefined && yamlPath) {
     throw new Error(`The file at path ${yamlPath} does not contain valid YAML content.`);
   }
 
-  update(extractedPricing, true, absolutePath);
+  if (yamlPath) {
+    const absolutePath: string = fs.realpathSync(yamlPath);
+    update(extractedPricing, true, absolutePath);
+  }else{
+    update(extractedPricing, false);
+  }
 
   const pricing: Pricing = parsePricing(extractedPricing);
 
