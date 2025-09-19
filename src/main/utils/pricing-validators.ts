@@ -1133,8 +1133,8 @@ function validateExpressionSyntax(expression: string, item: string): void {
 
   // 3. Remove allowed operators and spaces
   const allowedOpsPattern = new RegExp(allowedOperators.join('|'), 'g');
-  exprWithoutContexts = exprWithoutContexts.replace(allowedOpsPattern, ' ');
-  exprWithoutContexts = exprWithoutContexts.replace(/[\s()]+/g, ' ');
+  exprWithoutContexts = exprWithoutContexts.replace(allowedOpsPattern, '');
+  exprWithoutContexts = exprWithoutContexts.replace(/[\s()]+/g, '');
 
   // 4. Find remaining words (should be empty or only numbers/literals)
   const forbiddenWords = [];
@@ -1149,7 +1149,7 @@ function validateExpressionSyntax(expression: string, item: string): void {
     throw new Error(
       `The ${item} of a feature contains forbidden identifiers or invalid context usage: ${forbiddenWords.join(
         ', '
-      )}. Only pricingContext["features|usageLimits"]["..."] and subscriptionContext["..."] are allowed.`
+      )}. Only pricingContext["features|usageLimits"]["..."], subscriptionContext["..."], true and false are allowed.`
     );
   }
 
@@ -1176,4 +1176,5 @@ function validateExpressionSyntax(expression: string, item: string): void {
       );
     }
   }
+  
 }
