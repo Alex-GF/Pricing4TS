@@ -11,7 +11,7 @@ features:
     defaultValue: sursum
     type: AUTOMATION
     automationType: BOT
-    expression: pricingContext['louse'] === pricingContext['louse']
+    expression: pricingContext['features']['louse']
     render: enabled
   e-mail:
     name: e-mail
@@ -38,7 +38,7 @@ features:
     valueType: BOOLEAN
     defaultValue: true
     type: GUARANTEE
-    expression: pricingContext['version']
+    expression: pricingContext['features']['version']
     render: disabled
   pleasure:
     name: pleasure
@@ -65,7 +65,7 @@ features:
     valueType: BOOLEAN
     defaultValue: false
     type: DOMAIN
-    expression: pricingContext['cafe']
+    expression: pricingContext['features']['cafe']
     render: auto
   scorpion:
     name: scorpion
@@ -85,7 +85,7 @@ features:
     value: true
     type: INTEGRATION
     integrationType: WEB_SAAS
-    expression: pricingContext['tribe']
+    expression: pricingContext['features']['tribe']
     render: enabled
 usageLimits:
   substitution:
