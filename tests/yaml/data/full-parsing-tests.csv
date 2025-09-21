@@ -1,0 +1,275 @@
+testName,pricingPath,expected
+---------- box ----------,-,-
+box 2019,tests/resources/pricing/full/box/2019.yml,Box
+box 2020,tests/resources/pricing/full/box/2020.yml,Box
+box 2021,tests/resources/pricing/full/box/2021.yml,Box
+box 2022,tests/resources/pricing/full/box/2022.yml,Box
+box 2023,tests/resources/pricing/full/box/2023.yml,Box
+box 2024,tests/resources/pricing/full/box/2024.yml,Box
+box 2025,tests/resources/pricing/full/box/2025.yml,Box
+---------- buffer ----------,-,-
+buffer 2019,tests/resources/pricing/full/buffer/2019.yml,Buffer
+buffer 2020,tests/resources/pricing/full/buffer/2020.yml,Buffer
+buffer 2021,tests/resources/pricing/full/buffer/2021.yml,Buffer
+buffer 2022,tests/resources/pricing/full/buffer/2022.yml,Buffer
+buffer 2023,tests/resources/pricing/full/buffer/2023.yml,Buffer
+buffer 2024,tests/resources/pricing/full/buffer/2024.yml,Buffer
+buffer 2025,tests/resources/pricing/full/buffer/2025.yml,Buffer
+---------- canva ----------,-,-
+canva 2019,tests/resources/pricing/full/canva/2019.yml,Canva
+canva 2020,tests/resources/pricing/full/canva/2020.yml,Canva
+canva 2021,tests/resources/pricing/full/canva/2021.yml,Canva
+canva 2022,tests/resources/pricing/full/canva/2022.yml,Canva
+canva 2023,tests/resources/pricing/full/canva/2023.yml,Canva
+canva 2024,tests/resources/pricing/full/canva/2024.yml,Canva
+canva 2025,tests/resources/pricing/full/canva/2025.yml,Canva
+---------- circleci ----------,-,-
+circleci 2019,tests/resources/pricing/full/circleci/2019.yml,Circleci
+circleci 2020,tests/resources/pricing/full/circleci/2020.yml,Circleci
+circleci 2021,tests/resources/pricing/full/circleci/2021.yml,Circleci
+circleci 2022,tests/resources/pricing/full/circleci/2022.yml,Circleci
+circleci 2023,tests/resources/pricing/full/circleci/2023.yml,Circleci
+circleci 2024,tests/resources/pricing/full/circleci/2024.yml,Circleci
+circleci 2025,tests/resources/pricing/full/circleci/2025.yml,Circleci
+---------- clickup ----------,-,-
+clickup 2019,tests/resources/pricing/full/clickup/2019.yml,Clickup
+clickup 2020,tests/resources/pricing/full/clickup/2020.yml,Clickup
+clickup 2021,tests/resources/pricing/full/clickup/2021.yml,Clickup
+clickup 2022,tests/resources/pricing/full/clickup/2022.yml,Clickup
+clickup 2023,tests/resources/pricing/full/clickup/2023.yml,Clickup
+clickup 2024,tests/resources/pricing/full/clickup/2024.yml,Clickup
+clickup 2025,tests/resources/pricing/full/clickup/2025.yml,Clickup
+---------- clockify ----------,-,-
+clockify 2019,tests/resources/pricing/full/clockify/2019.yml,Clockify
+clockify 2020,tests/resources/pricing/full/clockify/2020.yml,Clockify
+clockify 2021,tests/resources/pricing/full/clockify/2021.yml,Clockify
+clockify 2022,tests/resources/pricing/full/clockify/2022.yml,Clockify
+clockify 2023,tests/resources/pricing/full/clockify/2023.yml,Clockify
+clockify 2024,tests/resources/pricing/full/clockify/2024.yml,Clockify
+clockify 2025,tests/resources/pricing/full/clockify/2025.yml,Clockify
+---------- crowdcast ----------,-,-
+crowdcast 2020,tests/resources/pricing/full/crowdcast/2020.yml,Crowdcast
+crowdcast 2021,tests/resources/pricing/full/crowdcast/2021.yml,Crowdcast
+crowdcast 2022,tests/resources/pricing/full/crowdcast/2022.yml,Crowdcast
+crowdcast 2023,tests/resources/pricing/full/crowdcast/2023.yml,Crowdcast
+crowdcast 2024,tests/resources/pricing/full/crowdcast/2024.yml,Crowdcast
+crowdcast 2025,tests/resources/pricing/full/crowdcast/2025.yml,Crowdcast
+---------- databox ----------,-,-
+databox 2019,tests/resources/pricing/full/databox/2019.yml,Databox
+databox 2020,tests/resources/pricing/full/databox/2020.yml,Databox
+databox 2021,tests/resources/pricing/full/databox/2021.yml,Databox
+databox 2022,tests/resources/pricing/full/databox/2022.yml,Databox
+databox 2023,tests/resources/pricing/full/databox/2023.yml,Databox
+databox 2024,tests/resources/pricing/full/databox/2024.yml,Databox
+databox 2025,tests/resources/pricing/full/databox/2025.yml,Databox
+---------- deskera ----------,-,-
+deskera 2021,tests/resources/pricing/full/deskera/2021.yml,Deskera
+deskera 2022,tests/resources/pricing/full/deskera/2022.yml,Deskera
+deskera 2023,tests/resources/pricing/full/deskera/2023.yml,Deskera
+deskera 2024,tests/resources/pricing/full/deskera/2024.yml,Deskera
+deskera 2025,tests/resources/pricing/full/deskera/2025.yml,Deskera
+---------- dropbox ----------,-,-
+dropbox 2021,tests/resources/pricing/full/dropbox/2021.yml,Dropbox
+dropbox 2022,tests/resources/pricing/full/dropbox/2022.yml,Dropbox
+dropbox 2023,tests/resources/pricing/full/dropbox/2023.yml,Dropbox
+dropbox 2024,tests/resources/pricing/full/dropbox/2024.yml,Dropbox
+dropbox 2025,tests/resources/pricing/full/dropbox/2025.yml,Dropbox
+---------- evernote ----------,-,-
+evernote 2019,tests/resources/pricing/full/evernote/2019.yml,Evernote
+evernote 2020,tests/resources/pricing/full/evernote/2020.yml,Evernote
+evernote 2021,tests/resources/pricing/full/evernote/2021.yml,Evernote
+evernote 2022,tests/resources/pricing/full/evernote/2022.yml,Evernote
+evernote 2023,tests/resources/pricing/full/evernote/2023.yml,Evernote
+evernote 2024,tests/resources/pricing/full/evernote/2024.yml,Evernote
+evernote 2025,tests/resources/pricing/full/evernote/2025.yml,Evernote
+---------- figma ----------,-,-
+figma 2019,tests/resources/pricing/full/figma/2019.yml,Figma
+figma 2020,tests/resources/pricing/full/figma/2020.yml,Figma
+figma 2021,tests/resources/pricing/full/figma/2021.yml,Figma
+figma 2022,tests/resources/pricing/full/figma/2022.yml,Figma
+figma 2023,tests/resources/pricing/full/figma/2023.yml,Figma
+figma 2024,tests/resources/pricing/full/figma/2024.yml,Figma
+figma 2025,tests/resources/pricing/full/figma/2025.yml,Figma
+---------- github ----------,-,-
+github 2019,tests/resources/pricing/full/github/2019.yml,Github
+github 2020,tests/resources/pricing/full/github/2020.yml,Github
+github 2021,tests/resources/pricing/full/github/2021.yml,Github
+github 2022,tests/resources/pricing/full/github/2022.yml,Github
+github 2023,tests/resources/pricing/full/github/2023.yml,Github
+github 2024,tests/resources/pricing/full/github/2024.yml,Github
+github 2025,tests/resources/pricing/full/github/2025.yml,Github
+---------- hypercontext ----------,-,-
+hypercontext 2021,tests/resources/pricing/full/hypercontext/2021.yml,Hypercontext
+hypercontext 2022,tests/resources/pricing/full/hypercontext/2022.yml,Hypercontext
+hypercontext 2023,tests/resources/pricing/full/hypercontext/2023.yml,Hypercontext
+hypercontext 2024,tests/resources/pricing/full/hypercontext/2024.yml,Hypercontext
+---------- jira ----------,-,-
+jira 2019,tests/resources/pricing/full/jira/2019.yml,Jira
+jira 2020,tests/resources/pricing/full/jira/2020.yml,Jira
+jira 2021,tests/resources/pricing/full/jira/2021.yml,Jira
+jira 2022,tests/resources/pricing/full/jira/2022.yml,Jira
+jira 2023,tests/resources/pricing/full/jira/2023.yml,Jira
+jira 2024,tests/resources/pricing/full/jira/2024.yml,Jira
+jira 2025,tests/resources/pricing/full/jira/2025.yml,Jira
+---------- mailchimp ----------,-,-
+mailchimp 2019,tests/resources/pricing/full/mailchimp/2019.yml,Mailchimp
+mailchimp 2020,tests/resources/pricing/full/mailchimp/2020.yml,Mailchimp
+mailchimp 2021,tests/resources/pricing/full/mailchimp/2021.yml,Mailchimp
+mailchimp 2022,tests/resources/pricing/full/mailchimp/2022.yml,Mailchimp
+mailchimp 2023,tests/resources/pricing/full/mailchimp/2023.yml,Mailchimp
+mailchimp 2024,tests/resources/pricing/full/mailchimp/2024.yml,Mailchimp
+mailchimp 2025,tests/resources/pricing/full/mailchimp/2025.yml,Mailchimp
+---------- microsoft ----------,-,-
+microsoft365Business 2019,tests/resources/pricing/full/microsoft365Business/2019.yml,microsoft
+microsoft365Business 2020,tests/resources/pricing/full/microsoft365Business/2020.yml,microsoft
+microsoft365Business 2021,tests/resources/pricing/full/microsoft365Business/2021.yml,microsoft
+microsoft365Business 2022,tests/resources/pricing/full/microsoft365Business/2022.yml,microsoft
+microsoft365Business 2023,tests/resources/pricing/full/microsoft365Business/2023.yml,microsoft
+microsoft365Business 2024,tests/resources/pricing/full/microsoft365Business/2024.yml,microsoft
+microsoft365Business 2025,tests/resources/pricing/full/microsoft365Business/2025.yml,microsoft
+---------- notion ----------,-,-
+notion 2021,tests/resources/pricing/full/notion/2021.yml,Notion
+notion 2022,tests/resources/pricing/full/notion/2022.yml,Notion
+notion 2023,tests/resources/pricing/full/notion/2023.yml,Notion
+notion 2024,tests/resources/pricing/full/notion/2024.yml,Notion
+notion 2025,tests/resources/pricing/full/notion/2025.yml,Notion
+---------- okta ----------,-,-
+okta 2019,tests/resources/pricing/full/okta/2019.yml,Okta
+okta 2020,tests/resources/pricing/full/okta/2020.yml,Okta
+okta 2021,tests/resources/pricing/full/okta/2021.yml,Okta
+okta 2022,tests/resources/pricing/full/okta/2022.yml,Okta
+okta 2023,tests/resources/pricing/full/okta/2023.yml,Okta
+okta 2024,tests/resources/pricing/full/okta/2024.yml,Okta
+okta 2025,tests/resources/pricing/full/okta/2025.yml,Okta
+---------- openphone ----------,-,-
+openphone 2020,tests/resources/pricing/full/openphone/2020.yml,Openphone
+openphone 2021,tests/resources/pricing/full/openphone/2021.yml,Openphone
+openphone 2022,tests/resources/pricing/full/openphone/2022.yml,Openphone
+openphone 2023,tests/resources/pricing/full/openphone/2023.yml,Openphone
+openphone 2024,tests/resources/pricing/full/openphone/2024.yml,Openphone
+openphone 2025,tests/resources/pricing/full/openphone/2025.yml,Openphone
+---------- overleaf ----------,-,-
+overleaf 2019,tests/resources/pricing/full/overleaf/2019.yml,Overleaf
+overleaf 2020,tests/resources/pricing/full/overleaf/2020.yml,Overleaf
+overleaf 2021,tests/resources/pricing/full/overleaf/2021.yml,Overleaf
+overleaf 2022,tests/resources/pricing/full/overleaf/2022.yml,Overleaf
+overleaf 2023,tests/resources/pricing/full/overleaf/2023.yml,Overleaf
+overleaf 2024,tests/resources/pricing/full/overleaf/2024.yml,Overleaf
+overleaf 2025,tests/resources/pricing/full/overleaf/2025.yml,Overleaf
+---------- planable ----------,-,-
+planable 2019,tests/resources/pricing/full/planable/2019.yml,Planable
+planable 2020,tests/resources/pricing/full/planable/2020.yml,Planable
+planable 2021,tests/resources/pricing/full/planable/2021.yml,Planable
+planable 2022,tests/resources/pricing/full/planable/2022.yml,Planable
+planable 2023,tests/resources/pricing/full/planable/2023.yml,Planable
+planable 2024,tests/resources/pricing/full/planable/2024.yml,Planable
+planable 2025,tests/resources/pricing/full/planable/2025.yml,Planable
+---------- postman ----------,-,-
+postman 2020,tests/resources/pricing/full/postman/2020.yml,Postman
+postman 2021,tests/resources/pricing/full/postman/2021.yml,Postman
+postman 2022,tests/resources/pricing/full/postman/2022.yml,Postman
+postman 2023,tests/resources/pricing/full/postman/2023.yml,Postman
+postman 2024,tests/resources/pricing/full/postman/2024.yml,Postman
+postman 2025,tests/resources/pricing/full/postman/2025.yml,Postman
+---------- pumble ----------,-,-
+pumble 2021,tests/resources/pricing/full/pumble/2021.yml,Pumble
+pumble 2022,tests/resources/pricing/full/pumble/2022.yml,Pumble
+pumble 2023,tests/resources/pricing/full/pumble/2023.yml,Pumble
+pumble 2024,tests/resources/pricing/full/pumble/2024.yml,Pumble
+pumble 2025,tests/resources/pricing/full/pumble/2025.yml,Pumble
+---------- quip ----------,-,-
+quip 2019,tests/resources/pricing/full/quip/2019.yml,Quip
+quip 2020,tests/resources/pricing/full/quip/2020.yml,Quip
+quip 2021,tests/resources/pricing/full/quip/2021.yml,Quip
+quip 2022,tests/resources/pricing/full/quip/2022.yml,Quip
+quip 2023,tests/resources/pricing/full/quip/2023.yml,Quip
+quip 2024,tests/resources/pricing/full/quip/2024.yml,Quip
+quip 2025,tests/resources/pricing/full/quip/2025.yml,Quip
+---------- salesforce ----------,-,-
+salesforce 2019,tests/resources/pricing/full/salesforce/2019.yml,Salesforce
+salesforce 2020,tests/resources/pricing/full/salesforce/2020.yml,Salesforce
+salesforce 2021,tests/resources/pricing/full/salesforce/2021.yml,Salesforce
+salesforce 2022,tests/resources/pricing/full/salesforce/2022.yml,Salesforce
+salesforce 2023,tests/resources/pricing/full/salesforce/2023.yml,Salesforce
+salesforce 2024,tests/resources/pricing/full/salesforce/2024.yml,Salesforce
+salesforce 2025,tests/resources/pricing/full/salesforce/2025.yml,Salesforce
+---------- shopify ----------,-,-
+shopify 2019,tests/resources/pricing/full/shopify/2019.yml,Shopify
+shopify 2020,tests/resources/pricing/full/shopify/2020.yml,Shopify
+shopify 2021,tests/resources/pricing/full/shopify/2021.yml,Shopify
+shopify 2022,tests/resources/pricing/full/shopify/2022.yml,Shopify
+shopify 2025,tests/resources/pricing/full/shopify/2025.yml,Shopify
+---------- slack ----------,-,-
+slack 2019,tests/resources/pricing/full/slack/2019.yml,Slack
+slack 2020,tests/resources/pricing/full/slack/2020.yml,Slack
+slack 2023,tests/resources/pricing/full/slack/2023.yml,Slack
+slack 2024,tests/resources/pricing/full/slack/2024.yml,Slack
+slack 2025,tests/resources/pricing/full/slack/2025.yml,Slack
+---------- tableau ----------,-,-
+tableau 2019,tests/resources/pricing/full/tableau/2019.yml,Tableau
+tableau 2020,tests/resources/pricing/full/tableau/2020.yml,Tableau
+tableau 2021,tests/resources/pricing/full/tableau/2021.yml,Tableau
+tableau 2022,tests/resources/pricing/full/tableau/2022.yml,Tableau
+tableau 2023,tests/resources/pricing/full/tableau/2023.yml,Tableau
+tableau 2024,tests/resources/pricing/full/tableau/2024.yml,Tableau
+tableau 2025,tests/resources/pricing/full/tableau/2025.yml,Tableau
+---------- trello ----------,-,-
+trello 2019,tests/resources/pricing/full/trello/2019.yml,Trello
+trello 2020,tests/resources/pricing/full/trello/2020.yml,Trello
+trello 2021,tests/resources/pricing/full/trello/2021.yml,Trello
+trello 2022,tests/resources/pricing/full/trello/2022.yml,Trello
+trello 2023,tests/resources/pricing/full/trello/2023.yml,Trello
+trello 2024,tests/resources/pricing/full/trello/2024.yml,Trello
+trello 2025,tests/resources/pricing/full/trello/2025.yml,Trello
+---------- trustmary ----------,-,-
+trustmary 2021,tests/resources/pricing/full/trustmary/2021.yml,Trustmary
+trustmary 2022,tests/resources/pricing/full/trustmary/2022.yml,Trustmary
+trustmary 2023,tests/resources/pricing/full/trustmary/2023.yml,Trustmary
+trustmary 2024,tests/resources/pricing/full/trustmary/2024.yml,Trustmary
+trustmary 2025,tests/resources/pricing/full/trustmary/2025.yml,Trustmary
+---------- userguiding ----------,-,-
+userguiding 2020,tests/resources/pricing/full/userguiding/2020.yml,Userguiding
+userguiding 2021,tests/resources/pricing/full/userguiding/2021.yml,Userguiding
+userguiding 2022,tests/resources/pricing/full/userguiding/2022.yml,Userguiding
+userguiding 2023,tests/resources/pricing/full/userguiding/2023.yml,Userguiding
+userguiding 2024,tests/resources/pricing/full/userguiding/2024.yml,Userguiding
+userguiding 2025,tests/resources/pricing/full/userguiding/2025.yml,Userguiding
+---------- webflow ----------,-,-
+webflow 2019,tests/resources/pricing/full/webflow/2019.yml,Webflow
+webflow 2020,tests/resources/pricing/full/webflow/2020.yml,Webflow
+webflow 2021,tests/resources/pricing/full/webflow/2021.yml,Webflow
+webflow 2022,tests/resources/pricing/full/webflow/2022.yml,Webflow
+webflow 2023,tests/resources/pricing/full/webflow/2023.yml,Webflow
+webflow 2024,tests/resources/pricing/full/webflow/2024.yml,Webflow
+webflow 2025,tests/resources/pricing/full/webflow/2025.yml,Webflow
+---------- wrike ----------,-,-
+wrike 2019,tests/resources/pricing/full/wrike/2019.yml,Wrike
+wrike 2020,tests/resources/pricing/full/wrike/2020.yml,Wrike
+wrike 2021,tests/resources/pricing/full/wrike/2021.yml,Wrike
+wrike 2022,tests/resources/pricing/full/wrike/2022.yml,Wrike
+wrike 2023,tests/resources/pricing/full/wrike/2023.yml,Wrike
+wrike 2024,tests/resources/pricing/full/wrike/2024.yml,Wrike
+wrike 2025,tests/resources/pricing/full/wrike/2025.yml,Wrike
+---------- zapier ----------,-,-
+zapier 2019,tests/resources/pricing/full/zapier/2019.yml,Zapier
+zapier 2020,tests/resources/pricing/full/zapier/2020.yml,Zapier
+zapier 2022,tests/resources/pricing/full/zapier/2022.yml,Zapier
+zapier 2023,tests/resources/pricing/full/zapier/2023.yml,Zapier
+zapier 2024,tests/resources/pricing/full/zapier/2024.yml,Zapier
+zapier 2025,tests/resources/pricing/full/zapier/2025.yml,Zapier
+---------- zenhub ----------,-,-
+zenhub 2019,tests/resources/pricing/full/zenhub/2019.yml,Zenhub
+zenhub 2020,tests/resources/pricing/full/zenhub/2020.yml,Zenhub
+zenhub 2021,tests/resources/pricing/full/zenhub/2021.yml,Zenhub
+zenhub 2022,tests/resources/pricing/full/zenhub/2022.yml,Zenhub
+zenhub 2023,tests/resources/pricing/full/zenhub/2023.yml,Zenhub
+zenhub 2024,tests/resources/pricing/full/zenhub/2024.yml,Zenhub
+zenhub 2025,tests/resources/pricing/full/zenhub/2025.yml,Zenhub
+---------- zoom ----------,-,-
+zoom 2019,tests/resources/pricing/full/zoom/2019.yml,Zoom
+zoom 2020,tests/resources/pricing/full/zoom/2020.yml,Zoom
+zoom 2021,tests/resources/pricing/full/zoom/2021.yml,Zoom
+zoom 2022,tests/resources/pricing/full/zoom/2022.yml,Zoom
+zoom 2023,tests/resources/pricing/full/zoom/2023.yml,Zoom
+zoom 2024,tests/resources/pricing/full/zoom/2024.yml,Zoom
+zoom 2025,tests/resources/pricing/full/zoom/2025.yml,Zoom
