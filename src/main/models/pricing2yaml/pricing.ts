@@ -17,6 +17,7 @@ export interface Pricing {
     usageLimits?: Record<string, UsageLimit>;
     plans?: Record<string, Plan>;
     addOns?: Record<string, AddOn>;
+    custom?: {[key: string]: any};
 }
 
 export interface ExtractedPricing extends Omit<Pricing, 'syntaxVersion' | 'createdAt'> {

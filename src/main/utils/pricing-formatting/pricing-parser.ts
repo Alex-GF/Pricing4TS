@@ -47,6 +47,7 @@ import {
   validateSubscriptionConstraintMinQuantity,
   validateSubscriptionConstraintMaxQuantity,
   validateSubscriptionConstraintQuantityStep,
+  validateCustom,
 } from '../pricing-validators';
 
 export function parsePricing(extractedPricing: ExtractedPricing): Pricing {
@@ -115,6 +116,7 @@ function parseBasicAttributes(extractedPricing: ExtractedPricing, pricing: Prici
   pricing.billing = validateBilling(extractedPricing.billing);
   pricing.variables = validateVariables(extractedPricing.variables);
   pricing.tags = validateTags(extractedPricing.tags);
+  pricing.custom = validateCustom(extractedPricing.custom);
 }
 
 function parseFeature(feature: Feature, tags?: string[]): Feature {

@@ -31,3 +31,4 @@ Given add-on with true private flag should parse,tests/resources/pricing/positiv
 Given add-on with false private flag should parse,tests/resources/pricing/positive/addOn/private/is-not-private.yml,Test
 ---------- variables ----------,-,-
 Given plan with formula price should parse,tests/resources/pricing/positive/variables/pricing-with-variables.yml,Test
+Given add-on with formula price should parse,tests/resources/pricing/positive/variables/addOn-with-variables.yml,Test

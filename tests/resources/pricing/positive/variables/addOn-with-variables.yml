@@ -1,0 +1,31 @@
+saasName: Test
+version: '2.0'
+currency: EUR
+createdAt: '2024-08-31'
+variables:
+  vip: true
+  x: 15
+features:
+  foo:
+    type: DOMAIN
+    valueType: TEXT
+    defaultValue: baz
+  addOnFeature:
+    type: DOMAIN
+    valueType: BOOLEAN
+    defaultValue: false
+plans:
+  PRO:
+    description: Pro plan
+    price: 15.99
+    unit: user/month
+    features: null
+    usageLimits: null
+addOns:
+  test:
+    description: Test addOn
+    price: 'Math.floor(#x / 5) < 1 ? #x * 10 : 100.0'
+    unit: user/month
+    features: 
+      addOnFeature:
+        value: true
