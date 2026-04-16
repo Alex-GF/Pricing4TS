@@ -136,3 +136,5 @@ npm/
 
 tests/resources/pricing/temp*
 tests/resources/temp*
+
+.DS_Store

@@ -1,0 +1,29 @@
+saasName: Test
+version: '2.0'
+currency: EUR
+createdAt: '2024-08-31'
+variables:
+  test:
+    - true
+    - false
+  value:
+    - 5
+    - 0
+features:
+  foo:
+    type: DOMAIN
+    valueType: TEXT
+    defaultValue: baz
+plans:
+  BASIC:
+    description: Basic plan
+    price: '#test[0] ? #value[0] : #value[1]'
+    unit: user/month
+    features: null
+    usageLimits: null
+  PRO:
+    description: Pro plan
+    price: 15.99
+    unit: user/month
+    features: null
+    usageLimits: null

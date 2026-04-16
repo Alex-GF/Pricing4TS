@@ -99,7 +99,7 @@ function _formatPricingContainerFields(pricingContainer: any, pricingContainerTy
 
       const serializedField = Object.entries(pricingContainer[field]).reduce(
         (acc: { [key: string]: {value: string | number | boolean | string[]} | undefined }, [key, value]) => {
-          if ((value as Feature | UsageLimit).value){
+          if ((value as Feature | UsageLimit).value !== undefined) {
             acc[key] = { value: (value as Feature | UsageLimit).value! };
           }
           return acc;

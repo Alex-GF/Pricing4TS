@@ -512,7 +512,7 @@ export function validatePlanUsageLimits(
 
 export function validatePrice(
   price: number | string | undefined | null,
-  variables: { [key: string]: boolean | string | number }
+  variables: { [key: string]: any } = {}
 ): number | string {
   if (price === null || price === undefined) {
     throw new Error(
@@ -533,10 +533,22 @@ export function validatePrice(
   if (typeof price === 'string') {
     if (price.includes('#')) {
       for (const [variable, value] of Object.entries(variables)) {
-        price = price.replace(
-          new RegExp(`#${variable}`, 'g'),
-          `${typeof value === 'string' ? `'${value}'` : value}`
-        );
+        let replacement: string;
+
+        if (typeof value === 'string') {
+          const escaped = (value as string).replace(/'/g, "\\'");
+          replacement = `'${escaped}'`;
+        } else if (value === null) {
+          replacement = 'null';
+        } else if (typeof value === 'object') {
+          // Use JSON.stringify and wrap in parentheses so object/array literals
+          // evaluate correctly inside eval (e.g. ({"test":"a"}).test )
+          replacement = `(${JSON.stringify(value)})`;
+        } else {
+          replacement = String(value);
+        }
+
+        price = price.replace(new RegExp(`#${variable}`, 'g'), replacement);
       }
 
       try {
@@ -801,25 +813,18 @@ export function validateBilling(billing: { [key: string]: number } | undefined) 
 }
 
 export function validateVariables(
-  variables: { [key: string]: number | string | boolean } | undefined
-) {
+  variables: { [key: string]: any } | undefined
+): { [key: string]: any } {
 
   variables ??= {};
 
   if (typeof variables !== 'object') {
     throw new TypeError(
-      `The billing field must be an object of type {[key: string]: number | string | boolean}`
+      `The 'variables' field must be an object of type {[key: string]: any}`
     );
   }
 
-  for (const [key, value] of Object.entries(variables)) {
-    if (typeof value !== 'number' && typeof value !== 'string' && typeof value !== 'boolean') {
-      throw new TypeError(
-        `The billing entry for ${key} must be either a number, a string or a boolean. Received: ${value}`
-      );
-    }
-  }
-
+  // Allow any value types for variables (object, array, string, number, boolean, etc.)
   return variables;
 }
 
