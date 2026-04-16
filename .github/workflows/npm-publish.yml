@@ -29,6 +29,6 @@ jobs:
         run: pnpm build
         
       - name: Deploy Package
-        run: npm publish
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
