@@ -12,16 +12,19 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
   
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install
   
       - name: Run Tests
-        run: npm run test:small
+        run: pnpm run test:small
 
       - name: Build Package
-        run: npm run build
+        run: pnpm build
         
       - name: Deploy Package
-        run: npm publish
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
