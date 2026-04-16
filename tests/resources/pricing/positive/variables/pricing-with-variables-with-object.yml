@@ -1,0 +1,25 @@
+saasName: Test
+version: '2.0'
+currency: EUR
+createdAt: '2024-08-31'
+variables:
+  test:
+    nested: true
+features:
+  foo:
+    type: DOMAIN
+    valueType: TEXT
+    defaultValue: baz
+plans:
+  BASIC:
+    description: Basic plan
+    price: '#test.nested ? 5 : 0.0'
+    unit: user/month
+    features: null
+    usageLimits: null
+  PRO:
+    description: Pro plan
+    price: 15.99
+    unit: user/month
+    features: null
+    usageLimits: null
