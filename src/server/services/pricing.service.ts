@@ -52,7 +52,7 @@ export default class PricingService {
         const selectedPlan = Object.keys(this.pricing.plans!)[solution.selected_plan - 1];
         const selectedAddons = solution.selected_addons.map((addonIndex, index) => addonIndex === 1 ? Object.keys(this.pricing.addOns!)[index] : null).filter(addon => addon !== null);
         const subscriptionFeatures = solution.subscription_features.map((featureIndex, index) => featureIndex === 1 ? Object.keys(this.pricing.features)[index] : null).filter(feature => feature !== null);
-        const subscriptionUsageLimits = solution.subscription_usage_limits.map((usageLimitIndex, index) => usageLimitIndex === 1 ? Object.keys(this.pricing.usageLimits!)[index] : null).filter(usageLimit => usageLimit !== null);
+        const subscriptionUsageLimits = solution.subscription_usage_limits.map((usageLimitIndex, index) => usageLimitIndex > 0 ? Object.keys(this.pricing.usageLimits!)[index] : null).filter(usageLimit => usageLimit !== null);
 
         configurationSpace.push({
           selectedPlan: selectedPlan,
