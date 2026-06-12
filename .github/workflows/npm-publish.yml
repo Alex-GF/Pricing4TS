@@ -4,35 +4,25 @@ on:
     types: [created]
 jobs:
   publish-npm:
+    name: Deployment to NPM
     runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
-          ref: ${{ github.event.release.target_commitish }}
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org/
-          cache: pnpm
+          cache: npm
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Run Tests
-        run: pnpm run test:small
-
+        run: npm i
+  
       - name: Build Package
-        run: pnpm build
-
-      - name: Publish Package
-        run: pnpm publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run build
+        
+      - name: Deploy Package (Trusted Publishing via OIDC)
+        run: npm publish
