@@ -43,6 +43,6 @@ addOns:
         value: true
     usageLimits:
       fooLimit:
-        value: 10_000_000
+        value: 10000000
     usageLimitsExtensions:
-      fooLimit: 5_000_000
+      fooLimit: 5000000
