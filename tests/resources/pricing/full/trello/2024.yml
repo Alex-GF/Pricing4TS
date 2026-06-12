@@ -231,7 +231,7 @@ usageLimits:
     - boards
   powerUpsLimit:
     valueType: NUMERIC
-    defaultValue: 1_000_000_000
+    defaultValue: 10000000000
     unit: Power-up/board
     type: NON_RENEWABLE
     linkedFeatures:

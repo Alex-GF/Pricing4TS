@@ -536,7 +536,7 @@ usageLimits:
       - shopifyPosPro
   includedFreeEmails:
     valueType: NUMERIC
-    defaultValue: 10_000
+    defaultValue: 10000
     unit: email/month
     type: RENEWABLE
     linkedFeatures:

@@ -42,9 +42,9 @@ addOns:
       foo:
         value: true
     usageLimits:
-      fooLimit: 10_000_000
+      fooLimit: 10000000
       test:
         value: 10000
     usageLimitsExtensions:
       fooLimit:
-        value: 5_000_000
+        value: 5000000
