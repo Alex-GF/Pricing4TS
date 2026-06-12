@@ -6,29 +6,33 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
-          
-      - uses: actions/setup-node@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: 18
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
           registry-url: https://registry.npmjs.org/
-  
-      - name: Install pnpm
-        run: npm install -g pnpm
+          cache: pnpm
 
       - name: Install Dependencies
-        run: pnpm install
-  
+        run: pnpm install --frozen-lockfile
+
       - name: Run Tests
         run: pnpm run test:small
 
       - name: Build Package
         run: pnpm build
-        
-      - name: Deploy Package
-        run: pnpm publish
+
+      - name: Publish Package
+        run: pnpm publish --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
