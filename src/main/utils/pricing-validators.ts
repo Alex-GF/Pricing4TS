@@ -58,7 +58,7 @@ export function validateSyntaxVersion(version: string): string {
 }
 
 export function validateVersion(version: string | undefined, createdAt: Date): string {
-  version ??= `${createdAt.getFullYear()}-${createdAt.getMonth() + 1}-${createdAt.getDate()}`;
+  version ??= `${createdAt.getUTCFullYear()}-${createdAt.getUTCMonth() + 1}-${createdAt.getUTCDate()}`;
 
   if (typeof version !== 'string') {
     throw new TypeError(
@@ -69,6 +69,15 @@ export function validateVersion(version: string | undefined, createdAt: Date): s
   return version;
 }
 
+/**
+ * `createdAt` is either a date (`yyyy-mm-dd`, read as UTC midnight) or an
+ * ISO 8601 date-time with an explicit time zone (`Z` or `±hh:mm`), e.g.
+ * `2025-05-25T14:30:00Z`. Both are normalized to the instant they denote.
+ */
+export const CREATED_AT_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+export const CREATED_AT_DATETIME_PATTERN =
+  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d{1,9})?)?(Z|[+-]\d{2}:\d{2})$/;
+
 export function validateCreatedAt(createdAt: string | Date | null): Date {
   if (createdAt === null || createdAt === undefined) {
     throw new Error(
@@ -77,11 +86,11 @@ export function validateCreatedAt(createdAt: string | Date | null): Date {
   }
 
   if (typeof createdAt === 'string'){
-    if (/^\d{4}-\d{2}-\d{2}$/.test(createdAt)) {
+    if (CREATED_AT_DATE_PATTERN.test(createdAt) || CREATED_AT_DATETIME_PATTERN.test(createdAt)) {
       createdAt = new Date(createdAt);
     } else {
       throw new TypeError(
-      `The createdAt field must be a string in the format yyyy-mm-dd or a valid Date object`
+      `The createdAt field must be a string in the format yyyy-mm-dd or an ISO 8601 date-time with time zone (e.g. 2025-05-25T14:30:00Z) or a valid Date object`
       );
     }
   }

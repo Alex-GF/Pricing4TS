@@ -40,11 +40,17 @@ function serializeBasicAttributes(pricing: Pricing, pricingToBeWritten: PricingT
   pricingToBeWritten.version = pricing.version;
   pricingToBeWritten.url = pricing.url;
   pricingToBeWritten.createdAt = pricing.createdAt instanceof Date
-    ? pricing.createdAt.toISOString().split('T')[0]
+    ? serializeCreatedAt(pricing.createdAt)
     : pricing.createdAt;
   pricingToBeWritten.currency = pricing.currency;
   pricingToBeWritten.tags = Array.isArray(pricing.tags) && pricing.tags.length > 0 ? pricing.tags : undefined;
   pricingToBeWritten.billing = pricing.billing && pricing.billing.monthly === 1 && Object.keys(pricing.billing).length === 1 ? undefined : pricing.billing;
+}
+
+/** Date-only when the instant is exactly UTC midnight (keeps existing files unchanged), full UTC date-time otherwise. */
+function serializeCreatedAt(createdAt: Date): string {
+  const iso = createdAt.toISOString();
+  return iso.endsWith('T00:00:00.000Z') ? iso.split('T')[0] : iso;
 }
 
 function serializeFeatures(pricing: Pricing, pricingToBeWritten: PricingToBeWritten) {
