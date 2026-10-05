@@ -1,6 +1,6 @@
 {
   "name": "pricing4ts",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "![NPM Version](https://img.shields.io/npm/v/pricing4ts)\nPricing4TS is a TypeScript-based toolkit designed to enhance the server-side functionality of a pricing-driven SaaS by enabling the seamless integration of pricing plans into the application logic. The package provides a suite of components that are predicated on the Pricing2Yaml syntax, a specification that facilitates the definition of system's pricing and its features alongside their respective evaluation expressions, grouping them within plans and add-ons, as well as establishing usage limits.",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -14,9 +14,9 @@
       "require": "./dist/server/server.js"
     }
   },
-  "directories": {
-    "test": "tests"
-  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && npm run copy-mzn",
     "copy-mzn": "copyfiles -u 1 src/**/*.mzn dist",
